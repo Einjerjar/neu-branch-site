@@ -12,7 +12,7 @@
     <ul class="flex children:mx-2 items-center ml-auto">
       {#each links as link}
         <li>
-          <a href={link.path}>
+          <a href={'#'+link.path}>
             {link.name}
           </a>
         </li>
