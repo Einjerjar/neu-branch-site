@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
   import SampleNav from '@/components/SampleNav.svelte'
   import Router from 'svelte-spa-router'
   import {routes} from '@/routes'
@@ -8,6 +10,7 @@
 
 <main>
   <SampleNav/>
+
   <Router {routes}/>
 </main>
 

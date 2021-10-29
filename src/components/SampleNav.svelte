@@ -1,17 +1,5 @@
 <script>
-import { each } from "svelte/internal";
-
-
-  const links = [
-    {
-      name: 'Home',
-      path: '/'
-    },
-    {
-      name: 'Academic Programs',
-      path: '/'
-    },
-  ]
+  import {links} from '@/route_data'
 </script>
 
 <div class="cmp-nav w-full h-16 bg-gray-100 shadow-lg mb-4">

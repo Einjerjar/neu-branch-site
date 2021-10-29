@@ -1,7 +1,14 @@
-import Home from '@/pages/Home.svelte'
-import AcademicPrograms from '@/pages/AcademicPrograms.svelte'
+import { links } from '@/route_data'
 
-export const routes = {
-  '/': Home,
-  '/programs': AcademicPrograms,
-}
+let rr = {}
+
+console.log(rr)
+
+links.forEach(v => {
+  console.log(1, v)
+  rr[v.path] = v.component
+})
+
+export const routes = rr
+
+console.log(2, rr)
