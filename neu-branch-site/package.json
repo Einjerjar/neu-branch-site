@@ -1,6 +1,7 @@
 {
-  "name": "new-branch-site",
+  "name": "neu-branch-site",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -9,8 +10,6 @@
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.11",
     "svelte": "^3.37.0",
-    "svelte-spa-router": "^3.2.0",
-    "vite": "^2.6.4",
-    "vite-plugin-windicss": "^1.4.12"
+    "vite": "^2.6.4"
   }
 }
