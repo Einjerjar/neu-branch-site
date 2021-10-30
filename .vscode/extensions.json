@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "svelte.svelte-vscode",
+    "voorjaar.windicss-intellisense",
+    "csstools.postcss",
+    "jkiviluoto.tws",
+    "aaron-bond.better-comments",
+    "streetsidesoftware.code-spell-checker",
+  ]
+}
