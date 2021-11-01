@@ -5,6 +5,7 @@ import AdmissionFrontPage from '@/pages/AdmissionFrontPage.svelte'
 import AboutNEU from '@/pages/AboutNEU.svelte'
 
 export const links = [
+  // Navbar links
   {
     name: 'Home',
     path: '/',
@@ -58,5 +59,39 @@ export const links = [
     path: '/alumnae',
     component: Home,
     category: 'secondary',
-  }
+  },
+
+  // Footer links
+  {
+    name: 'Basic Facts',
+    sublinks: [
+      {label: "university mission", component: Home, path: '/'},
+      {label: "university vision", component: Home, path: '/'},
+      {label: "university goals", component: Home, path: '/'},
+      {label: "university history", component: Home, path: '/'},
+    ],
+    category: 'footer',
+  },
+  {
+    name: 'Campuses',
+    sublinks: [
+      {label: "NEU quezon city (main)", component: Home, path: '/'},
+      {label: "NEU batangas", component: Home, path: '/'},
+      {label: "NEU pampanga", component: Home, path: '/'},
+      {label: "NEU general santso city", component: Home, path: '/'},
+      {label: "NEU rizal", component: Home, path: '/'},
+    ],
+    category: 'footer',
+  },
+  {
+    name: 'Other Links',
+    sublinks: [
+      {label: "School Calendar", component: Home, path: '/'},
+      {label: "Research & Publication", component: Home, path: '/'},
+      {label: "NEUTECH", component: Home, path: '/'},
+      {label: "MCLE", component: Home, path: '/'},
+      {label: "RUSSIAN STUDIES CENTER", component: Home, path: '/'},
+    ],
+    category: 'footer',
+  },
 ]
