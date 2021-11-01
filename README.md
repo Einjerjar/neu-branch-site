@@ -16,7 +16,7 @@
 - `Reusable components` should go in the `/components` directory
 - Components targeting only one `specific page` can be placed under a subfolder `named after its parent page`.
 - Components with `similar or correlated functions/use` can be placed under a subfolder `named after their similar concept` (eg: nav_components).
-- Try not to mess to much with configuration files such as the following
+- Try not to mess too much with configuration files such as the following
   - `windi.config.js`
   - `vite.config.js`
   - `jsconfig.json`
