@@ -1,17 +1,19 @@
 <script>
-// @ts-nocheck
+  // @ts-nocheck
 
-  import SampleNav from '@/components/SampleNav.svelte'
-  import Router from 'svelte-spa-router'
-  import {routes} from '@/routes'
+  import SampleNav from "@/components/SampleNav.svelte";
+  import Router from "svelte-spa-router";
+  import { routes } from "@/routes";
+  import Footer from "./components/Footer.svelte";
 
-  console.log(routes)
+  console.log(routes);
 </script>
 
 <main>
-  <SampleNav/>
+  <SampleNav />
 
-  <Router {routes}/>
+  <Router {routes} />
+  <Footer />
 </main>
 
 <style>
