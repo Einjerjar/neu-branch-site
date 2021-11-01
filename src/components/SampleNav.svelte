@@ -27,7 +27,7 @@
       scrollTimer = clearTimeout(scrollTimer)
     }
 
-    scrollTimer = setTimeout(scrollEnd, 10)
+    scrollTimer = setTimeout(scrollEnd, 1)
   }
 
   onMount(() => {
