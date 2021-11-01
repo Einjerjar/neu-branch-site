@@ -9,7 +9,7 @@
   console.log(routes);
 </script>
 
-<main>
+<main class="relative">
   <SampleNav />
 
   <Router {routes} />
