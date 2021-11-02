@@ -7,7 +7,7 @@
 
 <div class="p-10">
     <!--Card 1-->
-    <div class="max-w-sm rounded bg-white shadow-xl text-black">
+    <div class="max-w-sm rounded bg-white shadow-xl text-black overflow-hidden">
         <img class="picture-size" src={imageSrc} alt={schoolType}>
         <div class="px-6 py-4 ">
             <div class="font-bold text-xl mb-2 ">{schoolType}</div>
@@ -17,8 +17,6 @@
                 <div class="py-5">
                     <p><a class="ex1 cursor-pointer" href="default.asp"><strong>EXPLORE</strong></a></p>
                 </div>
-
-
 
             </div>
         </div>
