@@ -2,17 +2,14 @@
   import Divider from "@/components/Divider.svelte";
   import IconCard from "@/components/home/IconCard.svelte";
   import VideoHeader from "@/components/home/VideoHeader.svelte";
+import NewsTicker from "@/components/NewsTicker.svelte";
   import Slider from "@/components/Slider.svelte";
 
   const arr = [0, 0, 0, 0];
 </script>
 
 <div class="page-home">
-  <div
-    class="bg-primary-900 h-25 flex items-center justify-center text-white capitalize text-3xl font-semibold"
-  >
-    <div>enrollment is ongoing</div>
-  </div>
+  <NewsTicker/>
   <VideoHeader />
   <div class="container mx-auto">
     <div
@@ -36,6 +33,5 @@
       </div>
       <Slider />
     </div>
-    <div class="text-xl font-light">Home Test</div>
   </div>
 </div>
