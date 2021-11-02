@@ -1,6 +1,6 @@
 <script>
-  import {links} from '@/route_data'
-  import {slide} from 'svelte/transition'
+  import { primaryLinks, secondaryLinks } from '@/route_data'
+  import { slide } from 'svelte/transition'
   export let isSticky = false
 
   let dropdownNav = false
@@ -22,27 +22,23 @@
     <div class="ml-auto hidden md:(block min-w-30rem) lg:min-w-40rem xl:min-w-60rem">
       <div>
         <ul class="flex children:mx-4 items-center ml-auto text-white bg-primary-900 h-8 rounded-bl rounded-bl-md relative z-1">
-        {#each links as link}
-          {#if link.category == 'secondary'}
-            <li>
-              <a href={'#'+link.path}>
-                {link.name}
-              </a>
-            </li>
-          {/if}
+        {#each secondaryLinks as link}
+          <li>
+            <a href={'#'+link.path}>
+              {link.label}
+            </a>
+          </li>
         {/each}
       </ul>
       </div>
       <div class="flex">
         <ul class="flex children:mx-4 items-center ml-auto h-16 flex-grow-0">
-          {#each links as link}
-            {#if link && link.category == 'primary'}
-              <li>
-                <a href={'#'+link.path}>
-                  {link.name}
-                </a>
-              </li>
-            {/if}
+          {#each primaryLinks as link}
+            <li>
+              <a href={'#'+link.path}>
+                {link.label}
+              </a>
+            </li>
           {/each}
         </ul>
         <div class="ml-auto flex-grow flex items-center">
@@ -63,34 +59,30 @@
     </div>
   </div>
   {#if dropdownNav}
-    <div transition:slide class="absolute left-0 w-full top-full bg-gray-200">
+    <div transition:slide class="absolute left-0 w-full top-full bg-gray-200 z-999">
       <div class="container px-4 py-2 text-right">
         <div class="font-bold text-lg text-primary-900">
           Primary Links
         </div>
         <ul class="children:my-2 pl-4 text-primary-700">
-          {#each links as link}
-            {#if link && link.category && link.category == 'primary'}
-              <li>
-                <a href={'#'+link.path}>
-                  {link.name}
-                </a>
-              </li>
-            {/if}
+          {#each secondaryLinks as link}
+            <li>
+              <a href={'#'+link.path}>
+                {link.label}
+              </a>
+            </li>
           {/each}
         </ul>
         <div class="font-bold text-lg mt-4 text-primary-900">
           Secondary Links
         </div>
         <ul class="children:my-2 pl-4 text-primary-700">
-          {#each links as link}
-            {#if link && link.category && link.category == 'secondary'}
-              <li>
-                <a href={'#'+link.path}>
-                  {link.name}
-                </a>
-              </li>
-            {/if}
+          {#each primaryLinks as link}
+            <li>
+              <a href={'#'+link.path}>
+                {link.label}
+              </a>
+            </li>
           {/each}
         </ul>
       </div>
