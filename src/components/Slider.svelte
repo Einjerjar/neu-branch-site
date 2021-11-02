@@ -76,7 +76,7 @@
         ? 'prev'
         : ''}{index === next ? 'next' : ''}"
     >
-      <img src={image.src} alt={image.id} class="h-4/5 w-full" />
+      <img src={image.src} alt={image.id} class="h-4/5 w-full object-cover" />
       <div
         class="bg-primary-900 text-white text-2xl text-semibold h-1/5 flex items-center px-12"
       >
