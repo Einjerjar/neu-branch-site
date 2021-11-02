@@ -16,8 +16,6 @@
     }
 
     lastScroll = w
-
-    console.log('end', navShowing, lastScroll, w)
   }
 
   const onScroll = e => {

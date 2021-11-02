@@ -4,6 +4,20 @@ import Campus from "@/pages/Campus.svelte";
 import AdmissionFrontPage from "@/pages/AdmissionFrontpage.svelte";
 import AboutNEU from "@/pages/AboutNEU.svelte";
 
+export const primaryLinks = [
+  { label: 'Academics', path: '/academics', component: AcademicPrograms },
+  { label: 'Admission', path: '/admission', component: AdmissionFrontPage },
+  { label: 'Campus', path: '/campus', component: Campus },
+  { label: 'About NEU', path: '/about', component: AboutNEU },
+]
+
+export const secondaryLinks = [
+  { label: 'Resources', path: '/resources', component: Home },
+  { label: 'Visit', path: '/visit', component: Home },
+  { label: 'Events', path: '/events', component: Home },
+  { label: 'Alumnae', path: '/alumnae', component: Home },
+]
+
 export const links = [
   // Navbar links
   {
@@ -13,52 +27,14 @@ export const links = [
     category: "hidden",
   },
   {
-    name: "Academics",
-    path: "/academics",
-    component: AcademicPrograms,
-    category: "primary",
+    name: 'Primary Links',
+    sublinks: primaryLinks,
+    category: 'primary'
   },
   {
-    name: "Admission",
-    path: "/admission",
-    component: AdmissionFrontPage,
-    category: "primary",
-  },
-  {
-    name: "Campus",
-    path: "/campus",
-    component: Campus,
-    category: "primary",
-  },
-  {
-    name: "About NEU",
-    path: "/about",
-    component: AboutNEU,
-    category: "primary",
-  },
-  {
-    name: "Resources",
-    path: "/resources",
-    component: Home,
-    category: "secondary",
-  },
-  {
-    name: "Visit",
-    path: "/visit",
-    component: Home,
-    category: "secondary",
-  },
-  {
-    name: "Events",
-    path: "/events",
-    component: Home,
-    category: "secondary",
-  },
-  {
-    name: "Alumnae",
-    path: "/alumnae",
-    component: Home,
-    category: "secondary",
+    name: 'Secondary Links',
+    sublinks: secondaryLinks,
+    category: 'secondary'
   },
 
   // Footer links
