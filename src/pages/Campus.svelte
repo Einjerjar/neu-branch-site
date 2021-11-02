@@ -22,13 +22,13 @@ const philo = ""
 <div class="page-home bb-gg my-auto pb-20">
   <div class = "container bg-cyan-600 bg-opacity-75 mx-auto flex shadow-2xl my-20 <sm:flow-root">
     <div class = "w-1/2 px-4 py-4 justify-center my-10 pt-10 <md:w-screen">
-      <img class = "shadow-2xl justify-center mx-auto"src = /public/images/NEU_Pampanga.jpg alt = campusImage >
+      <img class = "shadow-2xl justify-center mx-auto"src = /images/NEU_Pampanga.jpg alt = campusImage >
       <p class = "text-center font-mono text-white">
         {descr}
       </p>
     </div>
     <div class="grid-cols-1 w-1/2 my-10 pt-10 pl-10 mx-auto">
-      <img class= "sm:w-full h-full <sm:w-screen h-auto"src = /public/images/half.png alt = ph>
+      <img class= "sm:w-full h-full <sm:w-screen h-auto"src =/images/half.png alt = ph>
       <button class = "sm:relative bottom-30 left-65 right-1/2 mx-auto bg-black text-white rounded-xl h-15 w-60 text-4xl <sm: left-10 " type="button">Get Direction </button>
     </div>
   </div>
@@ -38,7 +38,7 @@ const philo = ""
   <div class="container bg-white bg-opacity-75 mx-auto shadow-lg">
     <div class= "flex justify-center mx-auto">
       <div class= "inline-flex mx-auto pt-10">
-        <img class="mx-auto h-auto w-auto" src = /public/logo.png alt=logo> 
+        <img class="mx-auto h-auto w-auto" src = /logo.png alt=logo> 
         <h1 class = "text-center pl-10 pt-10 text-black tracking-wide font-bold font-mono text-6xl text-shadow-lg">NEW ERA UNIVERSITY</h1>
       </div>
     </div>
@@ -71,7 +71,7 @@ const philo = ""
         </ul>
       </div>
       <div class = "mx-10 mb-5">
-        <img class="w-200 h-100 drop-shadow-lg"src = /public/logo.png alt=another>
+        <img class="w-200 h-100 drop-shadow-lg"src = /logo.png alt=another>
       </div>
     </div>
   </div>
