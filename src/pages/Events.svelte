@@ -9,6 +9,7 @@ let imgSrc= [
     "https://neu.edu.ph/main/assets/images/posts_images/AntiBullying19.jpg",
     "https://www.neu.edu.ph/main/assets/images/posts_images/44thArenaHS9.jpg",
     "https://www.eaglenews.ph/wp-content/uploads/2017/04/NEU-graduates-480x320.jpg"
+
   ];
 
   let information = [
@@ -46,9 +47,7 @@ let imgSrc= [
               </Cards>
             {/each}
           </div>
-
           <Slider/>
-
 
     </div>
 </div>

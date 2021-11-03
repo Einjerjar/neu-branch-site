@@ -20,7 +20,6 @@
                 </p>
             <div class="py-5">
                 <p><a class="ex1 cursor-pointer" href={'#'+admissionLinks[1].path}><strong>EXPLORE</strong></a></p>
-
             </div>
         </div>
     </div>
