@@ -1,5 +1,5 @@
 <script>
-  import Cards from "@/components/Cards.svelte";
+  import Cards from "@/components/admission/Cards.svelte";
 
   let schoolType = [
     {type: "Basic Education", id: 0},
@@ -14,20 +14,29 @@
     "https://www.neu.edu.ph/main/assets/images/posts_images/44thArenaHS9.jpg",
     "https://www.eaglenews.ph/wp-content/uploads/2017/04/NEU-graduates-480x320.jpg"
   ];
+
+  let information = [
+    "This information is about the Basic Education",
+    "This information is about the Senior High School",
+    "This information is about the Undergraduate",
+  ];
+
 </script>
 
 
-<div class="page-home neu-pic">
+<div class="bg-cover page-home neu-pic">
   <div class="min-h-full mx-auto max-h-full flex  justify-center text-white font-medium">
     <div class="items-center my-21">
-        <p class=" font-sans shadowing text-center text-7xl"><strong>ADMISSION</strong></p>
+        <p class=" font-sans shadowing text-center text-9xl"><strong>ADMISSION</strong></p>
     </div>
 
   </div>
   <div>
     <div class="items-center flex flex-row justify-center">
       {#each schoolType as st (st.id)}
-        <Cards imageSrc={imgSrc[st.id]} schoolType={st.type}></Cards>
+        <Cards imageSrc={imgSrc[st.id]} schoolType={st.type}>
+          <p>{information[st.id]}</p>
+        </Cards>
       {/each}
 
 

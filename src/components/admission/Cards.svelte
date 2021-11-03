@@ -5,22 +5,21 @@
 </script>
 
 
-<div class="p-10">
+<div class="p-8">
     <!--Card 1-->
-    <div class="max-w-sm rounded bg-white shadow-xl text-black overflow-hidden">
+    <div class="max-w-sm rounded-lg bg-white shadow-2xl text-black overflow-hidden">
         <img class="picture-size" src={imageSrc} alt={schoolType}>
         <div class="px-6 py-4 ">
             <div class="font-bold text-xl mb-2 ">{schoolType}</div>
                 <p class=" text-base ">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                    <!-- {information} -->
+                    <slot></slot>
                 </p>
-                <div class="py-5">
-                    <p><a class="ex1 cursor-pointer" href="default.asp"><strong>EXPLORE</strong></a></p>
-                </div>
-
+            <div class="py-5">
+                <p><a class="ex1 cursor-pointer" href="default.asp"><strong>EXPLORE</strong></a></p>
             </div>
         </div>
-
+    </div>
 </div>
 
 
