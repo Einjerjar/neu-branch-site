@@ -3,19 +3,30 @@ import AcademicPrograms from "@/pages/AcademicPrograms.svelte";
 import Campus from "@/pages/Campus.svelte";
 import AdmissionFrontPage from "@/pages/AdmissionFrontpage.svelte";
 import AboutNEU from "@/pages/AboutNEU.svelte";
+import Procedure from "@/pages/Procedure.svelte";
+import Undergrad from "@/pages/Undergrad.svelte";
+import Events from "@/pages/Events.svelte";
+
 
 export const primaryLinks = [
   { label: 'Academics', path: '/academics', component: AcademicPrograms },
   { label: 'Admission', path: '/admission', component: AdmissionFrontPage },
   { label: 'Campus', path: '/campus', component: Campus },
   { label: 'About NEU', path: '/about', component: AboutNEU },
+  { label: 'About NEU', path: '/about', component: AboutNEU }
 ]
 
 export const secondaryLinks = [
   { label: 'Resources', path: '/resources', component: Home },
   { label: 'Visit', path: '/visit', component: Home },
-  { label: 'Events', path: '/events', component: Home },
+  { label: 'Events', path: '/events', component: Events },
   { label: 'Alumnae', path: '/alumnae', component: Home },
+]
+
+export const admissionLinks = [
+  { label: 'Procedure', path: '/procedure', component: Procedure },
+  { label: 'Undergrad', path: '/undergrad', component: Undergrad },
+
 ]
 
 export const links = [
@@ -35,6 +46,11 @@ export const links = [
     name: 'Secondary Links',
     sublinks: secondaryLinks,
     category: 'secondary'
+  },
+  {
+    name: 'Admission Links',
+    sublinks: admissionLinks,
+    category: 'admission'
   },
 
   // Footer links

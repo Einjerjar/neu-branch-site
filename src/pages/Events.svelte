@@ -20,5 +20,4 @@ import Slider from "@/components/Slider.svelte";
         </div>
         <Slider/>
     </div>
-    
 </div>

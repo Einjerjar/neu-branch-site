@@ -1,6 +1,9 @@
 <script>
     export let schoolType = 'School Type';
     export let imageSrc;
+    import { admissionLinks } from '@/route_data'
+
+
 
 </script>
 
@@ -16,7 +19,8 @@
                     <slot></slot>
                 </p>
             <div class="py-5">
-                <p><a class="ex1 cursor-pointer" href="default.asp"><strong>EXPLORE</strong></a></p>
+                <p><a class="ex1 cursor-pointer" href={'#'+admissionLinks[1].path}><strong>EXPLORE</strong></a></p>
+
             </div>
         </div>
     </div>

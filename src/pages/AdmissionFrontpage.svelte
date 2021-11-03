@@ -1,6 +1,6 @@
 <script>
   import Cards from "@/components/admission/Cards.svelte";
-
+  import { admissionLinks } from '@/route_data'
   let schoolType = [
     {type: "Basic Education", id: 0},
     {type: "Senior High School", id: 1},
@@ -27,7 +27,7 @@
 <div class="bg-cover page-home neu-pic">
   <div class="min-h-full mx-auto max-h-full flex  justify-center text-white font-medium">
     <div class="items-center my-21">
-        <p class=" font-sans shadowing text-center text-9xl"><strong>ADMISSION</strong></p>
+        <p class=" font-sans shadowing text-center text-9xl"><a href={'#'+admissionLinks[0].path}><strong>ADMISSION</strong></a></p>
     </div>
 
   </div>
