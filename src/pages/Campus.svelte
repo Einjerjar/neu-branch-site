@@ -13,9 +13,13 @@
                 Technology, and Accountancy.";
 
 
-const mission = "asjdkljaskldjaskldj askldjaklsdjaskld jaskl djaskldjaskld jklasd jsladk jaskldj jaskjd jkasd jklasklas jdakls jdas dkljasd klasjjd ajsd l jaskdj aslkd ja slj lasj d asjdk"
-const vision = ""
-const philo = ""
+const mission = "Provide quality education anchored on Christian values with the prime purpose of bringing honor and glory to God."
+const vision = "A world-class Institution of learning with a unique Christian culture of excellence, discipline, and service to humanity."
+const philo = "Godliness is the foundation of knowledge."
+
+const missionTitle = "MISSION"
+const visionTitle = "VISION"
+const philoTitle = "PHILOSOPHY"
 
 </script>
 
@@ -43,9 +47,9 @@ const philo = ""
       </div>
     </div>
     <div class = "container flex justify-center my-10">
-      <MVP desc = {mission}/>
-      <MVP desc = {mission}/>
-      <MVP desc = {mission}/>
+      <MVP title = {missionTitle} desc = {mission}/>
+      <MVP title = {philoTitle} desc = {philo}/>
+      <MVP title = {visionTitle} desc = {vision}/>
     </div>
   </div>
 
