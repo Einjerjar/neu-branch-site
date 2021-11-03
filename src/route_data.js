@@ -12,7 +12,6 @@ export const primaryLinks = [
   { label: 'Academics', path: '/academics', component: AcademicPrograms },
   { label: 'Admission', path: '/admission', component: AdmissionFrontPage },
   { label: 'Campus', path: '/campus', component: Campus },
-  { label: 'About NEU', path: '/about', component: AboutNEU },
   { label: 'About NEU', path: '/about', component: AboutNEU }
 ]
 
