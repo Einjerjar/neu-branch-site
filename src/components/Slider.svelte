@@ -84,6 +84,12 @@
       </div>
     </div>
   {/each}
+  <div class="bullets-container">
+    {#each images as img, ind (ind)}
+      <div class="bullet-item {ind === current ? 'active' : ''}" on:click={() => handleSlides(ind)}></div>
+      
+    {/each}
+  </div>
 
   <div
     class="absolute left-0 w-8 h-full flex items-center justify-center text-2xl cursor-pointer hover:(bg-primary-700 bg-opacity-30 text-white) text-primary-900 z-99"
@@ -101,10 +107,16 @@
 
 <style lang="postcss">
   .cmp-slider {
-    @apply relative h-100 w-full flex overflow-hidden;
+    @apply relative h-100 w-full flex overflow-hidden my-4;
   }
   .cmp-slider-slide {
     @apply h-full w-full absolute top-0 left-0 opacity-0 transition-all duration-300 ease-linear lg:(top-1/2 left-1/2 h-4/5 w-3/5 transform -translate-x-1/2 -translate-y-1/2 z-2);
+  }
+  .bullets-container {
+    @apply absolute w-full flex items-center justify-center bottom-0 space-x-3;
+  }
+  .bullet-item {
+    @apply w-6 h-6 rounded-full bg-primary-900 opacity-50 cursor-pointer; 
   }
   .active {
     @apply opacity-100;
