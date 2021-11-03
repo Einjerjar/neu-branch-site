@@ -9,10 +9,9 @@ import Events from "@/pages/Events.svelte";
 
 
 export const primaryLinks = [
+  { label: 'Campus', path: '/campus', component: Campus },
   { label: 'Academics', path: '/academics', component: AcademicPrograms },
   { label: 'Admission', path: '/admission', component: AdmissionFrontPage },
-  { label: 'Campus', path: '/campus', component: Campus },
-  { label: 'About NEU', path: '/about', component: AboutNEU },
   { label: 'About NEU', path: '/about', component: AboutNEU }
 ]
 
@@ -24,8 +23,8 @@ export const secondaryLinks = [
 ]
 
 export const admissionLinks = [
-  { label: 'Procedure', path: '/procedure', component: Procedure },
-  { label: 'Undergrad', path: '/undergrad', component: Undergrad },
+  { label: 'Procedure', path: '/admission/procedure', component: Procedure },
+  { label: 'Undergrad', path: '/admission/undergrad', component: Undergrad },
 
 ]
 

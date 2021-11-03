@@ -1,7 +1,7 @@
 <script>
     export let schoolType = 'School Type';
     export let imageSrc;
-    import { admissionLinks } from '@/route_data'
+    import { admissionLinks } from '@/route_data';
 
 
 
@@ -13,8 +13,8 @@
     <div class="max-w-sm rounded-lg bg-white shadow-2xl text-black overflow-hidden">
         <img class="picture-size" src={imageSrc} alt={schoolType}>
         <div class="px-6 py-4 ">
-            <div class="font-bold text-xl mb-2 ">{schoolType}</div>
-                <p class=" text-base ">
+            <div class="font-bold text-xl mb-2 text-center">{schoolType}</div>
+                <p class=" text-base text-center">
                     <!-- {information} -->
                     <slot></slot>
                 </p>
@@ -25,7 +25,6 @@
         </div>
     </div>
 </div>
-
 
 <style>
     a.ex1:hover, a.ex1:active {color: red;}
