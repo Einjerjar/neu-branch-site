@@ -1,11 +1,13 @@
 <script>
     import ProcedureButton from "@/components/admission/ProcedureButton.svelte";
-            let message = "Click me please... uwu";
+    import { admissionLinks } from '@/route_data';
 
 </script>
 
 <div class="bg-cover page-home neu-pic"></div>
 
+
+<!-- enclose every section of paragraphs in a div, and apply margins and paddings. -->
 
 <div class="min-h-full mx-auto max-h-full flex  justify-center text-rose-900 font-medium">
     <div class="items-center my-21">
@@ -29,9 +31,10 @@
             (under Assign Section, Last Column Right) to choose the schedule then click Proceed. Click Save and take note of <br>
             the assessment of fees and amount to be paid.
         </p >
-        <button class="favorite styled mb-15" type="button">
+        <!-- <button class="favorite styled mb-15" type="button">
             Click me
-        </button>
+        </button> -->
+        <ProcedureButton message="See more" page={'#'+admissionLinks[1].path}></ProcedureButton>
 
 
         <h3 class="text-left "><strong>Admission Procedure (NEU SHS Graduate)</strong></h3>
@@ -40,18 +43,15 @@
             Name (Last Name, First Name, Middle Name), Course Applying, Gender, and Year Graduated. Once you received the Temporary Username <br>
             and Password thru email, You can now edit your Personal Information Sheet thru this link NEU Automate for Application.<br>
         </p>
-        <button class="favorite styled mb-15" type="button">
-            Click me
-        </button>
+        <ProcedureButton message="See more" page={'#'+admissionLinks[1].path}></ProcedureButton>
+
 
         <h3 class="text-left"><strong>Admission Procedure (Non-NEU SHS Graduate)</strong></h3>
         <p class = "text-left font-mono text-black mb-5">
             Fill out the General Personal Information Sheet thru this link NEU Automate for Application. Submit all the following requirements <br>
             thru this link Admission Requirements Submission Link.
         </p>
-        <button class="favorite styled mb-15" type="button">
-            Click me
-        </button>
+        <ProcedureButton message="See more" page={'#'+admissionLinks[1].path}></ProcedureButton>
 
 
 
