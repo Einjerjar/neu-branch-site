@@ -2,7 +2,9 @@
 import Divider from "@/components/Divider.svelte";
 import NewsCard from "@/components/NewsCard.svelte";
 
+export let params = {};
 </script>
+<div>{params.id}</div>
 <div class="container mx-auto p-8">
 
     <div class="xl:(flex flex-row-reverse items-center space-x-4 w-full)">
@@ -51,22 +53,22 @@ import NewsCard from "@/components/NewsCard.svelte";
                     <p>events</p>      
                 </div>
                 <div>
-                    <div class="h-50">
-                        <NewsCard/>
+                    <div class="h-50 my-8">
+                        <NewsCard path={'#/events/'+params.id}/>
                     </div>
-                    <div class="h-50">
-                        <NewsCard/>
+                    <div class="h-50 my-8">
+                        <NewsCard path={'#/events/'+params.id}/>
                     </div>
                 </div>
                 <div class="text-2xl text-primary-900 uppercase mt-8 font-semibold xl:(text-4xl)">
                     <p>announcement</p>      
                 </div>
                 <div>
-                    <div class="h-50">
-                        <NewsCard/>
+                    <div class="h-50 my-8">
+                        <NewsCard path={'#/events/'+params.id}/>
                     </div>
-                    <div class="h-50">
-                        <NewsCard/>
+                    <div class="h-50 my-8">
+                        <NewsCard path={'#/events/'+params.id}/>
                     </div>
                 </div>
             </div>

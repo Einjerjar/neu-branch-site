@@ -56,9 +56,9 @@ export const links = [
   {
     name: "Basic Facts",
     sublinks: [
-      { label: "university mission", component: Home, path: "/" },
-      { label: "university vision", component: Home, path: "/" },
-      { label: "university goals", component: Home, path: "/" },
+      { label: "university mission", component: AboutNEU, path: "/about" },
+      { label: "university vision", component: AboutNEU, path: "/about" },
+      { label: "university goals", component: AboutNEU, path: "/about" },
       { label: "university history", component: Home, path: "/" },
     ],
     category: "footer",
@@ -74,15 +74,16 @@ export const links = [
     ],
     category: "footer",
   },
-  {
+  
+];
+
+export const external_links = {
     name: "Other Links",
     sublinks: [
-      { label: "School Calendar", component: Home, path: "/" },
-      { label: "Research & Publication", component: Home, path: "/" },
-      { label: "NEUTECH", component: Home, path: "/" },
-      { label: "MCLE", component: Home, path: "/" },
-      { label: "RUSSIAN STUDIES CENTER", component: Home, path: "/" },
+      { label: "School Calendar", path: "https://neu.edu.ph/main/assets/images/posts_images/collegiatecalendar2021.pdf" },
+      { label: "Research & Publication", path: "/research" },
+      { label: "NEUTECH", path: "/" },
+      { label: "MCLE", path: "https://mcle.ph/" },
+      { label: "RUSSIAN STUDIES CENTER", path: "http://russianstudies.neu.edu.ph/" },
     ],
-    category: "footer",
-  },
-];
+  };
