@@ -10,8 +10,13 @@
 <!-- enclose every section of paragraphs in a div, and apply margins and paddings. -->
 
 <div class="min-h-full mx-auto max-h-full flex  justify-center text-rose-900 font-medium">
-    <div class="items-center my-21">
-        <p class=" font-sans shadowing text-center text-6xl mb-15"><strong>ADMISSION</strong></p>
+    <div class="items-center my-10">
+        <p class=" font-sans shadowing text-center text-6xl "><strong>ADMISSION</strong></p>
+    </div>
+</div>
+<!-- -========================================================================== -->
+<div class="min-h-full mx-auto max-h-full flex  justify-center text-rose-900 font-medium">
+    <div class="items-center">
         <p class = "text-center font-mono text-black">
             Admission presupposes that a student’s application has satisfactorily met all the entrance requirements of the University.<br>
             Enrolment in the University is a contractual relationship between the students and the Administration.<br>
@@ -23,8 +28,12 @@
             Medical & Physical Examination. A student whose eligibility for admission has been verified must submit to the Registrar or<br>
             his authorized representatives the following:</p>
         <hr class="bg-black my-15"/>
+    </div>
+</div>
 
-        <h3 class="text-left " ><strong>Tertiary Enrollment Procedure</strong></h3>
+<div class="min-h-full mx-auto max-h-full flex  justify-center text-rose-900 font-medium">
+    <div class="items-center">
+        <h3 class="text-left my-5" ><strong>Tertiary Enrollment Procedure</strong></h3>
         <p class = "text-left font-mono text-black mb-5">
             Log in to SchoolAutomate (https://automate.neu.edu.ph). Click PARENTS/STUDENTS. New students: Use your temporary ID as log in ID <br>
             and password Old students: Use your user name and password. Click the Enrollment tab then Online Advising.Click Schedule <br>
@@ -35,8 +44,11 @@
             Click me
         </button> -->
         <ProcedureButton message="See more" page={'#'+admissionLinks[1].path}></ProcedureButton>
+    </div>
+</div>
 
-
+<div class="min-h-full mx-auto max-h-full flex  justify-center text-rose-900 font-medium">
+    <div class="items-center my-10">
         <h3 class="text-left "><strong>Admission Procedure (NEU SHS Graduate)</strong></h3>
         <p class = "text-left font-mono text-black mb-5">
             Request for your Temporary Student ID thru sending the following details to admissionrequirements@neu.edu.ph; <br>
@@ -44,24 +56,20 @@
             and Password thru email, You can now edit your Personal Information Sheet thru this link NEU Automate for Application.<br>
         </p>
         <ProcedureButton message="See more" page={'#'+admissionLinks[1].path}></ProcedureButton>
-
-
-        <h3 class="text-left"><strong>Admission Procedure (Non-NEU SHS Graduate)</strong></h3>
-        <p class = "text-left font-mono text-black mb-5">
-            Fill out the General Personal Information Sheet thru this link NEU Automate for Application. Submit all the following requirements <br>
-            thru this link Admission Requirements Submission Link.
-        </p>
-        <ProcedureButton message="See more" page={'#'+admissionLinks[1].path}></ProcedureButton>
-
-
-
-
     </div>
-
-
 </div>
 
-
+<div class="min-h-full mx-auto max-h-full flex  justify-center text-rose-900 font-medium">
+    <div class="items-center  mb-30">
+        <h3 class="text-left "><strong>Admission Procedure (Non-NEU SHS Graduate)</strong></h3>
+        <p class = "text-left font-mono text-black mb-5">
+            Request for your Temporary Student ID thru sending the following details to admissionrequirements@neu.edu.ph; <br>
+            Name (Last Name, First Name, Middle Name), Course Applying, Gender, and Year Graduated. Once you received the Temporary Username <br>
+            and Password thru email, You can now edit your Personal Information Sheet thru this link NEU Automate for Application.<br>
+        </p>
+        <ProcedureButton message="See more" page={'#'+admissionLinks[1].path}></ProcedureButton>
+    </div>
+</div>
 
 <style>
     .neu-pic{
@@ -76,30 +84,4 @@
         color: #791616;
     }
 
-    .styled {
-    border: 0;
-    line-height: 2.5;
-    padding: 0 20px;
-    font-size: 1rem;
-    text-align: center;
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
-    border-radius: 10px;
-    background-color: rgba(220, 0, 0, 1);
-    background-image: linear-gradient(to top left,
-                                      rgba(0, 0, 0, .2),
-                                      rgba(0, 0, 0, .2) 30%,
-                                      rgba(0, 0, 0, 0));
-    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
-                inset -2px -2px 3px rgba(0, 0, 0, .6);
-    }
-
-    .styled:hover {
-        background-color: rgba(255, 0, 0, 1);
-    }
-
-    .styled:active {
-        box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
-                    inset 2px 2px 3px rgba(0, 0, 0, .6);
-    }
 </style>

@@ -1,4 +1,8 @@
 <main>
+    <div class="pulaFade"></div>
+    <div class="pulaFade1"></div>
+    <div class="pula"></div>
+    <div class=" text-white absolute left-270 my-50 text-3xl">UNDERGRADUATE ADMISSION</div>
     <img src="https://scontent.fmnl4-4.fna.fbcdn.net/v/t1.6435-9/33304793_957288674431016_3750456500468842496_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=e3f864&_nc_ohc=F-hKMZgT0f8AX-mm3fW&tn=0GkIuqGQ0JO3an2c&_nc_ht=scontent.fmnl4-4.fna&oh=3ad10ecdbb3b242ec6a421983d71e5ab&oe=61A7A202" alt="neu_pic" >
     <h1><strong>WE ARE ERANIANS</strong></h1>
     
@@ -51,10 +55,40 @@
 </main>
 
 <style>
+    .pula{
+        position: absolute;
+        margin-left: 900px;
+        width: 700px;
+        height: 500px;
+        transform: skew(30deg);
+        background: #B81B1B;
+
+    }
+    .pulaFade{
+        position: absolute;
+        margin-left: 850px;
+        width: 700px;
+        height: 500px;
+        transform: skew(30deg);
+        background: #B81B1B;
+        opacity: 0.5;
+    }
+    .pulaFade1{
+        position: absolute;
+        margin-left: 800px;
+        width: 700px;
+        height: 500px;
+        transform: skew(30deg);
+        background: #B81B1B;
+        opacity: 0.3;
+    }
     img{
+        margin-left: auto;
+        margin-right: auto;
         margin-bottom: 50px;
-        width: auto;
-        height: auto;
+        width: 1500px;
+        height: 500px;
+        object-fit: cover;
         left: 0px;
         top: 76px;
     }
@@ -64,7 +98,7 @@
         font-family: 'Catamaran', sans-serif; 
         text-align: center;
         color: #791616;
-;
+
     }
     h2{
         font-size: 35px;
@@ -77,6 +111,9 @@
         font-family: 'Catamaran', sans-serif; 
         color: #791616;
     }
+
+    
+
     
     
 </style>
