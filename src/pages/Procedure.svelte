@@ -4,7 +4,13 @@
 
 </script>
 
-<div class="bg-cover page-home neu-pic"></div>
+<div class="bg-cover relative">
+    <img src="../public/images/admission_image.png" alt="neu_pic" >
+    <div class="md:inset-y-0 centered">
+        <p class="text-white pb-3.5 text-5xl">UNDERGRAD</p>
+        <p class="text-white text-5xl">PROCEDURES</p>
+    </div>
+</div>
 
 
 <!-- enclose every section of paragraphs in a div, and apply margins and paddings. -->
@@ -72,16 +78,23 @@
 </div>
 
 <style>
-    .neu-pic{
-        background-image: url('https://scontent.fmnl3-2.fna.fbcdn.net/v/t1.6435-9/33304793_957288674431016_3750456500468842496_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=e3f864&_nc_ohc=F-hKMZgT0f8AX_qefZ_&_nc_ht=scontent.fmnl3-2.fna&oh=2e41a176e891cbcbbad2f2151de2c5dd&oe=61A7A202');
-        width: 100%;
-        height: 1000px;
-    }
+
 
     h3{
         font-size: 25px;
         font-family: 'Catamaran', sans-serif;
         color: #791616;
+    }
+    .centered {
+        position: absolute;
+        top: 60%;
+        left: 85%;
+        transform: translate(-50%, -50%);
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        margin-bottom: 50px;
     }
 
 </style>
