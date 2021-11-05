@@ -30,10 +30,6 @@
   const vision = "A world-class Institution of learning with a unique Christian culture of excellence, discipline, and service to humanity."
   const philo = "Godliness is the foundation of knowledge."
 
-const missionTitle = "MISSION"
-const visionTitle = "VISION"
-const philoTitle = "PHILOSOPHY"
-
 </script> 
 
 <div class="sm:page-home pageBG_redColor my-auto pb-20 pt-10">
