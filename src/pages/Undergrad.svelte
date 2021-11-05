@@ -1,12 +1,13 @@
 <main>
-    <!-- <div class="pulaFade"></div>
-    <div class="pulaFade1"></div>
-    <div class="pula"></div> -->
 
-    <!-- <div class=" text-white absolute left-270 my-50 text-3xl">UNDERGRADUATE ADMISSION</div> -->
+    <div class="bg-cover relative">
+        <img src="../public/images/admission_image.png" alt="neu_pic" >
+        <div class="md:inset-y-0 centered">
+            <p class="text-white pb-3.5 text-5xl">UNDERGRAD</p>
+            <p class="text-white text-5xl">PROCEDURES</p>
+        </div>
+    </div>
 
-
-    <img src="../public/images/admission_image.png" alt="neu_pic" >
     <h1><strong>WE ARE ERANIANS</strong></h1>
     
     <p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br> 
@@ -62,34 +63,16 @@
 </main>
 
 <style>
-    /* .pula{
+    .centered {
         position: absolute;
-        margin-left: 900px;
-        width: 700px;
-        height: 500px;
-        transform: skew(30deg);
-        background: #B81B1B;
+        top: 60%;
+        left: 85%;
+        transform: translate(-50%, -50%);
+    }
 
-    }
-    .pulaFade{
-        position: absolute;
-        margin-left: 850px;
-        width: 700px;
-        height: 500px;
-        transform: skew(30deg);
-        background: #B81B1B;
-        opacity: 0.5;
-    }
-    .pulaFade1{
-        position: absolute;
-        margin-left: 800px;
-        width: 700px;
-        height: 500px;
-        transform: skew(30deg);
-        background: #B81B1B;
-        opacity: 0.3; */
-    /* } */
     img{
+        width: 100%;
+        height: 100%;
         margin-bottom: 50px;      
     }
 
@@ -111,9 +94,4 @@
         font-family: 'Catamaran', sans-serif; 
         color: #791616;
     }
-
-    
-
-    
-    
 </style>
