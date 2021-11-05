@@ -10,8 +10,8 @@
 
   let imgSrc= [
     "https://www.neu.edu.ph/main/assets/images/posts_images/ElemGrad199.jpg",
-    "https://neu.edu.ph/main/assets/images/posts_images/AntiBullying19.jpg",
     "https://www.neu.edu.ph/main/assets/images/posts_images/44thArenaHS9.jpg",
+    "https://www.eaglenews.ph/wp-content/uploads/2017/04/NEU-graduates-480x320.jpg",
     "https://www.eaglenews.ph/wp-content/uploads/2017/04/NEU-graduates-480x320.jpg"
   ];
 
@@ -24,8 +24,8 @@
 </script>
 
 
-<div class="bg-cover page-home neu-pic">
-  <div class="min-h-full mx-auto max-h-full flex  justify-center text-white font-medium">
+<div class="bg-cover page-home neu-pic pb-10 ">
+  <div class="min-h-full mx-auto max-h-full flex  justify-center text-white font-medium ">
     <div class="items-center my-21">
         <p class=" font-sans shadowing text-center text-9xl"><a href={'#'+admissionLinks[0].path}><strong>ADMISSION</strong></a></p>
     </div>
@@ -38,11 +38,29 @@
           <p>{information[st.id]}</p>
         </Cards>
       {/each}
+    </div>
+  </div>
+
+  <div class="min-h-full mx-auto max-h-full flex  justify-center pt-10	" style="font-family: 'Rokkitt', serif;">
+    <div class="items-center">
+      <p class=" text-center text-6xl pb-10 " style="color: #791616;">Entry Grade Admission Requirements</p>
+
+      <div class="text-center text-4xl">
+        <div class="text-left inline-block">
+
+
+          <ul>
+            <li class="pb-5"><strong>83</strong> Integrated School (K-12 Education)</li>
+            <li class="pb-5"><strong>85</strong> Tertiary Level</li>
+            <li class="pb-5"><strong>2.25</strong>Weighted average for transferees to the tertiary level</li>
+          </ul>
+        </div>
+
+      </div>
 
 
     </div>
   </div>
-
 </div>
 
 <style>
@@ -52,9 +70,15 @@
   }
 
   .shadowing{
-    text-shadow: 2px 2px #050505;
+    text-shadow: 3px 3px #050505;
   }
 
+  .entry{
+    font-family: Rokkitt;
+    font-style: normal;
+    /* or 200% */
+    color: #791616;
+  }
 
 
 

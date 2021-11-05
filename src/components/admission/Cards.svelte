@@ -18,7 +18,6 @@
             <p class="text-base mb-4">
                 <slot></slot>
             </p>
-
             <p><a class="font-bold ex1 cursor-pointer" href={'#'+admissionLinks[1].path}>EXPLORE</a></p>
 
         </div>
