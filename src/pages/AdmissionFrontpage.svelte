@@ -24,15 +24,15 @@
 </script>
 
 
-<div class="bg-cover page-home neu-pic pb-10 ">
+<div class="bg-cover page-home neu-pic">
   <div class="min-h-full mx-auto max-h-full flex  justify-center text-white font-medium ">
     <div class="items-center my-21">
-        <p class=" font-sans shadowing text-center text-9xl"><a href={'#'+admissionLinks[0].path}><strong>ADMISSION</strong></a></p>
+        <p class="font-sans shadowing text-center text-9xl"><a href={'#'+admissionLinks[0].path}><strong>ADMISSION</strong></a></p>
     </div>
 
   </div>
   <div>
-    <div class="items-center flex flex-row justify-center">
+    <div class="flex flex-wrap justify-center mb-8">
       {#each schoolType as st (st.id)}
         <Cards imageSrc={imgSrc[st.id]} schoolType={st.type}>
           <p>{information[st.id]}</p>
@@ -41,24 +41,24 @@
     </div>
   </div>
 
-  <div class="min-h-full mx-auto max-h-full flex  justify-center pt-10	" style="font-family: 'Rokkitt', serif;">
-    <div class="items-center">
-      <p class=" text-center text-6xl pb-10 " style="color: #791616;">Entry Grade Admission Requirements</p>
+  <div class="w-full py-10">
+    <div class="container bg-white px-8 py-6 mx-auto max-h-full flex justify-center rounded-md shadow-lg" style="font-family: 'Rokkitt', serif;">
+      <div class="items-center">
+        <p class=" text-center text-6xl pb-10 " style="color: #791616;">Entry Grade Admission Requirements</p>
 
-      <div class="text-center text-4xl">
-        <div class="text-left inline-block">
+        <div class="text-center text-4xl">
+          <div class="text-left inline-block">
 
 
-          <ul>
-            <li class="pb-5"><strong>83</strong> Integrated School (K-12 Education)</li>
-            <li class="pb-5"><strong>85</strong> Tertiary Level</li>
-            <li class="pb-5"><strong>2.25</strong>Weighted average for transferees to the tertiary level</li>
-          </ul>
+            <ul>
+              <li class="pb-5"><strong>83</strong> Integrated School (K-12 Education)</li>
+              <li class="pb-5"><strong>85</strong> Tertiary Level</li>
+              <li class="pb-5"><strong>2.25</strong>Weighted average for transferees to the tertiary level</li>
+            </ul>
+          </div>
+
         </div>
-
       </div>
-
-
     </div>
   </div>
 </div>

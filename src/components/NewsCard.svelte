@@ -6,7 +6,7 @@
 </script>
 
 <a href={path}>
-    <div class="news-card h-full overflow-hidden relative" style="background-image: url({src});background-size: cover; background-repeat: no-repeat; background-position: center;">
+    <div class="news-card transform transition transition-transform hover:scale-105 shadow rounded rounded-md overflow-hidden h-full overflow-hidden relative" style="background-image: url({src});background-size: cover; background-repeat: no-repeat; background-position: center;">
         <!-- <img src={src} alt={desc} class="object-cover w-full h-4/5"/> -->
         <div class="bg-primary-900 text-white text-semibold pl-8 absolute bottom-0 w-full">
             <p class="mb-2 text-xl lg:(text-2xl)">{desc} | {path}</p>

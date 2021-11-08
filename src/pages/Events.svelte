@@ -24,90 +24,83 @@ let imgSrc= [
     {type: "Undergraduate Announcement", id: 2}
   ];
 
+let sample_event_data = [
+  {
+    img: 'https://www.neu.edu.ph/main/assets/images/posts_images/44thArenaHS9.jpg',
+    title: 'Random Event',
+    desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit voluptatum fuga nam at vitae dicta, praesentium illo commodi iusto reprehenderit inventore architecto nisi! Ipsam asperiores harum aperiam odit molestias officiis.'
+  },
+  {
+    img: 'https://www.neu.edu.ph/main/assets/images/posts_images/44thArenaHS9.jpg',
+    title: 'Random Event',
+    desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit voluptatum fuga nam at vitae dicta, praesentium illo commodi iusto reprehenderit inventore architecto nisi! Ipsam asperiores harum aperiam odit molestias officiis.'
+  },
+  {
+    img: 'https://www.neu.edu.ph/main/assets/images/posts_images/44thArenaHS9.jpg',
+    title: 'Random Event',
+    desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit voluptatum fuga nam at vitae dicta, praesentium illo commodi iusto reprehenderit inventore architecto nisi! Ipsam asperiores harum aperiam odit molestias officiis.'
+  },
+  {
+    img: 'https://www.neu.edu.ph/main/assets/images/posts_images/44thArenaHS9.jpg',
+    title: 'Random Event',
+    desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit voluptatum fuga nam at vitae dicta, praesentium illo commodi iusto reprehenderit inventore architecto nisi! Ipsam asperiores harum aperiam odit molestias officiis.'
+  }
+]
+
 </script>
 <div>
     <NewsTicker/>
     <div class="container mx-auto">
-        <Slider/>
-        <Divider/>
-        <div class="bg-primary-900 text-white h-20 text-4xl uppercase flex items-center justify-center">
-            <p>announcement</p>
-        </div>
-        <Divider/>
-        <Slider/>
-        <Divider/>
-        <div class="bg-primary-900 text-white h-20 text-4xl uppercase flex items-center justify-center">
-            <p>events</p>
-        </div>
-        <Divider></Divider>
+      <Slider/>
+    </div>
+    <Divider/>
+    <div class="bg-primary-900 text-white h-20 text-4xl uppercase flex items-center justify-center">
+      <p>announcement</p>
+    </div>
+    <Divider/>
+    <div class="container mx-auto">
+      <Slider/>
+    </div>
+    <Divider/>
+    <div class="bg-primary-900 text-white h-20 text-4xl uppercase flex items-center justify-center">
+      <p>events</p>
+    </div>
+    <Divider/>
+    <div class="container mx-auto">
 <!--Event Section Start-->
 
-        <div class="container event items-center flex flex-row justify-center">
-
-          <div class="row justify-content-center text-center">
-
-            <div class="offset-sm-1 col-sm-5 p-8">
-              <img src="https://www.neu.edu.ph/main/assets/images/posts_images/44thArenaHS9.jpg" class="picture-style" alt="">
-              <div class="event-content box-style">
-                <h4>Event 1</h4>
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Expedita nostrum neque voluptatem?Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span><br>
-                  <a href="">join</a>
-              </div>
+      <div class="container cursor-pointer event items-center flex flex-wrap justify-center">
+        {#each sample_event_data as event}
+          <div class="offset-sm-1 col-sm-5 p-8 group mb-10">
+            <div class="p-2 bg-white rounded-md shadow transform transition duration-300 transition-transform group-hover:scale-105 group-hover:shadow-lg">
+              <div class="h-100 w-120 bg-center bg-cover" style={`background-image: url(${event.img});`}></div>
             </div>
-
-            <div class="offset-sm-1 col-sm-5 p-8">
-              <img src="https://neu.edu.ph/main/assets/images/posts_images/AntiBullying19.jpg" class="picture-style" alt="">
-              <div class="event-content box-style">
-                <h4>Event 2</h4>
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Expedita nostrum neque voluptatem?Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span><br>
-                  <a href="">join</a>
-              </div>
+            <div class="event-content box-style">
+              <h4>Event 1</h4>
+              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Expedita nostrum neque voluptatem?Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span><br>
+                <a href="#/">join</a>
             </div>
           </div>
-
-          <div class="row justify-content-center text-center">
-
-            <div class="offset-sm-1 col-sm-5 p-8">
-              <img class="picture-style" src="https://www.eaglenews.ph/wp-content/uploads/2017/04/NEU-graduates-480x320.jpg"  alt="">
-              <div class="event-content box-style">
-                <h4>Event 3</h4>
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Expedita nostrum neque voluptatem?Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span><br>
-                  <a href="">join</a>
-              </div>
-            </div>
-
-            <div class="offset-sm-1 col-sm-5 p-8">
-              <img src="https://neu.edu.ph/main/assets/images/posts_images/AntiBullying19.jpg" class="picture-style" alt="">
-              <div class="event-content box-style">
-                <h4>Event 4</h4>
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Expedita nostrum neque voluptatem?Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span><br>
-                  <a href="">join</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <Slider></Slider>
+        {/each}
       </div>
+      <Slider></Slider>
+    </div>
 
 </div>
 
 
 <!--EVENT SECTION START-->
 <style>
-.event{
+/* .event{
   margin: 200px auto;
-}
+} */
 
 .event-content{
   box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 0.3),
   inset 10px 10px 10px -10px
   rgba(0, 0, 0, 0.5);
   padding: 10px;
-  cursor: pointer;
   background: #fff !important;
   margin-top: -70px !important;
   margin-left: 20px !important;
@@ -141,7 +134,7 @@ let imgSrc= [
   cursor: pointer;
 }
 .event .col-sm-5{
-  margin-bottom: 200px !important;
+  /* margin-bottom: 200px !important; */
 }
 
 .picture-style{
