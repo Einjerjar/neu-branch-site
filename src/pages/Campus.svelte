@@ -35,13 +35,13 @@
 <div class="sm:page-home pageBG_redColor my-auto pb-20 pt-10">
   <div class = "bg-opacity-90 mx-auto flex shadow-2xl px-15 py-0 bg-cyan-900 <lg:flow-root px-0">
 
-    <div class = "sm:w-2/3 py-4 justify-center my-10 pt-5 mx-auto  <lg:w-screen mb-0">
-      <img class = "drop-shadow-4xl justify-center mx-auto px-10 w-150 h-100 <sm:px-0"src = {campusMainImage} alt = campusImage >
+    <div class = "sm:w-2/3 py-4 justify-center my-10 pt-5 mx-auto <lg:w-screen mb-0">
+      <img class = "drop-shadow-4xl justify-center mx-auto px-10 w-150 h-100 <sm:px-0"src = {campusMainImage} alt = campusImage>
       <p class = "pt-5 px-10 mx-auto px-auto text-sm text-justify font-sans text-white">
         {descr}
       </p>
     </div>
-    <div class="sm:grid-cols-1 pt-10 pr-20 <lg:pt-0 pr-0 mt-0 ">
+    <div class="sm:pt-10 pr-20 <lg:pt-0 pr-0 mt-0 ">
       <img class= "w-250 h-150 <lg:w-screen h-screen mx-0"src = {ph_mapSrc} alt = ph>
       <button on:click={isClicked} class= "sm:relative bottom-45 left-1/2 mx-auto text-white font-bold rounded-4xl h-15 w-55 text-2xl bg-trueGray-800 <sm:relative left-1/3 bottom-20" type="button">GET DIRECTIONS</button>
     </div>
@@ -65,7 +65,6 @@
 
   <Divider/>
 
-
   <div class= "container bg-black bg-opacity-80 mx-auto ">
     <div class = "container flex-col ml-10 my-10 mr-10 pr-5 px-auto">
       <h1 class= "text-white tracking-wide font-bold font-mono text-9xl">GOALS &</h1>
@@ -73,7 +72,7 @@
     </div>
     <div class ="sm:container mx-auto flex px-auto <lg:flow-root">
       <div class = "sm:mx-10 container text-white font-sans text-lg px-auto <lg:px-5">
-        <ul class= "sm:list-circle my-10 px-auto <lg:pr-5">
+        <ul class= "sm:list-circle my-10 px-auto <lg:pr-5 list-circle pl-5">
           <li>Impart value-laden education to the total development of man.</li>
           <li>Offer curricula responsive to the needs of the time.</li>
           <li>Optimize learning through the adoption and utilization of appropriate instructional methods and resources.</li>
@@ -100,6 +99,4 @@
     background-repeat: no-repeat;
     background-size: 100% 100%
   }
-
-
 </style>
