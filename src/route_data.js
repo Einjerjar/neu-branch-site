@@ -12,14 +12,14 @@ export const primaryLinks = [
   { label: 'Campus', path: '/campus', component: Campus },
   { label: 'Academics', path: '/academics', component: AcademicPrograms },
   { label: 'Admission', path: '/admission', component: AdmissionFrontPage },
-  { label: 'About NEU', path: '/about', component: AboutNEU }
+  // { label: 'About NEU', path: '/about', component: AboutNEU }
 ]
 
 export const secondaryLinks = [
   { label: 'Resources', path: '/resources', component: Home },
   { label: 'Visit', path: '/visit', component: Home },
   { label: 'Events', path: '/events', component: Events },
-  { label: 'Alumnae', path: '/alumnae', component: Home },
+  // { label: 'Alumnae', path: '/alumnae', component: Home },
 ]
 
 export const admissionLinks = [
