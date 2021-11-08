@@ -4,9 +4,8 @@ import NewsCard from "@/components/NewsCard.svelte";
 
 export let params = {};
 </script>
-<div>{params.id}</div>
+<!-- <div>{params.id}</div> -->
 <div class="container mx-auto p-8">
-
     <div class="xl:(flex flex-row-reverse items-center space-x-4 w-full)">
         <div class="xl:(px-8 w-2/5)">
             <div class="uppercase text-black font-semibold mb-2">
@@ -23,11 +22,9 @@ export let params = {};
             <img src="https://neu.edu.ph/main/assets/images/posts_images/CCEL2021ccs2.jpg" alt="event" class="mx-auto object-cover rounded">
         </div>
     </div>
-    
     <div class="xl:(w-full flex space-x-4 h-full mt-8)">
         <div class="xl:(w-2/3)">
             <p>
-                
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor nisi sit amet diam viverra, et commodo ante scelerisque. Morbi quis commodo erat. Quisque et ligula venenatis, interdum eros sit amet, lacinia libero. Aenean fermentum dictum diam quis rhoncus. Nullam vel vehicula est, ut sodales metus. Praesent finibus sem a lacus tempor, sed lobortis augue gravida. Ut nibh ante, aliquam in sollicitudin iaculis, maximus et dolor. Donec at pellentesque orci, in fermentum libero. Cras ac nunc enim.
             </p> <br>
             <p>
@@ -43,14 +40,14 @@ export let params = {};
                 Pellentesque hendrerit eros condimentum sagittis interdum. Donec sit amet est vel lacus varius feugiat. Vivamus bibendum nisl turpis, et dignissim velit feugiat non. Etiam fermentum orci sed nisl commodo euismod. Integer nibh est, lacinia at nisl at, tincidunt maximus velit. Aliquam faucibus ex nunc, at fermentum enim ullamcorper eu. Donec id egestas tellus. Vestibulum nisl ex, sagittis eget quam in, auctor elementum dui. Aliquam viverra dolor sed enim bibendum, id imperdiet est venenatis. Proin nec risus viverra, tempor quam nec, fermentum augue.
             </p>
         </div>
-        <div class="xl:hidden">   
-            <Divider/>       
+        <div class="xl:hidden">
+            <Divider/>
         </div>
         
-        <div class="xl:(border-l-5 border-black w-1/3)">
+        <div class="xl:(border-l-5 border-primary-900 rounded w-1/3)">
             <div class="ml-4">
                 <div class="text-2xl text-primary-900 uppercase font-semibold xl:(text-4xl)">
-                    <p>events</p>      
+                    <p>events</p>
                 </div>
                 <div>
                     <div class="h-50 my-8">
@@ -61,7 +58,7 @@ export let params = {};
                     </div>
                 </div>
                 <div class="text-2xl text-primary-900 uppercase mt-8 font-semibold xl:(text-4xl)">
-                    <p>announcement</p>      
+                    <p>announcement</p>
                 </div>
                 <div>
                     <div class="h-50 my-8">
@@ -74,7 +71,7 @@ export let params = {};
             </div>
             
             <!-- <div class="<xl:(bg-primary-900 text-white h-15 text-4xl uppercase flex items-center justify-center) xl:(text-4xl text-primary-900 uppercase)">
-                <p>announcement</p>      
+                <p>announcement</p>
             </div>
             <div>
                 <NewsCard/>
