@@ -9,6 +9,7 @@ import Events from "@/pages/Events.svelte";
 
 
 export const primaryLinks = [
+  { label: 'Home', path: '/', component: Home },
   { label: 'Campus', path: '/campus', component: Campus },
   { label: 'Academics', path: '/academics', component: AcademicPrograms },
   { label: 'Admission', path: '/admission', component: AdmissionFrontPage },
