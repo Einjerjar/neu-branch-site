@@ -1,8 +1,10 @@
 <script>
   import Cards from "@/components/admission/Cards.svelte";
   import EntryGrade from "@/components/admission/EntryGrade.svelte";
-  import { admissionLinks } from '@/route_data'
-  import LinksRelated from "@/components/admission/LinksRelated.svelte";
+  import { admissionLinks } from '@/route_data';
+  // import { procedureLinks } from '@/route_data';
+
+
 
   let schoolType = [
     {type: "Basic Education", id: 0},
@@ -29,15 +31,18 @@
   <div class="mx-auto bg-center bg-cover " style="background-image: url('https://neu.edu.ph/main/assets/images/NEU_Pampanga.jpg');">
     <div class="min-h-full mx-auto max-h-full flex  justify-center text-white">
       <div class="items-center my-21">
-          <p class="font-sans shadowing text-center text-5xl sm:text-8xl md:text-9xl lg: text-9xl "><a href={'#'+admissionLinks[0].path}><strong>ADMISSION</strong></a></p>
+          <p class="font-sans shadowing text-center text-5xl sm:text-8xl md:text-9xl lg: text-9xl ">
+            <a href={'#'+ admissionLinks[3].path}><strong>ADMISSION</strong></a></p>
       </div>
     </div>
+
     <div>
       <div class="flex flex-wrap justify-center mb-8">
         {#each schoolType as st (st.id)}
-          <Cards imageSrc={imgSrc[st.id]} schoolType={st.type}>
+          <Cards pathChosen={'#'+admissionLinks[st.id].path} imageSrc={imgSrc[st.id]} schoolType={st.type}>
             <p>{information[st.id]}</p>
           </Cards>
+
         {/each}
       </div>
     </div>

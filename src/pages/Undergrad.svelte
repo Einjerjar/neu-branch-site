@@ -1,18 +1,21 @@
+<script>
+    export let schoolType = "UNDEGRAD";
+</script>
+
 <main>
 
     <div class="bg-cover relative">
         <img src="../public/images/admission_image.png" alt="neu_pic" >
         <div class="md:inset-y-0 centered">
-            <p class="text-white pb-3.5 text-5xl">UNDERGRAD</p>
+            <p class="text-white pb-3.5 text-5xl">{schoolType}</p>
             <p class="text-white text-5xl">PROCEDURES</p>
         </div>
     </div>
 
+
+
     <h1><strong>WE ARE ERANIANS</strong></h1>
 
-    
-
-    
     <p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br> 
         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took<br>
          a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, <br>

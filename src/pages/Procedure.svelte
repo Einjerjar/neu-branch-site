@@ -7,8 +7,7 @@
 <div class="bg-cover relative">
     <img src="../public/images/admission_image.png" alt="neu_pic" >
     <div class="md:inset-y-0 centered">
-        <p class="text-white pb-3.5 text-5xl">UNDERGRAD</p>
-        <p class="text-white text-5xl">PROCEDURES</p>
+        <p class="text-white pb-3.5 text-5xl">PROCEDURES</p>
     </div>
 </div>
 
@@ -17,13 +16,13 @@
 
 <div class="min-h-full mx-auto max-h-full flex  justify-center text-rose-900 font-medium">
     <div class="items-center my-10">
-        <p class=" font-sans shadowing text-center text-6xl "><strong>ADMISSION</strong></p>
+        <p class="catamaran shadowing text-center text-6xl "><strong>ADMISSION</strong></p>
     </div>
 </div>
 <!-- -========================================================================== -->
 <div class="min-h-full mx-auto max-h-full flex  justify-center text-rose-900 font-medium">
     <div class="items-center">
-        <p class = "text-center font-mono text-black">
+        <p class = " catamaran text-center text-black">
             Admission presupposes that a student’s application has satisfactorily met all the entrance requirements of the University.<br>
             Enrolment in the University is a contractual relationship between the students and the Administration.<br>
             A student is admitted with definite understanding that he and his parents or guardians agree to comply with the scholastic<br>
@@ -40,7 +39,7 @@
 <div class="min-h-full mx-auto max-h-full flex  justify-center text-rose-900 font-medium">
     <div class="items-center">
         <h3 class="text-left my-5" ><strong>Tertiary Enrollment Procedure</strong></h3>
-        <p class = "text-left font-mono text-black mb-5">
+        <p class = " catamaran text-left text-black mb-5">
             Log in to SchoolAutomate (https://automate.neu.edu.ph). Click PARENTS/STUDENTS. New students: Use your temporary ID as log in ID <br>
             and password Old students: Use your user name and password. Click the Enrollment tab then Online Advising.Click Schedule <br>
             (under Assign Section, Last Column Right) to choose the schedule then click Proceed. Click Save and take note of <br>
@@ -56,7 +55,7 @@
 <div class="min-h-full mx-auto max-h-full flex  justify-center text-rose-900 font-medium">
     <div class="items-center my-10">
         <h3 class="text-left "><strong>Admission Procedure (NEU SHS Graduate)</strong></h3>
-        <p class = "text-left font-mono text-black mb-5">
+        <p class = " catamaran text-left text-black mb-5">
             Request for your Temporary Student ID thru sending the following details to admissionrequirements@neu.edu.ph; <br>
             Name (Last Name, First Name, Middle Name), Course Applying, Gender, and Year Graduated. Once you received the Temporary Username <br>
             and Password thru email, You can now edit your Personal Information Sheet thru this link NEU Automate for Application.<br>
@@ -68,7 +67,7 @@
 <div class="min-h-full mx-auto max-h-full flex  justify-center text-rose-900 font-medium">
     <div class="items-center  mb-30">
         <h3 class="text-left "><strong>Admission Procedure (Non-NEU SHS Graduate)</strong></h3>
-        <p class = "text-left font-mono text-black mb-5">
+        <p class = "catamaran text-left text-black mb-5">
             Request for your Temporary Student ID thru sending the following details to admissionrequirements@neu.edu.ph; <br>
             Name (Last Name, First Name, Middle Name), Course Applying, Gender, and Year Graduated. Once you received the Temporary Username <br>
             and Password thru email, You can now edit your Personal Information Sheet thru this link NEU Automate for Application.<br>
@@ -96,5 +95,12 @@
         height: 100%;
         margin-bottom: 50px;
     }
+
+
+    .catamaran {
+        font-family: 'Catamaran', sans-serif;
+        color: #791616;
+    }
+
 
 </style>

@@ -5,6 +5,10 @@ import AdmissionFrontPage from "@/pages/AdmissionFrontpage.svelte";
 import AboutNEU from "@/pages/AboutNEU.svelte";
 import Procedure from "@/pages/Procedure.svelte";
 import Undergrad from "@/pages/Undergrad.svelte";
+import SeniorHigh from "@/pages/SeniorHigh.svelte";
+import BasicEducation from "@/pages/BasicEducation.svelte";
+
+
 import Events from "@/pages/Events.svelte";
 
 
@@ -23,10 +27,14 @@ export const secondaryLinks = [
   // { label: 'Alumnae', path: '/alumnae', component: Home },
 ]
 
-export const admissionLinks = [
-  { label: 'Procedure', path: '/admission/procedure', component: Procedure },
-  { label: 'Undergrad', path: '/admission/undergrad', component: Undergrad },
+// export const procedureLinks = [
+// ]
 
+export const admissionLinks = [
+  { label: 'BasicEducation', path: '/admission/basicEducation', component: BasicEducation },
+  { label: 'SeniorHigh', path: '/admission/seniorHigh', component: SeniorHigh },
+  { label: 'Undergrad', path: '/admission/undergrad', component: Undergrad },
+  { label: 'Procedure', path: '/admission/procedure', component: Procedure },
 ]
 
 export const links = [
@@ -75,7 +83,7 @@ export const links = [
     ],
     category: "footer",
   },
-  
+
 ];
 
 export const external_links = {
