@@ -3,6 +3,10 @@ import Divider from "@/components/Divider.svelte";
 import NewsTicker from "@/components/NewsTicker.svelte";
 import Slider from "@/components/Slider.svelte";
 import Cards from "@/components/admission/Cards.svelte";
+import { events } from '@/sample_data/events';
+
+  const event_data = events.entries.filter((event) => event.Type[0] == 'Events');
+  const announcement_data = events.entries.filter((event) => event.Type[0] == 'Announcement');
 
 //images for announcement
 let imgSrc= [
@@ -51,25 +55,23 @@ let sample_event_data = [
 <div>
     <NewsTicker/>
     <div class="container mx-auto">
-      <Slider/>
+      <Slider datas={events.entries}/>
     </div>
     <Divider/>
     <div class="bg-primary-900 text-white h-20 text-4xl uppercase flex items-center justify-center">
       <p>announcement</p>
     </div>
-    <Divider/>
     <div class="container mx-auto">
-      <Slider/>
+      <Slider datas={announcement_data}/>
     </div>
     <Divider/>
     <div class="bg-primary-900 text-white h-20 text-4xl uppercase flex items-center justify-center">
       <p>events</p>
     </div>
-    <Divider/>
     <div class="container mx-auto">
 <!--Event Section Start-->
 
-      <div class="container cursor-pointer event items-center flex flex-wrap justify-center">
+      <div class="container cursor-pointer event items-center flex flex-wrap justify-center mb-12">
         {#each sample_event_data as event}
           <div class="offset-sm-1 col-sm-5 p-8 group mb-10">
             <div class="p-2 bg-white rounded-md shadow transform transition duration-300 transition-transform group-hover:scale-105 group-hover:shadow-lg">
@@ -84,7 +86,6 @@ let sample_event_data = [
           </div>
         {/each}
       </div>
-      <Slider></Slider>
     </div>
 
 </div>

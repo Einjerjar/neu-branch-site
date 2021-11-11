@@ -1,47 +1,49 @@
 <script>
 import NewsCard from './NewsCard.svelte';
-  const images = [
-    {
-      id: "image1",
-      src: "https://neu.edu.ph/main/assets/images/posts_images/CCEL2021ccs2.jpg",
-      title: "Event Title One",
-    },
-    {
-      id: "image2",
-      src: "https://neu.edu.ph/main/assets/images/posts_images/ay20-21.jpg",
-      title: "Event Title Two",
-    },
-    {
-      id: "image3",
-      src: "https://neu.edu.ph/main/assets/images/posts_images/applied_statistics_poster.jpg",
-      title: "Event Title Three",
-    },
-    {
-      id: "image4",
-      src: "https://neu.edu.ph/main/assets/images/posts_images/Batch2020.jpg",
-      title: "Event Title Four",
-    },
-    {
-      id: "image5",
-      src: "https://neu.edu.ph/main/assets/images/posts_images/ABOUTPAYMENT20.jpg",
-      title: "Event Title Five",
-    },
-    {
-      id: "image6",
-      src: "http://via.placeholder.com/500x500",
-      title: "Event Title Six",
-    },
-  ];
+  export let datas;
+  console.log(datas);
+  // const images = [
+  //   {
+  //     id: "image1",
+  //     src: "https://neu.edu.ph/main/assets/images/posts_images/CCEL2021ccs2.jpg",
+  //     title: "Event Title One",
+  //   },
+  //   {
+  //     id: "image2",
+  //     src: "https://neu.edu.ph/main/assets/images/posts_images/ay20-21.jpg",
+  //     title: "Event Title Two",
+  //   },
+  //   {
+  //     id: "image3",
+  //     src: "https://neu.edu.ph/main/assets/images/posts_images/applied_statistics_poster.jpg",
+  //     title: "Event Title Three",
+  //   },
+  //   {
+  //     id: "image4",
+  //     src: "https://neu.edu.ph/main/assets/images/posts_images/Batch2020.jpg",
+  //     title: "Event Title Four",
+  //   },
+  //   {
+  //     id: "image5",
+  //     src: "https://neu.edu.ph/main/assets/images/posts_images/ABOUTPAYMENT20.jpg",
+  //     title: "Event Title Five",
+  //   },
+  //   {
+  //     id: "image6",
+  //     src: "http://via.placeholder.com/500x500",
+  //     title: "Event Title Six",
+  //   },
+  // ];
 
   let current = 0;
   let next = 1;
-  let prev = images.length - 1;
+  let prev = datas.length - 1;
 
   const prevSlide = () => {
-    current > 0 ? handleSlides(current - 1) : handleSlides(images.length - 1);
+    current > 0 ? handleSlides(current - 1) : handleSlides(datas.length - 1);
   };
   const nextSlide = () => {
-    current < images.length - 1 ? handleSlides(current + 1) : handleSlides(0);
+    current < datas.length - 1 ? handleSlides(current + 1) : handleSlides(0);
   };
 
   const handleSlides = (i) => {
@@ -49,12 +51,12 @@ import NewsCard from './NewsCard.svelte';
     prev = current - 1;
     next = current + 1;
 
-    if (next > images.length - 1) {
+    if (next > datas.length - 1) {
       next = 0;
     }
 
     if (prev < 0) {
-      prev = images.length - 1;
+      prev = datas.length - 1;
     }
     
     
@@ -74,13 +76,14 @@ import NewsCard from './NewsCard.svelte';
 
 <div class="cmp-slider">
   <div class="absolute w-full h-full z-1"></div>
-  {#each images as image, index (image.id)}
+  {#each datas as data, index (data._id)}
     <div
       class="cmp-slider-slide {index === current ? 'active' : ''}{index === prev
         ? 'prev'
         : ''}{index === next ? 'next' : ''}"
     >
-      <NewsCard src={image.src} desc={image.title} path={'#/events/'+image.id}/>
+      <NewsCard data={data}/>
+      <!-- <NewsCard src={data.src} desc={data.title} path={'#/events/'+data.id}/> -->
       <!-- <img src={image.src} alt={image.id} class="h-4/5 w-full object-cover" />
       <div
         class="bg-primary-900 text-white text-2xl text-semibold h-1/5 flex items-center px-12"
@@ -91,7 +94,7 @@ import NewsCard from './NewsCard.svelte';
     </div>
   {/each}
   <div class="bullets-container">
-    {#each images as img, ind (ind)}
+    {#each datas as img, ind (ind)}
       <div class="bullet-item {ind === current ? 'active' : ''}" on:click={() => handleSlides(ind)}></div>
       
     {/each}
