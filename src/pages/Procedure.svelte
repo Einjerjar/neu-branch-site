@@ -5,7 +5,7 @@
 </script>
 
 <div class="bg-cover relative">
-    <img src="../public/images/admission_image.png" alt="neu_pic" >
+    <img src="./images/admission_image.png" alt="neu_pic" >
     <div class="md:inset-y-0 centered">
         <p class="text-white pb-3.5 text-5xl">PROCEDURES</p>
     </div>
