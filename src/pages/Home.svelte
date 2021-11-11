@@ -1,9 +1,14 @@
 <script>
+  import { events } from '@/sample_data/events';
   import Divider from "@/components/Divider.svelte";
   import IconCard from "@/components/home/IconCard.svelte";
   import VideoHeader from "@/components/home/VideoHeader.svelte";
-import NewsTicker from "@/components/NewsTicker.svelte";
+  import NewsTicker from "@/components/NewsTicker.svelte";
   import Slider from "@/components/Slider.svelte";
+
+  console.log(events.entries);
+  const event_data = events.entries.filter((event) => event.Type[0] == 'Events');
+  const announcement_data = events.entries.filter((event) => event.Type[0] == 'Announcement');
 
   const arr = [0, 0, 0, 0];
 </script>
@@ -24,14 +29,14 @@ import NewsTicker from "@/components/NewsTicker.svelte";
       <div class="text-primary-900 text-2xl capitalize font-bold mb-4">
         latest news
       </div>
-      <Slider />
+      <Slider datas={event_data}/>
     </div>
     <Divider />
     <div class="announcement-section">
       <div class="text-primary-900 text-2xl capitalize font-bold mb-4">
         announcement
       </div>
-      <Slider />
+      <Slider datas={announcement_data}/>
     </div>
   </div>
 </div>
