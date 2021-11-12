@@ -38,7 +38,7 @@
       <div class = "flex-grow">
         <div class="flex flex-col items-center">
           <div class="inline-block w-100 md:w-120 h-80 bg-white rounded shadow-lg bg-center bg-cover" style={`background-image: url(${campusMainImage});`}></div>
-          <p class = "my-4 w-full text-sm font-sans text-white">
+          <p class = "my-4 text-sm font-sans w-100 md:w-120 text-white">
             {descr}
           </p>
         </div>
