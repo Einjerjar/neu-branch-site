@@ -11,7 +11,7 @@
 </script>
 
 <div transition:slide class={`cmp-nav top-0 left-0 w-full max-w-100vw bg-gray-100 shadow-lg px-4 z-999 ${isSticky ? 'fixed' : ''}`}>
-  <div class="absolute hidden md:block right-0 top-0 h-8 bg-primary-900 w-20rem">
+  <div class="absolute hidden md:block right-0 top-0 h-8 bg-primary-900 w-20rem lg:w-50rem">
   </div>
   <div class="flex container mx-auto z-10 h-16 md:h-auto">
     <div class="flex items-center">

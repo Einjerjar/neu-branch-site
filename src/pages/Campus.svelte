@@ -37,21 +37,20 @@
     <div class="container mx-auto flex px-4 py-8 flex-wrap children:my-8">
       <div class = "flex-grow">
         <div class="flex flex-col items-center">
-          <div class="inline-block w-120 h-80 bg-white rounded shadow-lg bg-center bg-cover" style={`background-image: url(${campusMainImage});`}></div>
-
-          <p class = "my-4 w-120 text-sm font-sans text-white">
+          <div class="inline-block w-100 md:w-120 h-80 bg-white rounded shadow-lg bg-center bg-cover" style={`background-image: url(${campusMainImage});`}></div>
+          <p class = "my-4 w-full text-sm font-sans text-white">
             {descr}
           </p>
         </div>
       </div>
 
       <div class="flex-grow">
-        <div class="rounded relative overflow-hidden h-full w-120 mx-auto min-h-120">
+        <div class="rounded relative overflow-hidden h-full w-100 md:w-120 mx-auto min-h-120">
           <div class="h-full bg-red-500 bg-center bg-cover" style="background-image: url('./images/sample_map.png');"></div>
           <div class="absolute top-0 left-0 w-full bg-primary-900 px-8 py-4 bg-opacity-75 text-center text-white font-bold">
             Campus Location
           </div>
-          <button on:click={isClicked} class= "absolute bottom-4 transform -translate-x-1/2 left-1/2 px-6 py-3 text-white font-bold rounded-4xl text-2xl bg-primary-900 hover:bg-primary-800 hover:shadow-md" type="button">GET DIRECTIONS</button>
+          <button on:click={isClicked} class= "w-60 absolute bottom-4 transform -translate-x-1/2 left-1/2 px-6 py-3 text-white font-bold rounded-4xl text-2xl bg-primary-900 hover:bg-primary-800 hover:shadow-md" type="button">GET DIRECTIONS</button>
         </div>
       </div>
     </div>
@@ -59,7 +58,7 @@
 
   <!-- <Divider/> -->
 
-  <div class="container bg-white bg-opacity-85 mx-auto shadow-lg my-16 rounded-md">
+  <div class="container bg-white bg-opacity-85 mx-auto shadow-lg my-16 md:rounded-md">
     <div class= "flex flex-wrap items-center justify-center children:mx-4 children:my-2 mx-auto py-8">
       <img class="w-30" src = {neuLOGO} alt=logo>
       <h1 class = "text-center tracking-wide font-bold font-mono text-6xl text-shadow-lg">NEW ERA UNIVERSITY</h1>
@@ -73,7 +72,7 @@
 
   <!-- <Divider/> -->
 
-  <div class= "container bg-black bg-opacity-80 mx-auto y-16 rounded-md px-8 py-6 text-white">
+  <div class= "container bg-black bg-opacity-80 mx-auto md:rounded-md px-8 py-6 text-white">
 
     <div class="text-8xl <md:text-6xl font-mono font-bold">
       <div>GOALS &</div>
@@ -96,19 +95,7 @@
         <img class="w-full drop-shadow-lg <lg:w-auto h-auto justify-center"src = {GO_image} alt=another>
       </div>
     </div>
-
-
-
-    <div class ="sm:container mx-auto flex <lg:flow-root items-center">
-      <div class = "sm:mx-10 container text-white font-sans text-lg">
-
-      </div>
-      <div class = "mx-10 mb-5 w-150">
-
-      </div>
-    </div>
   </div>
-  <div></div>
 </div>
 
 
