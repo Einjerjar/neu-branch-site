@@ -11,15 +11,20 @@
 </script>
 
 <div transition:slide class={`cmp-nav top-0 left-0 w-full max-w-100vw bg-gray-100 shadow-lg px-4 z-999 ${isSticky ? 'fixed' : ''}`}>
-  <div class="absolute hidden md:block right-0 top-0 h-8 bg-primary-900 w-20rem lg:w-50rem">
+  <div class="absolute hidden lg:block right-0 top-0 h-8 bg-primary-900 w-20rem lg:w-30rem xl:w-50rem">
   </div>
-  <div class="flex container mx-auto z-10 h-16 md:h-auto">
+  <div class="flex container mx-auto z-10 min-h-16 ">
     <div class="flex items-center">
-      <a href="#/" class="font-light text-2xl">
-        New Era University
+      <a href="#/" class="">
+        <div class="flex items-center">
+          <img src="./images/logo_x300.png" class="w-12 lg:w-16" alt="">
+          <div class="font-shelley text-4xl ml-2 md:ml-4 text-gray-700">
+            New Era University
+          </div>
+        </div>
       </a>
     </div>
-    <div class="ml-auto hidden md:(block min-w-30rem) lg:min-w-40rem xl:min-w-60rem">
+    <div class="ml-auto hidden md:min-w-30rem lg:block lg:min-w-35rem xl:min-w-55rem">
       <div>
         <ul class="flex children:mx-4 items-center ml-auto text-white bg-primary-900 h-8 rounded-bl rounded-bl-md relative z-1">
         {#each secondaryLinks as link}
@@ -44,7 +49,7 @@
         <div class="ml-auto flex-grow flex items-center">
           <div class="ml-auto">
             <a href="#/admission">
-              <div class="test-btn">
+              <div class="test-btn text-center text-xs">
                 Apply Now
               </div>
             </a>
@@ -52,20 +57,20 @@
         </div>
       </div>
     </div>
-    <div class="ml-auto block md:hidden flex items-center">
+    <div class="ml-auto block lg:hidden flex items-center">
       <div class="test-btn !px-4" on:click={toggleNav}>
         <i class="fas fa-bars"></i>
       </div>
     </div>
   </div>
   {#if dropdownNav}
-    <div transition:slide class="absolute left-0 w-full top-full bg-gray-200 z-999">
-      <div class="container px-4 py-2 text-right">
+    <div transition:slide class="absolute lg:hidden left-0 w-full top-full bg-gray-200 z-999">
+      <div class="container px-4 py-2 mx-auto text-right">
         <div class="font-bold text-lg text-primary-900">
           Primary Links
         </div>
         <ul class="children:my-2 pl-4 text-primary-700">
-          {#each secondaryLinks as link}
+          {#each primaryLinks as link}
             <li>
               <a href={'#'+link.path}>
                 {link.label}
@@ -77,7 +82,7 @@
           Secondary Links
         </div>
         <ul class="children:my-2 pl-4 text-primary-700">
-          {#each primaryLinks as link}
+          {#each secondaryLinks as link}
             <li>
               <a href={'#'+link.path}>
                 {link.label}

@@ -11,17 +11,21 @@
   const announcement_data = events.entries.filter((event) => event.Type[0] == 'Announcement');
 
   const arr = [0, 0, 0, 0];
+  const icon_links = [
+    {name: 'NEUVLE', icon: 'fa-book', path: '#/'},
+    {name: 'Automate', icon: 'fa-robot', path: '#/'},
+    {name: 'Main Website', icon: 'fa-globe', path: '#/'},
+    {name: 'Locations', icon: 'fa-map-marker-alt', path: '#/'},
+  ]
 </script>
 
 <div class="page-home">
   <NewsTicker/>
   <VideoHeader />
   <div class="container mx-auto">
-    <div
-      class="iconcard-section <md:(max-w-4/5 mx-auto grid grid-cols-2 mt-4) md:(max-w-screen-lg -mt-10 flex justify-between mx-auto)"
-    >
-      {#each arr as nico}
-        <IconCard />
+    <div class="iconcard-section flex flex-wrap justify-center children:mx-4 -mt-8 <md:(max-w-4/5 mx-auto) md:(max-w-screen-lg -mt-10 mx-auto)" >
+      {#each icon_links as link}
+        <IconCard data={link} />
       {/each}
     </div>
     <Divider />

@@ -175,9 +175,9 @@
     </div>
   </div>
 
-  <div class="footer-secondary bg-gray-900 bg-opacity-10">
+  <div class="w-full px-8 bg-gray-900 bg-opacity-10">
     <div
-      class="container mx-auto py-8 flex flex-col items-center text-white space-y-6 md:(justify-between flex-row)"
+      class="container mx-auto py-8 px-8 flex flex-col items-center text-white space-y-6 md:(justify-between flex-row)"
     >
       <div class="lg:(flex items-center)">
         <div

@@ -3,3 +3,4 @@
 /.vscode/
 .DS_Store
 !/.vscode/extensions.json
+*.log
