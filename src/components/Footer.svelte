@@ -48,7 +48,7 @@
   <div class="container mx-auto">
     <div class="flex flex-col sm:flex-row">
       <a href="#/" class="mb-8 mx-auto min-w-35 md:ml-auto w-35 h-35 lg:(min-w-50 w-50 h-50) relative">
-        <div class="absolute w-full h-full bg-primary-300 transnform left-5 -top-2 rounded-b-lg p-5">
+        <div class="absolute bg-gra shadow-lg w-full h-full bg-primary-300 transnform left-5 -top-2 rounded-b-lg p-5">
           <img
             src="https://neu.edu.ph/main/assets/images/NEU_LOGO.png"
             alt="neu"
@@ -176,13 +176,9 @@
   </div>
 
   <div class="w-full px-8 bg-gray-900 bg-opacity-10">
-    <div
-      class="container mx-auto py-8 px-8 flex flex-col items-center text-white space-y-6 md:(justify-between flex-row)"
-    >
+    <div class="container mx-auto py-8 px-8 flex flex-col items-center text-white space-y-6 md:(justify-between flex-row)">
       <div class="lg:(flex items-center)">
-        <div
-          class="font-shelley text-4xl capitalize border-b-5px pb-6 lg:(border-none mr-6)"
-        >
+        <div class="font-shelley text-4xl capitalize border-b-5px pb-6 lg:(border-none mr-6)" >
           new era university
         </div>
         <div class="mt-6 lg:(border-l-5px pl-6)">

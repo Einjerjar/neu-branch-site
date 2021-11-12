@@ -61,7 +61,7 @@
   <div class="container bg-white bg-opacity-85 mx-auto shadow-lg my-16 md:rounded-md">
     <div class= "flex flex-wrap items-center justify-center children:mx-4 children:my-2 mx-auto py-8">
       <img class="w-30" src = {neuLOGO} alt=logo>
-      <h1 class = "text-center tracking-wide font-bold font-mono text-6xl text-shadow-lg">NEW ERA UNIVERSITY</h1>
+      <h1 class = "text-center tracking-wide font-shelley text-7xl text-shadow-lg">New Era University</h1>
     </div>
     <div class = "flex flex-wrap items-center justify-center my-10 <md:flex-col <lg:flex-wrap">
       <MVP desc = {mission} title = 'MISSION'/>
