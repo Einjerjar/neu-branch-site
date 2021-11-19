@@ -7,11 +7,11 @@
     {
       name: 'Campuses',
       children: [
-        {name: 'NEW Quezon City (Main)', path: '#/'},
-        {name: 'NEW Batangas', path: '#/'},
-        {name: 'NEW Pampanga', path: '#/'},
-        {name: 'NEW General Santos City', path: '#/'},
-        {name: 'NEW Rizal', path: '#/'},
+        {name: 'NEU Quezon City (Main)', path: '#/'},
+        {name: 'NEU Batangas', path: '#/'},
+        {name: 'NEU Pampanga', path: '#/'},
+        {name: 'NEU General Santos City', path: '#/'},
+        {name: 'NEU Rizal', path: '#/'},
       ]
     },
     {

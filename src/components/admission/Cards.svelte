@@ -13,8 +13,35 @@
         <div class="font-sans text-xl mt-4 mx-7 mb-9">
             <p class="font-bold mb-4">{schoolType}</p>
             <p class="text-base mb-4"><slot></slot></p>
-            <div class="group-hover:text-primary-600 transition transition-colors duration-300 cursor-pointer font-bold">EXPLORE</div>
+            <div class="fancy-link">
+                <div class="group-hover:text-primary-600 transition transition-colors duration-300 cursor-pointer font-bold text-center">EXPLORE</div>
+            </div>
         </div>
     </div>
     </a>
 </div>
+
+<style>
+    .fancy-link{
+        position: relative;
+    }
+
+    .fancy-link::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: red;
+
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 250ms ease-in;
+    }
+
+    .fancy-link:hover::after{
+        transform: scaleX(1);
+        transform-origin: center;
+    }
+</style>
