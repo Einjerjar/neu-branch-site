@@ -41,7 +41,7 @@
   }
 </script>
 
-<div class="cmp-slider">
+<div class="cmp-slider group">
   <div class="absolute w-full h-full z-1"></div>
   {#each datas as data, index (data._id)}
     <div
@@ -60,21 +60,18 @@
     {/each}
   </div>
 
-  <div
-    class="absolute left-0 w-8 h-full flex items-center justify-center text-2xl cursor-pointer hover:(bg-primary-700 bg-opacity-30 text-white) text-primary-900 z-99"
-    on:click={prevSlide}
-  >
+  <div class="left-0 slider-btn" on:click={prevSlide} >
     <i class="fas fa-angle-left" />
   </div>
-  <div
-    class="absolute right-0 w-8 h-full flex items-center justify-center text-2xl cursor-pointer hover:(bg-primary-700 bg-opacity-30 text-white) text-primary-900 z-99"
-    on:click={nextSlide}
-  >
+  <div class="right-0 slider-btn" on:click={nextSlide} >
     <i class="fas fa-angle-right" />
   </div>
 </div>
 
 <style lang="postcss">
+  .slider-btn {
+    @apply absolute w-16 transition transition=opacity h-full flex items-center justify-center text-2xl cursor-pointer bg-primary-700 bg-opacity-0 hover:(!bg-opacity-30 text-white) text-primary-900 z-99 group-hover:bg-opacity-10;
+  }
   .cmp-slider {
     @apply relative h-100 w-full flex overflow-hidden my-4;
   }

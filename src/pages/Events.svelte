@@ -85,7 +85,7 @@ import EventCard from "@/components/EventCard.svelte";
     <div class="container mx-auto">
 
       <!--Event Section Start-->
-      <div class="container cursor-pointer event items-center flex flex-wrap justify-center mb-12">
+      <div class="container cursor-pointer event items-center flex flex-wrap justify-center mb-12 px-4">
         {#await a_event_data()}
           Loading Events
         {:then e_data}

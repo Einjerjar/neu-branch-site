@@ -4,6 +4,7 @@
   import NewsCard from "@/components/NewsCard.svelte";
   import EventDetailsSidebar from '@/components/EventDetailsSidebar.svelte';
   import {re_param} from '@/utils'
+  import { HOST_ROOT } from '@/utils';
 
   export let params = {};
 
@@ -59,7 +60,7 @@ $: event_details = events.entries.filter((entry) => params.id === entry._id)[0];
             {#if local_event.asset}
                 {#each local_event.asset as asset}
                     <div class="my-4">
-                        <img src={asset.path} alt="alt">
+                        <img src={`${HOST_ROOT}${asset.path}`} alt="alt">
                     </div>
                 {/each}
             {/if}
