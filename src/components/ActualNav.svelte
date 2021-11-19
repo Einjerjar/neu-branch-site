@@ -8,6 +8,8 @@
   const toggleNav = () => {
     dropdownNav = !dropdownNav
   }
+
+  let branch_id = import.meta.env.VITE_BRANCH_ID
 </script>
 
 <div transition:slide class={`cmp-nav top-0 left-0 w-full max-w-100vw bg-gray-100 shadow-lg px-4 z-999 ${isSticky ? 'fixed' : ''}`}>
@@ -18,8 +20,13 @@
       <a href="#/" class="">
         <div class="flex items-center">
           <img src="./images/logo_x300.png" class="w-12 lg:w-16" alt="">
-          <div class="font-shelley text-4xl ml-2 md:ml-4 text-gray-700">
-            New Era University
+          <div class="ml-2 md:ml-4 text-gray-700 flex lg:block items-baseline">
+            <div class="font-shelley text-3xl sm:text-4xl">
+              New Era University
+            </div>
+            <div class="text-md text-center ml-4 lg:ml-0">
+              {branch_id} Branch
+            </div>
           </div>
         </div>
       </a>

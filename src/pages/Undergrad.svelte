@@ -3,6 +3,8 @@
     import BigHeader from "@/components/admission/BigHeader.svelte";
     import Article from "@/components/admission/Article.svelte";
 
+    export let admission_group = 'undergrad'
+
     let bannerName = "Undergrad Procedures";
     let bigTitle = "We are Eranians";
 </script>

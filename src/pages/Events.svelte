@@ -4,16 +4,17 @@ import NewsTicker from "@/components/NewsTicker.svelte";
 import Slider from "@/components/Slider.svelte";
 import Cards from "@/components/admission/Cards.svelte";
 import { events } from '@/sample_data/events';
+import {re_param} from '@/utils'
+import EventCard from "@/components/EventCard.svelte";
 
   const event_data = events.entries.filter((event) => event.Type[0] == 'Events');
   const announcement_data = events.entries.filter((event) => event.Type[0] == 'Announcement');
 
-//images for announcement
-let imgSrc= [
+  //images for announcement
+  let imgSrc= [
     "https://neu.edu.ph/main/assets/images/posts_images/AntiBullying19.jpg",
     "https://www.neu.edu.ph/main/assets/images/posts_images/44thArenaHS9.jpg",
     "https://www.eaglenews.ph/wp-content/uploads/2017/04/NEU-graduates-480x320.jpg"
-
   ];
 
   let information = [
@@ -28,63 +29,70 @@ let imgSrc= [
     {type: "Undergraduate Announcement", id: 2}
   ];
 
-let sample_event_data = [
-  {
-    img: 'https://www.neu.edu.ph/main/assets/images/posts_images/44thArenaHS9.jpg',
-    title: 'Random Event',
-    desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit voluptatum fuga nam at vitae dicta, praesentium illo commodi iusto reprehenderit inventore architecto nisi! Ipsam asperiores harum aperiam odit molestias officiis.'
-  },
-  {
-    img: 'https://www.neu.edu.ph/main/assets/images/posts_images/44thArenaHS9.jpg',
-    title: 'Random Event',
-    desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit voluptatum fuga nam at vitae dicta, praesentium illo commodi iusto reprehenderit inventore architecto nisi! Ipsam asperiores harum aperiam odit molestias officiis.'
-  },
-  {
-    img: 'https://www.neu.edu.ph/main/assets/images/posts_images/44thArenaHS9.jpg',
-    title: 'Random Event',
-    desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit voluptatum fuga nam at vitae dicta, praesentium illo commodi iusto reprehenderit inventore architecto nisi! Ipsam asperiores harum aperiam odit molestias officiis.'
-  },
-  {
-    img: 'https://www.neu.edu.ph/main/assets/images/posts_images/44thArenaHS9.jpg',
-    title: 'Random Event',
-    desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit voluptatum fuga nam at vitae dicta, praesentium illo commodi iusto reprehenderit inventore architecto nisi! Ipsam asperiores harum aperiam odit molestias officiis.'
-  }
-]
+  const MAX_SUB_POST = 4;
 
+  let a_event_data = async() => {
+    let f = await fetch(re_param('collections/get/News', {
+      limit: MAX_SUB_POST,
+      'filter[Type]': 'Events'
+    }))
+    let j = await f.json()
+
+    return j || events
+  }
+
+  let a_announce_data = async() => {
+    let f = await fetch(re_param('collections/get/News', {
+      limit: MAX_SUB_POST,
+      'filter[Type]': 'Announcement'
+    }))
+    let j = await f.json()
+
+    return j || events
+  }
 </script>
 <div>
     <NewsTicker/>
+
+    <!-- News? is this even necessary? -->
     <div class="container mx-auto">
-      <Slider datas={events.entries}/>
+      {#await a_event_data()}
+        Loading News
+      {:then e_data}
+        <Slider datas={e_data.entries}/>
+      {/await}
     </div>
+
     <Divider/>
     <div class="bg-primary-900 text-white h-20 text-4xl uppercase flex items-center justify-center">
       <p>announcement</p>
     </div>
+
+    <!-- Announcement -->
     <div class="container mx-auto">
-      <Slider datas={announcement_data}/>
+      {#await a_announce_data()}
+        Loading Announcements
+      {:then a_data}
+        <Slider datas={a_data.entries}/>
+      {/await}
     </div>
+
     <Divider/>
+
     <div class="bg-primary-900 text-white h-20 text-4xl uppercase flex items-center justify-center">
       <p>events</p>
     </div>
     <div class="container mx-auto">
-<!--Event Section Start-->
 
+      <!--Event Section Start-->
       <div class="container cursor-pointer event items-center flex flex-wrap justify-center mb-12">
-        {#each sample_event_data as event}
-          <div class="offset-sm-1 col-sm-5 p-8 group mb-10">
-            <div class="p-2 bg-white rounded-md shadow transform transition duration-300 transition-transform group-hover:scale-105 group-hover:shadow-lg">
-              <div class="h-100 w-120 bg-center bg-cover" style={`background-image: url(${event.img});`}></div>
-            </div>
-            <div class="event-content box-style">
-              <h4>Event 1</h4>
-              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Expedita nostrum neque voluptatem?Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span><br>
-                <a href="#/">join</a>
-            </div>
-          </div>
-        {/each}
+        {#await a_event_data()}
+          Loading Events
+        {:then e_data}
+          {#each e_data.entries as event}
+            <EventCard {event}/>
+          {/each}
+        {/await}
       </div>
     </div>
 

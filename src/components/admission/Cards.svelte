@@ -1,7 +1,7 @@
 <script>
+    import { admissionLinks } from '@/route_data';
     export let schoolType = 'School Type';
     export let imageSrc;
-    import { admissionLinks } from '@/route_data';
     export let pathChosen;
 </script>
 

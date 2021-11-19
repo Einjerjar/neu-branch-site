@@ -1,5 +1,6 @@
 <script>
-    export let data;
+    import {events} from '@/sample_data/events'
+    export let data = events.entries[0];
     // export let src="https://neu.edu.ph/main/assets/images/posts_images/CCEL2021ccs2.jpg";
     // export let desc="Event Title One";
     // export let date= "January 1, 2021";

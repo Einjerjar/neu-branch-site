@@ -6,6 +6,8 @@
   import { routes } from "@/routes";
   import Footer from "./components/Footer.svelte";
 
+  document.title = `NEU ${import.meta.env.VITE_BRANCH_ID} Branch Homepage`
+
   console.log(routes);
 </script>
 
