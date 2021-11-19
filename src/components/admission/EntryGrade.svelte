@@ -6,17 +6,17 @@
     ];
 </script>
 
-<div class="container bg-white px-8 py-6 mx-auto max-h-full flex justify-center rounded-md shadow-lg" style="font-family: 'Rokkitt', serif;">
-    <div class="items-center">
-        <p class=" text-center text-4xl sm:text-5xl md:text-6xl pb-10 lg:text-6xl xl:text-6xl 2xl:text-6xl " style="color: #791616;">Entry Grade Admission Requirements</p>
-        <div class="text-center">
-            <div class="text-xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-4xl text-left inline-block">
-                <ul>
-                    {#each entryReq as er (er.id)}
-                        <li class="pb-5"><strong>{entryReq[er.id].grade} </strong>{entryReq[er.id].description}</li>
-                    {/each}
-                </ul>
-            </div>
-        </div>
+<div class="container px-4 mx-auto">
+    <div class="bg-white px-8 py-6 max-h-full flex justify-center rounded-md shadow-lg font-light">
+      <div class="items-center">
+        <p class="text-center text-4xl sm:text-5xl md:text-6xl pb-10 lg:text-6xl text-primary-900">Entry Grade Admission Requirements</p>
+          <div class="text-xl md:text-3xl">
+              <ul>
+                  {#each entryReq as er (er.id)}
+                      <li class="pb-5"><strong>{entryReq[er.id].grade} </strong>{entryReq[er.id].description}</li>
+                  {/each}
+              </ul>
+          </div>
+      </div>
     </div>
 </div>

@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@400;500&display=swap" rel="stylesheet">
 
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Font-Awesome CDN -->
-    <script
-      src="https://kit.fontawesome.com/ec03e6c8da.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Svelte + Vite App</title>
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
+    <script src="https://kit.fontawesome.com/ec03e6c8da.js" crossorigin="anonymous" ></script>
+
+    <title>NEU BRANCH SITE</title>
+
+    <style> html { scroll-behavior: smooth; } </style>
   </head>
   <body>
     <div id="app"></div>
+
     <!-- Messenger Chat Plugin Code -->
     <div id="fb-root"></div>
 
     <!-- Your Chat Plugin code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
+    <!-- <div id="fb-customer-chat" class="fb-customerchat">
     </div>
 
     <script>
@@ -48,7 +45,7 @@
         js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
-    </script>
+    </script> -->
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

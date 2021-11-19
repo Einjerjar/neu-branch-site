@@ -28,11 +28,13 @@
 </script>
 
 <div class="page-home">
-  <div class="mx-auto bg-center bg-cover " style="background-image: url('https://neu.edu.ph/main/assets/images/NEU_Pampanga.jpg');">
+  <div class="mx-auto relative">
+    <div class="absolute -z-1 bg-center bg-cover w-full h-full left-0 top-0" style="background-image: url('https://neu.edu.ph/main/assets/images/NEU_Pampanga.jpg'); filter: grayscale(50%) brightness(50%);"></div>
     <div class="min-h-full mx-auto max-h-full flex  justify-center text-white">
       <div class="items-center my-21">
-          <p class="font-sans shadowing text-center text-5xl sm:text-8xl md:text-9xl lg: text-9xl ">
-            <a href={'#'+ admissionLinks[3].path}><strong>ADMISSION</strong></a></p>
+        <a href={`#${admissionLinks[3].path}`} class="text-6xl md:text-8xl underline font-bold uppercase text-shadow-lg">
+          Admission
+        </a>
       </div>
     </div>
 
@@ -46,6 +48,13 @@
         {/each}
       </div>
     </div>
+
+    <div class="flex justify-center">
+      <div class="p-1 bg-primary-100 bg-opacity-0 border-2 border-primary-200 px-6 py-2 text-primary-200 text-2xl rounded-md cursor-pointer hover:bg-primary-900 hover:text-white hover:border-opacity-0 transition-colors">
+        Admission Procedures
+      </div>
+    </div>
+
     <div class="w-full py-10"><EntryGrade></EntryGrade></div>
   </div>
 </div>

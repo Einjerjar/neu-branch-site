@@ -73,7 +73,6 @@
   <!-- <Divider/> -->
 
   <div class= "container bg-black bg-opacity-80 mx-auto md:rounded-md px-8 py-6 text-white">
-
     <div class="text-8xl <md:text-6xl font-mono font-bold">
       <div>GOALS &</div>
       <div>OBJECTIVES</div>
