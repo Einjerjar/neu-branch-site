@@ -1,4 +1,13 @@
-@import url("https://db.onlinewebfonts.com/c/3fda0d6ca5116e691e85501911ffa12c?family=Shelley");
+/* Had to manually rip out and edit the imports since font import from http will fail by default when site is hosted on https */
+
+@font-face {font-family: "Shelley";
+  src: url("//db.onlinewebfonts.com/t/3fda0d6ca5116e691e85501911ffa12c.eot"); /* IE9*/
+  src: url("//db.onlinewebfonts.com/t/3fda0d6ca5116e691e85501911ffa12c.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("//db.onlinewebfonts.com/t/3fda0d6ca5116e691e85501911ffa12c.woff2") format("woff2"), /* chrome firefox */
+  url("//db.onlinewebfonts.com/t/3fda0d6ca5116e691e85501911ffa12c.woff") format("woff"), /* chrome firefox */
+  url("//db.onlinewebfonts.com/t/3fda0d6ca5116e691e85501911ffa12c.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+  url("//db.onlinewebfonts.com/t/3fda0d6ca5116e691e85501911ffa12c.svg#Shelley") format("svg"); /* iOS 4.1- */
+}
 
 .font-shelley {
   font-family: Shelley;

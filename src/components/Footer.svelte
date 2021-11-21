@@ -1,5 +1,4 @@
 <script>
-  import '@/common_styles.css'
   import { links, external_links } from "@/route_data";
   const year = new Date().getFullYear();
 

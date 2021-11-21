@@ -1,4 +1,5 @@
 import 'virtual:windi.css'
+import '@/common_styles.css'
 import App from './App.svelte'
 
 const app = new App({

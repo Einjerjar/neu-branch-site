@@ -4,3 +4,5 @@
 .DS_Store
 !/.vscode/extensions.json
 *.log
+/public
+/index.html

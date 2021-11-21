@@ -8,7 +8,7 @@ import _css from 'rollup-plugin-css-only'
 export default defineConfig({
   plugins: [
     WindiCSS(),
-    _css({output: 'public/assets/common.css'}),
+    // _css({output: 'assets/common.css'}),
     svelte(),
   ],
   resolve: {
