@@ -5,8 +5,7 @@
   // import { procedureLinks } from '@/route_data';
 
 
-
-  let schoolType = [
+  const schoolType = [
     {type: "Basic Education", id: 0},
     {type: "Senior High School", id: 1},
     {type: "Undergraduate", id: 2}
@@ -32,9 +31,9 @@
     <div class="absolute -z-1 bg-center bg-cover w-full h-full left-0 top-0" style="background-image: url('https://neu.edu.ph/main/assets/images/NEU_Pampanga.jpg'); filter: grayscale(50%) brightness(50%);"></div>
     <div class="min-h-full mx-auto max-h-full flex  justify-center text-white">
       <div class="items-center my-21">
-        <a href={`#${admissionLinks[3].path}`} class="text-6xl md:text-8xl underline font-bold uppercase text-shadow-lg">
+        <p class="text-6xl md:text-8xl underline font-bold uppercase text-shadow-lg">
           Admission
-        </a>
+        </p>
       </div>
     </div>
 
@@ -49,12 +48,14 @@
       </div>
     </div>
 
-    <div class="flex justify-center">
-      <div class="p-1 bg-primary-100 bg-opacity-0 border-2 border-primary-200 px-6 py-2 text-primary-200 text-2xl rounded-md cursor-pointer hover:bg-primary-900 hover:text-white hover:border-opacity-0 transition-colors">
-        Admission Procedures
-      </div>
-    </div>
 
+    <a href={`#${admissionLinks[3].path}`}>
+      <div class="flex justify-center">
+        <div class="p-1 bg-primary-100 bg-opacity-0 border-2 border-primary-200 px-6 py-2 text-primary-200 text-2xl rounded-md cursor-pointer hover:bg-primary-900 hover:text-white hover:border-opacity-0 transition-colors">
+          Admission Procedures
+        </div>
+      </div>
+    </a>
     <div class="w-full py-10"><EntryGrade></EntryGrade></div>
   </div>
 </div>

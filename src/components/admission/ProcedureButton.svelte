@@ -8,21 +8,19 @@
 </script>
 
 <div >
-    <button class="px-2.5 py-1 rounded-xl font-semibold btn-special" class:bg-transparent={true} class:btn-default={true} on:click={goToPage}>
+    <button class="border-2 border-primary-800 px-4 py-2 rounded-md inline-block font-bold  btn-special" class:bg-transparent={true} class:btn-default={true} on:click={goToPage}>
         {message}
     </button>
 </div>
 
 <style lang="postcss">
-
     .btn-default {
-        @apply text-black border-2 border-solid;
-        border-color: #E76363;
+        @apply text-primary-800 border-2 border-solid;
     }
 
     .btn-special:hover {
         @apply text-white border-2 border-solid;
-        background: #E76363;
+        background: rgba(159, 18, 57);
     }
 
 </style>

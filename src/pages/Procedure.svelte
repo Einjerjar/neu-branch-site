@@ -3,7 +3,6 @@
   import { admissionLinks } from "@/route_data";
   import Banner from "@/components/admission/Banner.svelte";
   import BigHeader from "@/components/admission/BigHeader.svelte";
-  import MediumHeader from "@/components/admission/MediumHeader.svelte";
   import Article from "@/components/admission/Article.svelte";
 
   let bigTitle = "admission";
@@ -52,11 +51,9 @@
         Click Save and take note of the assessment of fees and amount to be
         paid.
       </p>
-      <a href="#/" class="block text-center md:text-left my-4">
-        <div class="border-2 border-primary-800 px-4 py-2 rounded-md inline-block font-bold text-primary-800">
-          See More
-        </div>
-      </a>
+      <div class="block text-center md:text-left my-4">
+        <ProcedureButton message='See More' page={'#/'}/>
+      </div>
     </Article>
 
     <Article title="Admission Procedure (NEU SHS Graduate)">
@@ -67,11 +64,10 @@
         the Temporary Username and Password thru email, You can now edit your
         Personal Information Sheet thru this link NEU Automate for Application.
       </p>
-      <a href="#/" class="block text-center md:text-left my-4">
-        <div class="border-2 border-primary-800 px-4 py-2 rounded-md inline-block font-bold text-primary-800">
-          See More
-        </div>
-      </a>
+      <div class="block text-center md:text-left my-4">
+        <ProcedureButton message='See More' page={'#/'}/>
+      </div>
+
     </Article>
 
     <Article title="Admission Procedure (Non-NEU SHS Graduate)">
@@ -82,11 +78,9 @@
         the Temporary Username and Password thru email, You can now edit your
         Personal Information Sheet thru this link NEU Automate for Application.
       </p>
-      <a href="#/" class="block text-center md:text-left my-4">
-        <div class="border-2 border-primary-800 px-4 py-2 rounded-md inline-block font-bold text-primary-800">
-          See More
-        </div>
-      </a>
+      <div class="block text-center md:text-left my-4">
+        <ProcedureButton message='See More' page={'#/'}/>
+      </div>
     </Article>
   </div>
 </div>

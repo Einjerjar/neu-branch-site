@@ -3,10 +3,11 @@
     import BigHeader from "@/components/admission/BigHeader.svelte";
     import Article from "@/components/admission/Article.svelte";
 
-    export let admission_group = 'undergrad'
-
-    let bannerName = "Undergrad Procedures";
-    let bigTitle = "We are Eranians";
+    export let admission_group = 'undergrad';
+    let bannerName = 'Undergrad Procedures';
+    let bigTitle = 'We are Eranians';
+    let procedureType = 'Admission Procedure (NEU SHS Graduates)';
+    let bigTitleContent = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
 </script>
 
 <main>
@@ -17,19 +18,14 @@
 
     <div class="min-h-full mx-auto max-h-full flex  justify-center text-rose-900 font-medium">
         <div class="items-center">
-        <p class=" text-black text-center">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br>
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took<br>
-            a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, <br>
-            but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the<br>
-            1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop <br>
-            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <hr class="bg-black my-15"/>
+            <p class="text-black text-center ">
+                {bigTitleContent}
+            </p>
+            <hr class="bg-black my-15"/>
         </div>
     </div>
 
-    <h2 class="mb-15"><strong>Admission Procedure (NEU SHS Graduates)</strong></h2>
+    <h2 class="mb-15"><strong>{procedureType}</strong></h2>
 
     <Article title="Step 1: Request for Temporary Student ID">
         <p>Request for your Temporary Student ID thru sending the following details to admissionrequirements@neu.edu.ph</p>
@@ -39,7 +35,6 @@
                 <li>Gender: </li>
                 <li>Year Graduated: </li>
             </ul>
-
     </Article>
 
     <Article title="Step 2: Edit your personal sheet thru NEU Automate">
