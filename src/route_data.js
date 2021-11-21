@@ -11,6 +11,8 @@ import Visit from "@/pages/Visit.svelte";
 
 
 import Events from "@/pages/Events.svelte";
+import Events2 from "@/pages/Events.svelte";
+
 
 
 export const primaryLinks = [

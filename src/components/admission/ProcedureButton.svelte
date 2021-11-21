@@ -1,6 +1,9 @@
 <script>
     export let message = "Click me please... uwu";
     export let page;
+    export let isRounded = true;
+    export let isSmallRounded = false;
+    export let isBold = true;
 
     const goToPage = () => {
         location.replace(page);
@@ -8,7 +11,7 @@
 </script>
 
 <div >
-    <button class="border-2 border-primary-800 px-4 py-2 rounded-md inline-block font-bold  btn-special" class:bg-transparent={true} class:btn-default={true} on:click={goToPage}>
+    <button class="border-2 border-primary-800 px-4 py-2 inline-block  rounded-sm btn-special" class:bg-transparent={true} class:btn-default={true} class:font-bold={isBold} class:rounded-md={isRounded} class:rounded-sm={isSmallRounded} on:click={goToPage}>
         {message}
     </button>
 </div>

@@ -1,160 +1,94 @@
 <script>
-import Divider from "@/components/Divider.svelte";
-import NewsTicker from "@/components/NewsTicker.svelte";
-import Slider from "@/components/Slider.svelte";
-import Cards from "@/components/admission/Cards.svelte";
-import { events } from '@/sample_data/events';
-import {re_param} from '@/utils'
-import EventCard from "@/components/EventCard.svelte";
+  import Banner from "@/components/admission/Banner.svelte";
+  import ProcedureButton from "@/components/admission/ProcedureButton.svelte";
 
-  const event_data = events.entries.filter((event) => event.Type[0] == 'Events');
-  const announcement_data = events.entries.filter((event) => event.Type[0] == 'Announcement');
 
-  //images for announcement
-  let imgSrc= [
-    "https://neu.edu.ph/main/assets/images/posts_images/AntiBullying19.jpg",
-    "https://www.neu.edu.ph/main/assets/images/posts_images/44thArenaHS9.jpg",
-    "https://www.eaglenews.ph/wp-content/uploads/2017/04/NEU-graduates-480x320.jpg"
-  ];
-
-  let information = [
-    "This information is about the Basic Education Announcements",
-    "This information is about the SHS Announcements",
-    "This information is about the Undergraduate Announcements",
-  ];
-
-  let announcementType = [
-    {type: "Basic Education Announcement", id: 0},
-    {type: "Senior High School Announcement", id: 1},
-    {type: "Undergraduate Announcement", id: 2}
-  ];
-
-  const MAX_SUB_POST = 4;
-
-  let a_event_data = async() => {
-    let f = await fetch(re_param('collections/get/News', {
-      limit: MAX_SUB_POST,
-      'filter[Type]': 'Events'
-    }))
-    let j = await f.json()
-
-    return j || events
-  }
-
-  let a_announce_data = async() => {
-    let f = await fetch(re_param('collections/get/News', {
-      limit: MAX_SUB_POST,
-      'filter[Type]': 'Announcement'
-    }))
-    let j = await f.json()
-
-    return j || events
-  }
 </script>
-<div>
-    <NewsTicker/>
 
-    <!-- News? is this even necessary? -->
-    <div class="container mx-auto">
-      {#await a_event_data()}
-        Loading News
-      {:then e_data}
-        <Slider datas={e_data.entries}/>
-      {/await}
+<Banner message={"Events"} srcImage='./images/neu_mainfront.jpg'/>
+<div class="my-15 mx-60 catamaran">
+  <div class="grid grid-cols-2 gap-5 place-content-center">
+    <div class="w-full h-full">
+      <img class='main-format object-cover' src="./images/neu_mainfront.jpg" alt="neu main">
+      <div class="mt-5 pr-8 height-sec ">
+        <h1 class="pb-3 text-2xl font-light text-gray-700 uppercase">New Era University Main Campus</h1>
+        <p class=" text-sm text-gray-600 pb-7">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id minus beatae dolorum incidunt inventore, doloremque iste eligendi sed dignissimos cupiditate quis a aliquid magni veniam esse, natus, veritatis at. Alias.</p>
+        <!-- object-bottom	 -->
+
+        <div class="float-left">
+          <ProcedureButton message={'MORE DETAILS'} page={'#/'} isRounded={false} isBold={false} isSmallRounded={true}/>
+        </div>
+
+      </div>
+
     </div>
 
-    <Divider/>
-    <div class="bg-primary-900 text-white h-20 text-4xl uppercase flex items-center justify-center">
-      <p>announcement</p>
-    </div>
+    <div>
 
-    <!-- Announcement -->
-    <div class="container mx-auto">
-      {#await a_announce_data()}
-        Loading Announcements
-      {:then a_data}
-        <Slider datas={a_data.entries}/>
-      {/await}
-    </div>
+      <div class=" height-third grid grid-cols-2 overflow-hidden">
 
-    <Divider/>
-
-    <div class="bg-primary-900 text-white h-20 text-4xl uppercase flex items-center justify-center">
-      <p>events</p>
-    </div>
-    <div class="container mx-auto">
-
-      <!--Event Section Start-->
-      <div class="container cursor-pointer event items-center flex flex-wrap justify-center mb-12 px-4">
-        {#await a_event_data()}
-          Loading Events
-        {:then e_data}
-          {#each e_data.entries as event}
-            <EventCard {event}/>
-          {/each}
-        {/await}
+          <div><img src="./images/pic_1.png" alt="Italian Trulli"></div>
+          <div><img src="./images/pic_1.png" alt="Italian Trulli"></div>
+          <div><img src="./images/pic_1.png" alt="Italian Trulli"></div>
+          <div><img src="./images/pic_1.png" alt="Italian Trulli"></div>
+      </div>
+      <div class="float-right pd mt-6">
+        <ProcedureButton message={'MORE DETAILS'} page={'#/'} isRounded={false} isBold={false} isSmallRounded={true}/>
       </div>
     </div>
 
+
+  </div>
+</div>
+
+<div>
+  <img class='main-format object-cover' src="./images/NEU_GENSAN.png" alt="neu main">
+</div>
+
+<div class="my-15 mx-60 catamaran">
+  <div class="container grid grid-cols-4 mx-auto">
+    <div class="w-full rounded">
+        <img src="./images/pic_1.png" alt="neu main">
+    </div>
+    <div class="w-full rounded">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum, eligendi facilis quis fuga, commodi omnis quidem quam unde odio in recusandae eaque sapiente libero sed aliquid. Vel odio fugit dolore?</p>
+    </div>
+    <div class="w-full rounded">
+      <img src="./images/pic_2.png" alt="neu main">
+    </div>
+    <div class="w-full rounded">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum, eligendi facilis quis fuga, commodi omnis quidem quam unde odio in recusandae eaque sapiente libero sed aliquid. Vel odio fugit dolore?</p>
+    </div>
+    <div class="w-full rounded">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum, eligendi facilis quis fuga, commodi omnis quidem quam unde odio in recusandae eaque sapiente libero sed aliquid. Vel odio fugit dolore?</p>
+    </div>
+    <div class="w-full rounded">
+      <img src="./images/pic_3.png" alt="neu main">
+    </div>
+    <div class="w-full rounded">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum, eligendi facilis quis fuga, commodi omnis quidem quam unde odio in recusandae eaque sapiente libero sed aliquid. Vel odio fugit dolore?</p>
+  </div>
+  <div class="w-full rounded">
+    <img src="./images/pic_4.png" alt="neu main">
+</div>
+</div>
 </div>
 
 
-<!--EVENT SECTION START-->
 <style>
-/* .event{
-  margin: 200px auto;
-} */
+  .main-format {
+    height: 55%;
+  }
+  .height-sec {
+    height: 25%;
+  }
 
-.event-content{
-  box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 0.3),
-  inset 10px 10px 10px -10px
-  rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  background: #fff !important;
-  margin-top: -70px !important;
-  margin-left: 20px !important;
-  position: absolute;
-}
+  .height-third {
+    height: 80%;
+  }
 
-.event-content h4{
-  font-weight: bold;
-  font-style: italic;
-  font-size: 20px;
-  margin-bottom: 5px;
-}
-
-.event-content span{
-  font-style: italic;
-  font-size: 15px;
-}
-
-.event-content a{
-  text-transform: uppercase;
-  font-weight: bold;
-  margin-top: 10px !important;
-}
-
-.event img{
-  transition: 0.6s;
-}
-
-.event img:hover{
-  transform: scale(1.1);
-  cursor: pointer;
-}
-.event .col-sm-5{
-  /* margin-bottom: 200px !important; */
-}
-
-.picture-style{
-  height: 500px;
-  width: 500px;
-}
-
-.box-style{
-  height: 150px;
-  width: 500px;
-}
-
-
+  .catamaran {
+        font-family: 'Catamaran', sans-serif;
+        /* color: #791616; */
+    }
 </style>

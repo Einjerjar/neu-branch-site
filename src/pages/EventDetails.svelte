@@ -21,6 +21,7 @@
 $: event_details = events.entries.filter((entry) => params.id === entry._id)[0];
 
 </script>
+
 <!-- <div>{params.id}</div> -->
 <div class="container mx-auto p-8">
     <div class="xl:(flex flex-row-reverse items-center space-x-4 w-full)">
