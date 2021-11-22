@@ -8,6 +8,7 @@ import Undergrad from "@/pages/Undergrad.svelte";
 import SeniorHigh from "@/pages/SeniorHigh.svelte";
 import BasicEducation from "@/pages/BasicEducation.svelte";
 import Visit from "@/pages/Visit.svelte";
+import EventsInfo from "@/pages/EventsInfo.svelte";
 
 
 import Events from "@/pages/Events.svelte";
@@ -27,7 +28,6 @@ export const secondaryLinks = [
   { label: 'Resources', path: '/resources', component: Home },
   { label: 'Visit', path: '/visit', component: Visit },
   { label: 'Events', path: '/events', component: Events },
-  // { label: 'Alumnae', path: '/alumnae', component: Home },
 ]
 
 // export const procedureLinks = [
@@ -38,6 +38,7 @@ export const admissionLinks = [
   { label: 'SeniorHigh', path: '/admission/seniorHigh', component: SeniorHigh },
   { label: 'Undergrad', path: '/admission/undergrad', component: Undergrad },
   { label: 'Procedure', path: '/admission/procedure', component: Procedure },
+  { label: 'EventsInfo', path: '/eventsInfo', component: EventsInfo },
 ]
 
 export const links = [

@@ -1,4 +1,5 @@
 <script>
+  import { admissionLinks } from "@/route_data";
   import Banner from "@/components/admission/Banner.svelte";
   import ProcedureButton from "@/components/admission/ProcedureButton.svelte";
 
@@ -16,7 +17,7 @@
         <!-- object-bottom	 -->
 
         <div class="float-left">
-          <ProcedureButton message={'MORE DETAILS'} page={'#/'} isRounded={false} isBold={false} isSmallRounded={true}/>
+          <ProcedureButton message={'MORE DETAILS'} page={`#${admissionLinks[4].path}`} isRounded={false} isBold={false} isSmallRounded={true}/>
         </div>
 
       </div>
