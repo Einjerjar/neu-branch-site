@@ -4,6 +4,8 @@
   import Branch from "@/components/admission/Branch.svelte";
   import EventsCards from "@/components/admission/EventsCards.svelte";
   import Header from "@/components/events/Header.svelte";
+  import { admissionLinks } from '@/route_data';
+
 
   let counter = 0;
 
@@ -72,10 +74,10 @@
 
   <div class="mb-20 mt-6 mx-60 grid grid-cols-2 place-content-center">
     <div>
-      <ProcedureButton message={'MORE DETAILS'} page={'#/'} isRounded={false} isBold={false} isSmallRounded={true}/>
+      <ProcedureButton message={'MORE DETAILS'} page={`#${admissionLinks[4].path}`} isRounded={false} isBold={false} isSmallRounded={true}/>
     </div>
     <div>
-      <ProcedureButton message={'MORE DETAILS'} page={'#/'} isRounded={false} isBold={false} isSmallRounded={true}/>
+      <ProcedureButton message={'MORE DETAILS'} page={`#${admissionLinks[4].path}`} isRounded={false} isBold={false} isSmallRounded={true}/>
     </div>
   </div>
 
