@@ -45,39 +45,53 @@
 <div class="home mb-20">
   <Banner message={"Events"} srcImage='./images/neu_mainfront.jpg'/>
 
-  <div class="mt-15 mb-2 mx-60 catamaran overflow-hidden">
-    <div class="grid grid-cols-2 gap-5 place-content-center">
+  <div class="container mx-auto px-4 my-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 place-content-center">
 
-      <div class="max-w-full max-h-ful w-full h-full">
-        <div class="main-format bg-contain relative flex flex-wrap">
-          <img class='max-w-full max-h-full object-cover' src="./images/neu_mainfront.jpg" alt="neu main"/>
+      <div class="w-full h-full">
+        <div class="w-full h-100 bg-red-300 bg-cover bg-center rounded" style={`background-image: url('./images/neu_mainfront.jpg')`}></div>
+
+        <div class="mt-5 pr-8 max-w-full">
+          <h1 class="pb-5 text-3xl font-light text-gray-700 font-gentium font-bold font-italic text-center">
+            New Era University Main Campus
+          </h1>
+          <p class="text-gray-400 font-nunito">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem sequi aspernatur voluptatum dicta, tempore provident et fuga commodi quasi neque, exercitationem a ullam pariatur blanditiis! Velit, modi perspiciatis voluptates delectus nihil aliquid reiciendis blanditiis eius dolorem cupiditate, necessitatibus consequuntur officiis ut iusto maiores aut, quo earum? Veniam enim sint ipsum.
+          </p>
         </div>
-
-        <div class="mt-5 pr-8 max-w-full max-h-full">
-          <h1 class="pb-5 text-3xl font-light text-gray-700 uppercase">New Era University Main Campus</h1>
-          <p class=" text-sm text-gray-600 pb-7">Loremtus, ve ipsum dolor sit amet consectetur, adipisicing elit. Id t. Id masddddddatae dolocupicidunt inventore, doloremque iste eligendi sed dignissimos cupiditatsddddddatae dolorasdadadume quis a aliquidasdadasd magni veniam esse, naritatis at. Alias.</p>
-
+        <div class="mt-8 text-right">
+          <ProcedureButton page={`#${admissionLinks[4].path}`} isRounded={false} isBold={false} isSmallRounded={true}>
+            More Details
+          </ProcedureButton>
         </div>
       </div>
 
       <div>
-        <div class=" grid grid-cols-2 overflow-hidden">
-
+        <div class=" grid grid-cols-1 md:grid-cols-2 gap-4">
             {#each imgSources as opt}
-              <div><img src="./images/pic_1.png" alt="Italian Trulli"></div>
+              <div class="min-h-75 bg-red-300 group relative cursor-pointer">
+                <div class="w-full h-full bg-cover bg-center rounded overflow-hidden shadow-md border-b-4 border-b-primary-900" style={`background-image: url('images/pic_1.png')`}>
+                  <div class="w-full h-full bg-gradient-to-t from-primary-400 to-transparent opacity-50 transform transform-scale origin-bottom transition transition-transform group-hover:scale-y-100 scale-y-0"></div>
+                </div>
+                <div class="absolute -bottom-2 -right-2 w-4/5 min-h-30 bg-white shadow-md p-4 border-right-4 border-right-primary-900 rounded-r transition transition-transform transform transform-scale group-hover:scale-105 origin-bottom-right">
+                  <div class="font-gentium font-bold font-italic text-2xl text-dark-700 truncate">
+                    Event Title asd asd asd asd asd asd as
+                  </div>
+                  <div class="text-dark-400 relative leading-6 max-h-18 overflow-hidden">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dicta reprehenderit iste nihil nam hic!
+                    <div class="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-white to-transparent"></div>
+                  </div>
+                </div>
+              </div>
             {/each}
+        </div>
+        <div class="mt-8 text-right">
+          <ProcedureButton page={`#${admissionLinks[4].path}`} isRounded={false} isBold={false} isSmallRounded={true}>
+            More Details
+          </ProcedureButton>
         </div>
       </div>
 
-    </div>
-  </div>
-
-  <div class="mb-20 mt-6 mx-60 grid grid-cols-2 place-content-center">
-    <div>
-      <ProcedureButton message={'MORE DETAILS'} page={`#${admissionLinks[4].path}`} isRounded={false} isBold={false} isSmallRounded={true}/>
-    </div>
-    <div>
-      <ProcedureButton message={'MORE DETAILS'} page={`#${admissionLinks[4].path}`} isRounded={false} isBold={false} isSmallRounded={true}/>
     </div>
   </div>
 
@@ -111,8 +125,10 @@
         {/if}
       {/each}
     </div>
-    <div>
-      <ProcedureButton message={"ALL PROJECT"} widthWide={true} isFullWidth={true} isSmallRounded={true} isRounded={false}></ProcedureButton>
+    <div class="mt-4">
+      <ProcedureButton widthWide={true} isFullWidth={true} isSmallRounded={true} isRounded={false} isBold={false}>
+        All Projects
+      </ProcedureButton>
     </div>
   </div>
 

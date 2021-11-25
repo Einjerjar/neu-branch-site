@@ -7,6 +7,7 @@ specifiers:
   svelte-spa-router: ^3.2.0
   vite: ^2.6.4
   vite-plugin-windicss: ^1.4.12
+  windicss: ^3.2.1
 
 devDependencies:
   '@sveltejs/vite-plugin-svelte': 1.0.0-next.30_svelte@3.44.0+vite@2.6.13
@@ -15,6 +16,7 @@ devDependencies:
   svelte-spa-router: 3.2.0
   vite: 2.6.13
   vite-plugin-windicss: 1.4.12_vite@2.6.13
+  windicss: 3.2.1
 
 packages:
 
@@ -85,7 +87,7 @@ packages:
     dependencies:
       debug: 4.3.2
       jiti: 1.12.9
-      windicss: 3.2.0
+      windicss: 3.2.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -99,7 +101,7 @@ packages:
       fast-glob: 3.2.7
       magic-string: 0.25.7
       micromatch: 4.0.4
-      windicss: 3.2.0
+      windicss: 3.2.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -153,6 +155,7 @@ packages:
     resolution: {integrity: sha512-1sCdVAq64yMp2Uhlu+97/enFxpmrj31QHtThz7K+/QGjbHa7JZdBdBsZCzWJuntKHZ+EU178tHYkvjaI9z5sGg==}
     cpu: [arm64]
     os: [android]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -160,6 +163,7 @@ packages:
     resolution: {integrity: sha512-XlL+BYZ2h9cz3opHfFgSHGA+iy/mljBFIRU9q++f9SiBXEZTb4gTW/IENAD1l9oKH0FdO9rUpyAfV+lM4uAxrg==}
     cpu: [x64]
     os: [darwin]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -167,6 +171,7 @@ packages:
     resolution: {integrity: sha512-RZMMqMTyActMrXKkW71IQO8B0tyQm0Bm+ZJQWNaHJchL5LlqazJi7rriwSocP+sKLszHhsyTEBBh6qPdw5g5yQ==}
     cpu: [arm64]
     os: [darwin]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -174,6 +179,7 @@ packages:
     resolution: {integrity: sha512-pf4BEN9reF3jvZEZdxljVgOv5JS4kuYFCI78xk+2HWustbLvTP0b9XXfWI/OD0ZLWbyLYZYIA+VbVe4tdAklig==}
     cpu: [x64]
     os: [freebsd]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -181,6 +187,7 @@ packages:
     resolution: {integrity: sha512-j9PUcuNWmlxr4/ry4dK/s6zKh42Jhh/N5qnAAj7tx3gMbkIHW0JBoVSbbgp97p88X9xgKbXx4lG2sJDhDWmsYQ==}
     cpu: [arm64]
     os: [freebsd]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -188,6 +195,7 @@ packages:
     resolution: {integrity: sha512-imtdHG5ru0xUUXuc2ofdtyw0fWlHYXV7JjF7oZHgmn0b+B4o4Nr6ZON3xxoo1IP8wIekW+7b9exIf/MYq0QV7w==}
     cpu: [ia32]
     os: [linux]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -195,6 +203,7 @@ packages:
     resolution: {integrity: sha512-O7fzQIH2e7GC98dvoTH0rad5BVLm9yU3cRWfEmryCEIFTwbNEWCEWOfsePuoGOHRtSwoVY1hPc21CJE4/9rWxQ==}
     cpu: [x64]
     os: [linux]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -202,6 +211,7 @@ packages:
     resolution: {integrity: sha512-R2Jij4A0K8BcmBehvQeUteQEcf24Y2YZ6mizlNFuJOBPxe3vZNmkZ4mCE7Pf1tbcqA65qZx8J3WSHeGJl9EsJA==}
     cpu: [arm]
     os: [linux]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -209,6 +219,7 @@ packages:
     resolution: {integrity: sha512-bkGxN67S2n0PF4zhh87/92kBTsH2xXLuH6T5omReKhpXdJZF5SVDSk5XU/nngARzE+e6QK6isK060Dr5uobzNw==}
     cpu: [arm64]
     os: [linux]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -216,6 +227,7 @@ packages:
     resolution: {integrity: sha512-UDNO5snJYOLWrA2uOUxM/PVbzzh2TR7Zf2i8zCCuFlYgvAb/81XO+Tasp3YAElDpp4VGqqcpBXLtofa9nrnJGA==}
     cpu: [mips64el]
     os: [linux]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -223,6 +235,7 @@ packages:
     resolution: {integrity: sha512-xu6J9rMWu1TcEGuEmoc8gsTrJCEPsf+QtxK4IiUZNde9r4Q4nlRVah4JVZP3hJapZgZJcxsse0XiKXh1UFdOeA==}
     cpu: [ppc64]
     os: [linux]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -230,6 +243,7 @@ packages:
     resolution: {integrity: sha512-d+Gr0ScMC2J83Bfx/ZvJHK0UAEMncctwgjRth9d4zppYGLk/xMfFKxv5z1ib8yZpQThafq8aPm8AqmFIJrEesw==}
     cpu: [x64]
     os: [netbsd]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -237,6 +251,7 @@ packages:
     resolution: {integrity: sha512-OuCYc+bNKumBvxflga+nFzZvxsgmWQW+z4rMGIjM5XIW0nNbGgRc5p/0PSDv0rTdxAmwCpV69fezal0xjrDaaA==}
     cpu: [x64]
     os: [openbsd]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -244,6 +259,7 @@ packages:
     resolution: {integrity: sha512-gUkgivZK11bD56wDoLsnYrsOHD/zHzzLSdqKcIl3wRMulfHpRBpoX8gL0dbWr+8N9c+1HDdbNdvxSRmZ4RCVwg==}
     cpu: [x64]
     os: [sunos]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -251,6 +267,7 @@ packages:
     resolution: {integrity: sha512-C1xJ54E56dGWRaYcTnRy7amVZ9n1/D/D2/qVw7e5EtS7p+Fv/yZxxgqyb1hMGKXgtFYX4jMpU5eWBF/AsYrn+A==}
     cpu: [ia32]
     os: [win32]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -258,6 +275,7 @@ packages:
     resolution: {integrity: sha512-6+EXEXopEs3SvPFAHcps2Krp/FvqXXsOQV33cInmyilb0ZBEQew4MIoZtMIyB3YXoV6//dl3i6YbPrFZaWEinQ==}
     cpu: [x64]
     os: [win32]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -265,6 +283,7 @@ packages:
     resolution: {integrity: sha512-xTqM/XKhORo6u9S5I0dNJWEdWoemFjogLUTVLkQMVyUV3ZuMChahVA+bCqKHdyX55pCFxD/8v2fm3/sfFMWN+g==}
     cpu: [arm64]
     os: [win32]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -324,6 +343,7 @@ packages:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -533,7 +553,7 @@ packages:
       chalk: 4.1.2
       debug: 4.3.2
       vite: 2.6.13
-      windicss: 3.2.0
+      windicss: 3.2.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -562,8 +582,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /windicss/3.2.0:
-    resolution: {integrity: sha512-z0q789VZXKdRBrAsfkR+1vOYCb7bS1kec1hyaulT4NClNgO9zGObWbiN+9Jwk0Iw7CLdk/QCB/WCF+zVmr0WpQ==}
+  /windicss/3.2.1:
+    resolution: {integrity: sha512-LusrIrryBFHAPQ/OOTbS4EWWuzI6eGeJglI9nQ3kDBr1cqH69NWt8Z8q59f9kTkgptXroejmWfksWwqgHs8EVw==}
     engines: {node: '>= 12'}
     hasBin: true
     dev: true

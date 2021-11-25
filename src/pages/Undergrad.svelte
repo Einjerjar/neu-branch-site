@@ -16,7 +16,7 @@
 <div class="mx-60 catamaran">
     <BigHeader bigTitle={bigTitle}/>
 
-    <div class="min-h-full mx-auto max-h-full flex  justify-center text-rose-900 font-medium">
+    <div class="min-h-full mx-auto max-h-full flex  justify-center text-primary-900 font-medium">
         <div class="items-center">
             <p class="text-black text-center ">
                 {bigTitleContent}

@@ -12,3 +12,19 @@
 .font-shelley {
   font-family: Shelley;
 }
+
+.font-gentium {
+  font-family: 'Gentium Book Basic', serif;
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+.font-pridi {
+  font-family: 'Pridi', serif;
+}
+
+.font-nunito {
+  font-family: 'Nunito Sans', sans-serif;
+}
