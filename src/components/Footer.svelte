@@ -64,7 +64,7 @@
               </div>
               <ul class="flex flex-col">
                 {#each links.children as link}
-                  <a href={link.path}>{link.name}</a>
+                  <a href={link.path} class="hover:(text-primary-300)">{link.name}</a>
                 {/each}
               </ul>
             </div>
@@ -78,7 +78,7 @@
           <ul class="flex flex-wrap justify-center mb-4">
             {#each social_links as link}
               <li>
-                <a href={link.path} class="mx-2">
+                <a href={link.path} class="mx-2 hover:text-primary-300">
                   <i class={`fab ${link.icon} text-3xl`}></i>
                 </a>
               </li>
@@ -88,7 +88,7 @@
           <ul class="flex flex-col text-right mx-4">
             {#each extra_links as link}
               <li>
-                <a href={link.path} class="uppercase font-bold">{link.name}</a>
+                <a href={link.path} class="uppercase font-bold hover:text-primary-300">{link.name}</a>
               </li>
             {/each}
           </ul>

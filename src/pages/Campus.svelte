@@ -16,15 +16,7 @@
   }
 
   //text sources
-  const descr = "New era University openede its New Era University - General Santos City Branch in June 1994, at first offereing the Prescgool Eduycation Program. \
-                Elementary and secondaty edu Education Programs were opened soon after. It was on June 5, 1998, \
-                when the new school building situated in a half-hectare land \
-                area was inaugurated. The school is now fully equipped to implement \
-                the K to 12 program with Senior High School. NEU – GSC marked \
-                another significant event of its history in March 2018 upo2xl\
-                receiving Government Recognition for the Bachelor of Science \
-                courses: Real Estate Management, Entrepreneurship, Accounting \
-                Technology, and Accountancy."
+  const descr = "New era University openede its New Era University - General Santos City Branch in June 1994, at first offereing the Prescgool Eduycation Program. Elementary and secondaty edu Education Programs were opened soon after. It was on June 5, 1998, when the new school building situated in a half-hectare land area was inaugurated. The school is now fully equipped to implement the K to 12 program with Senior High School. NEU – GSC marked another significant event of its history in March 2018 upon receiving Government Recognition for the Bachelor of Science courses: Real Estate Management, Entrepreneurship, Accounting Technology, and Accountancy."
 
   const mission = "Provide quality education anchored on Christian values with the prime purpose of bringing honor and glory to God."
   const vision = "A world-class Institution of learning with a unique Christian culture of excellence, discipline, and service to humanity."
@@ -32,38 +24,34 @@
 
 </script>
 
-<div class="sm:page-home pageBG_redColor my-auto pb-20">
-  <div class = "bg-opacity-90 mx-auto flex shadow-2xl px-15 py-0 bg-cyan-900 <lg:flow-root px-0">
-    <div class="container mx-auto flex px-4 py-8 flex-wrap children:my-8">
-      <div class = "flex-grow">
-        <div class="flex flex-col items-center">
-          <div class="inline-block w-100 md:w-120 h-80 bg-white rounded shadow-lg bg-center bg-cover" style={`background-image: url(${campusMainImage});`}></div>
-          <p class = "my-4 text-sm font-sans w-100 md:w-120 text-white">
+<div class="pageBG_redColor overflow-hidden">
+  <div class ="bg-opacity-90 mx-auto flex shadow-2xl px-15 bg-cyan-900">
+    <div class="container mx-auto flex px-4 py-8 flex-col justify-center lg:(justify-around flex-row) children:my-8">
+        <div class="w-full lg:w-2/5">
+          <img src={campusMainImage} alt="campus" class="w-full h-auto">
+          <p class="my-4 text-sm font-sans text-white">
             {descr}
           </p>
         </div>
-      </div>
-
-      <div class="flex-grow">
-        <div class="rounded relative overflow-hidden h-full w-100 md:w-120 mx-auto min-h-120">
-          <div class="h-full bg-red-500 bg-center bg-cover" style="background-image: url('./images/sample_map.png');"></div>
-          <div class="absolute top-0 left-0 w-full bg-primary-900 px-8 py-4 bg-opacity-75 text-center text-white font-bold">
+        
+        <div class="rounded w-full lg:w-2/5">
+          <div class="w-full bg-primary-900 py-4 bg-opacity-75 text-center text-white font-bold">
             Campus Location
           </div>
-          <button on:click={isClicked} class= "w-60 absolute bottom-4 transform -translate-x-1/2 left-1/2 px-6 py-3 text-white font-bold rounded-4xl text-2xl bg-primary-900 hover:bg-primary-800 hover:shadow-md" type="button">GET DIRECTIONS</button>
+          <div class="w-full">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15439.444240708332!2d121.0580216!3d14.6638252!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8ce91e09b39981b7!2sNew%20Era%20University!5e0!3m2!1sen!2sph!4v1639151039253!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen title='neu' loading="lazy"></iframe>
+          </div>
         </div>
-      </div>
     </div>
   </div>
-
   <!-- <Divider/> -->
 
   <div class="container bg-white bg-opacity-85 mx-auto shadow-lg my-16 md:rounded-md">
     <div class= "flex flex-wrap items-center justify-center children:mx-4 children:my-2 mx-auto py-8">
       <img class="w-30" src = {neuLOGO} alt=logo>
-      <h1 class = "text-center tracking-wide font-shelley text-7xl text-shadow-lg">New Era University</h1>
+      <h1 class = "text-center tracking-wide font-shelley text-[6vw] sm:text-7xl text-shadow-lg">New Era University</h1>
     </div>
-    <div class = "flex flex-wrap items-center justify-center my-10 <md:flex-col <lg:flex-wrap">
+    <div class = "flex flex-wrap items-center justify-center my-10 <md:flex-col <lg:flex-wrap children:max-w-100">
       <MVP desc = {mission} title = 'MISSION'/>
       <MVP desc = {philo} title = 'PHILOSOPHY'/>
       <MVP desc = {vision} title = 'VISION'/>
@@ -73,13 +61,12 @@
   <!-- <Divider/> -->
 
   <div class= "container bg-black bg-opacity-80 mx-auto md:rounded-md px-8 py-6 text-white">
-    <div class="text-8xl <md:text-6xl font-mono font-bold">
-      <div>GOALS &</div>
-      <div>OBJECTIVES</div>
+    <div class=" text-[6vw] sm:text-8xl font-mono font-bold">
+      <div>GOALS & OBJECTIVES</div>
     </div>
     <div class="flex flex-wrap items-center justify-content-between">
       <div class="flex-grow">
-        <ul class= "my-10 ml-8 list-circle children:my-2">
+        <ul class= "my-10 ml-8 list-circle text-[3vw] sm:text-base children:my-2">
           <li>Impart value-laden education to the total development of man.</li>
           <li>Offer curricula responsive to the needs of the time.</li>
           <li>Optimize learning through the adoption and utilization of appropriate instructional methods and resources.</li>

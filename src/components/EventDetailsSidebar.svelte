@@ -6,7 +6,7 @@
 
   const MAX_SUB_POST = 2
 
-  let a_other_events = async () => {
+  $: a_other_events = async () => {
     let f = await fetch(
       re_param("collections/get/News", {
         limit: MAX_SUB_POST,
@@ -19,7 +19,7 @@
     return j || events
   }
 
-  let a_announce_data = async () => {
+  $: a_announce_data = async () => {
     let f = await fetch(
       re_param("collections/get/News", {
         limit: MAX_SUB_POST,

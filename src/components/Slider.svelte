@@ -70,7 +70,7 @@
 
 <style lang="postcss">
   .slider-btn {
-    @apply absolute w-16 transition transition=opacity h-full flex items-center justify-center text-2xl cursor-pointer bg-primary-700 bg-opacity-0 hover:(!bg-opacity-30 text-white) text-primary-900 z-99 group-hover:bg-opacity-10;
+    @apply absolute top-2/5 w-16 transition transition-opacity h-24 flex items-center justify-center text-2xl cursor-pointer bg-primary-700 bg-opacity-0 hover:(!bg-opacity-30 text-white) text-primary-900 z-99 group-hover:bg-opacity-10;
   }
   .cmp-slider {
     @apply relative h-100 w-full flex overflow-hidden my-4;

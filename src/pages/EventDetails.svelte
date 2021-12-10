@@ -8,13 +8,13 @@
 
   export let params = {};
 
-  let a_local_event = async() => {
+  $: a_local_event = async() => {
     let f = await fetch(re_param('collections/get/News', {
       limit: 5,
       'filter[_id]': params.id
     }))
     let j = await f.json()
-
+    console.log(j)
     return j.entries[0] || events.entries[0]
   }
 

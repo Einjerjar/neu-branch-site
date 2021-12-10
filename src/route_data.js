@@ -12,7 +12,7 @@ import EventsInfo from "@/pages/EventsInfo.svelte";
 
 
 import Events from "@/pages/Events.svelte";
-import Events2 from "@/pages/Events.svelte";
+import Events2 from "@/pages/Events2.svelte";
 
 
 
