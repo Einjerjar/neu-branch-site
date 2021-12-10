@@ -38,7 +38,9 @@
 </script>
 
 <div class="page-home">
-  <NewsTicker/>
+  <div class="hidden md:block">
+    <NewsTicker/>
+  </div>
   <VideoHeader />
   <div class="container mx-auto px-4">
     <div class="iconcard-section flex flex-wrap justify-center children:mx-4 -mt-8 <md:(max-w-4/5 mx-auto) md:(max-w-screen-lg -mt-10 mx-auto)" >

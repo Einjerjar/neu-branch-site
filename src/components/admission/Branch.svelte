@@ -3,15 +3,15 @@
   export let branchName = 'main';
 </script>
 
-<div class="relative mb-1 group relative overflow-hidden cursor-default">
+<div class="relative mb-4 group relative overflow-hidden cursor-default w-full">
   <div class="w-full absolute -top-10 left-0 h-10 bg-red-900 shadow-2xl"></div>
-  <div class="h-150 bg-primary-200 bg-cover bg-center" style={`background-image: url(${branchImage});`}></div>
+  <div class="h-[60vw] max-h-150 bg-primary-200 bg-cover bg-center bg-no-repeat" style={`background-image: url(${branchImage});`}></div>
   <div class="absolute top-0 w-full h-full flex-col flex items-center justify-center bg-gradient-to-t from-primary-900 to-transparent transform scale-y-0 group-hover:scale-y-100 transition transition-color-transform origin-bottom group-hover:opacity-60 duration-200 opacity-0"></div>
   <div class="absolute w-full h-full top-0 left-0 flex flex-col items-center justify-end text-white transition transition-opacity opacity-0 group-hover:opacity-100 text-shadow-md pb-8 duration-400">
-    <div class="desc text-8xl text-center font-shelley">
+    <div class="desc text-5xl sm:text-6xl md:text-7xl text-center font-shelley">
       New Era University
     </div>
-    <div class="text-4xl font-nunito">
+    <div class="text-2xl sm:text-3xl md:text-4xl font-nunito">
         {branchName}
     </div>
   </div>

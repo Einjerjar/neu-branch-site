@@ -1,5 +1,6 @@
 <script>
     import Branch from "@/components/admission/Branch.svelte";
+    import { fade } from 'svelte/transition'
 
     const branchInfo = [
         {branchName:'Quezon City (Main Branch)', imgSource:'./images/NEU_MAIN.png', id:0},
@@ -10,13 +11,13 @@
 
 </script>
 
-<div class="w-full h-25 bg-primary-900 text-white text-5xl font-bold py-7 text-center fade-in">
-    UNIVERSITY BRANCHES
+<div class="w-full h-15 bg-primary-900 text-xl text-white uppercase font-semibold py-8 flex items-center justify-center md:(text-2xl h-18) lg:(text-4xl h-25)" in:fade={{duration: 600}}>
+    university branches
 </div>
 
-<div class=" bg-gray-200 fade-in">
+<div class="bg-gray-200" in:fade={{duration: 600}}>
     <div class="container mx-auto shadow-lg bg-white rounded py-5">
-        <div class="mx-auto items-center max-w-screen-md shadow-lg">
+        <div class="mx-auto items-center max-w-screen-md shadow-lg bg-white p-4 md:p-0">
             {#each branchInfo as branch (branch.id)}
                 <Branch branchImage={branch.imgSource} branchName={branch.branchName}></Branch>
 	        {/each}
@@ -27,38 +28,36 @@
         <!-- PLEASE START HERE -->
 
 
-        <div class="text-primary-900 text-5xl font-bold border-b-6 border-primary-900 py-8 mb-5 mt-5 py-7 text-left px-25 fade-in">
+        <div class="text-primary-900 text-2xl sm:text-3xl md:text-4xl font-bold border-b-6 p-8 mt-4 border-primary-900">
             School Facilities
         </div>
 
-        <div class="container2">
-            <div class="text-center py-50 p-15">
-                <div class="font-bold mb-1">
-                    Professional Schools Library
-                </div>
-                <p>Alorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it</p>
-            </div>
-            <div class="justify-center p-15">
-                <img class="display-block ml-auto position-relative" src="http://www.neu.edu.ph/law/wp-content/uploads/2017/01/Law-Library-3.jpg" alt=libLaw>
-            </div>
 
-            <div class="justify-center p-15">
-                <img class="display-block ml-auto position-relative" src="http://www.neu.edu.ph/law/wp-content/uploads/2017/01/Law-Library-3.jpg" alt=libLaw>
-            </div>
-            <div class="text-center py-50 p-15">
-                <div class="font-bold mb-1">
-                    Professional Schools Library
+        <div class="md:children:flex facility">
+            {#each branchInfo as a }
+            <div class="p-8 items-center">
+                <div class="md:w-2/4 p-4">
+                    <h4 class="text-2xl font-semibold mb-2">
+                        Professional Schools Library
+                    </h4 >
+                    <p>Alorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it</p>
                 </div>
-                <p>Alorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it</p>
+                <div class="md:w-2/4">
+                    <img class="w-full h-auto" src="http://www.neu.edu.ph/law/wp-content/uploads/2017/01/Law-Library-3.jpg" alt=libLaw>
+                </div>
             </div>
+            {/each}
+        
         </div>
-
     </div>
 
 </div>
 
 
 <style>
+    .facility div:nth-child(even) {
+        @apply flex-row-reverse;
+    }
     .container2{
         margin: 20px auto;
         background-color:white;

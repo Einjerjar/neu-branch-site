@@ -52,7 +52,7 @@
         paid.
       </p>
       <div class="block text-center md:text-left my-4">
-        <ProcedureButton message='See More' page={'#/'}/>
+        <ProcedureButton page={"#/admission/undergrad"}>See More</ProcedureButton>
       </div>
     </Article>
 
@@ -65,9 +65,8 @@
         Personal Information Sheet thru this link NEU Automate for Application.
       </p>
       <div class="block text-center md:text-left my-4">
-        <ProcedureButton message='See More' page={'#/'}/>
+        <ProcedureButton page={"#/admission/seniorHigh"}>See More</ProcedureButton>
       </div>
-
     </Article>
 
     <Article title="Admission Procedure (Non-NEU SHS Graduate)">
@@ -79,7 +78,7 @@
         Personal Information Sheet thru this link NEU Automate for Application.
       </p>
       <div class="block text-center md:text-left my-4">
-        <ProcedureButton message='See More' page={'#/'}/>
+        <ProcedureButton page={"#/admission/seniorHigh"}>See More</ProcedureButton>
       </div>
     </Article>
   </div>

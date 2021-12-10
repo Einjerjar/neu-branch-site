@@ -12,9 +12,9 @@
 </script>
 
 <div >
-    <button class="border-2 border-primary-800 px-4 py-2 inline-block  rounded-sm btn-special" class:bg-transparent={true} class:btn-default={true} class:font-bold={isBold}  class:w-full={isFullWidth} class:rounded-md={isRounded} class:rounded-sm={isSmallRounded} class:py-4={widthWide} on:click={goToPage}>
+    <a class="border-2 border-primary-800 px-4 py-2 inline-block  rounded-sm btn-special" class:bg-transparent={true} class:btn-default={true} class:font-bold={isBold}  class:w-full={isFullWidth} class:rounded-md={isRounded} class:rounded-sm={isSmallRounded} class:py-4={widthWide} href={page}>
         <slot></slot>
-    </button>
+    </a>
 </div>
 
 <style lang="postcss">
