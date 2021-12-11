@@ -115,6 +115,7 @@ let a_announce_data = async() => {
 
   <!-- four pictures with New Era Main Campus -->
   <div class="container mx-auto px-20 my-16">
+    <Header title={"Featured"}/>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 place-content-center">
       <div class="w-full h-full">
         <div class="w-full h-[60vw] max-h-100 bg-red-300 bg-cover bg-center rounded"
@@ -128,11 +129,6 @@ let a_announce_data = async() => {
           <p class="text-gray-400 text-[3vw] sm:text-base font-nunito">
             {neuMainSrcContent}
           </p>
-        </div>
-        <div class="mt-8 text-right">
-          <ProcedureButton page={`#${admissionLinks[4].path}`} isRounded={false} isBold={false} isSmallRounded={true}>
-            More Details
-          </ProcedureButton>
         </div>
       </div>
       <div>
@@ -160,11 +156,6 @@ let a_announce_data = async() => {
           </div>
           {/each}
           {/await}
-        </div>
-        <div class="mt-8 text-right">
-          <ProcedureButton page={`#${admissionLinks[4].path}`} isRounded={false} isBold={false} isSmallRounded={true}>
-            More Details
-          </ProcedureButton>
         </div>
       </div>
 
@@ -203,7 +194,7 @@ let a_announce_data = async() => {
         {/each}
       </div>
         {#if currentEItems < e_data.entries.length}
-          <div class="mt-4 capitalize flex items-center justify-center">
+          <div class="mt-8 capitalize flex items-center justify-center">
             <button class="border-2 border-primary-800 border-solid text-primary-800 px-4 py-2 inline-block rounded-sm transition transition-colors font-nunito capitalize hover:(text-white border-2 border-solid bg-primary-800)" on:click={() => currentEItems += 4}>
               load more events
             </button>
@@ -234,7 +225,7 @@ let a_announce_data = async() => {
         {/each}
       </div>
         {#if currentAItems < a_data.entries.length}
-          <div class="mt-4 capitalize flex items-center justify-center">
+          <div class="mt-8 capitalize flex items-center justify-center">
             <button class="border-2 border-primary-800 border-solid text-primary-800 px-4 py-2 inline-block rounded-sm transition transition-colors font-nunito capitalize hover:(text-white border-2 border-solid bg-primary-800)" on:click={() => currentAItems += 4}>
               load more articles
             </button>
