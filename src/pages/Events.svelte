@@ -47,7 +47,7 @@ import Button from '@/components/events/Button.svelte';
   <!-- <Banner message={"Events"} srcImage='./images/neu_mainfront.jpg'/> -->
 
   <!-- four pictures with New Era Main Campus -->
-  <div class="container mx-auto px-20 mb-16 mt-16">
+  <div class="container mx-auto px-4 mb-16 mt-16">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 place-content-center">
       <div class="w-full h-full">
         <div class="w-full h-[60vw] max-h-100 bg-red-300 bg-cover bg-center rounded"
@@ -74,9 +74,16 @@ import Button from '@/components/events/Button.svelte';
           {#await a_event_data()}
             loading
           {:then e_data} 
-          {#each e_data.entries.slice(0,4) as event }
-            <EventCard article={event}/>
-          {/each}
+            {#each e_data.entries.slice(0,4) as event }
+              <EventCard article={event}/>
+            {/each}
+            {#if currentELimit < e_data.entries.length}
+              <a href='#/eventlist/Events'>
+                <Button>
+                  load more events
+                </Button>
+              </a>
+            {/if}
           {/await}
         </div>
       </div>
@@ -88,7 +95,7 @@ import Button from '@/components/events/Button.svelte';
   </div>
   <div class="container mx-auto">
     <!-- Events Section -->
-    <Header title={"Our Events"}/>
+    <!-- <Header title={"Our Events"}/>
     <div class="my-15 catamaran px-4">
         {#await a_event_data()}
           loading
@@ -106,13 +113,13 @@ import Button from '@/components/events/Button.svelte';
             </a>
           {/if}
         {/await}
-    </div>
+    </div> -->
     <!-- Announcement Section -->
     <Header title={"Latest Articles"}/>
       {#await a_announce_data()}
         loading
       {:then a_data} 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 px-2">
           {#each a_data.entries.slice(0,currentALimit) as a_data}
             <ArticleCard article={a_data}/>
           {/each}
