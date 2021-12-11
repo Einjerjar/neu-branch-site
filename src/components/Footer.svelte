@@ -1,46 +1,8 @@
 <script>
   import { links, external_links } from "@/route_data";
+  import { footer_links } from '@/store'
+import LinkGroup from "./footer/LinkGroup.svelte";
   const year = new Date().getFullYear();
-
-  const link_groups = [
-    {
-      name: 'Campuses',
-      children: [
-        {name: 'NEU Quezon City (Main)', path: '#/'},
-        {name: 'NEU Batangas', path: '#/'},
-        {name: 'NEU Pampanga', path: '#/'},
-        {name: 'NEU General Santos City', path: '#/'},
-        {name: 'NEU Rizal', path: '#/'},
-      ]
-    },
-    {
-      name: 'Other Links',
-      children: [
-        {name: 'School Calendar', path: '#/'},
-        {name: 'Research and Publication', path: '#/'},
-        {name: 'NEUTECH', path: '#/'},
-        {name: 'MCLE', path: '#/'},
-        {name: 'Russian Studies Center', path: '#/'},
-      ]
-    },
-    {
-      name: 'Alumni Affairs',
-      children: []
-    }
-  ]
-
-  const social_links = [
-    {name: 'Facebook', icon: 'fa-facebook-square', path: 'https://facebook.com'},
-    {name: 'Twitter', icon: 'fa-twitter-square', path: 'https://twitter.com'},
-    {name: 'Instagram', icon: 'fa-instagram-square', path: 'https://instagram.com'},
-    {name: 'Youtube', icon: 'fa-youtube-square', path: 'https://youtube.com'},
-  ]
-
-  const extra_links = [
-    {name: 'Automate', path: 'https://automate.neu.edu.ph'},
-    {name: 'NEUVLE', path: 'https://automate.neu.edu.ph'},
-    {name: 'Subscribe', path: 'https://automate.neu.edu.ph'},
-  ]
 </script>
 
 <div class="cmp-footer w-full text-white bg-primary-900">
@@ -57,41 +19,14 @@
       </a>
       <div class="container mx-auto flex flex-col p-4 lg:flex-row">
         <div class="flex flex-wrap justify-center text-center ml-auto">
-          {#each link_groups as links}
-            <div class="w-60 mb-8">
-              <div class="font-bold uppercase text-lg">
-                {links.name}
-              </div>
-              <ul class="flex flex-col">
-                {#each links.children as link}
-                  <a href={link.path} class="hover:(text-primary-300)">{link.name}</a>
-                {/each}
-              </ul>
-            </div>
-          {/each}
+          <LinkGroup links={$footer_links.campus_links} title="Campus Links" />
+          <LinkGroup links={$footer_links.other_links} title="Other Links" />
+          <LinkGroup links={$footer_links.alumni_links} title="Alumni Affairs" />
         </div>
 
         <div class="flex flex-col w-60 mx-auto">
-          <div class="font-bold uppercase text-lg text-center">
-            Social Links
-          </div>
-          <ul class="flex flex-wrap justify-center mb-4">
-            {#each social_links as link}
-              <li>
-                <a href={link.path} class="mx-2 hover:text-primary-300">
-                  <i class={`fab ${link.icon} text-3xl`}></i>
-                </a>
-              </li>
-            {/each}
-          </ul>
-
-          <ul class="flex flex-col text-right mx-4">
-            {#each extra_links as link}
-              <li>
-                <a href={link.path} class="uppercase font-bold hover:text-primary-300">{link.name}</a>
-              </li>
-            {/each}
-          </ul>
+          <LinkGroup links={$footer_links.social_icons} icon_only={true} title="Social Links" />
+          <LinkGroup links={$footer_links.extra_links} title="Extra Links" show_title={false} extra_format={true}/>
         </div>
       </div>
     </div>
