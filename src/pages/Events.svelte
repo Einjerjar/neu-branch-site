@@ -23,7 +23,6 @@
   let a_event_data = async() => {
     let f = await fetch(re_param('collections/get/News', {
       'filter[Type]': 'Events',
-      'limit': currentEItems,
     }))
     
     let j = await f.json()
@@ -34,7 +33,6 @@
   let a_announce_data = async() => {
     let f = await fetch(re_param('collections/get/News', {
       'filter[Type]': 'Announcement',
-      'limit': currentAItems,
     }))
 
     let j = await f.json()
