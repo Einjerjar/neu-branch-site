@@ -70,5 +70,14 @@
         <Slider datas={a_data.entries}/>
       {/await}
     </div>
+    <Divider />
+    <!-- wrappers-wrapper -->
+    <div class="w-full mb-12">
+      <!-- iframe-wrapper -->
+      <div class="<sm:(relative overflow-hidden w-full pt-[56.25%])">
+        <!-- iframe -->
+        <iframe src="https://www.youtube.com/embed/-laHrCrn64U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="<sm:(absolute top-0 left-0 bottom-0 right-0 w-full h-full)" width="100%" height="450"></iframe>
+      </div>
+    </div>
   </div>
 </div>
