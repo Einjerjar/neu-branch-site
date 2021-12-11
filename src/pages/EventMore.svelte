@@ -1,0 +1,70 @@
+<script>
+  import { push } from 'svelte-spa-router'
+  import { re_param } from "@/utils";
+  import { events } from '@/sample_data/events';
+  import ArticleCard from "@/components/events/ArticleCard.svelte";
+  import Header from "@/components/events/Header.svelte";
+  import Divider from "@/components/Divider.svelte";
+
+  export let params = {}
+  if (params.filter == null || params.filter.trim() == '') {
+    push('/eventlist/all')
+  }
+
+  // @ts-ignore
+  $:filter = (params.filter ??= 'all').trim()
+
+  $:page = Math.max(0, parseInt(params.page ??= '1') - 1)
+  
+  const PAGE_LIMIT = 4
+
+  const a_event_data = async(_page) => {
+    const cfg = {
+      'limit': PAGE_LIMIT+1,
+      'skip': _page * (PAGE_LIMIT),
+    }
+    if (filter.length != 0 && filter != 'all') {
+      cfg['filter[Type]'] = filter
+    }
+
+    let f = await fetch(re_param('collections/get/News', cfg))
+    
+    let j = await f.json()
+    console.log('event', j)
+    return j || events
+  }
+
+  $:articles = a_event_data(page)
+</script>
+
+<div class="container mx-auto my-16">
+  {#await articles}
+    Loading
+  {:then a_data} 
+    <div class="mt-8 mb-4">
+      <Header title={filter.length > 0 && filter != 'all' ? filter : 'Latest Articles'} y_pad={false}/>
+    </div>
+    <Divider y_pad={false}/>
+    <div class="px-4 py-2 my-4 grid grid-cols-1 gap-4">
+      {#each a_data.entries.slice(0, PAGE_LIMIT) as article}
+        <ArticleCard {article} />
+      {/each}
+      <div class="flex children:mx-2 justify-center">
+        {#if page > 0}
+          <div class="mt-8 capitalize flex items-center justify-center">
+            <button class="border-2 border-primary-800 border-solid text-primary-800 px-4 py-2 inline-block rounded-sm transition transition-colors font-nunito capitalize hover:(text-white border-2 border-solid bg-primary-800)" on:click={() => push(`/eventlist/${filter}/${page}`)}>
+              Prev
+            </button>
+          </div>
+        {/if}
+        {#if PAGE_LIMIT < a_data.entries.length}
+          <div class="mt-8 capitalize flex items-center justify-center">
+            <button class="border-2 border-primary-800 border-solid text-primary-800 px-4 py-2 inline-block rounded-sm transition transition-colors font-nunito capitalize hover:(text-white border-2 border-solid bg-primary-800)" on:click={() => push(`/eventlist/${filter}/${page+2}`)}>
+              Next
+            </button>
+          </div>
+        {/if}
+      </div>
+    </div>
+  {/await}
+</div>

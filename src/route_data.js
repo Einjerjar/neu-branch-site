@@ -9,6 +9,7 @@ import SeniorHigh from "@/pages/SeniorHigh.svelte";
 import BasicEducation from "@/pages/BasicEducation.svelte";
 import Visit from "@/pages/Visit.svelte";
 import EventsInfo from "@/pages/EventsInfo.svelte";
+import EventMore from "@/pages/EventMore.svelte";
 
 
 import Events from "@/pages/Events.svelte";
@@ -63,6 +64,12 @@ export const links = [
     name: 'Admission Links',
     sublinks: admissionLinks,
     category: 'admission'
+  },
+  {
+    name: 'Post List',
+    path: '/eventlist/:filter?/:page?',
+    component: EventMore,
+    category: 'hidden',
   },
 
   // Footer links

@@ -12,17 +12,17 @@
   import Branch from "@/components/admission/Branch.svelte";
   import Header from "@/components/events/Header.svelte";
   import EventCard from '@/components/events/EventCard.svelte';
+  import ArticleCard from '@/components/events/ArticleCard.svelte';
 
   const branchInfo = {branchName:'General Santos City', imgSource:'./images/NEU_GENSAN.png', id:1};
   const neuMainSrc = './images/neu_mainfront.jpg';
 
-  let currentEItems = 4
-  let currentAItems = 5
+  let currentELimit = 4
   let currentALimit = 4
   let a_event_data = async() => {
     let f = await fetch(re_param('collections/get/News', {
       'filter[Type]': 'Events',
-      'limit': currentEItems,
+      'limit': currentELimit+1,
     }))
     
     let j = await f.json()
@@ -33,7 +33,7 @@
   let a_announce_data = async() => {
     let f = await fetch(re_param('collections/get/News', {
       'filter[Type]': 'Announcement',
-      'limit': currentAItems,
+      'limit': currentALimit+1,
     }))
 
     let j = await f.json()
@@ -74,7 +74,7 @@
             loading
           {:then e_data} 
           {#each e_data.entries.slice(0,4) as event }
-            <EventCard {event}/>
+            <EventCard article={event}/>
           {/each}
           {/await}
         </div>
@@ -94,13 +94,13 @@
           loading
         {:then e_data} 
       <div class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4">
-        {#each e_data.entries.slice(0,currentEItems) as event }
-          <EventCard {event}/>
+        {#each e_data.entries.slice(0,currentELimit) as event }
+          <EventCard article={event}/>
         {/each}
       </div>
-        {#if currentEItems < e_data.entries.length}
+        {#if currentELimit < e_data.entries.length}
           <div class="mt-8 capitalize flex items-center justify-center">
-            <button class="border-2 border-primary-800 border-solid text-primary-800 px-4 py-2 inline-block rounded-sm transition transition-colors font-nunito capitalize hover:(text-white border-2 border-solid bg-primary-800)" on:click={() => currentEItems += 4}>
+            <button class="border-2 border-primary-800 border-solid text-primary-800 px-4 py-2 inline-block rounded-sm transition transition-colors font-nunito capitalize hover:(text-white border-2 border-solid bg-primary-800)" on:click={() => push('/eventlist/Events')}>
               load more events
             </button>
           </div>
@@ -114,24 +114,12 @@
       {:then a_data} 
         <div class="grid md:grid-cols-2 gap-4">
           {#each a_data.entries.slice(0,currentALimit) as a_data}
-            <div class="flex w-full space-x-4">
-              <div class="w-2/5">
-                <a href={'#/events/'+a_data._id}>
-                  <img src={a_data.Banner.path} alt="pp" class="w-full h-full max-w-80 max-h-40 object-cover">
-                </a>
-              </div>
-              <div class="w-3/5">
-                <h3 class="text-base md:text-lg lg:text-xl font-semibold hover:(underline underline-primary-900)">
-                  <a href={'#/events/'+a_data._id}>{a_data.Title}</a>
-                </h3>
-                <p class="hidden lg:block">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, voluptatum.</p>
-              </div>
-            </div>
+            <ArticleCard article={a_data}/>
           {/each}
         </div>
         {#if currentALimit < a_data.entries.length}
           <div class="mt-8 capitalize flex items-center justify-center">
-            <button class="border-2 border-primary-800 border-solid text-primary-800 px-4 py-2 inline-block rounded-sm transition transition-colors font-nunito capitalize hover:(text-white border-2 border-solid bg-primary-800)" on:click={() => currentAItems += 4}>
+            <button class="border-2 border-primary-800 border-solid text-primary-800 px-4 py-2 inline-block rounded-sm transition transition-colors font-nunito capitalize hover:(text-white border-2 border-solid bg-primary-800)" on:click={() => push('/eventlist/all')}>
               load more articles
             </button>
           </div>
