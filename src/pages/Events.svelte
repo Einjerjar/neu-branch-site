@@ -89,23 +89,22 @@ import Button from '@/components/events/Button.svelte';
   <div class="container mx-auto">
     <!-- Events Section -->
     <Header title={"Our Events"}/>
-    <div class="my-15 catamaran">
-      
+    <div class="my-15 catamaran px-4">
         {#await a_event_data()}
           loading
         {:then e_data} 
-      <div class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4">
-        {#each e_data.entries.slice(0,currentELimit) as event }
-          <EventCard article={event}/>
-        {/each}
-      </div>
-        {#if currentELimit < e_data.entries.length}
-          <a href='#/eventlist/Events'>
-            <Button>
-              load more events
-            </Button>
-          </a>
-        {/if}
+          <div class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4">
+            {#each e_data.entries.slice(0,currentELimit) as event }
+              <EventCard article={event}/>
+            {/each}
+          </div>
+          {#if currentELimit < e_data.entries.length}
+            <a href='#/eventlist/Events'>
+              <Button>
+                load more events
+              </Button>
+            </a>
+          {/if}
         {/await}
     </div>
     <!-- Announcement Section -->

@@ -2,14 +2,14 @@
     export let article;
 </script>
 
-<div class="min-h-75 group relative cursor-auto ">
-    <div class="w-full h-[60vw] max-h-full sm:h-full bg-cover bg-center overflow-hidden shadow-md border-b-4 border-b-primary-900" style={`background-image: url(${article.Banner.path});`} >
+<div class={`group relative cursor-auto min-h-60`}>
+    <div class="w-full h-60vw max-h-full sm:h-full bg-cover bg-center overflow-hidden shadow-md border-b-4 border-b-primary-900" style={`background-image: url(${article.Banner.path});`} >
         <!-- for background -->
         <div class="w-full h-full bg-gray-900 opacity-90 transform transform-scale origin-bottom transition transition-transform group-hover:scale-y-100 scale-y-0">
-            <div class="block h-full flex absolute flex-col p-6 text-white">
-                <h2 class="object-center text-xl font-medium pb-2">
+            <div class="block w-full h-full flex absolute flex-col p-6 text-white">
+                <div class="text-xl font-medium pb-2 truncate">
                     {article.Title}
-                </h2>
+                </div>
                 <div class="flex-grow font-nutino">
                     <p class="text-sm text-ellipsis max-h-4.375em mb-8 leading-5 overflow-hidden">
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit.
