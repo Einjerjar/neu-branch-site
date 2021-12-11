@@ -6,6 +6,7 @@
   import {push} from 'svelte-spa-router'
   import { events } from '@/sample_data/events';
   import { re_param } from '@/utils'
+  import { branch_data } from '@/store'
 
   import Banner from "@/components/admission/Banner.svelte";
   import Branch from "@/components/admission/Branch.svelte";
@@ -14,9 +15,6 @@
 
   const branchInfo = {branchName:'General Santos City', imgSource:'./images/NEU_GENSAN.png', id:1};
   const neuMainSrc = './images/neu_mainfront.jpg';
-  const neuMainSrcContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem sequi aspernatur voluptatum dicta, tempore provident et fuga commodi quasi neque, exercitationem a ullam pariatur blanditiis! Velit, modi perspiciatis voluptates delectus nihil aliquid reiciendis blanditiis eius dolorem cupiditate, necessitatibus consequuntur officiis ut iusto maiores aut, quo earum? Veniam enim sint ipsum.'
-
-  let currentBranch = import.meta.env.VITE_BRANCH_ID;
 
   let currentEItems = 4
   let currentAItems = 5
@@ -45,11 +43,10 @@
 
 </script>
 <div class="home mb-20">
-  <Banner message={"Events"} srcImage='./images/neu_mainfront.jpg'/>
+  <!-- <Banner message={"Events"} srcImage='./images/neu_mainfront.jpg'/> -->
 
   <!-- four pictures with New Era Main Campus -->
-  <div class="container mx-auto px-20 my-16">
-    <Header title={"Featured"}/>
+  <div class="container mx-auto px-20 mb-16 mt-16">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 place-content-center">
       <div class="w-full h-full">
         <div class="w-full h-[60vw] max-h-100 bg-red-300 bg-cover bg-center rounded"
@@ -61,14 +58,17 @@
             New Era University
           </h1>
           <h2 class="pb-5 text-[6vw] sm:text-2xl font-light text-gray-700 font-italic text-center">
-            {currentBranch} Campus
+            {$branch_data.name} Campus
           </h2>
           <p class="text-gray-400 text-[3vw] sm:text-base font-nunito">
-            {neuMainSrcContent}
+            {$branch_data.description}
           </p>
         </div>
       </div>
       <div>
+        <div class="my-4">
+          <Header title={"Featured"} y_pad={false}/>
+        </div>
         <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
           {#await a_event_data()}
             loading
