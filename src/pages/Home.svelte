@@ -1,11 +1,11 @@
 <script>
+  import { re_param } from '@/utils';
   import { events } from '@/sample_data/events';
   import Divider from "@/components/Divider.svelte";
-  import IconCard from "@/components/home/IconCard.svelte";
   import VideoHeader from "@/components/home/VideoHeader.svelte";
   import NewsTicker from "@/components/NewsTicker.svelte";
   import Slider from "@/components/Slider.svelte";
-  import { re_param } from '@/utils';
+  import IconCards from '@/components/home/IconCards.svelte';
 
   const MAX_SUB_POST = 4;
 
@@ -44,9 +44,7 @@
   <VideoHeader />
   <div class="container mx-auto px-4">
     <div class="iconcard-section flex flex-wrap justify-center children:mx-4 -mt-8 <md:(max-w-4/5 mx-auto) md:(max-w-screen-lg -mt-10 mx-auto)" >
-      {#each icon_links as link}
-        <IconCard data={link} />
-      {/each}
+      <IconCards />
     </div>
     <Divider />
     <div class="news-section px-4">

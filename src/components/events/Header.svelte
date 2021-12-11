@@ -3,8 +3,7 @@
 </script>
 
 <div class=" text-center my-15 catamaran">
-  <p class="pb-2 text-xs text-gray-600">✕</p>
-  <p class="text-gray-700 text-3xl">{title}</p>
+  <div class="text-gray-700 text-4xl font-gentium">{title}</div>
 </div>
 
 

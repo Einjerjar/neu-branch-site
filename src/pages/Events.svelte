@@ -4,110 +4,43 @@
  -->
 <script>
   import {push} from 'svelte-spa-router'
-  import Banner from "@/components/admission/Banner.svelte";
-  import ProcedureButton from "@/components/admission/ProcedureButton.svelte";
-  import Branch from "@/components/admission/Branch.svelte";
-  import EventsCards from "@/components/admission/EventsCards.svelte";
-  import Header from "@/components/events/Header.svelte";
-  import CardHover from "@/components/events/CardHover.svelte";
-  import { admissionLinks } from '@/route_data';
   import { events } from '@/sample_data/events';
-  import {re_param} from '@/utils'
+  import { re_param } from '@/utils'
 
-  
-  const imgSources = [
-    {
-      imgSource: 'images/pic_1.PNG',
-      eventTitle: 'SENPAI',
-      eventContent: '4th year Computer Science students will share their knowledge, and will give some tips on how to become a better programmer',
-      id: 0},
-    {
-      imgSource: 'images/pic_2.PNG',
-      eventTitle: 'Story Telling',
-      eventContent: 'Wella the Worrier Story telling with Prof. Sally M. Lopez as the speaker.',
-      id: 1},
-    {
-      imgSource: 'images/pic_3.PNG',
-      eventTitle: 'PAtalk',
-      eventContent: 'The New Era Public Administration Society (NEPAS) will conduct a “PAtalk: A Webinar on COVID-19 and Vaccination Response of Quezon City Local Government”',
-      id: 2},
-    {
-      imgSource: 'images/pic_4.PNG',
-      eventTitle: 'Technology Week',
-      eventContent: 'New Era University joins the celebration of National Science & Technology Week',
-      id: 3},
-      {
-      imgSource: 'images/pic_1.PNG',
-      eventTitle: 'SENPAI',
-      eventContent: '4th year Computer Science students will share their knowledge, and will give some tips on how to become a better programmer',
-      id: 4},
-    {
-      imgSource: 'images/pic_1.PNG',
-      eventTitle: 'Story Telling',
-      eventContent: 'Wella the Worrier Story telling with Prof. Sally M. Lopez as the speaker.',
-      id: 5},
-    {
-      imgSource: 'images/pic_1.PNG',
-      eventTitle: 'PAtalk',
-      eventContent: 'The New Era Public Administration Society (NEPAS) will conduct a “PAtalk: A Webinar on COVID-19 and Vaccination Response of Quezon City Local Government”',
-      id: 6},
-    {
-      imgSource: './images/pic_9.jpg',
-      eventTitle: 'Technology Week',
-      eventContent: 'New Era University joins the celebration of National Science & Technology Week',
-      id: 7},
-  ];
+  import Banner from "@/components/admission/Banner.svelte";
+  import Branch from "@/components/admission/Branch.svelte";
+  import Header from "@/components/events/Header.svelte";
+  import EventCard from '@/components/events/EventCard.svelte';
 
-  let imageSources = [
-    '@/images/pic_1.png',
-    '@/images/pic_2.png',
-    '@/images/pic_3.png',
-    '@/images/pic_4.png',
-    '/images/pic_5.png',
-  ];
-
-
-
-  let ourEventsInformation= [
-    {content: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum, eligendi facilis quis fuga, commodi omnis quidem ',
-    imgSrc: './images/pic_1.png',
-    id: 0},
-    {content: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum, eligendi facilis quis fuga, commodi omnis quidem',
-    imgSrc: './images/pic_2.png',
-    id: 1},
-    {content: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum, eligendi facilis quis fuga, commodi omnis quidem',
-    imgSrc: './images/pic_3.png',
-    id: 3},
-    {content: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum, eligendi facilis quis fuga, commodi omnis quidem',
-    imgSrc: './images/pic_4.png',
-    id: 4},
-  ];
   const branchInfo = {branchName:'General Santos City', imgSource:'./images/NEU_GENSAN.png', id:1};
   const neuMainSrc = './images/neu_mainfront.jpg';
   const neuMainSrcContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem sequi aspernatur voluptatum dicta, tempore provident et fuga commodi quasi neque, exercitationem a ullam pariatur blanditiis! Velit, modi perspiciatis voluptates delectus nihil aliquid reiciendis blanditiis eius dolorem cupiditate, necessitatibus consequuntur officiis ut iusto maiores aut, quo earum? Veniam enim sint ipsum.'
 
-  const MAX_SUB_POST = 4;
-let currentEItems = 4
-let currentAItems = 4
-let a_event_data = async() => {
-  let f = await fetch(re_param('collections/get/News', {
-    
-    'filter[Type]': 'Events'
-  }))
-  let j = await f.json()
-  console.log('event', j)
-  return j || events
-}
+  let currentBranch = import.meta.env.VITE_BRANCH_ID;
 
-let a_announce_data = async() => {
-  let f = await fetch(re_param('collections/get/News', {
-   
-    'filter[Type]': 'Announcement'
-  }))
-  let j = await f.json()
-  console.log('announcement', j)
-  return j || events
-}
+  let currentEItems = 4
+  let currentAItems = 4
+  let a_event_data = async() => {
+    let f = await fetch(re_param('collections/get/News', {
+      'filter[Type]': 'Events',
+      'limit': currentEItems,
+    }))
+    
+    let j = await f.json()
+    console.log('event', j)
+    return j || events
+  }
+
+  let a_announce_data = async() => {
+    let f = await fetch(re_param('collections/get/News', {
+      'filter[Type]': 'Announcement',
+      'limit': currentAItems,
+    }))
+
+    let j = await f.json()
+    console.log('announcement', j)
+    return j || events
+  }
 
 </script>
 <div class="home mb-20">
@@ -123,9 +56,12 @@ let a_announce_data = async() => {
         </div>
         <div class="mt-5 pr-8 max-w-full">
           <!-- <CardHover/> -->
-          <h1 class="pb-5 text-[6vw] sm:text-4xl font-light text-gray-700 font-gentium font-bold font-italic text-center">
-            New Era University Main Campus
+          <h1 class="pb-5 text-[6vw] sm:text-6xl font-light text-gray-700 font-shelley font-bold font-italic text-center">
+            New Era University
           </h1>
+          <h2 class="pb-5 text-[6vw] sm:text-2xl font-light text-gray-700 font-italic text-center">
+            {currentBranch} Campus
+          </h2>
           <p class="text-gray-400 text-[3vw] sm:text-base font-nunito">
             {neuMainSrcContent}
           </p>
@@ -137,23 +73,7 @@ let a_announce_data = async() => {
             loading
           {:then e_data} 
           {#each e_data.entries.slice(0,4) as event }
-          <div class="min-h-75 group relative cursor-pointer" >
-            <div class="w-full h-[60vw] max-h-full sm:h-full bg-cover bg-center overflow-hidden shadow-md border-b-4 border-b-primary-900" style={`background-image: url(${event.Banner.path});`}
-                 >
-              <!-- for background -->
-              <div class="w-full h-full bg-gradient-to-t from-black to-transparent opacity-100 transform transform-scale origin-bottom transition transition-transform group-hover:scale-y-100 scale-y-0">
-
-                <div class=" absolute  justify-center items-center m-7 text-white ">
-                  <h2 class="object-center text-xl font-medium pb-2">{event.Title}</h2>
-                  <p class="pb-4 text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt error neque nam delectus nisi. Quos, reiciendis inventore sed dolor id commodi.</p>
-
-                  <a class="bg-transparent hover:bg-white  font-semibold hover:text-black py-2 px-4 border border-white-500 hover:border-transparent rounded" href={'#/events/'+event._id}>
-                    See more
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+            <EventCard {event}/>
           {/each}
           {/await}
         </div>
@@ -174,23 +94,7 @@ let a_announce_data = async() => {
         {:then e_data} 
       <div class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4">
         {#each e_data.entries.slice(0,currentEItems) as event }
-        <div class="min-h-75 group relative cursor-pointer" >
-          <div class="w-full h-[60vw] max-h-full sm:h-full bg-cover bg-center overflow-hidden shadow-md border-b-4 border-b-primary-900" style={`background-image: url(${event.Banner.path});`}
-               >
-            <!-- for background -->
-            <div class="w-full h-full bg-gradient-to-t from-black to-transparent opacity-100 transform transform-scale origin-bottom transition transition-transform group-hover:scale-y-100 scale-y-0">
-
-              <div class=" absolute  justify-center items-center m-7 text-white ">
-                <h2 class="object-center text-xl font-medium pb-2">{event.Title}</h2>
-                <p class="pb-4 text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt error neque nam delectus nisi. Quos, reiciendis inventore sed dolor id commodi.</p>
-
-                <a class="bg-transparent hover:bg-white  font-semibold hover:text-black py-2 px-4 border border-white-500 hover:border-transparent rounded" href={'#/events/'+event._id}>
-                  See more
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+          <EventCard {event}/>
         {/each}
       </div>
         {#if currentEItems < e_data.entries.length}

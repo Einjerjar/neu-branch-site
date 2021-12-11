@@ -1,7 +1,26 @@
 <script>
   import { primaryLinks, secondaryLinks } from '@/route_data'
   import { slide } from 'svelte/transition'
+  import { branch_data } from '@/store'
+  import { onMount } from 'svelte'
+  import { re_param } from '@/utils';
   export let isSticky = false
+
+  onMount(() => {
+    aBranchData();
+  })
+
+  let currentBranch = import.meta.env.VITE_BRANCH_ID.toString().toLowerCase();
+  const aBranchData = async () => {
+    let branchData = await fetch(re_param('collections/get/branch_data', {
+      'filter[id]': currentBranch
+    }))
+    let branchDataJson = await branchData.json();
+    branchDataJson = branchDataJson.entries[0];
+    console.log('branchdata', branchDataJson);
+    branch_data.set(branchDataJson);
+    return branchDataJson;
+  }
 
   let dropdownNav = false
 
@@ -25,7 +44,7 @@
               New Era University
             </div>
             <div class="text-md text-center ml-4 lg:ml-0">
-              {branch_id} Branch
+              {$branch_data.name} Branch
             </div>
           </div>
         </div>
@@ -65,7 +84,7 @@
       </div>
     </div>
     <div class="ml-auto block lg:hidden flex items-center">
-      <div class="test-btn !px-4" on:click={toggleNav}>
+      <div class="test-btn border-none !px-4" on:click={toggleNav}>
         <i class="fas fa-bars"></i>
       </div>
     </div>

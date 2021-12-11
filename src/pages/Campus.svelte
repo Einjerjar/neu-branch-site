@@ -1,4 +1,6 @@
 <script>
+  import { branch_data } from '@/store'
+
   import Divider from "@/components/Divider.svelte";
   import MVP from "@/components/campus/mvp.svelte"
 
@@ -25,12 +27,20 @@
 </script>
 
 <div class="pageBG_redColor overflow-hidden">
-  <div class ="bg-opacity-90 mx-auto flex shadow-2xl px-15 bg-cyan-900">
+  <div class ="bg-opacity-90 mx-auto flex shadow-2xl px-15 bg-cyan-900 text-white">
     <div class="container mx-auto flex px-4 py-8 flex-col justify-center lg:(justify-around flex-row) children:my-8">
         <div class="w-full lg:w-2/5">
           <img src={campusMainImage} alt="campus" class="w-full h-auto">
-          <p class="my-4 text-sm font-sans text-white">
-            {descr}
+          <div class="text-center my-4">
+            <div class="text-6xl font-shelley">
+              New Era University
+            </div>
+            <div class="text-3xl font-light">
+              {$branch_data.name} Branch
+            </div>
+          </div>
+          <p class="my-4 font-sans text-white">
+            {$branch_data.description}
           </p>
         </div>
         
@@ -60,7 +70,7 @@
 
   <!-- <Divider/> -->
 
-  <div class= "container bg-black bg-opacity-80 mx-auto md:rounded-md px-8 py-6 text-white">
+  <div class= "container mb-16 bg-black bg-opacity-80 mx-auto md:rounded-md px-8 py-6 text-white">
     <div class=" text-[6vw] sm:text-8xl font-mono font-bold">
       <div>GOALS & OBJECTIVES</div>
     </div>
