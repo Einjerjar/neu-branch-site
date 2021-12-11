@@ -13,6 +13,7 @@
   import Header from "@/components/events/Header.svelte";
   import EventCard from '@/components/events/EventCard.svelte';
   import ArticleCard from '@/components/events/ArticleCard.svelte';
+import Button from '@/components/events/Button.svelte';
 
   const branchInfo = {branchName:'General Santos City', imgSource:'./images/NEU_GENSAN.png', id:1};
   const neuMainSrc = './images/neu_mainfront.jpg';
@@ -99,11 +100,11 @@
         {/each}
       </div>
         {#if currentELimit < e_data.entries.length}
-          <div class="mt-8 capitalize flex items-center justify-center">
-            <button class="border-2 border-primary-800 border-solid text-primary-800 px-4 py-2 inline-block rounded-sm transition transition-colors font-nunito capitalize hover:(text-white border-2 border-solid bg-primary-800)" on:click={() => push('/eventlist/Events')}>
+          <a href='#/eventlist/Events'>
+            <Button>
               load more events
-            </button>
-          </div>
+            </Button>
+          </a>
         {/if}
         {/await}
     </div>
@@ -118,11 +119,11 @@
           {/each}
         </div>
         {#if currentALimit < a_data.entries.length}
-          <div class="mt-8 capitalize flex items-center justify-center">
-            <button class="border-2 border-primary-800 border-solid text-primary-800 px-4 py-2 inline-block rounded-sm transition transition-colors font-nunito capitalize hover:(text-white border-2 border-solid bg-primary-800)" on:click={() => push('/eventlist/all')}>
+          <a href='#/eventlist/all'>
+            <Button>
               load more articles
-            </button>
-          </div>
+            </Button>
+          </a>
         {/if}
       {/await}
   </div>

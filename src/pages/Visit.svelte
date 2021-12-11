@@ -54,7 +54,7 @@
 </div>
 
 
-<style>
+<style lang="postcss">
     .facility div:nth-child(even) {
         @apply flex-row-reverse;
     }
