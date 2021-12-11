@@ -2,6 +2,7 @@
   import { programs, departments } from "@/sample_data/programs";
   import { slide } from "svelte/transition";
 
+  // TODO: Fix this clusterfuck
   let program_sets = ["Undergradute", "Senior High School", "Basic Education"];
   let selected = "Undergradute";
 

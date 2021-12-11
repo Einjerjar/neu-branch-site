@@ -2,10 +2,10 @@
   export let article;
 </script>
 
-<div class="container mx-auto">
-  <div class="flex w-full space-x-4">
+<div class="container mx-auto block">
+  <div class="flex w-full h-full space-x-4">
     <div class="w-2/5 max-w-80">
-      <a href={'#/events/'+article._id} class="block">
+      <a href={'#/events/'+article._id} class="block h-full">
         <img src={article.Banner.path} alt="pp" class="w-full h-full max-h-40 object-cover">
       </a>
     </div>

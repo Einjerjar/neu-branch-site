@@ -113,7 +113,7 @@ import Button from '@/components/events/Button.svelte';
       {#await a_announce_data()}
         loading
       {:then a_data} 
-        <div class="grid md:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {#each a_data.entries.slice(0,currentALimit) as a_data}
             <ArticleCard article={a_data}/>
           {/each}
