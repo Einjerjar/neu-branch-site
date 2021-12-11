@@ -19,10 +19,12 @@
   let currentBranch = import.meta.env.VITE_BRANCH_ID;
 
   let currentEItems = 4
-  let currentAItems = 4
+  let currentAItems = 5
+  let currentALimit = 4
   let a_event_data = async() => {
     let f = await fetch(re_param('collections/get/News', {
       'filter[Type]': 'Events',
+      'limit': currentEItems,
     }))
     
     let j = await f.json()
@@ -33,6 +35,7 @@
   let a_announce_data = async() => {
     let f = await fetch(re_param('collections/get/News', {
       'filter[Type]': 'Announcement',
+      'limit': currentAItems,
     }))
 
     let j = await f.json()
@@ -109,24 +112,24 @@
       {#await a_announce_data()}
         loading
       {:then a_data} 
-      <div class="grid md:grid-cols-2 gap-4">
-        {#each a_data.entries.slice(0,currentAItems) as a_data}
-          <div class="flex w-full space-x-4">
-            <div class="w-2/5">
-              <a href={'#/events/'+a_data._id}>
-                <img src={a_data.Banner.path} alt="pp" class="w-full h-full max-w-80 max-h-40 object-cover">
-              </a>
+        <div class="grid md:grid-cols-2 gap-4">
+          {#each a_data.entries.slice(0,currentALimit) as a_data}
+            <div class="flex w-full space-x-4">
+              <div class="w-2/5">
+                <a href={'#/events/'+a_data._id}>
+                  <img src={a_data.Banner.path} alt="pp" class="w-full h-full max-w-80 max-h-40 object-cover">
+                </a>
+              </div>
+              <div class="w-3/5">
+                <h3 class="text-base md:text-lg lg:text-xl font-semibold hover:(underline underline-primary-900)">
+                  <a href={'#/events/'+a_data._id}>{a_data.Title}</a>
+                </h3>
+                <p class="hidden lg:block">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, voluptatum.</p>
+              </div>
             </div>
-            <div class="w-3/5">
-              <h3 class="text-base md:text-lg lg:text-xl font-semibold hover:(underline underline-primary-900)">
-                <a href={'#/events/'+a_data._id}>{a_data.Title}</a>
-              </h3>
-              <p class="hidden lg:block">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, voluptatum.</p>
-            </div>
-          </div>
-        {/each}
-      </div>
-        {#if currentAItems < a_data.entries.length}
+          {/each}
+        </div>
+        {#if currentALimit < a_data.entries.length}
           <div class="mt-8 capitalize flex items-center justify-center">
             <button class="border-2 border-primary-800 border-solid text-primary-800 px-4 py-2 inline-block rounded-sm transition transition-colors font-nunito capitalize hover:(text-white border-2 border-solid bg-primary-800)" on:click={() => currentAItems += 4}>
               load more articles
