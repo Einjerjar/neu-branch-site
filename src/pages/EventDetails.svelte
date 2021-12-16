@@ -9,7 +9,7 @@
   export let params = {};
 
   $: a_local_event = async() => {
-    let f = await fetch(re_param('collections/get/News', {
+    let f = await fetch(re_param('collections/get/posts', {
       limit: 5,
       'filter[_id]': params.id
     }))
@@ -32,23 +32,23 @@ $: event_details = events.entries.filter((entry) => params.id === entry._id)[0];
             <div class="uppercase text-black font-semibold mb-2">
                 <h2 class="text-xl md:text-2xl">
                     <!-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt reprehenderit quasi quos praesentium illum nihil? -->
-                    {local_event.Title}
+                    {local_event.title}
                 </h2>
             </div>
             <div class="mb-4">
                 <!-- January 1, 2021 <span>|</span> By: NEU Central Student Council Officer <span>|</span> Myr Jdy C. Mahinay -->
-                {local_event.Date}
-                {#if local_event.Office}
-                    <span>|</span> By: {local_event.Office}
+                {local_event.date_written}
+                {#if local_event.office}
+                    <span>|</span> By: {local_event.office}
                 {/if}
-                {#if local_event.Author}
-                    <span>|</span> {local_event.Author}
+                {#if local_event.author}
+                    <span>|</span> {local_event.author}
                 {/if}
             </div>
           </div>
 
           <div class="mb-4 xl:(w-3/5)">
-              <img src={local_event.Banner.path} alt="event" class="mx-auto object-cover rounded">
+              <img src={`${HOST_ROOT}${local_event.banner.path}`} alt="event" class="mx-auto object-cover rounded">
           </div>
         {/await}
     </div>
@@ -57,11 +57,11 @@ $: event_details = events.entries.filter((entry) => params.id === entry._id)[0];
           Loading Event Details
         {:then local_event}
           <div class="xl:(w-2/3)">
-            {@html local_event.Content}
-            {#if local_event.asset}
-                {#each local_event.asset as asset}
+            {@html local_event.content}
+            {#if local_event.images}
+                {#each local_event.images as img}
                     <div class="my-4">
-                        <img src={`${HOST_ROOT}${asset.path}`} alt="alt">
+                        <img src={`${HOST_ROOT}${img.path}`} alt="alt">
                     </div>
                 {/each}
             {/if}

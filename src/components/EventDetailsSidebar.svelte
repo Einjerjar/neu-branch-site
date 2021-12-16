@@ -1,6 +1,6 @@
 <script>
   import { events } from '@/sample_data/events'
-  import { re_param } from "@/utils"
+  import { re_param, HOST_ROOT } from "@/utils"
   import NewsCard from "./NewsCard.svelte"
   export let post_id
 
@@ -8,10 +8,10 @@
 
   $: a_other_events = async () => {
     let f = await fetch(
-      re_param("collections/get/News", {
+      re_param("collections/get/posts", {
         limit: MAX_SUB_POST,
         "filter[_id][$not]": post_id,
-        "filter[Type]": "Events",
+        "filter[category]": "event",
       })
     )
     let j = await f.json()
@@ -21,10 +21,10 @@
 
   $: a_announce_data = async () => {
     let f = await fetch(
-      re_param("collections/get/News", {
+      re_param("collections/get/posts", {
         limit: MAX_SUB_POST,
         "filter[_id][$not]": post_id,
-        "filter[Type]": "Announcement",
+        "filter[category]": "announcement",
       })
     )
     let j = await f.json()

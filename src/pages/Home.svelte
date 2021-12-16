@@ -8,21 +8,21 @@
   import IconCards from '@/components/home/IconCards.svelte';
 
   const MAX_SUB_POST = 4;
-
+  
   let a_event_data = async() => {
-    let f = await fetch(re_param('collections/get/News', {
+    let f = await fetch(re_param('collections/get/posts', {
       limit: MAX_SUB_POST,
-      'filter[Type]': 'Events'
+      'filter[category]': 'event'
     }))
     let j = await f.json()
-
+    console.log('announcement data from posts collection',j)
     return j || events
   }
 
   let a_announce_data = async() => {
-    let f = await fetch(re_param('collections/get/News', {
+    let f = await fetch(re_param('collections/get/posts', {
       limit: MAX_SUB_POST,
-      'filter[Type]': 'Announcement'
+      'filter[category]': 'announcement'
     }))
     let j = await f.json()
 

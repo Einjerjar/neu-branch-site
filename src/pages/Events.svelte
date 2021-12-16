@@ -1,7 +1,3 @@
-<!-- 
-  nicolas TODO
-  * add featured embedded videos section from neu youtube page
- -->
 <script>
   import {push} from 'svelte-spa-router'
   import { events } from '@/sample_data/events';
@@ -21,24 +17,21 @@ import Button from '@/components/events/Button.svelte';
   let currentELimit = 4
   let currentALimit = 4
   let a_event_data = async() => {
-    let f = await fetch(re_param('collections/get/News', {
-      'filter[Type]': 'Events',
+    let f = await fetch(re_param('collections/get/posts', {
+      'filter[category]': 'event',
       'limit': currentELimit+1,
     }))
     
     let j = await f.json()
-    console.log('event', j)
     return j || events
   }
 
   let a_announce_data = async() => {
-    let f = await fetch(re_param('collections/get/News', {
-      'filter[Type]': 'Announcement',
+    let f = await fetch(re_param('collections/get/posts', {
       'limit': currentALimit+1,
     }))
 
     let j = await f.json()
-    console.log('announcement', j)
     return j || events
   }
 
@@ -78,7 +71,7 @@ import Button from '@/components/events/Button.svelte';
               <EventCard article={event}/>
             {/each}
             {#if currentELimit < e_data.entries.length}
-              <a href='#/eventlist/Events'>
+              <a href='#/eventlist/event'>
                 <Button>
                   load more events
                 </Button>

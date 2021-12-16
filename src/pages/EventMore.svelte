@@ -23,10 +23,10 @@
       'skip': _page * (PAGE_LIMIT),
     }
     if (filter.length != 0 && filter != 'all') {
-      cfg['filter[Type]'] = filter
+      cfg['filter[category]'] = filter
     }
 
-    let f = await fetch(re_param('collections/get/News', cfg))
+    let f = await fetch(re_param('collections/get/posts', cfg))
     
     let j = await f.json()
     console.log('event', j)
