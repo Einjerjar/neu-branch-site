@@ -12,6 +12,8 @@
 
   let currentBranch = import.meta.env.VITE_BRANCH_ID.toString().toLowerCase();
   const aBranchData = async () => {
+    if (!Object.prototype.hasOwnProperty.call($branch_data, 'temp')) return
+    
     let branchData = await fetch(re_param('collections/get/branch_data', {
       'filter[id]': currentBranch
     }))

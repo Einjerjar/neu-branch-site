@@ -1,6 +1,7 @@
 import { writable } from 'svelte/store'
 
 export const branch_data = writable({
+  temp: true,
   "name": "Lipa",
   "description": "Pellentesque interdum sem vel bibendum suscipit. Nam magna massa, volutpat id interdum vitae, scelerisque ac nisi. In sit amet risus eu ligula ultrices varius at quis arcu. Donec semper, massa dapibus rutrum vestibulum, mi nunc imperdiet neque, sit amet eleifend urna nibh a enim. Fusce lacinia risus vitae viverra gravida. Proin vel tincidunt orci. Duis vel finibus risus, quis tincidunt elit. Duis malesuada maximus elementum. In malesuada tincidunt sapien vel tincidunt. Aliquam erat volutpat. Quisque nec condimentum augue. Vestibulum turpis justo, rhoncus id fermentum iaculis, aliquam id sem. Nunc pellentesque purus sit amet interdum fermentum. Pellentesque at sapien odio. Nullam iaculis ante ut ultricies convallis. Proin velit mauris, ornare sed interdum a, finibus et lorem.",
   "admission_groups": [

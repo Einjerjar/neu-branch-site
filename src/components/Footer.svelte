@@ -1,11 +1,10 @@
 <script>
-  import { links, external_links } from "@/route_data";
   import { footer_links } from '@/store'
-import LinkGroup from "./footer/LinkGroup.svelte";
+  import LinkGroup from "./footer/LinkGroup.svelte";
   const year = new Date().getFullYear();
 </script>
 
-<div class="cmp-footer w-full text-white bg-primary-900">
+<div class="cmp-footer w-full text-white bg-primary-900 z-98">
   <div class="container mx-auto">
     <div class="flex flex-col sm:flex-row">
       <a href="#/" class="mb-8 mx-auto min-w-35 md:ml-auto w-35 h-35 lg:(min-w-50 w-50 h-50) relative">

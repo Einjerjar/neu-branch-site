@@ -5,7 +5,7 @@
   import ArticleCard from "@/components/events/ArticleCard.svelte";
   import Header from "@/components/events/Header.svelte";
   import Divider from "@/components/Divider.svelte";
-import Button from '@/components/events/Button.svelte';
+  import Button from '@/components/events/Button.svelte';
 
   export let params = {}
   if (params.filter == null || params.filter.trim() == '') {

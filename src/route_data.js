@@ -1,5 +1,5 @@
 import Home from "@/pages/Home.svelte";
-import AcademicPrograms from "@/pages/AcademicPrograms.svelte";
+import AcademicPrograms from "@/pages/AcademicPrograms2.svelte";
 import Campus from "@/pages/Campus.svelte";
 import AdmissionFrontPage from "@/pages/AdmissionFrontpage.svelte";
 import AboutNEU from "@/pages/AboutNEU.svelte";
@@ -13,7 +13,7 @@ import EventMore from "@/pages/EventMore.svelte";
 
 
 import Events from "@/pages/Events.svelte";
-import Events2 from "@/pages/Events2.svelte";
+// import Events2 from "@/pages/Events2.svelte";
 
 
 
@@ -70,40 +70,5 @@ export const links = [
     path: '/eventlist/:filter?/:page?',
     component: EventMore,
     category: 'hidden',
-  },
-
-  // Footer links
-  {
-    name: "Basic Facts",
-    sublinks: [
-      { label: "university mission", component: AboutNEU, path: "/about" },
-      { label: "university vision", component: AboutNEU, path: "/about" },
-      { label: "university goals", component: AboutNEU, path: "/about" },
-      { label: "university history", component: Home, path: "/" },
-    ],
-    category: "footer",
-  },
-  {
-    name: "Campuses",
-    sublinks: [
-      { label: "NEU quezon city (main)", component: Home, path: "/" },
-      { label: "NEU batangas", component: Home, path: "/" },
-      { label: "NEU pampanga", component: Home, path: "/" },
-      { label: "NEU general santso city", component: Home, path: "/" },
-      { label: "NEU rizal", component: Home, path: "/" },
-    ],
-    category: "footer",
-  },
-
+  }
 ];
-
-export const external_links = {
-    name: "Other Links",
-    sublinks: [
-      { label: "School Calendar", path: "https://neu.edu.ph/main/assets/images/posts_images/collegiatecalendar2021.pdf" },
-      { label: "Research & Publication", path: "/research" },
-      { label: "NEUTECH", path: "/" },
-      { label: "MCLE", path: "https://mcle.ph/" },
-      { label: "RUSSIAN STUDIES CENTER", path: "http://russianstudies.neu.edu.ph/" },
-    ],
-  };
