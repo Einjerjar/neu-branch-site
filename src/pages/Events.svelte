@@ -43,8 +43,7 @@ import Button from '@/components/events/Button.svelte';
   <div class="container mx-auto px-4 mb-16 mt-16">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 place-content-center">
       <div class="w-full h-full">
-        <div class="w-full h-[60vw] max-h-100 bg-red-300 bg-cover bg-center rounded"
-             style={`background-image: url(${neuMainSrc})`}>
+        <div class="w-full h-[60vw] max-h-100 bg-red-300 bg-cover bg-center rounded" style={`background-image: url(${neuMainSrc})`}>
         </div>
         <div class="mt-5 pr-8 max-w-full">
           <!-- <CardHover/> -->

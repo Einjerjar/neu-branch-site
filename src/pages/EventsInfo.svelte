@@ -1,6 +1,6 @@
 <script>
     import BigHeader from "@/components/admission/BigHeader.svelte";
-  import Article from "@/components/admission/Article.svelte";
+    import Article from "@/components/admission/Article.svelte";
 
     let bigTitle = "New Era University: General Santos Branch events information";
 </script>

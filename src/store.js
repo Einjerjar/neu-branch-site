@@ -566,3 +566,5 @@ export const footer_links = writable({
     }
   ]
 });
+
+export const img_path = writable('')

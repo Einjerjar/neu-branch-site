@@ -1,4 +1,6 @@
 <script>
+import { img_path } from '@/store';
+
 import { HOST_ROOT } from '@/utils';
 
   import { createEventDispatcher } from 'svelte'
@@ -42,7 +44,7 @@ import { HOST_ROOT } from '@/utils';
     <div class="p-4">
       <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
         <div>
-          <div class="w-full rounded bg-cover bg-center" style={`aspect-ratio: 1/1; background-image: url(${p_img});`}></div>
+          <div class="w-full rounded bg-cover bg-center cursor-pointer" style={`aspect-ratio: 1/1; background-image: url(${p_img});`} on:click={() => img_path.set(p_img)}></div>
           <div class="mt-4 hidden md:block">
             <div>
               <div class="font-bold text-primary-900">

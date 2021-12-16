@@ -5,6 +5,7 @@
   import EventDetailsSidebar from '@/components/EventDetailsSidebar.svelte';
   import {re_param} from '@/utils'
   import { HOST_ROOT } from '@/utils';
+import { img_path } from '@/store';
 
   export let params = {};
 
@@ -48,7 +49,7 @@ $: event_details = events.entries.filter((entry) => params.id === entry._id)[0];
           </div>
 
           <div class="mb-4 xl:(w-3/5)">
-              <img src={`${HOST_ROOT}${local_event.banner.path}`} alt="event" class="mx-auto object-cover rounded">
+              <img src={`${HOST_ROOT}${local_event.banner.path}`} alt="event" class="mx-auto object-cover rounded cursor-pointer" on:click={() => img_path.set(`${HOST_ROOT}${local_event.banner.path}`)}>
           </div>
         {/await}
     </div>
