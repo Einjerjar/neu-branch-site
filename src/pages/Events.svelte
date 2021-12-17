@@ -131,14 +131,4 @@ import Loading from '@/components/Loading.svelte';
   </div>
 </div>
 <style>
-
-/*
--remove the classes below if you have the 'group-hover'property added in your tailwind config file
--also remove the class from the html template
-*/
-
-  .catamaran {
-    font-family: 'Catamaran', sans-serif;
-        /* color: #791616; */
-  }
 </style>

@@ -20,27 +20,4 @@
 </div>
 
 <style>
-  .overlay {
-    top: 0;
-    left: 0;
-    /* background: rgba(0, 0, 0, 0.6); */
-    color: #ffffff;
-    font-family: 'Quicksand', sans-serif;
-    /* opacity: 0; */
-    transition: opacity 0.25s;
-  }
-
-    .overlay > * {
-        transform: translateY(20px);
-        transition: transform 0.25s;
-    }
-
-    .overlay:hover {
-        cursor: pointer;
-        /* opacity: 1; */
-    }
-
-    .overlay:hover > * {
-        transform: translateY(0);
-    }
 </style>

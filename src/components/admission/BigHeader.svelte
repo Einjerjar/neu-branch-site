@@ -11,8 +11,4 @@
 
 
 <style>
-  h3, h1{
-    font-family: 'Catamaran', sans-serif;
-    color: #791616;
-  }
 </style>

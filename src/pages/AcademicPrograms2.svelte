@@ -9,10 +9,10 @@
   import { branch_data } from '@/store';
   import { clean_entries, HOST_ROOT, re_get } from '@/utils';
 
-  export let params = {
-    department: '',
-  };
-  export let e_department = params.department;
+  // export let params = {
+  //   department: '',
+  // };
+  // export let e_department = params.department;
 
   const expected_levels = ['basic', 'shs', 'undergrad'];
   const level_data = {

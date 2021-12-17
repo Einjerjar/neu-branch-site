@@ -62,8 +62,4 @@ import { slide } from "svelte/transition";
 </div>
 
 <style>
-  .shadowing{
-    text-shadow: 3px 3px #050505;
-  }
-
 </style>
