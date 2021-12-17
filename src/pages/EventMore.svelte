@@ -6,6 +6,7 @@
   import Header from "@/components/events/Header.svelte";
   import Divider from "@/components/Divider.svelte";
   import Button from '@/components/events/Button.svelte';
+import { slide } from 'svelte/transition';
 
   export let params = {}
   if (params.filter == null || params.filter.trim() == '') {
@@ -36,7 +37,7 @@
   $:articles = a_event_data(page)
 </script>
 
-<div class="container mx-auto my-16">
+<div transition:slide class="container mx-auto my-16">
   {#await articles}
     Loading
   {:then a_data} 

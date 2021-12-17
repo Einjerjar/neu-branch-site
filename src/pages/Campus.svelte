@@ -3,6 +3,7 @@
 
   import Divider from "@/components/Divider.svelte";
   import MVP from "@/components/campus/mvp.svelte"
+import { slide } from 'svelte/transition';
 
   //img sources
   const ph_mapSrc = './images/branchimage.png'
@@ -26,7 +27,7 @@
 
 </script>
 
-<div class="pageBG_redColor overflow-hidden">
+<div transition:slide class="pageBG_redColor overflow-hidden">
   <div class ="bg-opacity-90 mx-auto flex shadow-2xl px-15 bg-cyan-900 text-white">
     <div class="container mx-auto flex px-4 py-8 flex-col justify-center lg:(justify-around flex-row) children:my-8">
         <div class="w-full lg:w-2/5">

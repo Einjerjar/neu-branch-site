@@ -39,7 +39,7 @@
   }
 </script>
 
-<div class={`absolute transition-bg-opacity z-98 transition dutation-300 left-0 top-0 w-full h-full lg:hidden bg-black ${selected_program && isProgramShowing ? 'bg-opacity-50' : 'bg-opacity-0 pointer-events-none'}`} on:click={() => hideProgram()}></div>
+<div transition:slide class={`absolute transition-bg-opacity z-98 transition dutation-300 left-0 top-0 w-full h-full lg:hidden bg-black ${selected_program && isProgramShowing ? 'bg-opacity-50' : 'bg-opacity-0 pointer-events-none'}`} on:click={() => hideProgram()}></div>
 <div class="page-home bg-gray-200 py-8 px-2">
   <div class="container mx-auto shadow-lg m-2 bg-white rounded">
     <div class="text-center text-4xl lg:text-8xl text-primary-900 font-bold border-b-6 border-primary-900 py-8" >

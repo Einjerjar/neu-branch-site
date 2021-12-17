@@ -6,6 +6,7 @@
   import NewsTicker from "@/components/NewsTicker.svelte";
   import Slider from "@/components/Slider.svelte";
   import IconCards from '@/components/home/IconCards.svelte';
+import { slide } from 'svelte/transition';
 
   const MAX_SUB_POST = 4;
   
@@ -37,7 +38,7 @@
   ]
 </script>
 
-<div class="page-home">
+<div transition:slide class="page-home">
   <div class="hidden md:block">
     <NewsTicker/>
   </div>

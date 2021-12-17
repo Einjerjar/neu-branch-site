@@ -1,6 +1,6 @@
 <script>
     import Branch from "@/components/admission/Branch.svelte";
-    import { fade } from 'svelte/transition'
+    import { fade, slide } from 'svelte/transition'
 
     const branchInfo = [
         {branchName:'Quezon City (Main Branch)', imgSource:'./images/NEU_MAIN.png', id:0},
@@ -11,6 +11,7 @@
 
 </script>
 
+<div transition:slide>
 <div class="w-full h-15 bg-primary-900 text-xl text-white uppercase font-semibold py-8 flex items-center justify-center md:(text-2xl h-18) lg:(text-4xl h-25)" in:fade={{duration: 600}}>
     university branches
 </div>
@@ -20,7 +21,7 @@
         <div class="mx-auto items-center bg-white p-4 grid grid-cols-1 lg:grid-cols-2 gap-4">
             {#each branchInfo as branch (branch.id)}
                 <Branch branchImage={branch.imgSource} branchName={branch.branchName}></Branch>
-	        {/each}
+            {/each}
         </div>
 
 
@@ -52,6 +53,7 @@
         </div>
     </div>
 
+</div>
 </div>
 
 

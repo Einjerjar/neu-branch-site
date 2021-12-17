@@ -10,6 +10,7 @@
   import EventCard from '@/components/events/EventCard.svelte';
   import ArticleCard from '@/components/events/ArticleCard.svelte';
 import Button from '@/components/events/Button.svelte';
+import { slide } from 'svelte/transition';
 
   const branchInfo = {branchName:'General Santos City', imgSource:'./images/NEU_GENSAN.png', id:1};
   const neuMainSrc = './images/neu_mainfront.jpg';
@@ -36,7 +37,7 @@ import Button from '@/components/events/Button.svelte';
   }
 
 </script>
-<div class="home mb-20">
+<div transition:slide class="home mb-20">
   <!-- <Banner message={"Events"} srcImage='./images/neu_mainfront.jpg'/> -->
 
   <!-- four pictures with New Era Main Campus -->

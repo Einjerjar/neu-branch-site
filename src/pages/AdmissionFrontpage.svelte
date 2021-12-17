@@ -2,6 +2,7 @@
   import Cards from "@/components/admission/Cards.svelte";
   import EntryGrade from "@/components/admission/EntryGrade.svelte";
   import { admissionLinks } from '@/route_data';
+import { slide } from "svelte/transition";
   // import { procedureLinks } from '@/route_data';
 
 
@@ -26,7 +27,7 @@
   ];
 </script>
 
-<div class="page-home">
+<div transition:slide class="page-home">
   <div class="mx-auto relative">
     <div class="absolute -z-1 bg-center bg-cover w-full h-full left-0 top-0" style="background-image: url('https://neu.edu.ph/main/assets/images/NEU_Pampanga.jpg'); filter: grayscale(50%) brightness(50%);"></div>
     <div class="min-h-full mx-auto max-h-full flex  justify-center text-white">

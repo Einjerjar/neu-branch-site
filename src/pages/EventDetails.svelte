@@ -6,6 +6,7 @@
   import {re_param} from '@/utils'
   import { HOST_ROOT } from '@/utils';
 import { img_path } from '@/store';
+import { slide } from 'svelte/transition';
 
   export let params = {};
 
@@ -24,7 +25,7 @@ $: event_details = events.entries.filter((entry) => params.id === entry._id)[0];
 </script>
 
 <!-- <div>{params.id}</div> -->
-<div class="container mx-auto p-8">
+<div transition:slide class="container mx-auto p-8">
     <div class="xl:(flex flex-row-reverse items-center space-x-4 w-full)">
         {#await a_local_event()}
           Loading Event Details

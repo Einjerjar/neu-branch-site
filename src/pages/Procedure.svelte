@@ -4,11 +4,13 @@
   import Banner from "@/components/admission/Banner.svelte";
   import BigHeader from "@/components/admission/BigHeader.svelte";
   import Article from "@/components/admission/Article.svelte";
+import { slide } from "svelte/transition";
 
   let bigTitle = "admission";
   let bannerName = "Procedures";
 </script>
 
+<div transition:slide>
 <Banner message={bannerName} />
 <!-- enclose every section of paragraphs in a div, and apply margins and paddings. -->
 <div class="container mx-auto px-4">
@@ -82,4 +84,5 @@
       </div>
     </Article>
   </div>
+</div>
 </div>
