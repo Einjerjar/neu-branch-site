@@ -4,25 +4,33 @@ export const programs = {
       "name": "program_name",
       "type": "text",
       "localize": false,
-      "options": []
+      "options": [
+        
+      ]
     },
     "description": {
       "name": "description",
       "type": "wysiwyg",
       "localize": false,
-      "options": []
+      "options": [
+        
+      ]
     },
     "branch": {
       "name": "branch",
       "type": "tags",
       "localize": false,
-      "options": []
+      "options": [
+        
+      ]
     },
     "level": {
       "name": "level",
       "type": "tags",
       "localize": false,
-      "options": []
+      "options": [
+        
+      ]
     },
     "department": {
       "name": "department",
@@ -34,12 +42,28 @@ export const programs = {
         "multiple": true,
         "limit": false
       }
+    },
+    "image": {
+      "name": "image",
+      "type": "image",
+      "localize": false,
+      "options": [
+        
+      ]
+    },
+    "images": {
+      "name": "images",
+      "type": "gallery",
+      "localize": false,
+      "options": [
+        
+      ]
     }
   },
   "entries": [
     {
       "program_name": "(STEM) Science, technology, engineering, and mathematics",
-      "program_desc": "<p>Science, technology, engineering, and mathematics<\/p>\n<p>Science, technology, engineering, and mathematics<\/p>\n<p>Science, technology, engineering, and mathematics<\/p>\n<p>Science, technology, engineering, and mathematics<\/p>",
+      "program_desc": "<p>Science, technology, engineering, and mathematics</p>\n<p>Science, technology, engineering, and mathematics</p>\n<p>Science, technology, engineering, and mathematics</p>\n<p>Science, technology, engineering, and mathematics</p>",
       "branch": [
         "gensan",
         "lipa"
@@ -50,16 +74,24 @@ export const programs = {
       ],
       "_mby": "56500c4665393650ef0000cf",
       "_by": "56500c4665393650ef0000cf",
-      "_modified": 1635773671,
+      "_modified": 1639641396,
       "_created": 1635773485,
       "_id": "94f9c4bb3637329082000057",
       "_pid": null,
       "_o": 0,
-      "children": []
+      "description": null,
+      "department": null,
+      "image": {
+        "path": "/cockpit/storage/uploads/2021/12/16/D_compressed_uid_61baf0cfdf324.jpg"
+      },
+      "images": null,
+      "children": [
+        
+      ]
     },
     {
       "program_name": "(ABM) Accounting and Business Management",
-      "program_desc": "<p>Accounting and Business Management<\/p>\n<p>Accounting and Business Management<\/p>\n<p>Accounting and Business Management<\/p>\n<p>Accounting and Business Management<\/p>",
+      "program_desc": "<p>Accounting and Business Management</p>\n<p>Accounting and Business Management</p>\n<p>Accounting and Business Management</p>\n<p>Accounting and Business Management</p>",
       "branch": [
         "gensan",
         "lipa"
@@ -70,16 +102,24 @@ export const programs = {
       ],
       "_mby": "56500c4665393650ef0000cf",
       "_by": "56500c4665393650ef0000cf",
-      "_modified": 1635773737,
+      "_modified": 1639641414,
       "_created": 1635773737,
       "_id": "952029123264657c730000c5",
       "_pid": null,
       "_o": 1,
-      "children": []
+      "description": null,
+      "department": null,
+      "image": {
+        "path": "/cockpit/storage/uploads/2021/12/16/C_compressed_uid_61baf039466e7.jpg"
+      },
+      "images": null,
+      "children": [
+        
+      ]
     },
     {
       "program_name": "(HUMSS) Humanities and Social Sciences",
-      "program_desc": "<p>Humanities and Social Sciences<\/p>\n<p>Humanities and Social Sciences<\/p>\n<p>Humanities and Social Sciences<\/p>\n<p>Humanities and Social Sciences<\/p>",
+      "program_desc": "<p>Humanities and Social Sciences</p>\n<p>Humanities and Social Sciences</p>\n<p>Humanities and Social Sciences</p>\n<p>Humanities and Social Sciences</p>",
       "branch": [
         "gensan",
         "lipa"
@@ -90,16 +130,24 @@ export const programs = {
       ],
       "_mby": "56500c4665393650ef0000cf",
       "_by": "56500c4665393650ef0000cf",
-      "_modified": 1635773780,
+      "_modified": 1639641421,
       "_created": 1635773780,
       "_id": "9526c685313063b9670000b0",
       "_pid": null,
       "_o": 2,
-      "children": []
+      "description": null,
+      "department": null,
+      "image": {
+        "path": "/cockpit/storage/uploads/2021/12/16/B_compressed_uid_61baf03a7064c.jpg"
+      },
+      "images": null,
+      "children": [
+        
+      ]
     },
     {
       "program_name": "(GAS) General Academic Strand",
-      "program_desc": "<p>General Academic Strand<\/p>\n<p>General Academic Strand<\/p>\n<p>General Academic Strand<\/p>\n<p>General Academic Strand<\/p>",
+      "program_desc": "<p>General Academic Strand</p>\n<p>General Academic Strand</p>\n<p>General Academic Strand</p>\n<p>General Academic Strand</p>",
       "branch": [
         "lipa"
       ],
@@ -109,17 +157,24 @@ export const programs = {
       ],
       "_mby": "56500c4665393650ef0000cf",
       "_by": "56500c4665393650ef0000cf",
-      "_modified": 1635775764,
+      "_modified": 1639641432,
       "_created": 1635773806,
       "_id": "952aa99238306461830001e3",
       "_pid": null,
       "_o": 3,
       "department": null,
-      "children": []
+      "description": null,
+      "image": {
+        "path": "/cockpit/storage/uploads/2021/12/16/A_compressed_uid_61baf039d4a44.jpg"
+      },
+      "images": null,
+      "children": [
+        
+      ]
     },
     {
       "program_name": "Bachelor of Science in Real Estate Management",
-      "program_desc": "<p>Bachelor of science in real estate management<\/p>\n<p>Bachelor of science in real estate management<\/p>\n<p>Bachelor of science in real estate management<\/p>\n<p>Bachelor of science in real estate management<\/p>\n<p>&nbsp;<\/p>",
+      "program_desc": "<p>Bachelor of science in real estate management</p>\n<p>Bachelor of science in real estate management</p>\n<p>Bachelor of science in real estate management</p>\n<p>Bachelor of science in real estate management</p>\n<p>&nbsp;</p>",
       "branch": [
         "gensan",
         "lipa"
@@ -135,11 +190,13 @@ export const programs = {
       "_id": "953f0dd13636357bbc0001ac",
       "_pid": null,
       "_o": 4,
-      "children": []
+      "children": [
+        
+      ]
     },
     {
       "program_name": "Bachelor of Science in Accounting Information System",
-      "program_desc": "<p>Bachelor of Science in Accounting Information System<\/p>\n<p>Bachelor of Science in Accounting Information System<\/p>\n<p>Bachelor of Science in Accounting Information System<\/p>\n<p>Bachelor of Science in Accounting Information System<\/p>",
+      "program_desc": "<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>",
       "branch": [
         "gensan",
         "lipa",
@@ -152,21 +209,57 @@ export const programs = {
       "_mby": "56500c4665393650ef0000cf",
       "_by": "56500c4665393650ef0000cf",
       "_o": 5,
-      "_modified": 1635775972,
+      "_modified": 1639752229,
       "_created": 1635774106,
       "_id": "955862716134343cac000172",
       "department": [
         {
           "_id": "95df14a7653631604e0002c7",
           "link": "departments",
-          "display": "pampanga cbaa"
+          "display": "departments"
         }
       ],
-      "children": []
+      "description": null,
+      "image": {
+        "path": "/cockpit/storage/uploads/2021/12/16/D_compressed_uid_61baf0cfdf324.jpg"
+      },
+      "images": [
+        {
+          "meta": {
+            "title": "",
+            "asset": "d821602e656638380400012d"
+          },
+          "path": "/cockpit/storage/uploads/2021/12/17/2021-05-27-17_38_55-Social-Issues-Soft-Infringement---Google-Slides-and-4-more-pages---E---Microsoft_uid_61bc9fc762979.png"
+        },
+        {
+          "meta": {
+            "title": "",
+            "asset": "d87bdd476636332f4a000347"
+          },
+          "path": "/cockpit/storage/uploads/2021/12/17/B_uid_61bca21871c16.jpg"
+        },
+        {
+          "meta": {
+            "title": "",
+            "asset": "d87bf43c3034303b740002bd"
+          },
+          "path": "/cockpit/storage/uploads/2021/12/17/C_uid_61bca2190385d.jpg"
+        },
+        {
+          "meta": {
+            "title": "",
+            "asset": "d87bd12b333862059300002e"
+          },
+          "path": "/cockpit/storage/uploads/2021/12/17/D_uid_61bca2181d0ea.jpg"
+        }
+      ],
+      "children": [
+        
+      ]
     },
     {
       "program_name": "Bachelor of Science in Accountancy",
-      "program_desc": "<p>Bachelor of Science in Accountancy<\/p>\n<p>Bachelor of Science in Accountancy<\/p>\n<p>Bachelor of Science in Accountancy<\/p>\n<p>Bachelor of Science in Accountancy<\/p>\n<p>&nbsp;<\/p>",
+      "program_desc": "<p>Bachelor of Science in Accountancy</p>\n<p>Bachelor of Science in Accountancy</p>\n<p>Bachelor of Science in Accountancy</p>\n<p>Bachelor of Science in Accountancy</p>\n<p>&nbsp;</p>",
       "branch": [
         "gensan",
         "lipa",
@@ -179,21 +272,28 @@ export const programs = {
       "_mby": "56500c4665393650ef0000cf",
       "_by": "56500c4665393650ef0000cf",
       "_o": 6,
-      "_modified": 1635775996,
+      "_modified": 1639641468,
       "_created": 1635774127,
       "_id": "955b9533336237927e0002e1",
       "department": [
         {
           "_id": "95df14a7653631604e0002c7",
           "link": "departments",
-          "display": "pampanga cbaa"
+          "display": "departments"
         }
       ],
-      "children": []
+      "description": null,
+      "image": {
+        "path": "/cockpit/storage/uploads/2021/12/16/C_compressed_uid_61baf039466e7.jpg"
+      },
+      "images": null,
+      "children": [
+        
+      ]
     },
     {
       "program_name": "Bachelor of Science in Entrepreneurship",
-      "program_desc": "<p>Bachelor of Science in Entrepreneurship<\/p>\n<p>Bachelor of Science in Entrepreneurship<\/p>\n<p>Bachelor of Science in Entrepreneurship<\/p>\n<p>Bachelor of Science in Entrepreneurship<\/p>\n<p>&nbsp;<\/p>",
+      "program_desc": "<p>Bachelor of Science in Entrepreneurship</p>\n<p>Bachelor of Science in Entrepreneurship</p>\n<p>Bachelor of Science in Entrepreneurship</p>\n<p>Bachelor of Science in Entrepreneurship</p>\n<p>&nbsp;</p>",
       "branch": [
         "gensan",
         "lipa"
@@ -208,11 +308,13 @@ export const programs = {
       "_modified": 1635774337,
       "_created": 1635774262,
       "_id": "957040be6562334acc0002a0",
-      "children": []
+      "children": [
+        
+      ]
     },
     {
       "program_name": "Bachelor of Science in Information System",
-      "program_desc": "<p>Bachelor of Science in Information System<\/p>\n<p>Bachelor of Science in Information System<\/p>\n<p>Bachelor of Science in Information System<\/p>\n<p>Bachelor of Science in Information System<\/p>",
+      "program_desc": "<p>Bachelor of Science in Information System</p>\n<p>Bachelor of Science in Information System</p>\n<p>Bachelor of Science in Information System</p>\n<p>Bachelor of Science in Information System</p>",
       "branch": [
         "pampanga"
       ],
@@ -230,14 +332,21 @@ export const programs = {
       "_mby": "56500c4665393650ef0000cf",
       "_by": "56500c4665393650ef0000cf",
       "_o": 8,
-      "_modified": 1635775912,
+      "_modified": 1639641482,
       "_created": 1635775784,
       "_id": "965885846563638a46000107",
-      "children": []
+      "description": null,
+      "image": {
+        "path": "/cockpit/storage/uploads/2021/12/16/B_compressed_uid_61baf03a7064c.jpg"
+      },
+      "images": null,
+      "children": [
+        
+      ]
     },
     {
       "program_name": "BSBA Major in Financial Management",
-      "program_desc": "<p>BSBA Major in Financial Management<\/p>\n<p>BSBA Major in Financial Management<\/p>\n<p>BSBA Major in Financial Management<\/p>\n<p>BSBA Major in Financial Management<\/p>",
+      "program_desc": "<p>BSBA Major in Financial Management</p>\n<p>BSBA Major in Financial Management</p>\n<p>BSBA Major in Financial Management</p>\n<p>BSBA Major in Financial Management</p>",
       "branch": [
         "pampanga"
       ],
@@ -249,20 +358,27 @@ export const programs = {
         {
           "_id": "95df14a7653631604e0002c7",
           "link": "departments",
-          "display": "pampanga cbaa"
+          "display": "departments"
         }
       ],
       "_mby": "56500c4665393650ef0000cf",
       "_by": "56500c4665393650ef0000cf",
       "_o": 9,
-      "_modified": 1635776041,
+      "_modified": 1639641498,
       "_created": 1635776041,
       "_id": "967fb882303433b30e000149",
-      "children": []
+      "description": null,
+      "image": {
+        "path": "/cockpit/storage/uploads/2021/12/16/A_compressed_uid_61baf039d4a44.jpg"
+      },
+      "images": null,
+      "children": [
+        
+      ]
     },
     {
       "program_name": "BSBA Major in Marketing Management",
-      "program_desc": "<p>BSBA Major in Marketing management<\/p>\n<p>BSBA Major in Marketing management<\/p>\n<p>BSBA Major in Marketing management<\/p>\n<p>BSBA Major in Marketing management<\/p>",
+      "program_desc": "<p>BSBA Major in Marketing management</p>\n<p>BSBA Major in Marketing management</p>\n<p>BSBA Major in Marketing management</p>\n<p>BSBA Major in Marketing management</p>",
       "branch": null,
       "level": [
         "undergraduate",
@@ -281,11 +397,13 @@ export const programs = {
       "_modified": 1635776076,
       "_created": 1635776076,
       "_id": "968511e8313235feaa00034d",
-      "children": []
+      "children": [
+        
+      ]
     },
     {
       "program_name": "BSBA Major in Human Resource Development Management",
-      "program_desc": "<p>BSBA Major in Human Resource Development Management<\/p>\n<p>BSBA Major in Human Resource Development Management<\/p>\n<p>BSBA Major in Human Resource Development Management<\/p>\n<p>BSBA Major in Human Resource Development Management<\/p>",
+      "program_desc": "<p>BSBA Major in Human Resource Development Management</p>\n<p>BSBA Major in Human Resource Development Management</p>\n<p>BSBA Major in Human Resource Development Management</p>\n<p>BSBA Major in Human Resource Development Management</p>",
       "branch": [
         "pampanga"
       ],
@@ -306,11 +424,13 @@ export const programs = {
       "_modified": 1635776111,
       "_created": 1635776111,
       "_id": "968a6a64633733cc7b0002ae",
-      "children": []
+      "children": [
+        
+      ]
     },
     {
       "program_name": "Bachelor of Inclusive and Special Needs Education",
-      "program_desc": "<p>Bachelor of Inclusive and Special Needs Education<\/p>\n<p>Bachelor of Inclusive and Special Needs Education<\/p>\n<p>Bachelor of Inclusive and Special Needs Education<\/p>\n<p>Bachelor of Inclusive and Special Needs Education<\/p>\n<p>&nbsp;<\/p>",
+      "program_desc": "<p>Bachelor of Inclusive and Special Needs Education</p>\n<p>Bachelor of Inclusive and Special Needs Education</p>\n<p>Bachelor of Inclusive and Special Needs Education</p>\n<p>Bachelor of Inclusive and Special Needs Education</p>\n<p>&nbsp;</p>",
       "branch": [
         "pampanga"
       ],
@@ -331,11 +451,13 @@ export const programs = {
       "_modified": 1635776147,
       "_created": 1635776147,
       "_id": "968fecb16130351c85000031",
-      "children": []
+      "children": [
+        
+      ]
     },
     {
       "program_name": "Bachelor in Early Childhood Education",
-      "program_desc": "<p>Bachelor in Early Childhood Education<\/p>\n<p>Bachelor in Early Childhood Education<\/p>\n<p>Bachelor in Early Childhood Education<\/p>\n<p>Bachelor in Early Childhood Education<\/p>",
+      "program_desc": "<p>Bachelor in Early Childhood Education</p>\n<p>Bachelor in Early Childhood Education</p>\n<p>Bachelor in Early Childhood Education</p>\n<p>Bachelor in Early Childhood Education</p>",
       "branch": [
         "pampanga"
       ],
@@ -356,11 +478,13 @@ export const programs = {
       "_modified": 1635776183,
       "_created": 1635776183,
       "_id": "96954f7e316161852800039c",
-      "children": []
+      "children": [
+        
+      ]
     },
     {
       "program_name": "Bachelor in Elementary Education",
-      "program_desc": "<p>Bachelor in Elementary Education<\/p>\n<p>Bachelor in Elementary Education<\/p>\n<p>Bachelor in Elementary Education<\/p>\n<p>Bachelor in Elementary Education<\/p>",
+      "program_desc": "<p>Bachelor in Elementary Education</p>\n<p>Bachelor in Elementary Education</p>\n<p>Bachelor in Elementary Education</p>\n<p>Bachelor in Elementary Education</p>",
       "branch": [
         "pampanga"
       ],
@@ -381,11 +505,13 @@ export const programs = {
       "_modified": 1635776216,
       "_created": 1635776216,
       "_id": "969a61bc353763328c0002aa",
-      "children": []
+      "children": [
+        
+      ]
     },
     {
       "program_name": "Bachelor of Science in Pyschology",
-      "program_desc": "<p>Bachelor of Science in Pyschology<\/p>\n<p>Bachelor of Science in Pyschology<\/p>\n<p>Bachelor of Science in Pyschology<\/p>\n<p>Bachelor of Science in Pyschology<\/p>",
+      "program_desc": "<p>Bachelor of Science in Pyschology</p>\n<p>Bachelor of Science in Pyschology</p>\n<p>Bachelor of Science in Pyschology</p>\n<p>Bachelor of Science in Pyschology</p>",
       "branch": [
         "pampanga"
       ],
@@ -406,11 +532,13 @@ export const programs = {
       "_modified": 1635776248,
       "_created": 1635776248,
       "_id": "969f53c3303539c562000028",
-      "children": []
+      "children": [
+        
+      ]
     },
     {
       "program_name": "Bachelor of Science in Economics",
-      "program_desc": "<p>Bachelor of Science in Economics<\/p>\n<p>Bachelor of Science in Economics<\/p>\n<p>Bachelor of Science in Economics<\/p>\n<p>Bachelor of Science in Economics<\/p>",
+      "program_desc": "<p>Bachelor of Science in Economics</p>\n<p>Bachelor of Science in Economics</p>\n<p>Bachelor of Science in Economics</p>\n<p>Bachelor of Science in Economics</p>",
       "branch": [
         "pampanga"
       ],
@@ -431,11 +559,13 @@ export const programs = {
       "_modified": 1635776291,
       "_created": 1635776291,
       "_id": "96a5e2093736317e5b000155",
-      "children": []
+      "children": [
+        
+      ]
     },
     {
       "program_name": "Bachelor of Arts in Political Science",
-      "program_desc": "<p>Bachelor of Arts in Political Science<\/p>\n<p>Bachelor of Arts in Political Science<\/p>\n<p>Bachelor of Arts in Political Science<\/p>\n<p>Bachelor of Arts in Political Science<\/p>\n<p>&nbsp;<\/p>",
+      "program_desc": "<p>Bachelor of Arts in Political Science</p>\n<p>Bachelor of Arts in Political Science</p>\n<p>Bachelor of Arts in Political Science</p>\n<p>Bachelor of Arts in Political Science</p>\n<p>&nbsp;</p>",
       "branch": [
         "pampanga"
       ],
@@ -456,11 +586,13 @@ export const programs = {
       "_modified": 1635776326,
       "_created": 1635776326,
       "_id": "96ab28226630655cef0000a3",
-      "children": []
+      "children": [
+        
+      ]
     },
     {
       "program_name": "(ICT) Information and Communications Technology",
-      "program_desc": "<p>Information and Communications Technology<\/p>\n<p>Information and Communications Technology<\/p>\n<p>Information and Communications Technology<\/p>\n<p>Information and Communications Technology<\/p>",
+      "program_desc": "<p>Information and Communications Technology</p>\n<p>Information and Communications Technology</p>\n<p>Information and Communications Technology</p>\n<p>Information and Communications Technology</p>",
       "branch": [
         "lipa"
       ],
@@ -475,11 +607,13 @@ export const programs = {
       "_modified": 1635776393,
       "_created": 1635776393,
       "_id": "96b55f67316438caf2000339",
-      "children": []
+      "children": [
+        
+      ]
     },
     {
       "program_name": "Home Economics",
-      "program_desc": "<p>Home Economics<\/p>\n<p>Home Economics<\/p>\n<p>Home Economics<\/p>\n<p>Home Economics<\/p>\n<p>&nbsp;<\/p>",
+      "program_desc": "<p>Home Economics</p>\n<p>Home Economics</p>\n<p>Home Economics</p>\n<p>Home Economics</p>\n<p>&nbsp;</p>",
       "branch": [
         "lipa"
       ],
@@ -494,11 +628,13 @@ export const programs = {
       "_modified": 1635776418,
       "_created": 1635776418,
       "_id": "96b92e3b35363960e3000355",
-      "children": []
+      "children": [
+        
+      ]
     },
     {
       "program_name": "Industrial Arts",
-      "program_desc": "<p>Industrial Arts<\/p>\n<p>Industrial Arts<\/p>\n<p>Industrial Arts<\/p>\n<p>Industrial Arts<\/p>",
+      "program_desc": "<p>Industrial Arts</p>\n<p>Industrial Arts</p>\n<p>Industrial Arts</p>\n<p>Industrial Arts</p>",
       "branch": [
         "lipa"
       ],
@@ -513,11 +649,13 @@ export const programs = {
       "_modified": 1635776440,
       "_created": 1635776440,
       "_id": "96bc8be0656131f21c000357",
-      "children": []
+      "children": [
+        
+      ]
     },
     {
       "program_name": "Arts & Design",
-      "program_desc": "<p>Arts &amp; Design<\/p>\n<p>Arts &amp; Design<\/p>\n<p>Arts &amp; Design<\/p>\n<p>Arts &amp; Design<\/p>\n<p>&nbsp;<\/p>",
+      "program_desc": "<p>Arts &amp; Design</p>\n<p>Arts &amp; Design</p>\n<p>Arts &amp; Design</p>\n<p>Arts &amp; Design</p>\n<p>&nbsp;</p>",
       "branch": [
         "lipa"
       ],
@@ -532,11 +670,13 @@ export const programs = {
       "_modified": 1635776466,
       "_created": 1635776456,
       "_id": "96bef4d5353133f3d40000fe",
-      "children": []
+      "children": [
+        
+      ]
     },
     {
       "program_name": "Bachelor of Science in Computer Science",
-      "program_desc": "<p>Bachelor of Science in Computer Science<\/p>\n<p>Bachelor of Science in Computer Science<\/p>\n<p>Bachelor of Science in Computer Science<\/p>\n<p>Bachelor of Science in Computer Science<\/p>",
+      "program_desc": "<p>Bachelor of Science in Computer Science</p>\n<p>Bachelor of Science in Computer Science</p>\n<p>Bachelor of Science in Computer Science</p>\n<p>Bachelor of Science in Computer Science</p>",
       "branch": [
         "lipa"
       ],
@@ -551,7 +691,9 @@ export const programs = {
       "_modified": 1635776496,
       "_created": 1635776496,
       "_id": "96c527503530378f380003c6",
-      "children": []
+      "children": [
+        
+      ]
     }
   ],
   "total": 23

@@ -12,7 +12,7 @@ import SkeletonImage from "../SkeletonImage.svelte";
 </script>
 
 <div on:click class="cursor-pointer bg-light-800 rounded relative overflow-hidden group transform transform-scale transition transition-scale scale-100 hover:scale-102 hover:shadow-lg hover:bg-light-50">
-  <SkeletonImage class='w-full relative overflow-hidden' style='aspect-ratio: 1/1;' img={data.img}/>
+  <SkeletonImage class='w-full relative overflow-hidden' style='aspect-ratio: 1/1;' img={data.img} viewable={false}/>
   <div class="p-2 flex flex-col justify-between">
     <div class="text-center font-light text-2xl text-primary-900 truncate">
       {data.text}

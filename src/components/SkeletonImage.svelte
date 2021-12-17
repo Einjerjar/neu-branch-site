@@ -1,25 +1,32 @@
 <script>
   import SkeletonComponent from "./SkeletonComponent.svelte";
+  import {img_path} from '@/store'
 
   let clazz = ''
   let style = ''
 
-  export let img = '';
+  export let img = ''
+  export let viewable = true
   export { clazz as class, style }
 
   let i_ref
-  let img_s = new Image()
   let loaded = false
 
-  img_s.addEventListener('load', () => {
-    i_ref.style.backgroundImage = `url(${img_s.src})`
-    loaded = true
-  })
+  const handleImgChange = (i) => {
+    let im = new Image()
+    loaded = false
+    im.addEventListener('load', () => {
+      i_ref.style.backgroundImage = `url(${im.src})`
+      loaded = true
+    })
+    im.src = i
+  }
 
-  img_s.src = img
+  $: img_change = handleImgChange(img)
+
 </script>
 
-<div class='relative overflow-hidden {clazz}' style={style}>
+<div on:click on:click={() => viewable ? img_path.set(img) : ''} class='relative overflow-hidden {viewable ? 'cursor-pointer' : ''} {clazz}' style={style}>
   {#if !loaded}
     <SkeletonComponent />
   {/if}

@@ -1,11 +1,11 @@
 <script>
-import { img_path } from '@/store';
+  import { img_path } from '@/store';
 
-import { HOST_ROOT } from '@/utils';
+  import { HOST_ROOT } from '@/utils';
 
   import { createEventDispatcher } from 'svelte'
   import { slide } from 'svelte/transition';
-import SkeletonImage from '../SkeletonImage.svelte';
+  import SkeletonImage from '../SkeletonImage.svelte';
 
   const dispatch = createEventDispatcher()
 
@@ -28,8 +28,28 @@ import SkeletonImage from '../SkeletonImage.svelte';
         display: "pampanga cbaa",
       },
     ],
+    image: null,
+    images: null,
   }
   $: p_img = prg.image ? HOST_ROOT + prg.image.path : './images/acad/default_compressed.jpg';
+
+  let gallery = [
+    './images/acad/A_compressed.jpg',
+    './images/acad/B_compressed.jpg',
+    './images/acad/C_compressed.jpg',
+    './images/acad/D_compressed.jpg',
+  ]
+
+  let offset = 0
+
+  const handleScroll = (n) => {
+    if (offset + n < 0 || offset + n > gallery.length-3) return
+    offset += n
+  }
+
+  $: n_gallery = prg.images == null ? [] : prg.images.slice(offset, offset+3)
+  $: g_at_start = offset === 0
+  $: g_at_end = offset === gallery.length-3
 </script>
 
 <div transition:slide class="container mx-auto px-4">
@@ -45,7 +65,7 @@ import SkeletonImage from '../SkeletonImage.svelte';
     <div class="p-4">
       <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
         <div>
-          <SkeletonImage class="w-full rounded bg-cover bg-center cursor-pointer" style='aspect-ratio: 1/1;' img={p_img} on:click={() => img_path.set(p_img)}></SkeletonImage>
+          <SkeletonImage class="w-full rounded bg-cover bg-center cursor-pointer" style='aspect-ratio: 1/1;' img={p_img}></SkeletonImage>
           <div class="mt-4 hidden md:block">
             <div>
               <div class="font-bold text-primary-900">
@@ -80,19 +100,21 @@ import SkeletonImage from '../SkeletonImage.svelte';
           <div class="text-gray-700 mt-4 flex-grow my-4">
             {@html prg.program_desc}
           </div>
-          <div class="rounded bg-primary-900 w-full flex">
-            <div class="text-white w-16 flex items-center justify-center">
-              <i class="fa fa-chevron-left"></i>
+          {#if prg.images != null && prg.images.length != 0}
+            <div class="rounded bg-primary-900 w-full flex">
+              <div class="text-primary-500 w-16 flex items-center justify-center {!g_at_start ? '!text-primary-300 !hover:text-white' : ''}" on:click={() => handleScroll(-1)}>
+                <i class="fa fa-chevron-left"></i>
+              </div>
+              <div class="grid grid-cols-3 gap-4 flex-grow p-4">
+                {#each n_gallery as g}
+                  <SkeletonImage class="w-full rounded bg-cover bg-center" style="aspect-ratio: 1/1;" img={HOST_ROOT + g.path}/>
+                {/each}
+              </div>
+              <div class="text-primary-500 w-16 flex items-center justify-center {!g_at_end ? '!text-primary-300 !hover:text-white' : ''}" on:click={() => handleScroll(+1)}>
+                <i class="fa fa-chevron-right"></i>
+              </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 flex-grow p-4">
-              <div class="w-full rounded bg-cover bg-center" style="aspect-ratio: 1/1; background-image: url(./images/acad/default_compressed.jpg);"></div>
-              <div class="w-full rounded bg-cover bg-center hidden md:block" style="aspect-ratio: 1/1; background-image: url(./images/acad/default_compressed.jpg);"></div>
-              <div class="w-full rounded bg-cover bg-center hidden lg:block" style="aspect-ratio: 1/1; background-image: url(./images/acad/default_compressed.jpg);"></div>
-            </div>
-            <div class="text-white w-16 flex items-center justify-center">
-              <i class="fa fa-chevron-right"></i>
-            </div>
-          </div>
+          {/if}
           <div class="mt-4 block md:hidden">
             <div>
               <div class="font-bold text-primary-900">
