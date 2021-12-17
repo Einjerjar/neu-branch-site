@@ -9,7 +9,7 @@
 </script>
 
 <div on:click class="cursor-pointer bg-light-800 rounded relative overflow-hidden group transform transform-scale transition transition-scale scale-100 hover:scale-102 hover:shadow-lg hover:bg-light-50">
-  <div class="w-full bg-red-500 bg-cover bg-center" style={`aspect-ratio: 1/1; background-image: url(${data.img});`}></div>
+  <div class="w-full bg-red-500 bg-cover bg-center" style='aspect-ratio: 1/1; background-image: url({data.img});'></div>
   <div class="p-2 flex flex-col justify-between">
     <div class="text-center font-light text-2xl text-primary-900 truncate">
       {data.text}

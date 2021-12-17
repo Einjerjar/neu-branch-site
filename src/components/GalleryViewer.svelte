@@ -1,6 +1,6 @@
 <script>
   import { img_path } from '@/store'
-import { fade, slide } from 'svelte/transition';
+  import { fade, slide } from 'svelte/transition';
 
   $: show = $img_path !== ''
   const handleEscape = e => {
@@ -19,7 +19,7 @@ import { fade, slide } from 'svelte/transition';
   <div class="max-h-full bg-white rounded overflow-hidden pointer-events-auto">
     <div class="w-full h-50px flex bg-gray-300 px-4 py-2 items-center">
       <div class="mr-2">
-        Test
+        {$img_path}
       </div>
       <div class="ml-auto">
         <div class="w-32px h-32px flex items-center justify-center group" on:click={() => {img_path.set('')}}>

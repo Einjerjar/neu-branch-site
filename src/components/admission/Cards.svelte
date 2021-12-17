@@ -9,7 +9,7 @@
     <!-- <a href={'#'+admissionLinks[0].path}> -->
     <a href={pathChosen}>
       <div class="group text-black overflow-hidden cursor-pointer">
-        <div class="h-75 bg-cover bg-center" style={`background-image: url(${imageSrc});`}></div>
+        <div class="h-75 bg-cover bg-center" style='background-image: url({imageSrc});'></div>
         <div class="font-sans text-xl mt-4 mx-7 mb-9">
             <p class="font-bold mb-4">{schoolType}</p>
             <p class="text-base mb-4"><slot></slot></p>
