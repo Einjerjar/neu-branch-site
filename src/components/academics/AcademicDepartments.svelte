@@ -29,7 +29,7 @@
   }
 
   const closeGroup = () => {
-    console.log('closeGroup')
+    // console.log('closeGroup')
     dispatch('closeGroup')
   }
 </script>

@@ -5,7 +5,7 @@
     showMore: true
   }
 
-  console.log(data)
+  // console.log(data)
 </script>
 
 <div on:click class="cursor-pointer bg-light-800 rounded relative overflow-hidden group transform transform-scale transition transition-scale scale-100 hover:scale-102 hover:shadow-lg hover:bg-light-50">

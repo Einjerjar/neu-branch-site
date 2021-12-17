@@ -30,7 +30,7 @@ import { slide } from 'svelte/transition';
     let f = await fetch(re_param('collections/get/posts', cfg))
     
     let j = await f.json()
-    console.log('event', j)
+    // console.log('event', j)
     return j || events
   }
 

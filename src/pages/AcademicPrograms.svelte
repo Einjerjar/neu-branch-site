@@ -6,7 +6,7 @@
   let program_sets = ["Undergradute", "Senior High School", "Basic Education"];
   let selected = "Undergradute";
 
-  console.log(departments);
+  // console.log(departments);
 
   let selected_department_index = 1;
   $: selected_department = departments.entries[selected_department_index];
@@ -29,13 +29,13 @@
   let isProgramShowing = false
   const showProgram = () => {
     isProgramShowing = true
-    console.log('show')
+    // console.log('show')
   };
 
   const hideProgram = () => {
     isProgramShowing = false
     selected_program_index = 0
-    console.log('hide')
+    // console.log('hide')
   }
 </script>
 

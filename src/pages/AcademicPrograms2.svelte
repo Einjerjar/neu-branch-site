@@ -57,7 +57,7 @@
     let data = res.entries
     data = clean_entries(data)
 
-    console.log('p', data, d)
+    // console.log('p', data, d)
     return data || programs;
   }
 
@@ -66,11 +66,11 @@
       'filter[branch]': id,
     }))
 
-    console.log('rr', res)
+    // console.log('rr', res)
     let data = res.entries
     data = clean_entries(data)
 
-    console.log(data, Object.keys(level_data))
+    // console.log(data, Object.keys(level_data))
     return data || departments
   }
 
@@ -102,35 +102,35 @@
   }
 
   const selectGroup = (v) => {
-    console.log('selectGroup', v);
+    // console.log('selectGroup', v);
     set_state(1);
     grp = v.detail
   };
 
   const selectDepartment = (v) => {
-    console.log('selectDepartment', v);
+    // console.log('selectDepartment', v);
     set_state(2);
     dep = v.detail
   };
 
   const selectProgram = (v) => {
-    console.log('selectProgram', v)
+    // console.log('selectProgram', v)
     set_state(3);
     prg = v.detail
   }
 
   const closeView = () => {
-    console.log('closeView')
+    // console.log('closeView')
     set_state(2);
   }
 
   const closeGroup = () => {
-    console.log('closeGroup')
+    // console.log('closeGroup')
     set_state(0);
   }
 
   const closeDep = () => {
-    console.log('closeDep')
+    // console.log('closeDep')
     set_state(1);
   }
 </script>

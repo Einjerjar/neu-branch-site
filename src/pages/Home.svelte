@@ -16,7 +16,7 @@ import { slide } from 'svelte/transition';
       'filter[category]': 'event'
     }))
     let j = await f.json()
-    console.log('announcement data from posts collection',j)
+    // console.log('announcement data from posts collection',j)
     return j || events
   }
 

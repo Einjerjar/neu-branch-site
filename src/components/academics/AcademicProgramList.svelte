@@ -9,7 +9,7 @@
   }
 
   const closeDep = () => {
-    console.log('closeDep')
+    // console.log('closeDep')
     dispatch('closeDep')
   }
 

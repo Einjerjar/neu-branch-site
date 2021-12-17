@@ -19,7 +19,7 @@
     }))
     let branchDataJson = await branchData.json();
     branchDataJson = branchDataJson.entries[0];
-    console.log('branchdata', branchDataJson);
+    // console.log('branchdata', branchDataJson);
     branch_data.set(branchDataJson);
     return branchDataJson;
   }

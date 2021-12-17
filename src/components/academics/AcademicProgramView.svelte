@@ -9,7 +9,7 @@ import { HOST_ROOT } from '@/utils';
   const dispatch = createEventDispatcher()
 
   const closeView = () => {
-    console.log('EE')
+    // console.log('EE')
     dispatch('closeView')
   }
 

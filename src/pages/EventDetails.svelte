@@ -16,7 +16,7 @@ import { slide } from 'svelte/transition';
       'filter[_id]': params.id
     }))
     let j = await f.json()
-    console.log(j)
+    // console.log(j)
     return j.entries[0] || events.entries[0]
   }
 
