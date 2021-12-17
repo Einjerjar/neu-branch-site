@@ -6,7 +6,7 @@
   import { slide } from 'svelte/transition';
 
   //img sources
-  const campusMainImage = './images/NEU_Pampangga.jpg'
+  const campusMainImage = './images/neu_pampangga.jpg'
   const neuLOGO = './images/logo_x300.png'
   const GO_image = './images/logo_x300.png'
 
