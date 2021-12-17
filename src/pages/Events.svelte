@@ -13,7 +13,7 @@ import Button from '@/components/events/Button.svelte';
 import { slide } from 'svelte/transition';
 import Loading from '@/components/Loading.svelte';
 
-  const branchInfo = {branchName:'General Santos City', imgSource:'./images/NEU_GENSAN.png', id:1};
+  const branchInfo = {branchName:'General Santos City', imgSource:'./images/neu_gensan.jpg', id:1};
   const neuMainSrc = './images/neu_mainfront.jpg';
 
   let currentELimit = 4

@@ -3,10 +3,10 @@
     import { fade, slide } from 'svelte/transition'
 
     const branchInfo = [
-        {branchName:'Quezon City (Main Branch)', imgSource:'./images/NEU_MAIN.png', id:0},
-        {branchName:'General Santos City', imgSource:'./images/NEU_GENSAN.png', id:1},
-        {branchName:'Pampanga', imgSource:'./images/NEU_PAMPANGA.png', id:2},
-        {branchName:'Lipa City', imgSource:'./images/NEU_LIPA.png', id:3},
+        {branchName:'Quezon City (Main Branch)', imgSource:'./images/neu_main.jpg', id:0},
+        {branchName:'General Santos City', imgSource:'./images/neu_gensan.jpg', id:1},
+        {branchName:'Pampanga', imgSource:'./images/neu_pampanga.jpg', id:2},
+        {branchName:'Lipa City', imgSource:'./images/neu_lipa.jpg', id:3},
     ];
 
 </script>

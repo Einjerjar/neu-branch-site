@@ -3,20 +3,15 @@
 
   import Divider from "@/components/Divider.svelte";
   import MVP from "@/components/campus/mvp.svelte"
-import { slide } from 'svelte/transition';
+  import { slide } from 'svelte/transition';
 
   //img sources
-  const ph_mapSrc = './images/branchimage.png'
-  const campusMainImage = './images/NEU_Pampangga.png'
+  const campusMainImage = './images/NEU_Pampangga.jpg'
   const neuLOGO = './images/logo_x300.png'
   const GO_image = './images/logo_x300.png'
 
   //map
   const mapDirections = 'https://goo.gl/maps/HSAo3iXD8URBUHNe9'
-
-  function isClicked(){
-    window.open(mapDirections);
-  }
 
   //text sources
   const descr = "New era University openede its New Era University - General Santos City Branch in June 1994, at first offereing the Prescgool Eduycation Program. Elementary and secondaty edu Education Programs were opened soon after. It was on June 5, 1998, when the new school building situated in a half-hectare land area was inaugurated. The school is now fully equipped to implement the K to 12 program with Senior High School. NEU – GSC marked another significant event of its history in March 2018 upon receiving Government Recognition for the Bachelor of Science courses: Real Estate Management, Entrepreneurship, Accounting Technology, and Accountancy."
@@ -99,7 +94,7 @@ import { slide } from 'svelte/transition';
 
 <style>
   .pageBG_redColor{
-    background-image: url('./images/ABOUT_RED.png');
+    background-image: url('./images/about_red.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: bottom;
