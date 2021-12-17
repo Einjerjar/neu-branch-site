@@ -3,7 +3,15 @@
 import { fade, slide } from 'svelte/transition';
 
   $: show = $img_path !== ''
+  const handleEscape = e => {
+    if (!show) return
+    if (e.keyCode === 27) {
+      img_path.set('')
+    }
+  }
 </script>
+
+<svelte:window on:keydown={handleEscape} />
 
 {#if show}
 <div transition:fade class="fixed w-screen h-screen bg-black bg-opacity-75 z-9998"  on:click={() => {img_path.set('')}}></div>  
