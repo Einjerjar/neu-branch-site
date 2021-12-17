@@ -64,7 +64,7 @@ $: event_details = events.entries.filter((entry) => params.id === entry._id)[0];
             {#if local_event.images}
                 {#each local_event.images as img}
                     <div class="my-4">
-                        <img src={`${HOST_ROOT}${img.path}`} alt="alt">
+                        <img class="cursor-pointer rounded" src={`${HOST_ROOT}${img.path}`} on:click={() => img_path.set(`${HOST_ROOT}${img.path}`)} alt="alt">
                     </div>
                 {/each}
             {/if}
