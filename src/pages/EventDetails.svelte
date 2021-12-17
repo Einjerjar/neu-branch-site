@@ -7,6 +7,7 @@
   import { HOST_ROOT } from '@/utils';
 import { img_path } from '@/store';
 import { slide } from 'svelte/transition';
+import Loading from '@/components/Loading.svelte';
 
   export let params = {};
 
@@ -28,7 +29,7 @@ $: event_details = events.entries.filter((entry) => params.id === entry._id)[0];
 <div transition:slide class="container mx-auto p-8">
     <div class="xl:(flex flex-row-reverse items-center space-x-4 w-full)">
         {#await a_local_event()}
-          Loading Event Details
+          <Loading>Loading Event Details</Loading>
         {:then local_event}
           <div class="xl:(px-8 w-2/5)">
             <div class="uppercase text-black font-semibold mb-2">
@@ -56,7 +57,7 @@ $: event_details = events.entries.filter((entry) => params.id === entry._id)[0];
     </div>
     <div class="xl:(w-full flex space-x-4 h-full mt-8)">
         {#await a_local_event()}
-          Loading Event Details
+          <Loading>Loading Event Details</Loading>
         {:then local_event}
           <div class="xl:(w-2/3)">
             {@html local_event.content}

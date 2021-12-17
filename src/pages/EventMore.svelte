@@ -7,6 +7,7 @@
   import Divider from "@/components/Divider.svelte";
   import Button from '@/components/events/Button.svelte';
 import { slide } from 'svelte/transition';
+import Loading from '@/components/Loading.svelte';
 
   export let params = {}
   if (params.filter == null || params.filter.trim() == '') {
@@ -39,7 +40,7 @@ import { slide } from 'svelte/transition';
 
 <div transition:slide class="container mx-auto my-16">
   {#await articles}
-    Loading
+    <Loading />
   {:then a_data} 
     <div class="mt-8 mb-4">
       <Header title={filter.length > 0 && filter != 'all' ? filter : 'Latest Articles'} y_pad={false}/>

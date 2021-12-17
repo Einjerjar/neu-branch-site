@@ -11,6 +11,7 @@
   import ArticleCard from '@/components/events/ArticleCard.svelte';
 import Button from '@/components/events/Button.svelte';
 import { slide } from 'svelte/transition';
+import Loading from '@/components/Loading.svelte';
 
   const branchInfo = {branchName:'General Santos City', imgSource:'./images/NEU_GENSAN.png', id:1};
   const neuMainSrc = './images/neu_mainfront.jpg';
@@ -65,7 +66,9 @@ import { slide } from 'svelte/transition';
         </div>
         <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
           {#await a_event_data()}
-            loading
+            <div class="w-full col-span-2">
+              <Loading />
+            </div>
           {:then e_data} 
             {#each e_data.entries.slice(0,4) as event }
               <EventCard article={event}/>
@@ -110,7 +113,7 @@ import { slide } from 'svelte/transition';
     <!-- Announcement Section -->
     <Header title={"Latest Articles"}/>
       {#await a_announce_data()}
-        loading
+        <Loading />
       {:then a_data} 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 px-2">
           {#each a_data.entries.slice(0,currentALimit) as a_data}

@@ -6,7 +6,8 @@
   import NewsTicker from "@/components/NewsTicker.svelte";
   import Slider from "@/components/Slider.svelte";
   import IconCards from '@/components/home/IconCards.svelte';
-import { slide } from 'svelte/transition';
+  import { slide } from 'svelte/transition';
+import Loading from '@/components/Loading.svelte';
 
   const MAX_SUB_POST = 4;
   
@@ -53,7 +54,7 @@ import { slide } from 'svelte/transition';
         latest news
       </div>
       {#await a_event_data()}
-        Loading News
+        <Loading> Loading News </Loading>
       {:then e_data}
         <Slider datas={e_data.entries}/>
       {/await}
@@ -64,7 +65,7 @@ import { slide } from 'svelte/transition';
         announcements
       </div>
       {#await a_announce_data()}
-        Loading News
+        <Loading> Loading Announcements </Loading>
       {:then a_data}
         <Slider datas={a_data.entries}/>
       {/await}

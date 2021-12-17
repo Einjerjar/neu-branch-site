@@ -6,6 +6,7 @@
   import { events } from '@/sample_data/events';
   import {re_param} from '@/utils'
   import EventCard from "@/components/EventCard.svelte";
+import Loading from "@/components/Loading.svelte";
 
     const event_data = events.entries.filter((event) => event.Type[0] == 'Events');
     const announcement_data = events.entries.filter((event) => event.Type[0] == 'Announcement');
@@ -57,7 +58,7 @@
       <!-- News? is this even necessary? -->
       <div class="container mx-auto">
         {#await a_event_data()}
-          Loading News
+          <Loading>Loading News</Loading>
         {:then e_data}
           <Slider datas={e_data.entries}/>
         {/await}
@@ -71,7 +72,7 @@
       <!-- Announcement -->
       <div class="container mx-auto">
         {#await a_announce_data()}
-          Loading Announcements
+          <Loading>Loading Announcements</Loading>
         {:then a_data}
           <Slider datas={a_data.entries}/>
         {/await}
@@ -87,7 +88,7 @@
         <!--Event Section Start-->
         <div class="container cursor-pointer event items-center flex flex-wrap justify-center mb-12 px-4">
           {#await a_event_data()}
-            Loading Events
+            <Loading>Loading Events</Loading>
           {:then e_data}
             {#each e_data.entries as event}
               <EventCard {event}/>

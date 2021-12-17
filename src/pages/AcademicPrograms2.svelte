@@ -4,6 +4,7 @@
   import AcademicProgramList from '@/components/academics/AcademicProgramList.svelte';
   import AcademicProgramView from '@/components/academics/AcademicProgramView.svelte';
   import ItemCard from '@/components/academics/ItemCard.svelte';
+  import Loading from '@/components/Loading.svelte';
   import { departments, programs } from '@/sample_data/programs';
   import { branch_data } from '@/store';
   import { clean_entries, HOST_ROOT, re_get } from '@/utils';
@@ -140,10 +141,10 @@
 <div class='min-h-screen bg-dark-900 w-full fixed top-0 left-0 -z-1 bg-opacity-75' />
 
 {#await a_programs}
-  Loading programs
+  <Loading icon_class_extra='!text-white' text_class_extra='!text-white'>Loading programs</Loading>
 {:then prgs} 
   {#await a_departments}
-    Loading Departments
+    <Loading>Loading Departments</Loading>
   {:then deps} 
     {#if state == 'grp'}
       <AcademicGroups groups={levels} on:selectGroup={(v) => selectGroup(v)} />

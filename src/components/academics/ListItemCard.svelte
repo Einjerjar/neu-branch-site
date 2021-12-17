@@ -1,5 +1,6 @@
 <script>
 import { HOST_ROOT } from "@/utils";
+import SkeletonImage from "../SkeletonImage.svelte";
 
   export let prg = {
     program_name: "Bachelor of Science in Accounting Information System",
@@ -32,7 +33,8 @@ import { HOST_ROOT } from "@/utils";
 </script>
 
 <div on:click class="w-full rounded bg-light-700 h-40 p-4 flex group cursor-pointer" >
-  <div class="h-full bg-red-200 rounded bg-cover bg-center" style='aspect-ratio: 1/1; background-image: url({p_img});' />
+  <!-- <div class="h-full bg-red-200 rounded bg-cover bg-center" style='aspect-ratio: 1/1; background-image: url({p_img});' /> -->
+  <SkeletonImage class='h-full rounded bg-cover bg-center' style='aspect-ratio: 1/1;' img={p_img} />
   <div class="flex flex-col pl-4 overflow-hidden">
     <div class="text-3xl font-medium text-primary-900 group-hover:text-primary-400 mb-2" >
       {prg.program_name}
