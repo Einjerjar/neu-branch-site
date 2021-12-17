@@ -43,13 +43,13 @@
   let offset = 0
 
   const handleScroll = (n) => {
-    if (offset + n < 0 || offset + n > gallery.length-3) return
+    if (offset + n < 0 || offset + n > prg.images.length-3) return
     offset += n
   }
 
   $: n_gallery = prg.images == null ? [] : prg.images.slice(offset, offset+3)
   $: g_at_start = offset === 0
-  $: g_at_end = offset+3 >= gallery.length-1
+  $: g_at_end = offset+3 >= prg.images.length
 </script>
 
 <div transition:slide class="container mx-auto px-4">
