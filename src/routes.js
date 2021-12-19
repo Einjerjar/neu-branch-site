@@ -1,5 +1,7 @@
+// @ts-nocheck
 import { links } from '@/route_data'
 import EventDetails from '@/pages/EventDetails.svelte'
+
 let rr = {
   '/events/:id': EventDetails,
 }

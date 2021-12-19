@@ -1,7 +1,7 @@
 <script>
-  export let message = "";
-  export let srcImage = "./images/admission_image.jpg";
-  export let ishFull = true;
+  export let message = ''
+  export let srcImage = './images/admission_image.jpg'
+  export let ishFull = true
 </script>
 
 

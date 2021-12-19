@@ -1,11 +1,10 @@
 <script>
-  import { img_path } from '@/store';
-
-  import { HOST_ROOT } from '@/utils';
-
+  import { slide } from 'svelte/transition'
   import { createEventDispatcher } from 'svelte'
-  import { slide } from 'svelte/transition';
-  import SkeletonImage from '../SkeletonImage.svelte';
+
+  import { HOST_ROOT } from '@/utils'
+
+  import SkeletonImage from '../SkeletonImage.svelte'
 
   const dispatch = createEventDispatcher()
 
@@ -15,31 +14,24 @@
   }
 
   export let prg = {
-    program_name: "Bachelor of Science in Accounting Information System",
+    program_name: 'Bachelor of Science in Accounting Information System',
     program_desc:
-      "<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>",
-    branch: ["gensan", "lipa", "pampanga"],
-    level: ["undergraduate", "tertiary"],
-    _id: "955862716134343cac000172",
+      '<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>',
+    branch: [ 'gensan', 'lipa', 'pampanga' ],
+    level: [ 'undergraduate', 'tertiary' ],
+    _id: '955862716134343cac000172',
     department: [
       {
-        _id: "95df14a7653631604e0002c7",
-        link: "departments",
-        display: "pampanga cbaa",
+        _id: '95df14a7653631604e0002c7',
+        link: 'departments',
+        display: 'pampanga cbaa',
       },
     ],
     image: null,
     images: null,
   }
-  $: p_img = prg.image ? HOST_ROOT + prg.image.path : './images/acad/default_compressed.jpg';
-
-  let gallery = [
-    './images/acad/A_compressed.jpg',
-    './images/acad/B_compressed.jpg',
-    './images/acad/C_compressed.jpg',
-    './images/acad/D_compressed.jpg',
-  ]
-
+  $: p_img = prg.image ? HOST_ROOT + prg.image.path : './images/acad/default_compressed.jpg'
+  
   let offset = 0
 
   const handleScroll = (n) => {

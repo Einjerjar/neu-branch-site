@@ -1,6 +1,6 @@
 <script>
-  export let branchImage = 'main';
-  export let branchName = 'main';
+  export let branchImage = 'main'
+  export let branchName = 'main'
 </script>
 
 <div class="rounded-md overflow-hidden shadow group">

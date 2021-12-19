@@ -1,6 +1,6 @@
 <script>
   import { createEventDispatcher } from 'svelte'
-  import Button from "./events/Button.svelte";
+  import Button from './events/Button.svelte'
 
   export let btn_class_extra = ''
   export let text_class_extra = ''

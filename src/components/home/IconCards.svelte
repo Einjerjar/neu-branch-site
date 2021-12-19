@@ -1,6 +1,6 @@
 <script>
     import { branch_data } from '@/store'
-    import IconCard from '@/components/home/IconCard.svelte';
+    import IconCard from '@/components/home/IconCard.svelte'
 </script>
 
 {#if $branch_data.home_icons}

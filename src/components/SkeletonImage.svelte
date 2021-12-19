@@ -1,6 +1,7 @@
 <script>
-  import SkeletonComponent from "./SkeletonComponent.svelte";
-  import {img_path} from '@/store'
+  import { img_path } from '@/store'
+  
+  import SkeletonComponent from './SkeletonComponent.svelte'
 
   let clazz = ''
   let style = ''

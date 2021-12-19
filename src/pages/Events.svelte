@@ -1,27 +1,26 @@
 <script>
-  import {push} from 'svelte-spa-router'
-  import { events } from '@/sample_data/events';
+  import { slide } from 'svelte/transition'
+  
+  import { events } from '@/sample_data/events'
   import { re_param } from '@/utils'
   import { branch_data } from '@/store'
 
-  import Banner from "@/components/admission/Banner.svelte";
-  import Branch from "@/components/admission/Branch.svelte";
-  import Header from "@/components/events/Header.svelte";
-  import EventCard from '@/components/events/EventCard.svelte';
-  import ArticleCard from '@/components/events/ArticleCard.svelte';
-import Button from '@/components/events/Button.svelte';
-import { slide } from 'svelte/transition';
-import Loading from '@/components/Loading.svelte';
+  import ArticleCard from '@/components/events/ArticleCard.svelte'
+  import Branch from '@/components/admission/Branch.svelte'
+  import Button from '@/components/events/Button.svelte'
+  import EventCard from '@/components/events/EventCard.svelte'
+  import Header from '@/components/events/Header.svelte'
+  import Loading from '@/components/Loading.svelte'
 
-  const branchInfo = {branchName:'General Santos City', imgSource:'./images/neu_gensan.jpg', id:1};
-  const neuMainSrc = './images/neu_mainfront.jpg';
+  const branchInfo = { branchName:'General Santos City', imgSource:'./images/neu_gensan.jpg', id:1 }
+  const neuMainSrc = './images/neu_mainfront.jpg'
 
   let currentELimit = 4
   let currentALimit = 4
   let a_event_data = async() => {
     let response = await fetch(re_param('collections/get/posts', {
       'filter[category]': 'event',
-      'limit': currentELimit+1,
+      limit: currentELimit+1,
     }))
     
     let data = await response.json()
@@ -30,7 +29,7 @@ import Loading from '@/components/Loading.svelte';
 
   let a_announce_data = async() => {
     let response = await fetch(re_param('collections/get/posts', {
-      'limit': currentALimit+1,
+      limit: currentALimit+1,
     }))
 
     let data = await response.json()
@@ -62,7 +61,7 @@ import Loading from '@/components/Loading.svelte';
       </div>
       <div>
         <div class="my-4">
-          <Header title={"Featured"} y_pad={false}/>
+          <Header title={'Featured'} y_pad={false}/>
         </div>
         <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
           {#await a_event_data()}
@@ -111,7 +110,7 @@ import Loading from '@/components/Loading.svelte';
         {/await}
     </div> -->
     <!-- Announcement Section -->
-    <Header title={"Latest Articles"}/>
+    <Header title={'Latest Articles'}/>
       {#await a_announce_data()}
         <Loading />
       {:then a_data} 

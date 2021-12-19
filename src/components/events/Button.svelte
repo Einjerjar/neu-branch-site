@@ -1,8 +1,8 @@
 <script>
-  export let onclick = () => {}
   let clazz = ''
-
-  export {clazz as class}
+  export { clazz as class }
+  
+  export let onclick = () => {}
 </script>
 
 <div on:click class="mt-8 capitalize flex items-center justify-center {clazz}">

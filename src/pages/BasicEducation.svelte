@@ -1,10 +1,10 @@
 <script>
-    import Banner from "@/components/admission/Banner.svelte";
-    import BigHeader from "@/components/admission/BigHeader.svelte";
-    import Article from "@/components/admission/Article.svelte";
+    import Article from '@/components/admission/Article.svelte'
+    import Banner from '@/components/admission/Banner.svelte'
+    import BigHeader from '@/components/admission/BigHeader.svelte'
 
-    let bannerName = "Basic Education Procedures";
-    let bigTitle = "We are Eranians";
+    let bannerName = 'Basic Education Procedures'
+    let bigTitle = 'We are Eranians'
 </script>
 
 <main>

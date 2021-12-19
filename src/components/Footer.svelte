@@ -1,7 +1,9 @@
 <script>
   import { footer_links } from '@/store'
-  import LinkGroup from "./footer/LinkGroup.svelte";
-  const year = new Date().getFullYear();
+  
+  import LinkGroup from './footer/LinkGroup.svelte'
+
+  const year = new Date().getFullYear()
 </script>
 
 <div class="cmp-footer w-full text-white bg-primary-900 z-98">

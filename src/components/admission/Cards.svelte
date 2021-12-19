@@ -1,8 +1,7 @@
 <script>
-    import { admissionLinks } from '@/route_data';
-    export let schoolType = 'School Type';
-    export let imageSrc;
-    export let pathChosen;
+    export let schoolType = 'School Type'
+    export let imageSrc
+    export let pathChosen
 </script>
 
 <div class="w-100 rounded-lg bg-white overflow-hidden mx-8 shadow transition transition-all transform hover:scale-105 duration-100 hover:shadow-2xl mb-8">

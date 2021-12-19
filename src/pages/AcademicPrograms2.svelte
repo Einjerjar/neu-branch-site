@@ -1,67 +1,70 @@
 <script>
-  import AcademicDepartments from "@/components/academics/AcademicDepartments.svelte";
-  import AcademicGroups from "@/components/academics/AcademicGroups.svelte";
-  import AcademicProgramList from "@/components/academics/AcademicProgramList.svelte";
-  import AcademicProgramView from "@/components/academics/AcademicProgramView.svelte";
-  import LoadFailed from "@/components/LoadFailed.svelte";
-  import Loading from "@/components/Loading.svelte";
-  import { departments, programs } from "@/sample_data/programs";
-  import { branch_data } from "@/store";
-  import { clean_entries, HOST_ROOT, re_get } from "@/utils";
+  import { departments, programs } from '@/sample_data/programs'
+  import { branch_data } from '@/store'
+  import { clean_entries, HOST_ROOT, re_get } from '@/utils'
 
-  const expected_levels = ["basic", "shs", "undergrad"];
+  import AcademicDepartments from '@/components/academics/AcademicDepartments.svelte'
+  import AcademicGroups from '@/components/academics/AcademicGroups.svelte'
+  import AcademicProgramList from '@/components/academics/AcademicProgramList.svelte'
+  import AcademicProgramView from '@/components/academics/AcademicProgramView.svelte'
+  import Loading from '@/components/Loading.svelte'
+  import LoadFailed from '@/components/LoadFailed.svelte'
+
+  const expected_levels = [ 'basic', 'shs', 'undergrad' ]
   const level_data = {
     basic: {
-      img: "./images/acad/A_compressed.jpg",
-      text: "Basic Education",
+      img: './images/acad/A_compressed.jpg',
+      text: 'Basic Education',
       showMore: true,
-      _id: "basic",
+      _id: 'basic',
     },
     shs: {
-      img: "./images/acad/B_compressed.jpg",
-      text: "Senior Highschool",
+      img: './images/acad/B_compressed.jpg',
+      text: 'Senior Highschool',
       showMore: true,
-      _id: "shs",
+      _id: 'shs',
     },
     undergraduate: {
-      img: "./images/acad/C_compressed.jpg",
-      text: "Undergraduate",
+      img: './images/acad/C_compressed.jpg',
+      text: 'Undergraduate',
       showMore: true,
-      _id: "undergraduate",
+      _id: 'undergraduate',
     },
-  };
-  let levels = [];
+  }
+  let levels = []
 
+  // eslint-disable-next-line no-unused-vars
   const t_programs = async (id, trigger) => {
-    const res = await re_get("collections/get/programs", {
-      "filter[branch]": id,
-    });
+    const res = await re_get('collections/get/programs', {
+      'filter[branch]': id,
+    })
 
-    levels = [];
+    levels = []
 
     // some magic to get the available levels, too lazy to name so yeah
-    const m = res.entries.map((v) => v.level);
-    const r = m.reduce((v, p) => [...v, ...p]);
-    const f = r.filter((v, i) => r.indexOf(v) == i);
-    const d = f.filter((v) => Object.keys(level_data).includes(v));
+    const m = res.entries.map((v) => v.level)
+    const r = m.reduce((v, p) => [ ...v, ...p ])
+    const f = r.filter((v, i) => r.indexOf(v) == i)
+    const d = f.filter((v) => Object.keys(level_data).includes(v))
 
     for (let i in d) {
       if (i in expected_levels) {
-        levels.push(level_data[d[i]]);
+        levels.push(level_data[d[i]])
       }
     }
 
-    let data = res.entries;
-    data = clean_entries(data);
+    let data = res.entries
+    data = clean_entries(data)
 
     // console.log('p', data, d)
-    return data || programs;
-  };
+    return data || programs
+  }
 
+  // eslint-disable-next-line no-unused-vars
   const t_departments = async (id, trigger) => {
-    let res = await re_get("collections/get/departments", {
-      "filter[branch]": id,
-    });
+    let res = await re_get('collections/get/departments', {
+      'filter[branch]': id,
+    })
 
     // console.log('rr', res)
     let data = res.entries
@@ -69,7 +72,7 @@
 
     // console.log(data, Object.keys(level_data))
     return data || departments
-  };
+  }
 
   let programsRetryTrigger = 0
   let departmentsRetryTrigger = 0
@@ -77,60 +80,60 @@
   $: a_programs = t_programs($branch_data.id, programsRetryTrigger)
   $: a_departments = t_departments($branch_data.id, departmentsRetryTrigger)
 
-  let state = "grp"
-  let states = ["grp", "dep", "prog", "view"]
+  let state = 'grp'
+  let states = [ 'grp', 'dep', 'prog', 'view' ]
 
   const set_state = (n) => {
-    state = states[n];
+    state = states[n]
     window.scrollTo(0, 0)
-  };
+  }
 
-  let grp = "";
-  let dep = "";
+  let grp = ''
+  let dep = ''
   let prg = {
-    program_name: "Bachelor of Science in Accounting Information System",
+    program_name: 'Bachelor of Science in Accounting Information System',
     program_desc:
-      "<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>",
-    branch: ["gensan", "lipa", "pampanga"],
-    level: ["undergraduate", "tertiary"],
-    _id: "955862716134343cac000172",
+      '<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>',
+    branch: [ 'gensan', 'lipa', 'pampanga' ],
+    level: [ 'undergraduate', 'tertiary' ],
+    _id: '955862716134343cac000172',
     department: [
       {
-        _id: "95df14a7653631604e0002c7",
-        link: "departments",
-        display: "pampanga cbaa",
+        _id: '95df14a7653631604e0002c7',
+        link: 'departments',
+        display: 'pampanga cbaa',
       },
     ],
     image: null,
     images: null,
-  };
+  }
 
   const selectGroup = (v) => {
     set_state(1)
     grp = v.detail
-  };
+  }
 
   const selectDepartment = (v) => {
     set_state(2)
     dep = v.detail
-  };
+  }
 
   const selectProgram = (v) => {
     set_state(3)
     prg = v.detail
-  };
+  }
 
   const closeView = () => {
     set_state(2)
-  };
+  }
 
   const closeGroup = () => {
     set_state(0)
-  };
+  }
 
   const closeDep = () => {
     set_state(1)
-  };
+  }
 </script>
 
 <div
@@ -146,9 +149,9 @@
   {#await a_departments}
     <Loading>Loading Departments</Loading>
   {:then deps}
-    {#if state == "grp"}
+    {#if state == 'grp'}
       <AcademicGroups groups={levels} on:selectGroup={(v) => selectGroup(v)} />
-    {:else if state == "dep"}
+    {:else if state == 'dep'}
       <AcademicDepartments
         {grp}
         departments={deps.map((v) => {
@@ -157,11 +160,11 @@
             text: v.name,
             showMore: true,
             _id: v._id,
-          };
+          }
         })}
         on:selectGroup={(v) => selectDepartment(v)}
         on:closeGroup={() => closeGroup()} />
-    {:else if state == "prog"}
+    {:else if state == 'prog'}
       <AcademicProgramList
         programs={prgs}
         departments={deps}

@@ -1,15 +1,17 @@
 <script>
-  import { re_param, HOST_ROOT } from "@/utils"
+  import { re_param } from '@/utils'
   import { events } from '@/sample_data/events'
 
-  import LoadFailed from './LoadFailed.svelte';
-  import NewsCard from "./NewsCard.svelte"
+  import LoadFailed from './LoadFailed.svelte'
+  import NewsCard from './NewsCard.svelte'
 
   export let post_id
 
   const MAX_SUB_POST = 2
 
   const getArticles = async (id, category, trigger) => {
+    if (trigger < 0) console.log(trigger)
+    
     let response = await fetch(re_param('collections/get/posts', {
       limit: MAX_SUB_POST,
       'filter[_id][$ne]': id,
@@ -37,7 +39,7 @@
       Loding events
     {:then other_events}
       {#each other_events.entries as data}
-        <a href={`#/events/${data['_id']}`}>
+        <a href='#/events/{data['_id']}'>
           <div class="h-50 my-8">
             <NewsCard {data} />
           </div>
@@ -57,7 +59,7 @@
       Loding events
     {:then announce_data}
       {#each announce_data.entries as data}
-        <a href={`#/events/${data['_id']}`}>
+        <a href='#/events/{data['_id']}'>
           <div class="h-50 my-8">
             <NewsCard {data} />
           </div>

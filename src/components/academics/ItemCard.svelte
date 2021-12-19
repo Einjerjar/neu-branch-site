@@ -1,14 +1,11 @@
 <script>
-import SkeletonComponent from "../SkeletonComponent.svelte";
-import SkeletonImage from "../SkeletonImage.svelte";
+  import SkeletonImage from '../SkeletonImage.svelte'
 
   export let data = {
     img: './images/acad/A.png',
     text: 'Undergraduate',
     showMore: true
   }
-
-  // console.log(data)
 </script>
 
 <div on:click class="cursor-pointer bg-light-800 rounded relative overflow-hidden group transform transform-scale transition transition-scale scale-100 hover:scale-102 hover:shadow-lg hover:bg-light-50">

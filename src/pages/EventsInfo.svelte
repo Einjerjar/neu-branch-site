@@ -1,8 +1,8 @@
 <script>
-    import BigHeader from "@/components/admission/BigHeader.svelte";
-    import Article from "@/components/admission/Article.svelte";
+    import Article from '@/components/admission/Article.svelte'
+    import BigHeader from '@/components/admission/BigHeader.svelte'
 
-    let bigTitle = "New Era University: General Santos Branch events information";
+    let bigTitle = 'New Era University: General Santos Branch events information'
 </script>
 
 
@@ -72,24 +72,23 @@
     /* Create two unequal columns that floats next to each other */
     /* Left column */
     .leftcolumn {
-    float: left;
-    width: 75%;
-    padding: 20px;
-    border-right: 1px solid black;
-    height: auto;
+        float: left;
+        width: 75%;
+        padding: 20px;
+        border-right: 1px solid black;
+        height: auto;
     }
 
     /* Right column */
     .rightcolumn {
-    float: left;
-    width: 25%;
-
+        float: left;
+        width: 25%;
     }
     /* Clear floats after the columns */
     .row:after {
-    content: "";
-    display: table;
-    clear: both;
+        content: "";
+        display: table;
+        clear: both;
     }
 
 </style>

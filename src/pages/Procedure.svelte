@@ -1,13 +1,13 @@
 <script>
-  import ProcedureButton from "@/components/admission/ProcedureButton.svelte";
-  import { admissionLinks } from "@/route_data";
-  import Banner from "@/components/admission/Banner.svelte";
-  import BigHeader from "@/components/admission/BigHeader.svelte";
-  import Article from "@/components/admission/Article.svelte";
-import { slide } from "svelte/transition";
+  import { slide } from 'svelte/transition'
 
-  let bigTitle = "admission";
-  let bannerName = "Procedures";
+  import Article from '@/components/admission/Article.svelte'
+  import Banner from '@/components/admission/Banner.svelte'
+  import BigHeader from '@/components/admission/BigHeader.svelte'
+  import ProcedureButton from '@/components/admission/ProcedureButton.svelte'
+
+  let bigTitle = 'admission'
+  let bannerName = 'Procedures'
 </script>
 
 <div transition:slide>
@@ -54,7 +54,7 @@ import { slide } from "svelte/transition";
         paid.
       </p>
       <div class="block text-center md:text-left my-4">
-        <ProcedureButton page={"#/admission/undergrad"}>See More</ProcedureButton>
+        <ProcedureButton page={'#/admission/undergrad'}>See More</ProcedureButton>
       </div>
     </Article>
 
@@ -67,7 +67,7 @@ import { slide } from "svelte/transition";
         Personal Information Sheet thru this link NEU Automate for Application.
       </p>
       <div class="block text-center md:text-left my-4">
-        <ProcedureButton page={"#/admission/seniorHigh"}>See More</ProcedureButton>
+        <ProcedureButton page={'#/admission/seniorHigh'}>See More</ProcedureButton>
       </div>
     </Article>
 
@@ -80,7 +80,7 @@ import { slide } from "svelte/transition";
         Personal Information Sheet thru this link NEU Automate for Application.
       </p>
       <div class="block text-center md:text-left my-4">
-        <ProcedureButton page={"#/admission/seniorHigh"}>See More</ProcedureButton>
+        <ProcedureButton page={'#/admission/seniorHigh'}>See More</ProcedureButton>
       </div>
     </Article>
   </div>

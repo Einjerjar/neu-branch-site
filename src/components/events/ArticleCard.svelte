@@ -1,6 +1,7 @@
 <script>
   import { HOST_ROOT } from '@/utils'
-  export let article;
+  
+  export let article
 </script>
 
 <div class="container mx-auto block">

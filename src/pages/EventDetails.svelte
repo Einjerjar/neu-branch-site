@@ -1,17 +1,18 @@
 <script>
-  import { slide } from 'svelte/transition';
+  import { slide } from 'svelte/transition'
 
-  import { re_param, HOST_ROOT } from '@/utils';
-  import { img_path } from '@/store';
-  import { events } from '@/sample_data/events';
+  import { re_param, HOST_ROOT } from '@/utils'
+  import { img_path } from '@/store'
+  import { events } from '@/sample_data/events'
 
-  import Divider from "@/components/Divider.svelte";
-  import EventDetailsSidebar from '@/components/EventDetailsSidebar.svelte';
-  import Loading from '@/components/Loading.svelte';
-  import LoadFailed from '@/components/LoadFailed.svelte';
+  import Divider from '@/components/Divider.svelte'
+  import EventDetailsSidebar from '@/components/EventDetailsSidebar.svelte'
+  import Loading from '@/components/Loading.svelte'
+  import LoadFailed from '@/components/LoadFailed.svelte'
 
-  export let params = {};
+  export let params = {}
 
+  // eslint-disable-next-line no-unused-vars
   const getArticle = async(id, trigger) => {
     let response = await fetch(re_param('collections/get/posts', {
       limit: 5,
@@ -52,7 +53,7 @@
           </div>
 
           <div class="mb-4 xl:(w-3/5)">
-              <img src={`${HOST_ROOT}${other_articles.banner.path}`} alt="event" class="mx-auto object-cover rounded cursor-pointer" on:click={() => img_path.set(`${HOST_ROOT}${other_articles.banner.path}`)}>
+              <img src='{HOST_ROOT}{other_articles.banner.path}' alt="event" class="mx-auto object-cover rounded cursor-pointer" on:click={() => img_path.set(`${HOST_ROOT}${other_articles.banner.path}`)}>
           </div>
         {/await}
     </div>
@@ -66,7 +67,7 @@
               {#if local_event.images}
                   {#each local_event.images as img}
                       <div class="my-4">
-                          <img class="cursor-pointer rounded" src={`${HOST_ROOT}${img.path}`} on:click={() => img_path.set(`${HOST_ROOT}${img.path}`)} alt="alt">
+                          <img class="cursor-pointer rounded" src='{HOST_ROOT}{img.path}' on:click={() => img_path.set(`${HOST_ROOT}${img.path}`)} alt="alt">
                       </div>
                   {/each}
               {/if}

@@ -1,10 +1,11 @@
 <script>
-  import { events } from "@/sample_data/events"
+  import { events } from '@/sample_data/events'
+  
   export let event = events.entries[0]
 </script>
 
 <div class="offset-sm-1 col-sm-5 p-8 group mb-10 relative group">
-  <a href={`#/events/${event._id}`}>
+  <a href='#/events/{event._id}'>
     <div class="p-2 bg-white rounded-md shadow transform transition duration-300 transition-transform group-hover:scale-105 group-hover:shadow-lg">
       <div class="h-100 w-100 md:w-120 bg-center bg-cover rounded-md" style='background-image: url({event.Banner.path});'></div>
     </div>

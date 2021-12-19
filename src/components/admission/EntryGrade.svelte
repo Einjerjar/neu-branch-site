@@ -1,9 +1,9 @@
 <script>
     export let entryReq = [
-        {grade:83, description:"Integrated School (K-12 Education)", id:0},
-        {grade:85, description:"Tertiary Level", id:1},
-        {grade:2.25, description:"Weighted  average for transferees to the tertiary level" , id:2},
-    ];
+      { grade:83, description:'Integrated School (K-12 Education)', id:0 },
+      { grade:85, description:'Tertiary Level', id:1 },
+      { grade:2.25, description:'Weighted  average for transferees to the tertiary level' , id:2 },
+    ]
 </script>
 
 <div class="container px-4 mx-auto">

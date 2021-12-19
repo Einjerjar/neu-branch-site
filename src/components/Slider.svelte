@@ -1,43 +1,43 @@
 <script>
-  import NewsCard from './NewsCard.svelte';
-  import {events} from '@/sample_data/events'
+  import NewsCard from './NewsCard.svelte'
+  import { events } from '@/sample_data/events'
   export let datas = events.entries
 
-  let current = 0;
-  let next = 1;
-  let prev = datas.length - 1;
+  let current = 0
+  let next = 1
+  let prev = datas.length - 1
 
   const prevSlide = () => {
-    current > 0 ? handleSlides(current - 1) : handleSlides(datas.length - 1);
-  };
+    current > 0 ? handleSlides(current - 1) : handleSlides(datas.length - 1)
+  }
   const nextSlide = () => {
-    current < datas.length - 1 ? handleSlides(current + 1) : handleSlides(0);
-  };
+    current < datas.length - 1 ? handleSlides(current + 1) : handleSlides(0)
+  }
 
   const handleSlides = (i) => {
-    current = i;
-    prev = current - 1;
-    next = current + 1;
+    current = i
+    prev = current - 1
+    next = current + 1
 
     if (next > datas.length - 1) {
-      next = 0;
+      next = 0
     }
 
     if (prev < 0) {
-      prev = datas.length - 1;
+      prev = datas.length - 1
     }
 
     // console.log(prev, current, next);
-  };
+  }
 
   // play slider every 5 seconds
-  let cleanup;
+  let cleanup
   $: {
-    cleanup?.();
+    cleanup?.()
     const interval = setInterval(() => {
-      nextSlide();
-    }, 5000);
-    cleanup = () => clearInterval(interval);
+      nextSlide()
+    }, 5000)
+    cleanup = () => clearInterval(interval)
   }
 </script>
 

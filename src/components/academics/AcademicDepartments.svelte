@@ -1,7 +1,8 @@
 <script>
+  import { slide } from 'svelte/transition'
   import { createEventDispatcher } from 'svelte'
-  import { slide } from 'svelte/transition';
-  import ItemCard from "./ItemCard.svelte";
+  
+  import ItemCard from './ItemCard.svelte'
   import SlideyButton from './SlideyButton.svelte'
 
   export let departments = [

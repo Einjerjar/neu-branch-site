@@ -3,25 +3,25 @@
   import { slide } from 'svelte/transition'
   import { branch_data } from '@/store'
   import { onMount } from 'svelte'
-  import { re_param } from '@/utils';
+  import { re_param } from '@/utils'
   export let isSticky = false
 
   onMount(() => {
-    aBranchData();
+    aBranchData()
   })
 
-  let currentBranch = import.meta.env.VITE_BRANCH_ID.toString().toLowerCase();
+  let currentBranch = import.meta.env.VITE_BRANCH_ID.toString().toLowerCase()
   const aBranchData = async () => {
     if (!Object.prototype.hasOwnProperty.call($branch_data, 'temp')) return
     
     let branchData = await fetch(re_param('collections/get/branch_data', {
       'filter[id]': currentBranch
     }))
-    let branchDataJson = await branchData.json();
-    branchDataJson = branchDataJson.entries[0];
+    let branchDataJson = await branchData.json()
+    branchDataJson = branchDataJson.entries[0]
     // console.log('branchdata', branchDataJson);
-    branch_data.set(branchDataJson);
-    return branchDataJson;
+    branch_data.set(branchDataJson)
+    return branchDataJson
   }
 
   let dropdownNav = false
@@ -33,7 +33,7 @@
   let branch_id = import.meta.env.VITE_BRANCH_ID
 </script>
 
-<div transition:slide class={`cmp-nav top-0 left-0 w-full max-w-100vw bg-gray-100 shadow-lg px-4 z-999 ${isSticky ? 'fixed' : ''}`}>
+<div transition:slide class='cmp-nav top-0 left-0 w-full max-w-100vw bg-gray-100 shadow-lg px-4 z-999 {isSticky ? 'fixed' : ''}'>
   <div class="absolute hidden lg:block right-0 top-0 h-8 bg-primary-900 w-20rem lg:w-30rem xl:w-50rem">
   </div>
   <div class="flex container mx-auto z-10 min-h-16 ">

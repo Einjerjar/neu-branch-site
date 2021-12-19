@@ -1,3 +1,4 @@
+// @ts-nocheck
 import 'virtual:windi.css'
 import '@/common_styles.css'
 import App from './App.svelte'

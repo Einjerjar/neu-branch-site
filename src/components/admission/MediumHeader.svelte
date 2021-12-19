@@ -1,5 +1,5 @@
 <script>
-  export let midTitle = "This is a medium sized title"
+  export let midTitle = 'This is a medium sized title'
 </script>
 
 

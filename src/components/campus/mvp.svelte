@@ -1,6 +1,6 @@
 <script>
-    export let title = ""
-    export let desc = ""
+    export let title = ''
+    export let desc = ''
 
 </script>
 

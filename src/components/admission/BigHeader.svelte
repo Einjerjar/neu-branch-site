@@ -1,5 +1,5 @@
 <script>
-  export let bigTitle = "This is a title"
+  export let bigTitle = 'This is a title'
 </script>
 
 

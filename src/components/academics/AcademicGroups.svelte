@@ -1,6 +1,7 @@
 <script>
+  import { slide } from 'svelte/transition'
   import { createEventDispatcher } from 'svelte'
-  import { slide } from 'svelte/transition';
+  
   export let groups = [
     {
       img: './images/acad/A.png',
@@ -16,7 +17,7 @@
     dispatch('selectGroup', grp_name)
   }
 
-  import ItemCard from "./ItemCard.svelte";
+  import ItemCard from './ItemCard.svelte'
 </script>
 
 <div transition:slide class="container mx-auto px-4 py-16 flex flex-col">

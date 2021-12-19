@@ -1,6 +1,6 @@
 <script>
-  import MediumHeader from "@/components/admission/MediumHeader.svelte";
-  export let title;
+  import MediumHeader from '@/components/admission/MediumHeader.svelte'
+  export let title
 </script>
 
 <div class="min-h-full mx-auto max-h-full flex flex-wrap justify-start text-primary-900 ">

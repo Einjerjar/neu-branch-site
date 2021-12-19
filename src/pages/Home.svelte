@@ -1,15 +1,17 @@
 <script>
-  import { re_param } from '@/utils';
-  import { events } from '@/sample_data/events';
-  import Divider from "@/components/Divider.svelte";
-  import VideoHeader from "@/components/home/VideoHeader.svelte";
-  import NewsTicker from "@/components/NewsTicker.svelte";
-  import Slider from "@/components/Slider.svelte";
-  import IconCards from '@/components/home/IconCards.svelte';
-  import { slide } from 'svelte/transition';
-import Loading from '@/components/Loading.svelte';
+  import { slide } from 'svelte/transition'
 
-  const MAX_SUB_POST = 4;
+  import { re_param } from '@/utils'
+  import { events } from '@/sample_data/events'
+
+  import Divider from '@/components/Divider.svelte'
+  import IconCards from '@/components/home/IconCards.svelte'
+  import Loading from '@/components/Loading.svelte'
+  import NewsTicker from '@/components/NewsTicker.svelte'
+  import Slider from '@/components/Slider.svelte'
+  import VideoHeader from '@/components/home/VideoHeader.svelte'
+
+  const MAX_SUB_POST = 4
   
   let a_event_data = async() => {
     let response = await fetch(re_param('collections/get/posts', {
@@ -30,13 +32,6 @@ import Loading from '@/components/Loading.svelte';
     let data = await response.json()
     return data || events
   }
-
-  const icon_links = [
-    {name: 'NEUVLE', icon: 'fa-book', path: '#/'},
-    {name: 'Automate', icon: 'fa-robot', path: '#/'},
-    {name: 'Main Website', icon: 'fa-globe', path: '#/'},
-    {name: 'Locations', icon: 'fa-map-marker-alt', path: '#/'},
-  ]
 </script>
 
 <div transition:slide class="page-home">

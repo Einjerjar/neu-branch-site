@@ -1,14 +1,10 @@
 <script>
-    export let page = '';
-    export let isRounded = true;
-    export let isSmallRounded = false;
-    export let isBold = true;
-    export let isFullWidth = false;
-    export let widthWide = false;
-
-    const goToPage = () => {
-        location.replace(page);
-    }
+    export let page = ''
+    export let isRounded = true
+    export let isSmallRounded = false
+    export let isBold = true
+    export let isFullWidth = false
+    export let widthWide = false
 </script>
 
 <div >

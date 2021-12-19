@@ -1,13 +1,15 @@
 <script>
+  import { slide } from 'svelte/transition'
   import { push } from 'svelte-spa-router'
-  import { re_param } from "@/utils";
-  import { events } from '@/sample_data/events';
-  import ArticleCard from "@/components/events/ArticleCard.svelte";
-  import Header from "@/components/events/Header.svelte";
-  import Divider from "@/components/Divider.svelte";
-  import Button from '@/components/events/Button.svelte';
-import { slide } from 'svelte/transition';
-import Loading from '@/components/Loading.svelte';
+
+  import { re_param } from '@/utils'
+  import { events } from '@/sample_data/events'
+
+  import ArticleCard from '@/components/events/ArticleCard.svelte'
+  import Button from '@/components/events/Button.svelte'
+  import Divider from '@/components/Divider.svelte'
+  import Header from '@/components/events/Header.svelte'
+  import Loading from '@/components/Loading.svelte'
 
   export let params = {}
   if (params.filter == null || params.filter.trim() == '') {
@@ -21,8 +23,8 @@ import Loading from '@/components/Loading.svelte';
 
   const a_event_data = async(_page) => {
     const cfg = {
-      'limit': PAGE_LIMIT+1,
-      'skip': _page * (PAGE_LIMIT),
+      limit: PAGE_LIMIT+1,
+      skip: _page * PAGE_LIMIT,
     }
     if (filter.length != 0 && filter != 'all') {
       cfg['filter[category]'] = filter
@@ -51,14 +53,14 @@ import Loading from '@/components/Loading.svelte';
       {/each}
       <div class="flex children:mx-2 justify-center">
         {#if page > 0}
-          <a href={`#/eventlist/${filter}/${page}`}>
+          <a href='#/eventlist/{filter}/{page}'>
             <Button>
               Prev
             </Button>
           </a>
         {/if}
         {#if PAGE_LIMIT < a_data.entries.length}
-          <a href={`#/eventlist/${filter}/${page+2}`}>
+          <a href='#/eventlist/{filter}/{page+2}'>
             <Button>
               Next
             </Button>

@@ -1,6 +1,7 @@
 <script>
+  import { fade, slide } from 'svelte/transition'
+  
   import { img_path } from '@/store'
-  import { fade, slide } from 'svelte/transition';
 
   $: show = $img_path !== ''
   const handleEscape = e => {

@@ -1,24 +1,18 @@
 <script>
+  import { slide } from 'svelte/transition'
+  
   import { branch_data } from '@/store'
 
-  import Divider from "@/components/Divider.svelte";
-  import MVP from "@/components/campus/mvp.svelte"
-  import { slide } from 'svelte/transition';
+  import MVP from '@/components/campus/mvp.svelte'
 
   //img sources
   const campusMainImage = './images/neu_pampangga.jpg'
   const neuLOGO = './images/logo_x300.png'
   const GO_image = './images/logo_x300.png'
 
-  //map
-  const mapDirections = 'https://goo.gl/maps/HSAo3iXD8URBUHNe9'
-
-  //text sources
-  const descr = "New era University openede its New Era University - General Santos City Branch in June 1994, at first offereing the Prescgool Eduycation Program. Elementary and secondaty edu Education Programs were opened soon after. It was on June 5, 1998, when the new school building situated in a half-hectare land area was inaugurated. The school is now fully equipped to implement the K to 12 program with Senior High School. NEU – GSC marked another significant event of its history in March 2018 upon receiving Government Recognition for the Bachelor of Science courses: Real Estate Management, Entrepreneurship, Accounting Technology, and Accountancy."
-
-  const mission = "Provide quality education anchored on Christian values with the prime purpose of bringing honor and glory to God."
-  const vision = "A world-class Institution of learning with a unique Christian culture of excellence, discipline, and service to humanity."
-  const philo = "Godliness is the foundation of knowledge."
+  const mission = 'Provide quality education anchored on Christian values with the prime purpose of bringing honor and glory to God.'
+  const vision = 'A world-class Institution of learning with a unique Christian culture of excellence, discipline, and service to humanity.'
+  const philo = 'Godliness is the foundation of knowledge.'
 
 </script>
 

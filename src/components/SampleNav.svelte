@@ -1,5 +1,6 @@
 <script>
-  import {onMount, onDestroy} from 'svelte'
+  import { onMount, onDestroy } from 'svelte'
+
   import ActualNav from '@/components/ActualNav.svelte'
 
   let navShowing = false
@@ -18,9 +19,7 @@
     lastScroll = scroll
   }
 
-  const onScroll = e => {
-    // console.log(e)
-
+  const onScroll = () => {
     if (scrollTimer) {
       scrollTimer = clearTimeout(scrollTimer)
     }
