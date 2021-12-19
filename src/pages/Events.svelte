@@ -74,7 +74,7 @@ import Loading from '@/components/Loading.svelte';
               <EventCard article={event}/>
             {/each}
             {#if currentELimit < e_data.entries.length}
-              <a href='#/eventlist/event'>
+              <a href='#/eventlist/event' class="col-span-2">
                 <Button>
                   load more events
                 </Button>

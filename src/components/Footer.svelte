@@ -8,7 +8,7 @@
   <div class="container mx-auto">
     <div class="flex flex-col sm:flex-row">
       <a href="#/" class="mb-8 mx-auto min-w-35 md:ml-auto w-35 h-35 lg:(min-w-50 w-50 h-50) relative">
-        <div class="absolute bg-gra shadow-lg w-full h-full bg-primary-300 -top-2 rounded-b-lg p-5">
+        <div class="absolute bg-gra shadow-lg w-full h-full bg-primary-800 -top-2 rounded-b-lg p-5">
           <img
             src="./images/logo_x300.png"
             alt="neu"

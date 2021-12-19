@@ -23,7 +23,7 @@
 </script>
 
 <div transition:slide class="pageBG_redColor overflow-hidden">
-  <div class ="bg-opacity-90 mx-auto flex shadow-2xl px-15 bg-cyan-900 text-white">
+  <div class ="bg-opacity-90 mx-auto flex shadow-2xl px-15 bg-primary-900 text-white">
     <div class="container mx-auto flex px-4 py-8 flex-col justify-center lg:(justify-around flex-row) children:my-8">
         <div class="w-full lg:w-2/5">
           <img src={campusMainImage} alt="campus" class="w-full h-auto">

@@ -4,5 +4,7 @@
 .DS_Store
 !/.vscode/extensions.json
 *.log
-/public
+/public/android
+/public/ios
+/public/windows11
 /index.html

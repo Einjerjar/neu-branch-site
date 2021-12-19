@@ -49,7 +49,7 @@
 
   $: n_gallery = prg.images == null ? [] : prg.images.slice(offset, offset+3)
   $: g_at_start = offset === 0
-  $: g_at_end = offset+3 >= prg.images.length
+  $: g_at_end = prg.images ? offset+3 >= prg.images.length : true
 </script>
 
 <div transition:slide class="container mx-auto px-4">
