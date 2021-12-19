@@ -10,6 +10,7 @@
   import Divider from '@/components/Divider.svelte'
   import Header from '@/components/events/Header.svelte'
   import Loading from '@/components/Loading.svelte'
+  import LoadFailed from '@/components/LoadFailed.svelte'
 
   export let params = {}
   if (params.filter == null || params.filter.trim() == '') {
@@ -21,7 +22,11 @@
   
   const PAGE_LIMIT = 4
 
-  const a_event_data = async(_page) => {
+  let eventRetryTrigger = 0
+
+  const a_event_data = async(_page, trigger) => {
+    if (trigger < 0) console.log(trigger)
+
     const cfg = {
       limit: PAGE_LIMIT+1,
       skip: _page * PAGE_LIMIT,
@@ -36,7 +41,7 @@
     return data || events
   }
 
-  $:articles = a_event_data(page)
+  $:articles = a_event_data(page, eventRetryTrigger)
 </script>
 
 <div transition:slide class="container mx-auto my-16">
@@ -68,5 +73,7 @@
         {/if}
       </div>
     </div>
+  {:catch}
+    <LoadFailed on:retry={() => eventRetryTrigger ++}/>
   {/await}
 </div>

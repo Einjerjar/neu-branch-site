@@ -11,30 +11,31 @@
   import EventCard from '@/components/events/EventCard.svelte'
   import Header from '@/components/events/Header.svelte'
   import Loading from '@/components/Loading.svelte'
+  import LoadFailed from '@/components/LoadFailed.svelte'
 
   const branchInfo = { branchName:'General Santos City', imgSource:'./images/neu_gensan.jpg', id:1 }
   const neuMainSrc = './images/neu_mainfront.jpg'
 
   let currentELimit = 4
   let currentALimit = 4
-  let a_event_data = async() => {
-    let response = await fetch(re_param('collections/get/posts', {
-      'filter[category]': 'event',
-      limit: currentELimit+1,
-    }))
-    
-    let data = await response.json()
-    return data || events
-  }
 
-  let a_announce_data = async() => {
-    let response = await fetch(re_param('collections/get/posts', {
-      limit: currentALimit+1,
-    }))
+  let eventRetryTrigger = 0
+  let announceRetryTrigger = 0
+
+  const getEvents = async (category, limit, trigger) => {
+    if (trigger < 0) console.log(trigger)
+
+    const conf = { limit }
+    if (category.trim() != '') conf['filter[category]'] = category
+
+    let response = await fetch(re_param('collections/get/posts', conf))
 
     let data = await response.json()
     return data || events
   }
+
+  $: a_event_data = getEvents('event', currentELimit+1, eventRetryTrigger)
+  $: a_announce_data = getEvents('', currentALimit+1, announceRetryTrigger)
 
 </script>
 <div transition:slide class="home mb-20">
@@ -64,7 +65,7 @@
           <Header title={'Featured'} y_pad={false}/>
         </div>
         <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
-          {#await a_event_data()}
+          {#await a_event_data}
             <div class="w-full col-span-2">
               <Loading />
             </div>
@@ -79,6 +80,8 @@
                 </Button>
               </a>
             {/if}
+          {:catch}
+            <LoadFailed on:retry={() => eventRetryTrigger ++} />
           {/await}
         </div>
       </div>
@@ -89,29 +92,9 @@
     <Branch branchImage={branchInfo.imgSource} branchName={branchInfo.branchName}></Branch>
   </div>
   <div class="container mx-auto">
-    <!-- Events Section -->
-    <!-- <Header title={"Our Events"}/>
-    <div class="my-15 catamaran px-4">
-        {#await a_event_data()}
-          loading
-        {:then e_data} 
-          <div class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4">
-            {#each e_data.entries.slice(0,currentELimit) as event }
-              <EventCard article={event}/>
-            {/each}
-          </div>
-          {#if currentELimit < e_data.entries.length}
-            <a href='#/eventlist/Events'>
-              <Button>
-                load more events
-              </Button>
-            </a>
-          {/if}
-        {/await}
-    </div> -->
     <!-- Announcement Section -->
     <Header title={'Latest Articles'}/>
-      {#await a_announce_data()}
+      {#await a_announce_data}
         <Loading />
       {:then a_data} 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 px-2">
@@ -126,6 +109,8 @@
             </Button>
           </a>
         {/if}
+      {:catch}
+        <LoadFailed on:retry={() => announceRetryTrigger ++} />
       {/await}
   </div>
 </div>

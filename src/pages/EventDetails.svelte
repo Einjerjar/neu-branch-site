@@ -33,7 +33,9 @@
 <div transition:slide class="container mx-auto p-8">
     <div class="xl:(flex flex-row-reverse items-center space-x-4 w-full)">
         {#await a_current_article}
-          <!-- <Loading>Loading Event Details</Loading> -->
+          <Loading>
+            Loading Event Details
+          </Loading>
         {:then other_articles}
           <div class="xl:(px-8 w-2/5)">
             <div class="uppercase text-black font-semibold mb-2">

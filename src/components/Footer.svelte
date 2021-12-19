@@ -33,7 +33,7 @@
     </div>
   </div>
 
-  <div class="w-full px-8 bg-gray-900 bg-opacity-10">
+  <div class="w-full px-8 bg-gray-900 bg-opacity-20">
     <div class="container mx-auto py-8 px-8 flex flex-col items-center text-white space-y-6 md:(justify-between flex-row)">
       <div class="lg:(flex items-center)">
         <div class="font-shelley text-4xl capitalize border-b-5px pb-6 lg:(border-none mr-6)" >

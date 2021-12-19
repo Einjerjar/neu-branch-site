@@ -10,28 +10,29 @@
   import NewsTicker from '@/components/NewsTicker.svelte'
   import Slider from '@/components/Slider.svelte'
   import VideoHeader from '@/components/home/VideoHeader.svelte'
+import LoadFailed from '@/components/LoadFailed.svelte'
 
-  const MAX_SUB_POST = 4
-  
-  let a_event_data = async() => {
-    let response = await fetch(re_param('collections/get/posts', {
-      limit: MAX_SUB_POST,
-      'filter[category]': 'event'
-    }))
+  let currentELimit = 4
+  let currentALimit = 4
 
-    let data = await response.json()
-    return data || events
-  }
+  let eventRetryTrigger = 0
+  let announceRetryTrigger = 0
 
-  let a_announce_data = async() => {
-    let response = await fetch(re_param('collections/get/posts', {
-      limit: MAX_SUB_POST,
-      'filter[category]': 'announcement'
-    }))
+  const getEvents = async (category, limit, trigger) => {
+    if (trigger < 0) console.log(trigger)
+
+    const conf = { limit }
+    if (category.trim() != '') conf['filter[category]'] = category
+
+    let response = await fetch(re_param('collections/get/posts', conf))
 
     let data = await response.json()
     return data || events
   }
+
+  $: a_event_data = getEvents('event', currentELimit, eventRetryTrigger)
+  $: a_announce_data = getEvents('announcement', currentALimit, announceRetryTrigger)
+
 </script>
 
 <div transition:slide class="page-home">
@@ -48,10 +49,12 @@
       <div class="text-primary-900 text-2xl capitalize font-bold mb-4">
         latest news
       </div>
-      {#await a_event_data()}
+      {#await a_event_data}
         <Loading> Loading News </Loading>
       {:then e_data}
         <Slider datas={e_data.entries}/>
+      {:catch}
+        <LoadFailed on:retry={() => eventRetryTrigger ++} />
       {/await}
     </div>
     <Divider />
@@ -59,10 +62,12 @@
       <div class="text-primary-900 text-2xl capitalize font-bold mb-4">
         announcements
       </div>
-      {#await a_announce_data()}
+      {#await a_announce_data}
         <Loading> Loading Announcements </Loading>
       {:then a_data}
         <Slider datas={a_data.entries}/>
+      {:catch}
+        <LoadFailed on:retry={() => announceRetryTrigger ++} />
       {/await}
     </div>
     <Divider />

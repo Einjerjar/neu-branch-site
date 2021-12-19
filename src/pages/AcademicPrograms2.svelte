@@ -136,24 +136,24 @@
   }
 </script>
 
-<div
-  class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 z-99 hidden" />
+<div class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 z-99 hidden" />
 <div class="min-h-screen bg-primary-900 w-full fixed top-0 left-0 -z-1" />
-<div
-  class="min-h-screen bg-dark-900 w-full fixed top-0 left-0 -z-1 bg-opacity-75" />
+<div class="min-h-screen bg-dark-900 w-full fixed top-0 left-0 -z-1 bg-opacity-75" />
 
 {#await a_programs}
-  <Loading icon_class_extra="!text-white" text_class_extra="!text-white"
-    >Loading programs</Loading>
+  <Loading icon_class_extra="!text-white" text_class_extra="!text-white">
+    Loading programs
+  </Loading>
 {:then prgs}
   {#await a_departments}
-    <Loading>Loading Departments</Loading>
+    <Loading>
+      Loading Departments
+    </Loading>
   {:then deps}
     {#if state == 'grp'}
       <AcademicGroups groups={levels} on:selectGroup={(v) => selectGroup(v)} />
     {:else if state == 'dep'}
-      <AcademicDepartments
-        {grp}
+      <AcademicDepartments {grp} on:selectGroup={(v) => selectDepartment(v)} on:closeGroup={() => closeGroup()}
         departments={deps.map((v) => {
           return {
             img: HOST_ROOT + v.image?.path,
@@ -161,22 +161,14 @@
             showMore: true,
             _id: v._id,
           }
-        })}
-        on:selectGroup={(v) => selectDepartment(v)}
-        on:closeGroup={() => closeGroup()} />
+        })} />
     {:else if state == 'prog'}
-      <AcademicProgramList
-        programs={prgs}
-        departments={deps}
-        department={dep}
-        on:selectGroup={(v) => selectProgram(v)}
-        on:closeDep={() => closeDep()} />
+      <AcademicProgramList programs={prgs} departments={deps} department={dep} on:selectGroup={(v) => selectProgram(v)} on:closeDep={() => closeDep()} />
     {:else}
       <AcademicProgramView {prg} on:closeView={() => closeView()} />
     {/if}
   {:catch}
-    <LoadFailed
-      on:retry={() => departmentsRetryTrigger++}>
+    <LoadFailed on:retry={() => departmentsRetryTrigger++}>
       Failed to load Department list!
     </LoadFailed>
   {/await}
