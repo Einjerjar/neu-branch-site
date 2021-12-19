@@ -28,11 +28,10 @@ import Loading from '@/components/Loading.svelte';
       cfg['filter[category]'] = filter
     }
 
-    let f = await fetch(re_param('collections/get/posts', cfg))
+    let response = await fetch(re_param('collections/get/posts', cfg))
+    let data = await response.json()
     
-    let j = await f.json()
-    // console.log('event', j)
-    return j || events
+    return data || events
   }
 
   $:articles = a_event_data(page)

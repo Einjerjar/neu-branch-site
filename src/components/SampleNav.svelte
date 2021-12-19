@@ -7,15 +7,15 @@
   let lastScroll = 0
 
   const scrollEnd = () => {
-    let w = window.scrollY
+    let scroll = window.scrollY
 
-    if (lastScroll >= w) {
+    if (lastScroll >= scroll) {
       navShowing = true
     } else {
       navShowing = false
     }
 
-    lastScroll = w
+    lastScroll = scroll
   }
 
   const onScroll = e => {

@@ -33,23 +33,23 @@ import Loading from "@/components/Loading.svelte";
     const MAX_SUB_POST = 4;
 
     let a_event_data = async() => {
-      let f = await fetch(re_param('collections/get/News', {
+      let response = await fetch(re_param('collections/get/News', {
         limit: MAX_SUB_POST,
         'filter[Type]': 'Events'
       }))
-      let j = await f.json()
 
-      return j || events
+      let data = await response.json()
+      return data || events
     }
 
     let a_announce_data = async() => {
-      let f = await fetch(re_param('collections/get/News', {
+      let response = await fetch(re_param('collections/get/News', {
         limit: MAX_SUB_POST,
         'filter[Type]': 'Announcement'
       }))
-      let j = await f.json()
 
-      return j || events
+      let data = await response.json()
+      return data || events
     }
   </script>
   <div>

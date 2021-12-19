@@ -14,9 +14,9 @@ const BranchColors = {
 }
 
 // https://vitejs.dev/config/
-export default defineConfig(({command, mode}) => {
+export default defineConfig(({ command, mode }) => {
   // some magic so we can get the env variables from the .env file
-  process.env = {...process.env, ...loadEnv(mode, process.cwd())}
+  process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
 
   return {
     plugins: [

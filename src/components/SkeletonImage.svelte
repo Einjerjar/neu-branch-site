@@ -7,6 +7,7 @@
 
   export let img = ''
   export let viewable = true
+  export let element = false
   export { clazz as class, style }
 
   let i_ref
@@ -16,7 +17,11 @@
     let im = new Image()
     loaded = false
     im.addEventListener('load', () => {
-      i_ref.style.backgroundImage = `url(${im.src})`
+      if (!element) {
+        i_ref.style.backgroundImage = `url(${im.src})`
+      } else {
+        i_ref.src = im.src
+      }
       loaded = true
     })
     im.src = i
@@ -30,5 +35,9 @@
   {#if !loaded}
     <SkeletonComponent />
   {/if}
-  <div class="absolute top-0 left-0 bg-cover bg-center w-full h-full" bind:this={i_ref}></div>
+  {#if !element}
+    <div class="absolute top-0 left-0 bg-cover bg-center w-full h-full" bind:this={i_ref}></div>
+  {:else}
+    <img class='w-full h-full' bind:this={i_ref} alt=''/>
+  {/if}
 </div>

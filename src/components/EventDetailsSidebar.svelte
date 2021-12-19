@@ -1,36 +1,31 @@
 <script>
-  import { events } from '@/sample_data/events'
   import { re_param, HOST_ROOT } from "@/utils"
+  import { events } from '@/sample_data/events'
+
+  import LoadFailed from './LoadFailed.svelte';
   import NewsCard from "./NewsCard.svelte"
+
   export let post_id
 
   const MAX_SUB_POST = 2
 
-  $: a_other_events = async () => {
-    let f = await fetch(
-      re_param("collections/get/posts", {
-        limit: MAX_SUB_POST,
-        "filter[_id][$not]": post_id,
-        "filter[category]": "event",
-      })
-    )
-    let j = await f.json()
+  const getArticles = async (id, category, trigger) => {
+    let response = await fetch(re_param('collections/get/posts', {
+      limit: MAX_SUB_POST,
+      'filter[_id][$ne]': id,
+      'filter[category]': category,
+    }))
 
-    return j || events
+    let data = await response.json()
+    return data || events
   }
 
-  $: a_announce_data = async () => {
-    let f = await fetch(
-      re_param("collections/get/posts", {
-        limit: MAX_SUB_POST,
-        "filter[_id][$not]": post_id,
-        "filter[category]": "announcement",
-      })
-    )
-    let j = await f.json()
+  let eventRetryTrigger = 0
+  let announceRetryTrigger = 0
 
-    return j || events
-  }
+  $: a_events = getArticles(post_id, 'event', eventRetryTrigger)
+  $: a_announce = getArticles(post_id, 'announcement', announceRetryTrigger)
+
 </script>
 
 <div class="ml-4">
@@ -38,7 +33,7 @@
     <p>Events</p>
   </div>
   <div>
-    {#await a_other_events()}
+    {#await a_events}
       Loding events
     {:then other_events}
       {#each other_events.entries as data}
@@ -48,6 +43,8 @@
           </div>
         </a>
       {/each}
+    {:catch}
+      <LoadFailed on:retry={() => {eventRetryTrigger ++}}/>
     {/await}
   </div>
   <div
@@ -56,7 +53,7 @@
     <p>Announcements</p>
   </div>
   <div>
-    {#await a_announce_data()}
+    {#await a_announce}
       Loding events
     {:then announce_data}
       {#each announce_data.entries as data}
@@ -66,6 +63,8 @@
           </div>
         </a>
       {/each}
+    {:catch}
+      <LoadFailed on:retry={() => {announceRetryTrigger ++}}/>
     {/await}
   </div>
 </div>

@@ -35,7 +35,7 @@
               {$branch_data.name} Branch
             </div>
           </div>
-          <p class="my-4 font-sans text-white">
+          <p class="my-4 font-sans text-white text-justify">
             {$branch_data.description}
           </p>
         </div>
