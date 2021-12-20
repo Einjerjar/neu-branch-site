@@ -100,7 +100,7 @@
         <ul class="children:my-2 pl-4 text-primary-700">
           {#each primaryLinks as link}
             <li>
-              <a href={'#'+link.path}>
+              <a href={'#'+link.path} on:click={toggleNav}>
                 {link.label}
               </a>
             </li>
@@ -112,7 +112,7 @@
         <ul class="children:my-2 pl-4 text-primary-700">
           {#each secondaryLinks as link}
             <li>
-              <a href={'#'+link.path}>
+              <a href={'#'+link.path} on:click={toggleNav}>
                 {link.label}
               </a>
             </li>

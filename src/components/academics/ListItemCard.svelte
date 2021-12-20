@@ -37,7 +37,7 @@
   <!-- <div class="h-full bg-red-200 rounded bg-cover bg-center" style='aspect-ratio: 1/1; background-image: url({p_img});' /> -->
   <SkeletonImage class='h-full rounded bg-cover bg-center' style='aspect-ratio: 1/1;' img={p_img} viewable={false}/>
   <div class="flex flex-col pl-4 overflow-hidden">
-    <div class="text-3xl font-medium text-primary-900 group-hover:text-primary-400 mb-2" >
+    <div class="<sm:text-base <md:text-xl text-3xl font-medium text-primary-900 group-hover:text-primary-400 mb-2" >
       {prg.program_name}
     </div>
     <div class="text-gray-700 text-sm max-h-4.1em overflow-hidden children:text-sm">

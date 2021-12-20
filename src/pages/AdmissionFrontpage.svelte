@@ -31,7 +31,7 @@
     <div class="absolute -z-1 bg-center bg-cover w-full h-full left-0 top-0" style="background-image: url('https://neu.edu.ph/main/assets/images/NEU_Pampanga.jpg'); filter: grayscale(50%) brightness(50%);"></div>
     <div class="min-h-full mx-auto max-h-full flex  justify-center text-white">
       <div class="items-center my-21">
-        <p class="text-6xl md:text-8xl underline font-bold uppercase text-shadow-lg">
+        <p class="<sm:text-4xl <md:text-6xl md:text-8xl underline font-bold uppercase text-shadow-lg">
           Admission
         </p>
       </div>
