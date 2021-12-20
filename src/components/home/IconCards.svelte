@@ -4,9 +4,9 @@
 </script>
 
 {#if $branch_data.home_icons}
-<ul class="flex children:mx-4">
+<div class="flex flex-wrap justify-center children:mx-4">
     {#each $branch_data.home_icons as icon}
         <IconCard data={icon.value}/>
     {/each}
-</ul>
+</div>
 {/if}
