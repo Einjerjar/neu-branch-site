@@ -35,12 +35,12 @@
 
 <div on:click class="w-full rounded bg-light-700 h-40 p-4 flex group cursor-pointer" >
   <!-- <div class="h-full bg-red-200 rounded bg-cover bg-center" style='aspect-ratio: 1/1; background-image: url({p_img});' /> -->
-  <SkeletonImage class='h-full rounded bg-cover bg-center' style='aspect-ratio: 1/1;' img={p_img} viewable={false}/>
-  <div class="flex flex-col pl-4 overflow-hidden">
-    <div class="<sm:text-base <md:text-xl text-3xl font-medium text-primary-900 group-hover:text-primary-400 mb-2" >
+  <SkeletonImage class='h-full rounded bg-cover bg-center flex-shrink-0' style='aspect-ratio: 1/1;' img={p_img} viewable={false}/>
+  <div class="pl-4 overflow-hidden">
+    <div class="<sm:text-base <md:text-xl text-3xl font-medium text-primary-900 group-hover:text-primary-400 mb-2 truncate" >
       {prg.program_name}
     </div>
-    <div class="text-gray-700 text-sm max-h-4.1em overflow-hidden children:text-sm">
+    <div class="text-gray-700 text-sm max-h-4.1em overflow-hidden children:text-sm children:truncate">
       {@html prg.program_desc}
     </div>
   </div>
