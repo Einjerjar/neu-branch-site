@@ -5,7 +5,6 @@
 
   import MVP from '@/components/campus/mvp.svelte'
 
-  //img sources
   const campusMainImage = './images/neu_pampangga.jpg'
   const neuLOGO = './images/logo_x300.png'
   const GO_image = './images/logo_x300.png'
@@ -46,10 +45,10 @@
   </div>
   <!-- <Divider/> -->
 
-  <div class="container bg-white bg-opacity-85 mx-auto shadow-lg my-16 md:rounded-md">
+  <div class="container bg-primary-900 bg-opacity-85 mx-auto shadow-lg my-16 md:rounded-md">
     <div class= "flex flex-wrap items-center justify-center children:mx-4 children:my-2 mx-auto py-8">
       <img class="w-30" src = {neuLOGO} alt=logo>
-      <h1 class = "text-center tracking-wide font-shelley text-[6vw] sm:text-7xl text-shadow-lg">New Era University</h1>
+      <h1 class = "text-center text-white tracking-wide font-shelley text-[6vw] sm:text-7xl text-shadow-lg">New Era University</h1>
     </div>
     <div class = "flex flex-wrap items-center justify-center my-10 <md:flex-col <lg:flex-wrap children:max-w-100">
       <MVP desc = {mission} title = 'MISSION'/>
@@ -60,25 +59,27 @@
 
   <!-- <Divider/> -->
 
-  <div class= "container mb-16 bg-black bg-opacity-80 mx-auto md:rounded-md px-8 py-6 text-white">
-    <div class=" text-[6vw] sm:text-8xl font-mono font-bold">
-      <div>GOALS & OBJECTIVES</div>
-    </div>
-    <div class="flex flex-wrap items-center justify-content-between">
-      <div class="flex-grow">
-        <ul class= "my-10 ml-8 list-circle text-[3vw] sm:text-base children:my-2">
-          <li>Impart value-laden education to the total development of man.</li>
-          <li>Offer curricula responsive to the needs of the time.</li>
-          <li>Optimize learning through the adoption and utilization of appropriate instructional methods and resources.</li>
-          <li>Propel institutional development through the conduct of useful and significant researches.</li>
-          <li>Extend outreach services which promote self-help in the community.</li>
-          <li>Promote access to non-conventional higher education and basic education programs.</li>
-          <li>Develop servant leaders among staff, faculty members, and administrators.</li>
-          <li>Produce God-fearing, competent, and disciplined graduates.</li>
-        </ul>
+  <div class="bg-primary-700 p-16">
+    <div class= "container bg-white bg-opacity-80 mx-auto md:rounded-md px-8 py-6 text-black">
+      <div class=" text-[6vw] sm:text-8xl font-mono font-bold">
+        <div class="text-gray-900">GOALS & OBJECTIVES</div>
       </div>
-      <div class="mx-auto max-w-100">
-        <img class="w-full drop-shadow-lg <lg:w-auto h-auto justify-center"src = {GO_image} alt=another>
+      <div class="flex flex-wrap items-center justify-content-between">
+        <div class="flex-grow">
+          <ul class= "my-10 ml-8 list-circle text-[3vw] sm:text-base children:my-2">
+            <li>Impart value-laden education to the total development of man.</li>
+            <li>Offer curricula responsive to the needs of the time.</li>
+            <li>Optimize learning through the adoption and utilization of appropriate instructional methods and resources.</li>
+            <li>Propel institutional development through the conduct of useful and significant researches.</li>
+            <li>Extend outreach services which promote self-help in the community.</li>
+            <li>Promote access to non-conventional higher education and basic education programs.</li>
+            <li>Develop servant leaders among staff, faculty members, and administrators.</li>
+            <li>Produce God-fearing, competent, and disciplined graduates.</li>
+          </ul>
+        </div>
+        <div class="mx-auto max-w-100">
+          <img class="w-full drop-shadow-lg <lg:w-auto h-auto justify-center"src = {GO_image} alt=another>
+        </div>
       </div>
     </div>
   </div>
@@ -88,7 +89,7 @@
 
 <style>
   .pageBG_redColor{
-    background-image: url('./images/about_red.jpg');
+    /* background-image: url('./images/about_red.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: bottom;
