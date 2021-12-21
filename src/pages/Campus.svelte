@@ -21,14 +21,14 @@
         <div class="w-full lg:w-2/5">
           <img src={campusMainImage} alt="campus" class="w-full h-auto">
           <div class="text-center my-4">
-            <div class="text-6xl font-shelley">
+            <div class=" <md:text-4xl text-6xl font-shelley">
               New Era University
             </div>
-            <div class="text-3xl font-light">
+            <div class="<md:text-xl text-3xl font-light">
               {$branch_data.name} Branch
             </div>
           </div>
-          <p class="my-4 font-sans text-white text-justify">
+          <p class="<md:text-sm my-4 font-sans text-white text-justify">
             {$branch_data.description}
           </p>
         </div>

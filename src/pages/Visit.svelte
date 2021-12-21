@@ -46,14 +46,14 @@
                 School Facilities
             </div>
 
-            <div class="md:children:flex facility">
+            <div class="<md:children:block md:children:flex facility">
                 {#each branchInfo as a}
                     <div class="p-8 grid grid-cols-2 gap-4 items-center">
                         <div class="md:w-2/4 p-4">
-                            <h4 class="text-2xl font-semibold mb-2">
+                            <h4 class="<md:text-xl text-2xl font-semibold mb-2">
                                 Professional Schools Library
                             </h4>
-                            <p>
+                            <p class="<md:text-sm">
                                 Alorem Ipsum is simply dummy text of the
                                 printing and typesetting industry. Lorem Ipsum
                                 has been the industry's standard dummy text ever

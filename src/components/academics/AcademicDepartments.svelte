@@ -39,7 +39,7 @@
   <div class="flex">
     <SlideyButton on:click={() => closeGroup()}/>
   </div>
-  <div class="text-6xl md:text-8xl font-gentium text-white text-center mb-8 capitalize">
+  <div class="<sm:text-4xl <md:text-6xl md:text-8xl font-gentium text-white text-center mb-8 capitalize">
     {grp}
   </div>
   <div class="text-2xl md:text-4xl font-gentium text-white text-center mb-16">
