@@ -1,6 +1,7 @@
 /* Had to manually rip out and edit the imports since font import from http will fail by default when site is hosted on https */
 
-@font-face {font-family: "Shelley";
+@font-face {
+  font-family: "Shelley";
   src: url("//db.onlinewebfonts.com/t/3fda0d6ca5116e691e85501911ffa12c.eot"); /* IE9*/
   src: url("//db.onlinewebfonts.com/t/3fda0d6ca5116e691e85501911ffa12c.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
   url("//db.onlinewebfonts.com/t/3fda0d6ca5116e691e85501911ffa12c.woff2") format("woff2"), /* chrome firefox */
@@ -11,20 +12,25 @@
 
 .font-shelley {
   font-family: Shelley;
+  font-display: swap;
 }
 
 .font-gentium {
   font-family: 'Gentium Book Basic', serif;
+  font-display: swap;
 }
 
 .font-italic {
   font-style: italic;
+  font-display: swap;
 }
 
 .font-pridi {
   font-family: 'Pridi', serif;
+  font-display: swap;
 }
 
 .font-nunito {
   font-family: 'Nunito Sans', sans-serif;
+  font-display: swap;
 }
