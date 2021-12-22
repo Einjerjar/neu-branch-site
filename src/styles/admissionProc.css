@@ -1,0 +1,9 @@
+.admission-special h1,
+.admission-special h2,
+.admission-special h3,
+.admission-special h4,
+.admission-special h5,
+.admission-special h6
+{
+  @apply text-primary-700;
+}

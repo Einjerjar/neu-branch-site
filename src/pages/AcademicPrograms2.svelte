@@ -136,7 +136,7 @@
   }
 </script>
 
-<div class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 z-99 hidden" />
+<!-- <div class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 z-99 hidden" /> -->
 <div class="min-h-screen bg-primary-900 w-full fixed top-0 left-0 -z-1" />
 <div class="min-h-screen bg-dark-900 w-full fixed top-0 left-0 -z-1 bg-opacity-75" />
 

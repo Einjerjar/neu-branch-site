@@ -62,7 +62,7 @@
   <div class="bg-primary-700 p-16">
     <div class= "container bg-white bg-opacity-80 mx-auto md:rounded-md px-8 py-6 text-black">
       <div class=" text-[6vw] sm:text-8xl font-mono font-bold">
-        <div class="text-gray-900">GOALS & OBJECTIVES</div>
+        <div class="text-primary-800">GOALS & OBJECTIVES</div>
       </div>
       <div class="flex flex-wrap items-center justify-content-between">
         <div class="flex-grow">

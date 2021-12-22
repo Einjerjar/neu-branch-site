@@ -9,6 +9,7 @@ import BasicEducation from '@/pages/BasicEducation.svelte'
 import Visit from '@/pages/Visit.svelte'
 import EventsInfo from '@/pages/EventsInfo.svelte'
 import EventMore from '@/pages/EventMore.svelte'
+import AdmissionProcedure from '@/pages/AdmissionProcedure.svelte'
 
 
 import Events from '@/pages/Events.svelte'
@@ -62,6 +63,11 @@ export const links = [
     name: 'Admission Links',
     sublinks: admissionLinks,
     category: 'admission'
+  },
+  {
+    name: 'Admission Sub',
+    path: '/admission/:id',
+    component: AdmissionProcedure,
   },
   {
     name: 'Post List',

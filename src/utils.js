@@ -12,7 +12,7 @@ export const re_get = async (url, params) => {
   return await res.json()
 }
 
-export const clean_entries = entries => entries.map(v => {
+export const clean_item = v => {
   const temp = {}
   Object.assign(temp, v)
 
@@ -23,4 +23,6 @@ export const clean_entries = entries => entries.map(v => {
   }
 
   return temp
-})
+}
+
+export const clean_entries = entries => entries.map(v => clean_item(v))
