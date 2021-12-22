@@ -21,7 +21,7 @@ export const branch_data = {
   _mby: '56500c4665393650ef0000cf',
   _by: '56500c4665393650ef0000cf',
   _o: 0,
-  _modified: 1640153840,
+  _modified: 1640159223,
   _created: 1635924472,
   _id: 'eef88680383935bda9000063',
   urls: [
@@ -341,5 +341,30 @@ export const branch_data = {
         content: '<h3 class="text-left pb-2 text-2xl"><strong>Step 1: Request for Temporary Student ID </strong><strong style="font-size: 14px;">@ under</strong></h3>\n<p>&lt;p"&gt;Request for your Temporary Student ID thru sending the following details to admissionrequirements@neu.edu.ph</p>\n<ul class="mb-10 list-disc ml-10">\n<li>Name: (Last Name, First Name, Middle Name)</li>\n<li>Course Applying:</li>\n<li>Gender:</li>\n<li>Year Graduated:</li>\n</ul>\n<p>&nbsp;</p>\n<h3 class="text-left pb-2 text-2xl "><strong>Step 2: Edit your personal sheet thru NEU Automate</strong></h3>\n<p>Once you received the Temporary Username and Password thru email, You can now edt your Personal Information Sheet thru this link NEU Automate for Application</p>\n<ul class="mb-10 list-roman ml-10 ">\n<li>Enter your log-in credentials (username and password)</li>\n<li>Click Personal Info</li>\n<li>Click Edit Personal Info</li>\n<li>Fill out the General Student Personal Information Sheet (Special characters are not allowed)</li>\n<li>CLick Proceed and Print Personal Info then Save/Print as PDF</li>\n</ul>\n<p>&nbsp;</p>\n<h3 class="text-left pb-2 text-2xl "><strong>Step 3: Submission</strong></h3>\n<p>Submit all the following requirements thru this link Admission Requirements Submission Link Admission Requirements for Freshmen</p>\n<ul class="list-disc ml-10 ">\n<li>General Student Personal Information Sheet (GSPIS)</li>\n<li>PSA Authenticated Birth Certificate</li>\n<li>Senior High School Report Card (F-138) with Graduated Remarks</li>\n<li>2x2 picture with white background</li>\n</ul>\n<p>Admission Requirements for Transferees and Graduate School</p>\n<ul class="mb-10 list-disc ml-10">\n<li>General Student Personal Information Sheet (GSPIS)</li>\n<li>PSA Authenticated Birth Certificate</li>\n<li>Transcript of Records</li>\n<li>Honorable Dismissal / Transfer Credential Certificate</li>\n<li>2x2 picture with white background</li>\n</ul>\n<p>&nbsp;</p>\n<h3 class="text-left pb-2 text-2xl "><strong>Step 4: Admission Approval</strong></h3>\n<p class="max-w-screen-lg mb-30 ">Upon receipt of the advise from the College Admissions Office on the Approval of admission, you may now log-in thru this link NEU Automate for Student Enrollment using the log-in credentials (Username and Password) that you have created in filling out your General Information Sheet.</p>'
       }
     }
-  ]
+  ],
+  homepage_video: {
+    path: '/2021/12/22/mov_bbb_uid_61c2d6945f6c6.mp4',
+    title: 'mov_bbb.mp4',
+    mime: 'video/mp4',
+    description: '',
+    tags: [
+      
+    ],
+    size: 788493,
+    image: false,
+    video: true,
+    audio: false,
+    archive: false,
+    document: false,
+    code: false,
+    colors: null,
+    width: null,
+    height: null,
+    created: 1640158868,
+    modified: 1640158868,
+    _by: '56500c4665393650ef0000cf',
+    folder: 'cadb6ade6165338f51000170',
+    _id: 'cade05d4343935249b000338'
+  },
+  homepage_embed: 'https://www.youtube.com/embed/-laHrCrn64U'
 }

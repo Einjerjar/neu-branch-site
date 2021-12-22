@@ -17,9 +17,10 @@
     let branchData = await fetch(re_param('collections/get/branch_data', {
       'filter[id]': currentBranch
     }))
+
     let branchDataJson = await branchData.json()
     branchDataJson = branchDataJson.entries[0]
-    // console.log('branchdata', branchDataJson);
+    console.log('branchdata', branchDataJson);
     branch_data.set(branchDataJson)
     return branchDataJson
   }

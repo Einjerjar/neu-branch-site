@@ -1,7 +1,10 @@
 import { writable } from 'svelte/store'
 import { branch_data as bd } from './sample_data/branch_data'
 
-export const branch_data = writable({ ...bd })
+export const branch_data = writable({
+  ...bd,
+  temp: true
+})
 
 export const footer_links = writable({
   links: [

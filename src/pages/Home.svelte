@@ -11,6 +11,7 @@
   import Slider from '@/components/Slider.svelte'
   import VideoHeader from '@/components/home/VideoHeader.svelte'
 import LoadFailed from '@/components/LoadFailed.svelte'
+import { branch_data } from '@/store'
 
   let currentELimit = 4
   let currentALimit = 4
@@ -76,7 +77,9 @@ import LoadFailed from '@/components/LoadFailed.svelte'
       <!-- iframe-wrapper -->
       <div class="<sm:(relative overflow-hidden w-full pt-[56.25%])">
         <!-- iframe -->
-        <iframe src="https://www.youtube.com/embed/-laHrCrn64U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="<sm:(absolute top-0 left-0 bottom-0 right-0 w-full h-full)" width="100%" height="450"></iframe>
+        {#if $branch_data.homepage_embed}
+          <iframe src={$branch_data.homepage_embed} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="<sm:(absolute top-0 left-0 bottom-0 right-0 w-full h-full)" width="100%" height="450"></iframe>
+        {/if}
       </div>
     </div>
   </div>
