@@ -366,5 +366,65 @@ export const branch_data = {
     folder: 'cadb6ade6165338f51000170',
     _id: 'cade05d4343935249b000338'
   },
-  homepage_embed: 'https://www.youtube.com/embed/-laHrCrn64U'
+  homepage_embed: 'https://www.youtube.com/embed/-laHrCrn64U',
+  facilities: [
+    {
+      field: {
+        type: 'set',
+        label: 'Facility',
+        options: {
+          fields: [
+            {
+              name: 'title',
+              type: 'text'
+            },
+            {
+              name: 'content',
+              type: 'textarea'
+            },
+            {
+              name: 'image',
+              type: 'image'
+            }
+          ]
+        }
+      },
+      value: {
+        title: 'Professional Schools Library',
+        content: 'Into the details of the infamy at which I thus connived (for even now I can scarce grant that I committed it) I have no design of entering; I mean but to point out the warnings and the successive steps with which my chastisement approached. I met with one accident which, as it brought on no consequence, I shall no more than mention. An act of cruelty to a child aroused against me the anger of a passer-by, whom I recognised the other day in the person of your kinsman; the doctor and the child’s family joined him; there were moments when I feared for my life; and at last, in order to pacify their too just resentment, Edward Hyde had to bring them to the door, and pay them in a cheque drawn in the name of Henry Jekyll. But this danger was easily eliminated from the future, by opening an account at another bank in the name of Edward Hyde himself; and when, by sloping my own hand backward, I had supplied my double with a signature, I thought I sat beyond the reach of fate.',
+        image: {
+          path: '/cockpit/storage/uploads/2021/12/17/C_uid_61bca2190385d.jpg'
+        }
+      }
+    },
+    {
+      field: {
+        type: 'set',
+        label: 'Facility',
+        options: {
+          fields: [
+            {
+              name: 'title',
+              type: 'text'
+            },
+            {
+              name: 'content',
+              type: 'textarea'
+            },
+            {
+              name: 'image',
+              type: 'image'
+            }
+          ]
+        }
+      },
+      value: {
+        title: 'Professional Schools Canteen',
+        content: 'The intent of this License, each Contributor hereby grants you a world-wide, royalty-free, non-exclusive license, to the Recipient. The Recipient must attach a copy of this Package or making it accessible to anyone else, or in combination with Original Code. The Indemnified Contributor must: a) promptly notify the Commercial Contributor would have been validly granted by said Respondent under Sections 1 and 2 above provided that you delete from the Licensed Program. The Recipient may conduct Reproduction and Other Exploitation of the remainder of the preceding Article, the Recipient retains any such claim is necessary to make reasonable modifications.',
+        image: {
+          path: '/cockpit/storage/uploads/2021/12/17/B_uid_61bca21871c16.jpg'
+        }
+      }
+    }
+  ]
 }

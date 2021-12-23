@@ -1,28 +1,14 @@
 <script>
-    import Branch from '@/components/admission/Branch.svelte'
-import Loading from '@/components/Loading.svelte'
-    import SkeletonImage from '@/components/SkeletonImage.svelte'
-import { HOST_ROOT, re_param } from '@/utils'
     import { fade, slide } from 'svelte/transition'
+    
+    import { HOST_ROOT, re_param } from '@/utils'
+    import { branch_data } from '@/store'
+    import { branch_data as bd } from '@/sample_data/branch_data'
 
-    const branchInfo = [
-      {
-        branchName: 'Quezon City (Main Branch)',
-        imgSource: './images/neu_main.jpg',
-        id: 0,
-      },
-      {
-        branchName: 'General Santos City',
-        imgSource: './images/neu_gensan.jpg',
-        id: 1,
-      },
-      {
-        branchName: 'Pampanga',
-        imgSource: './images/neu_pampanga.jpg',
-        id: 2,
-      },
-      { branchName: 'Lipa City', imgSource: './images/neu_lipa.jpg', id: 3 },
-    ]
+    import Branch from '@/components/admission/Branch.svelte'
+    import Loading from '@/components/Loading.svelte'
+    import SkeletonImage from '@/components/SkeletonImage.svelte'
+    import LoadFailed from '@/components/LoadFailed.svelte'
 
     const getBranches = async () => {
       const response = await fetch(re_param('collections/get/branch_data', {
@@ -38,6 +24,7 @@ import { HOST_ROOT, re_param } from '@/utils'
     }
 
     $: a_branches = getBranches()
+    $: facilities = $branch_data.facilities ?? bd.facilities
 </script>
 
 <div transition:slide>
@@ -47,7 +34,7 @@ import { HOST_ROOT, re_param } from '@/utils'
         university branches
     </div>
 
-    <div class="bg-gray-200" in:fade={{ duration: 600 }}>
+    <div class="bg-gray-200 pb-16" in:fade={{ duration: 600 }}>
         <div class="container mx-auto shadow-lg bg-white rounded py-5">
             <div
                 class="mx-auto items-center bg-white p-4 grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -59,6 +46,8 @@ import { HOST_ROOT, re_param } from '@/utils'
                             branchImage="{HOST_ROOT}{branch.cover_image?.path || ''}"
                             branchName={branch.name} />
                     {/each}
+                {:catch}
+                    <LoadFailed class='col-span-2'>Failed to load branch list</LoadFailed>
                 {/await}
             </div>
 
@@ -68,25 +57,21 @@ import { HOST_ROOT, re_param } from '@/utils'
             </div>
 
             <div class="<md:children:block md:children:flex facility">
-                {#each branchInfo as a}
+                {#each facilities as facility}
                     <div class="p-8 grid grid-cols-2 gap-4 items-center">
                         <div class="md:w-2/4 p-4">
                             <h4 class="<md:text-xl text-2xl font-semibold mb-2">
-                                Professional Schools Library
+                                {facility.value.title}
                             </h4>
                             <p class="<md:text-sm">
-                                Alorem Ipsum is simply dummy text of the
-                                printing and typesetting industry. Lorem Ipsum
-                                has been the industry's standard dummy text ever
-                                since the 1500s, when an unknown printer took a
-                                galley of type and scrambled it
+                                {facility.value.content}
                             </p>
                         </div>
                         <div class="md:w-2/4">
                             <div class="p-2 shadow rounded-md">
                                 <SkeletonImage
                                     class="w-full h-auto"
-                                    img="http://www.neu.edu.ph/law/wp-content/uploads/2017/01/Law-Library-3.jpg"
+                                    img="{HOST_ROOT}{facility.value.image?.path || ''}"
                                     element={true} />
                             </div>
                         </div>
