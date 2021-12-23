@@ -2,19 +2,18 @@ import { defineConfig, loadEnv } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import path from 'path'
 import WindiCSS from 'vite-plugin-windicss'
-import _css from 'rollup-plugin-css-only'
 import colors from 'windicss/colors'
 
 // configure all current and new branch colors here
 const BranchColors = {
   main: colors.blueGray,
-  lipa: colors.lightBlue,
+  lipa: colors.sky,
   pampanga: colors.teal,
   gensan: colors.rose,
 }
 
 // https://vitejs.dev/config/
-export default defineConfig(({ command, mode }) => {
+export default defineConfig(({ mode }) => {
   // some magic so we can get the env variables from the .env file
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
 

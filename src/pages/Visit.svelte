@@ -1,6 +1,7 @@
 <script>
     import Branch from '@/components/admission/Branch.svelte'
     import SkeletonImage from '@/components/SkeletonImage.svelte'
+import { HOST_ROOT, re_param } from '@/utils'
     import { fade, slide } from 'svelte/transition'
 
     const branchInfo = [
@@ -21,6 +22,21 @@
       },
       { branchName: 'Lipa City', imgSource: './images/neu_lipa.jpg', id: 3 },
     ]
+
+    const getBranches = async () => {
+      const response = await fetch(re_param('collections/get/branch_data', {
+        'fields[id]': true,
+        'fields[name]': true,
+        'fields[cover_image]': true,
+        'fields[_o]': true,             // preserves custom ordering
+      }))
+      
+      const data = await response.json()
+
+      return data.entries
+    }
+
+    $: a_branches = getBranches()
 </script>
 
 <div transition:slide>
@@ -34,11 +50,15 @@
         <div class="container mx-auto shadow-lg bg-white rounded py-5">
             <div
                 class="mx-auto items-center bg-white p-4 grid grid-cols-1 lg:grid-cols-2 gap-4">
-                {#each branchInfo as branch (branch.id)}
-                    <Branch
-                        branchImage={branch.imgSource}
-                        branchName={branch.branchName} />
-                {/each}
+                {#await a_branches}
+                Loading
+                {:then branches}
+                    {#each branches as branch}
+                        <Branch
+                            branchImage="{HOST_ROOT}{branch.cover_image?.path || ''}"
+                            branchName={branch.name} />
+                    {/each}
+                {/await}
             </div>
 
             <div
