@@ -1,12 +1,16 @@
 <script>
   import { onMount } from 'svelte'
   import { branch_data } from '@/store'
+  import { branch_data as bd } from '@/sample_data/branch_data'
   import { HOST_ROOT } from '@/utils'
 
   let video
 
+  // fallback to sample data
+  $: video_path = $branch_data.homepage_video?.path || bd.homepage_video.path
+
   onMount(() => {
-    video.src = `${HOST_ROOT}/cockpit/storage/uploads${$branch_data.homepage_video.path}`
+    video.src = `${HOST_ROOT}/cockpit/storage/uploads${video_path}`
     video.load()
   })
 </script>

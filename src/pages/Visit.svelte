@@ -1,5 +1,6 @@
 <script>
     import Branch from '@/components/admission/Branch.svelte'
+import Loading from '@/components/Loading.svelte'
     import SkeletonImage from '@/components/SkeletonImage.svelte'
 import { HOST_ROOT, re_param } from '@/utils'
     import { fade, slide } from 'svelte/transition'
@@ -51,7 +52,7 @@ import { HOST_ROOT, re_param } from '@/utils'
             <div
                 class="mx-auto items-center bg-white p-4 grid grid-cols-1 lg:grid-cols-2 gap-4">
                 {#await a_branches}
-                Loading
+                    <Loading class='col-span-2'>Loading Branch List</Loading>
                 {:then branches}
                     {#each branches as branch}
                         <Branch

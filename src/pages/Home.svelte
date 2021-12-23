@@ -72,20 +72,22 @@
         <LoadFailed on:retry={() => announceRetryTrigger ++} />
       {/await}
     </div>
-    <Divider />
-    <!-- wrappers-wrapper -->
-    <div class="w-full mb-12">
-      <!-- iframe-wrapper -->
-      <div class="<sm:(relative overflow-hidden w-full pt-[56.25%])">
-        <!-- iframe -->
-        {#if $branch_data.homepage_embed}
+    
+    {#if $branch_data.homepage_embed}
+      <Divider />
+      <!-- wrappers-wrapper -->
+      <div class="w-full mb-12">
+        <!-- iframe-wrapper -->
+        <div class="<sm:(relative overflow-hidden w-full pt-[56.25%])">
+          <!-- iframe -->
+          
           <!-- <iframe src={$branch_data.homepage_embed} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="<sm:(absolute top-0 left-0 bottom-0 right-0 w-full h-full)" width="100%" height="450"></iframe> -->
           <LiteYT
             videoID={$branch_data.homepage_embed.split('/')[4]}
             class="<sm:(absolute top-0 left-0 bottom-0 right-0 w-full h-full) w-full h-450px"
           />
-        {/if}
+        </div>
       </div>
-    </div>
+    {/if}
   </div>
 </div>

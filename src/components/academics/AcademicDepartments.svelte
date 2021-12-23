@@ -5,6 +5,8 @@
   import ItemCard from './ItemCard.svelte'
   import SlideyButton from './SlideyButton.svelte'
 
+  export let has_unassigned = false
+
   export let departments = [
     {
       img: './images/acad/A.png',
@@ -14,12 +16,14 @@
     }
   ]
 
-  departments.push({
-    img: './images/acad/default_compressed.jpg',
-    text: 'Unassigned',
-    showMore: true,
-    _id: 'UNASSIGNED',
-  })
+  if (has_unassigned) {
+    departments.push({
+      img: './images/acad/default_compressed.jpg',
+      text: 'Unassigned',
+      showMore: true,
+      _id: 'UNASSIGNED',
+    })
+  }
 
   export let grp = 'undergraduate'
 

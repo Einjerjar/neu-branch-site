@@ -32,6 +32,7 @@
     },
   }
   let levels = []
+  let has_unassigned = false
 
   // eslint-disable-next-line no-unused-vars
   const t_programs = async (id, trigger) => {
@@ -40,6 +41,10 @@
     })
 
     levels = []
+
+    // some magic to search for unassigned programs
+    const dd = res.entries.map(v => v.department)
+    has_unassigned = dd.includes(null)
 
     // some magic to get the available levels, too lazy to name so yeah
     const m = res.entries.map((v) => v.level)
@@ -90,7 +95,7 @@
 
   let grp = ''
   let dep = ''
-  let prg = {
+  let prg = { // sample data
     program_name: 'Bachelor of Science in Accounting Information System',
     program_desc:
       '<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>',
@@ -154,6 +159,7 @@
       <AcademicGroups groups={levels} on:selectGroup={(v) => selectGroup(v)} />
     {:else if state == 'dep'}
       <AcademicDepartments {grp} on:selectGroup={(v) => selectDepartment(v)} on:closeGroup={() => closeGroup()}
+        {has_unassigned}
         departments={deps.map((v) => {
           return {
             img: HOST_ROOT + v.image?.path,
