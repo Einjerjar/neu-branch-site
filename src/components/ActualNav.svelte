@@ -57,11 +57,21 @@
       <div>
         <ul class="flex children:mx-4 items-center ml-auto text-white bg-primary-900 h-8 rounded-bl rounded-bl-md relative z-1">
         {#each secondaryLinks as link}
-          <li>
-            <a href={'#'+link.path}>
-              {link.label}
-            </a>
-          </li>
+            {#if link.sublinks}
+              <li class="cursor-pointer relative group">{link.label} <i class="fas fa-angle-down pl-1 text-sm"></i>
+                <ul class="absolute rounded-b-md invisible opacity-0 min-w-36 left-0 hidden bg-primary-900 text-white text-sm -mx-4 px-4 group-hover:(opacity-100 visible block) children:pt-3 last:pb-3">
+                  {#each link.sublinks as sublink}
+                  <li><a href={sublink.path} target="_blank" >{sublink.label}</a></li>
+                  {/each}
+                </ul>
+              </li>
+              {:else}
+              <li>
+                <a href={'#'+link.path}>
+                  {link.label}
+                </a>
+              </li>
+            {/if}
         {/each}
       </ul>
       </div>
@@ -117,6 +127,15 @@
                 {link.label}
               </a>
             </li>
+            {#if link.sublinks}
+              {#each link.sublinks as sublink}
+              <li>
+                <a href={'#'+sublink.path} target="_blank" on:click={toggleNav}>
+                  {sublink.label}
+                </a>
+              </li>
+              {/each}
+            {/if}
           {/each}
         </ul>
       </div>

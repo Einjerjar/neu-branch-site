@@ -25,9 +25,15 @@ export const primaryLinks = [
 ]
 
 export const secondaryLinks = [
-  { label: 'Resources', path: '/resources', component: Home },
-  { label: 'Visit', path: '/visit', component: Visit },
-  { label: 'Events', path: '/events', component: Events },
+  { label: 'Resources', path: '/resources',component: Home, sublinks: [
+    { label: 'Gale EBooks', path: 'http://www.infotrac.galegroup.com/itweb/phneu' },
+    { label: 'UptoDate', path: 'http://www.uptodate.com' },
+    { label: 'EBSCO Databases', path: 'http://search.ebscohost.com/' },
+    { label: 'Worldbook Online', path: 'http://www.worldbookonline.com' },
+    { label: 'Wiley Digital Textbooks', path: 'http://vle.neu.edu.ph' },
+  ] }, 
+  { label: 'Visit', path: '/visit', component: Visit }, 
+  { label: 'Events', path: '/events', component: Events } 
 ]
 
 // export const procedureLinks = [

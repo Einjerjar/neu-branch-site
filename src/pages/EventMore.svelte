@@ -1,16 +1,16 @@
 <script>
   import { slide } from 'svelte/transition'
   import { push } from 'svelte-spa-router'
-
+  import { branch_data as bd} from '@/store'
   import { re_param } from '@/utils'
   import { events } from '@/sample_data/events'
-
   import ArticleCard from '@/components/events/ArticleCard.svelte'
   import Button from '@/components/events/Button.svelte'
   import Divider from '@/components/Divider.svelte'
   import Header from '@/components/events/Header.svelte'
   import Loading from '@/components/Loading.svelte'
   import LoadFailed from '@/components/LoadFailed.svelte'
+
 
   export let params = {}
   if (params.filter == null || params.filter.trim() == '') {
@@ -30,6 +30,7 @@
     const cfg = {
       limit: PAGE_LIMIT+1,
       skip: _page * PAGE_LIMIT,
+      'filter[branch]': $bd.name.toLowerCase()
     }
     if (filter.length != 0 && filter != 'all') {
       cfg['filter[category]'] = filter

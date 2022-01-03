@@ -25,7 +25,7 @@
       <div class="flex flex-wrap justify-center mb-8">
         {#if branch_procs.length > 0}
           {#each branch_procs as {id, name, cover, short_desc, content}}
-            <Cards pathChosen='#/admission/{id}' imageSrc='{HOST_ROOT}{cover.path}' schoolType={name}>
+            <Cards pathChosen='#/admission/{id}' imageSrc='{HOST_ROOT}/{cover.path}' schoolType={name}>
               {short_desc}
             </Cards>
           {/each}

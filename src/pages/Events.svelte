@@ -2,7 +2,7 @@
   import { slide } from 'svelte/transition'
   
   import { events } from '@/sample_data/events'
-  import { re_param } from '@/utils'
+  import { re_param, HOST_ROOT } from '@/utils'
   import { branch_data } from '@/store'
 
   import ArticleCard from '@/components/events/ArticleCard.svelte'
@@ -13,29 +13,27 @@
   import Loading from '@/components/Loading.svelte'
   import LoadFailed from '@/components/LoadFailed.svelte'
 
-  const branchInfo = { branchName:'General Santos City', imgSource:'./images/neu_gensan.jpg', id:1 }
-  const neuMainSrc = './images/neu_mainfront.jpg'
-
   let currentELimit = 4
   let currentALimit = 4
 
   let eventRetryTrigger = 0
   let announceRetryTrigger = 0
 
-  const getEvents = async (category, limit, trigger) => {
+  const getEvents = async (category, branch, limit, trigger) => {
     if (trigger < 0) console.log(trigger)
 
     const conf = { limit }
     if (category.trim() != '') conf['filter[category]'] = category
+    if (branch.trim() != '') conf['filter[branch]'] = branch
 
     let response = await fetch(re_param('collections/get/posts', conf))
 
     let data = await response.json()
     return data || events
   }
-
-  $: a_event_data = getEvents('event', currentELimit+1, eventRetryTrigger)
-  $: a_announce_data = getEvents('', currentALimit+1, announceRetryTrigger)
+  console.log('branch name', $branch_data.name.toLowerCase())
+  $: a_event_data = getEvents('event', $branch_data.name.toLowerCase(), currentELimit+1, eventRetryTrigger)
+  $: a_announce_data = getEvents('', $branch_data.name.toLowerCase(), currentALimit+1, announceRetryTrigger)
 
 </script>
 <div transition:slide class="home mb-20">
@@ -45,7 +43,7 @@
   <div class="container mx-auto px-4 mb-16 mt-16">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 place-content-center">
       <div class="w-full h-full">
-        <div class="w-full h-[60vw] max-h-100 bg-red-300 bg-cover bg-center rounded" style='background-image: url({neuMainSrc}) '>
+        <div class="w-full h-[60vw] max-h-100 bg-red-300 bg-cover bg-center rounded" style='background-image: url({`${HOST_ROOT}/${$branch_data.cover_image.path}`}) '>
         </div>
         <div class="mt-5 pr-8 max-w-full">
           <!-- <CardHover/> -->
@@ -71,7 +69,9 @@
             </div>
           {:then e_data} 
             {#each e_data.entries.slice(0,4) as event }
-              <EventCard article={event}/>
+              {#if event.published}
+                <EventCard article={event}/>
+              {/if}
             {/each}
             {#if currentELimit < e_data.entries.length}
               <a href='#/eventlist/event' class="col-span-2">
@@ -89,7 +89,7 @@
     </div>
   </div>
   <div>
-    <Branch branchImage={branchInfo.imgSource} branchName={branchInfo.branchName}></Branch>
+    <Branch branchImage={`${HOST_ROOT}/${$branch_data.cover_image.path}`} branchName={$branch_data.name}></Branch>
   </div>
   <div class="container mx-auto">
     <!-- Announcement Section -->
@@ -99,7 +99,9 @@
       {:then a_data} 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 px-2">
           {#each a_data.entries.slice(0,currentALimit) as a_data}
-            <ArticleCard article={a_data}/>
+            {#if a_data.published}
+              <ArticleCard article={a_data}/>
+            {/if}
           {/each}
         </div>
         {#if currentALimit < a_data.entries.length}

@@ -62,6 +62,7 @@
     data = clean_entries(data)
 
     // console.log('p', data, d)
+    
     return data || programs
   }
 
@@ -157,7 +158,7 @@
   {:then deps}
     {#if state == 'grp'}
       <AcademicGroups groups={levels} on:selectGroup={(v) => selectGroup(v)} />
-    {:else if state == 'dep'}
+    {:else if state == 'dep'} 
       <AcademicDepartments {grp} on:selectGroup={(v) => selectDepartment(v)} on:closeGroup={() => closeGroup()}
         {has_unassigned}
         departments={deps.map((v) => {
@@ -166,6 +167,7 @@
             text: v.name,
             showMore: true,
             _id: v._id,
+            extra_tags: v.extra_tags[0]
           }
         })} />
     {:else if state == 'prog'}

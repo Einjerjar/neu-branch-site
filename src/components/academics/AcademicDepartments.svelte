@@ -6,13 +6,14 @@
   import SlideyButton from './SlideyButton.svelte'
 
   export let has_unassigned = false
-
+  export let grp = 'undergraduate'
   export let departments = [
     {
       img: './images/acad/A.png',
       text: 'A',
       showMore: true,
       _id: '5e9f9c9c9c9c9c9c9c9c9c9',
+      extra_tags: grp
     }
   ]
 
@@ -22,11 +23,11 @@
       text: 'Unassigned',
       showMore: true,
       _id: 'UNASSIGNED',
+      extra_tags: grp
     })
   }
-
-  export let grp = 'undergraduate'
-
+  departments = departments.filter(v => v.extra_tags === grp)
+  
   const dispatch = createEventDispatcher()
 
   const selectGroup = (grp_name) => {

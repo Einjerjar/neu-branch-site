@@ -1,6 +1,6 @@
 <script>
-  import { footer_links } from '@/store'
-  
+  import { footer_links, branch_data as bd } from '@/store'
+  console.log($bd.address.address)
   import LinkGroup from './footer/LinkGroup.svelte'
 
   const year = new Date().getFullYear()
@@ -40,9 +40,9 @@
           new era university
         </div>
         <div class="mt-6 lg:(border-l-5px pl-6)">
-          <p>No. 9 Central Ave., New Era,</p>
-          <p>Quezon City, Philippines, 1107</p>
-          <p>Telephone: (02) 8981-4221</p>
+          <p>{$bd.address.address}</p>
+          <p>{`${$bd.address.city} ${$bd.address.country} ${$bd.address.postal_code}`}</p>
+          <p>Telephone: {$bd.telephone_numbers[0].value.number}</p>
           <p>info@neu.edu.ph</p>
         </div>
       </div>

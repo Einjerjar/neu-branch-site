@@ -2,6 +2,7 @@
   import { slide } from 'svelte/transition'
   
   import { branch_data } from '@/store'
+  import { HOST_ROOT } from '@/utils';
 
   import MVP from '@/components/campus/mvp.svelte'
 
@@ -19,7 +20,7 @@
   <div class ="bg-opacity-90 mx-auto flex shadow-2xl px-15 bg-primary-900 text-white">
     <div class="container mx-auto flex px-4 py-8 flex-col justify-center lg:(justify-around flex-row) children:my-8">
         <div class="w-full lg:w-2/5">
-          <img src={campusMainImage} alt="campus" class="w-full h-auto">
+          <img src={`${HOST_ROOT}/${$branch_data.cover_image.path}`} alt="campus" class="w-full h-auto">
           <div class="text-center my-4">
             <div class=" <md:text-4xl text-6xl font-shelley">
               New Era University
@@ -38,7 +39,7 @@
             Campus Location
           </div>
           <div class="w-full">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15439.444240708332!2d121.0580216!3d14.6638252!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8ce91e09b39981b7!2sNew%20Era%20University!5e0!3m2!1sen!2sph!4v1639151039253!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen title='neu' loading="lazy"></iframe>
+            <iframe src={$branch_data.googlemaps_embed} width="100%" height="450" style="border:0;" allowfullscreen title='neu' loading="lazy"></iframe>
           </div>
         </div>
     </div>
@@ -95,3 +96,4 @@
     background-position-y: bottom;
   }
 </style>
+

@@ -2,6 +2,7 @@
   import NewsCard from './NewsCard.svelte'
   import { events } from '@/sample_data/events'
   export let datas = events.entries
+  console.log(datas.length)
 
   let current = 0
   let next = 1

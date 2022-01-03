@@ -20,20 +20,23 @@
   let eventRetryTrigger = 0
   let announceRetryTrigger = 0
 
-  const getEvents = async (category, limit, trigger) => {
+  const getEvents = async (category, branch, limit, trigger) => {
     if (trigger < 0) console.log(trigger)
 
     const conf = { limit }
     if (category.trim() != '') conf['filter[category]'] = category
+    if (branch.trim() != '') conf['filter[branch]'] = branch
 
     let response = await fetch(re_param('collections/get/posts', conf))
 
     let data = await response.json()
+    // console.log(data.length)
     return data || events
   }
 
-  $: a_event_data = getEvents('event', currentELimit, eventRetryTrigger)
-  $: a_announce_data = getEvents('announcement', currentALimit, announceRetryTrigger)
+  $: a_event_data = getEvents('event', $branch_data.name.toLowerCase(), currentELimit, eventRetryTrigger)
+  $: a_announce_data = getEvents('announcement', $branch_data.name.toLowerCase(), currentALimit, announceRetryTrigger)
+
 
 </script>
 

@@ -65,7 +65,12 @@
             <Loading>Loading Event Details</Loading>
           {:then local_event}
             <div class="text-justify px-4">
+              {#if local_event.content}
               {@html local_event.content}
+                {:else}
+                <p></p>
+              {/if}
+              
               {#if local_event.images}
                   {#each local_event.images as img}
                       <div class="my-4">
