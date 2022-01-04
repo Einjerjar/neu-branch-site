@@ -23,9 +23,8 @@
 
   let eventRetryTrigger = 0
 
+  // eslint-disable-next-line no-unused-vars
   const a_event_data = async (_page, trigger) => {
-    if (trigger < 0) console.log(trigger)
-
     const cfg = {
       limit: PAGE_LIMIT + 1,
       skip: _page * PAGE_LIMIT,

@@ -13,7 +13,6 @@ import AdmissionProcedure from '@/pages/AdmissionProcedure.svelte'
 
 
 import Events from '@/pages/Events.svelte'
-// import Events2 from "@/pages/Events2.svelte";
 
 
 export const primaryLinks = [
@@ -21,7 +20,6 @@ export const primaryLinks = [
   { label: 'Campus', path: '/campus', component: Campus },
   { label: 'Academics', path: '/academics', component: AcademicPrograms },
   { label: 'Admission', path: '/admission', component: AdmissionFrontPage },
-  // { label: 'About NEU', path: '/about', component: AboutNEU }
 ]
 
 export const secondaryLinks = [
@@ -37,9 +35,6 @@ export const secondaryLinks = [
   { label: 'Visit', path: '/visit', component: Visit },
   { label: 'Events', path: '/events', component: Events }
 ]
-
-// export const procedureLinks = [
-// ]
 
 export const admissionLinks = [
   { label: 'BasicEducation', path: '/admission/basicEducation', component: BasicEducation },

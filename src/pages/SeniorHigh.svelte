@@ -76,7 +76,6 @@
 <style>
   .catamaran {
     font-family: "Catamaran", sans-serif;
-    /* color: #791616; */
   }
 
   h2 {

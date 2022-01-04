@@ -22,9 +22,8 @@
   let announceRetryTrigger = 0
   let upcomingRetryTrigger = 0
 
+  // eslint-disable-next-line no-unused-vars
   const getEvents = async (category, branch, limit, trigger) => {
-    if (trigger < 0) console.log(trigger)
-
     const conf = { limit }
     if (category.trim() != '') conf['filter[category]'] = category
     if (branch.trim() != '') conf['filter[branch]'] = branch
@@ -35,9 +34,9 @@
     // console.log(category, data)
     return data || events
   }
-  const getUpcomingEvent = async (limit, branch, trigger) => {
-    if (trigger < 0) console.log(trigger)
 
+  // eslint-disable-next-line no-unused-vars
+  const getUpcomingEvent = async (limit, branch, trigger) => {
     const conf = { limit }
     if (branch.trim() != '') conf['filter[branch]'] = branch
 

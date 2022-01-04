@@ -19,9 +19,8 @@
   let eventRetryTrigger = 0
   let announceRetryTrigger = 0
 
+  // eslint-disable-next-line no-unused-vars
   const getEvents = async (category, branch, limit, trigger) => {
-    if (trigger < 0) console.log(trigger)
-
     const conf = { limit }
     if (category.trim() != '') conf['filter[category]'] = category
     if (branch.trim() != '') conf['filter[branch]'] = branch

@@ -9,7 +9,6 @@
   const dispatch = createEventDispatcher()
 
   const closeView = () => {
-    // console.log('EE')
     dispatch('closeView')
   }
 

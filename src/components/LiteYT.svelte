@@ -1,6 +1,5 @@
 <script>
   export let videoID = ''
-  // export let videoTitle = ''
   export let clazz = ''
   export let params = ''
 

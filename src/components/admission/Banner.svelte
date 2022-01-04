@@ -14,7 +14,6 @@
 
 <style>
   .centered {
-    /* left: 75%; */
     top: 42%;
   }
 </style>
