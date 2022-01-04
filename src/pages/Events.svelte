@@ -26,7 +26,7 @@
     if (category.trim() != '') conf['filter[category]'] = category
     if (branch.trim() != '') conf['filter[branch]'] = branch
 
-    let response = await fetch(re_param('collections/get/posts', conf))
+    let response = await fetch(re_param('collections/get/posts?sort[_created]=-1', conf))
 
     let data = await response.json()
     return data || events
