@@ -36,11 +36,12 @@
       cfg['filter[category]'] = filter
     }
 
-    let response = await fetch(re_param('collections/get/posts', cfg))
+    let response = await fetch(re_param('collections/get/posts?sort[_created]=-1', cfg))
     let data = await response.json()
-    
     return data || events
   }
+
+  
 
   $:articles = a_event_data(page, eventRetryTrigger)
 </script>

@@ -13,12 +13,14 @@
   import LoadFailed from '@/components/LoadFailed.svelte'
   import { branch_data } from '@/store'
   import LiteYT from '@/components/LiteYT.svelte'
+import UpcomingCard from '@/components/home/UpcomingCard.svelte'
 
   let currentELimit = 4
   let currentALimit = 4
 
   let eventRetryTrigger = 0
   let announceRetryTrigger = 0
+  let upcomingRetryTrigger = 0
 
   const getEvents = async (category, branch, limit, trigger) => {
     if (trigger < 0) console.log(trigger)
@@ -27,17 +29,27 @@
     if (category.trim() != '') conf['filter[category]'] = category
     if (branch.trim() != '') conf['filter[branch]'] = branch
 
-    let response = await fetch(re_param('collections/get/posts', conf))
+    let response = await fetch(re_param('collections/get/posts?sort[_created]=-1', conf))
 
     let data = await response.json()
     console.log(category, data)
     return data || events
   }
+  const getUpcomingEvent = async (limit, branch, trigger) => {
+    if (trigger < 0) console.log(trigger)
+
+    const conf = { limit }
+    if (branch.trim() != '') conf['filter[branch]'] = branch
+
+    let response = await fetch(re_param('collections/get/upcoming_events?sort[_created]=-1', conf))
+    let data = await response.json()
+
+    return data
+  }
 
   $: a_event_data = getEvents('event', $branch_data.name.toLowerCase(), currentELimit, eventRetryTrigger)
   $: a_announce_data = getEvents('announcement', $branch_data.name.toLowerCase(), currentALimit, announceRetryTrigger)
-
-
+  $: upcoming_data = getUpcomingEvent(4, $branch_data.name.toLowerCase(), upcomingRetryTrigger)
 </script>
 
 <div transition:slide class="page-home">
@@ -75,6 +87,26 @@
         <LoadFailed on:retry={() => announceRetryTrigger ++} />
       {/await}
     </div>
+    <Divider />
+    <div class="upcoming-section mb-16 px-4">
+      <div class="text-primary-900 text-2xl capitalize font-bold mb-4">
+        upcoming events
+      </div>
+      <div class="grid gap-4 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+        {#await upcoming_data}
+          <Loading> Loading Upcoming Events </Loading>
+        {:then u_data}
+          {#each u_data.entries as data}
+            {#if data.published}
+              <UpcomingCard {data}/>
+            {/if}
+          {/each}
+          {:catch}
+        <LoadFailed on:retry={() => upcomingRetryTrigger ++} />
+        {/await}
+      </div>
+    </div>
+
 
     {#if $branch_data.homepage_embed}
       <Divider />
