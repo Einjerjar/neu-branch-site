@@ -5,7 +5,7 @@
   export let datas = events.entries
   export let scrollBy = 1
 
-  console.log(datas)
+  // console.log(datas)
 
   let slides = []
   let rootWidth = 0
@@ -28,7 +28,7 @@
         offset = 0
       if (offset < maxOffset)
         offset = maxOffset
-      console.log('Width', rootWidth, offset)
+      // console.log('Width', rootWidth, offset)
     }, 100)
   }
 

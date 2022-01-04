@@ -15,7 +15,7 @@
   let announceRetryTrigger = 0
 
   const getEvents = async (category, limit, trigger) => {
-    if (trigger < 0) console.log(trigger)
+    // if (trigger < 0) console.log(trigger)
 
     const conf = { limit }
     if (category.trim() != '') conf['filter[category]'] = category

@@ -23,7 +23,7 @@ import UpcomingCard from '@/components/home/UpcomingCard.svelte'
   let upcomingRetryTrigger = 0
 
   const getEvents = async (category, branch, limit, trigger) => {
-    if (trigger < 0) console.log(trigger)
+    // if (trigger < 0) console.log(trigger)
 
     const conf = { limit }
     if (category.trim() != '') conf['filter[category]'] = category
@@ -32,11 +32,11 @@ import UpcomingCard from '@/components/home/UpcomingCard.svelte'
     let response = await fetch(re_param('collections/get/posts?sort[_created]=-1', conf))
 
     let data = await response.json()
-    console.log(category, data)
+    // console.log(category, data)
     return data || events
   }
   const getUpcomingEvent = async (limit, branch, trigger) => {
-    if (trigger < 0) console.log(trigger)
+    // if (trigger < 0) console.log(trigger)
 
     const conf = { limit }
     if (branch.trim() != '') conf['filter[branch]'] = branch

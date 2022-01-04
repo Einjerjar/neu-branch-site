@@ -20,7 +20,7 @@
   let announceRetryTrigger = 0
 
   const getEvents = async (category, branch, limit, trigger) => {
-    if (trigger < 0) console.log(trigger)
+    // if (trigger < 0) console.log(trigger)
 
     const conf = { limit }
     if (category.trim() != '') conf['filter[category]'] = category
@@ -31,7 +31,7 @@
     let data = await response.json()
     return data || events
   }
-  console.log('branch name', $branch_data.name.toLowerCase())
+  // console.log('branch name', $branch_data.name.toLowerCase())
   $: a_event_data = getEvents('event', $branch_data.name.toLowerCase(), currentELimit+1, eventRetryTrigger)
   $: a_announce_data = getEvents('', $branch_data.name.toLowerCase(), currentALimit+1, announceRetryTrigger)
 

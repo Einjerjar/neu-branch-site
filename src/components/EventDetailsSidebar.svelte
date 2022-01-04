@@ -10,7 +10,7 @@
   const MAX_SUB_POST = 2
 
   const getArticles = async (id, category, trigger) => {
-    if (trigger < 0) console.log(trigger)
+    // if (trigger < 0) console.log(trigger)
     
     let response = await fetch(re_param('collections/get/posts', {
       limit: MAX_SUB_POST,

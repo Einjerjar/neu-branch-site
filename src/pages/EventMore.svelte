@@ -25,7 +25,7 @@
   let eventRetryTrigger = 0
 
   const a_event_data = async(_page, trigger) => {
-    if (trigger < 0) console.log(trigger)
+    // if (trigger < 0) console.log(trigger)
 
     const cfg = {
       limit: PAGE_LIMIT+1,
