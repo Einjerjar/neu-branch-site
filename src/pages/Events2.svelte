@@ -4,8 +4,8 @@
 
   import Divider from '@/components/Divider.svelte'
   import EventCard from '@/components/EventCard.svelte'
-  import Loading from '@/components/Loading.svelte'
   import LoadFailed from '@/components/LoadFailed.svelte'
+  import Loading from '@/components/Loading.svelte'
   import NewsTicker from '@/components/NewsTicker.svelte'
   import Slider from '@/components/Slider.svelte'
 

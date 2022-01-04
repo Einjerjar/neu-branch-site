@@ -1,6 +1,6 @@
 <script>
-  import { re_param } from '@/utils'
   import { events } from '@/sample_data/events'
+  import { re_param } from '@/utils'
 
   import LoadFailed from './LoadFailed.svelte'
   import NewsCard from './NewsCard.svelte'

@@ -1,6 +1,7 @@
 <script>
   import { events } from '@/sample_data/events'
   import { HOST_ROOT } from '@/utils'
+
   export let data = events.entries[0]
 </script>
 

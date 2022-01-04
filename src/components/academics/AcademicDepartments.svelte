@@ -1,7 +1,7 @@
 <script>
-  import { slide } from 'svelte/transition'
   import { createEventDispatcher } from 'svelte'
-  
+  import { slide } from 'svelte/transition'
+
   import ItemCard from './ItemCard.svelte'
   import SlideyButton from './SlideyButton.svelte'
 
@@ -27,7 +27,7 @@
     })
   }
   departments = departments.filter(v => v.extra_tags === grp)
-  
+
   const dispatch = createEventDispatcher()
 
   const selectGroup = (grp_name) => {

@@ -1,14 +1,13 @@
 <script>
   import { fade, slide } from 'svelte/transition'
-
-  import { HOST_ROOT, re_param } from '@/utils'
   import { branch_data } from '@/store'
   import { branch_data as bd } from '@/sample_data/branch_data'
+  import { HOST_ROOT, re_param } from '@/utils'
 
   import Branch from '@/components/admission/Branch.svelte'
+  import LoadFailed from '@/components/LoadFailed.svelte'
   import Loading from '@/components/Loading.svelte'
   import SkeletonImage from '@/components/SkeletonImage.svelte'
-  import LoadFailed from '@/components/LoadFailed.svelte'
 
   const getBranches = async () => {
     const response = await fetch(

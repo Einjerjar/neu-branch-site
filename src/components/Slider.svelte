@@ -1,7 +1,9 @@
 <script>
-  // Props
-  import NewsCard from './NewsCard.svelte'
   import { events } from '@/sample_data/events'
+
+  import NewsCard from './NewsCard.svelte'
+
+  // Props
   export let datas = events.entries
   export let scrollBy = 1
 

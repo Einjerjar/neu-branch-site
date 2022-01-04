@@ -1,19 +1,18 @@
 <script>
   import { slide } from 'svelte/transition'
-
-  import { re_param } from '@/utils'
+  import { branch_data } from '@/store'
   import { events } from '@/sample_data/events'
+  import { re_param } from '@/utils'
 
   import Divider from '@/components/Divider.svelte'
   import IconCards from '@/components/home/IconCards.svelte'
+  import LiteYT from '@/components/LiteYT.svelte'
+  import LoadFailed from '@/components/LoadFailed.svelte'
   import Loading from '@/components/Loading.svelte'
   import NewsTicker from '@/components/NewsTicker.svelte'
   import Slider from '@/components/Slider.svelte'
-  import VideoHeader from '@/components/home/VideoHeader.svelte'
-  import LoadFailed from '@/components/LoadFailed.svelte'
-  import { branch_data } from '@/store'
-  import LiteYT from '@/components/LiteYT.svelte'
   import UpcomingCard from '@/components/home/UpcomingCard.svelte'
+  import VideoHeader from '@/components/home/VideoHeader.svelte'
 
   let currentELimit = 4
   let currentALimit = 4

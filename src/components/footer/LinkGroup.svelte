@@ -1,76 +1,11 @@
 <script>
+  import { branch_data as bd } from '@/sample_data/branch_data'
+
   export let icon_only = false
   export let show_title = true
   export let extra_format = false
   export let title = 'title'
-  export let links = [
-    {
-      field: {
-        type: 'set',
-        label: 'Link',
-        options: {
-          fields: [
-            {
-              name: 'Label',
-              type: 'text',
-            },
-            {
-              name: 'Link',
-              type: 'text',
-            },
-          ],
-        },
-      },
-      value: {
-        Label: 'Automate',
-        Link: 'https://automate.neu.edu.ph',
-      },
-    },
-    {
-      field: {
-        type: 'set',
-        label: 'Link',
-        options: {
-          fields: [
-            {
-              name: 'Label',
-              type: 'text',
-            },
-            {
-              name: 'Link',
-              type: 'text',
-            },
-          ],
-        },
-      },
-      value: {
-        Label: 'NEUVLE',
-        Link: 'https://vle.neu.edu.ph',
-      },
-    },
-    {
-      field: {
-        type: 'set',
-        label: 'Link',
-        options: {
-          fields: [
-            {
-              name: 'Label',
-              type: 'text',
-            },
-            {
-              name: 'Link',
-              type: 'text',
-            },
-          ],
-        },
-      },
-      value: {
-        Label: 'Subscribe',
-        Link: 'https://automate.neu.edu.ph',
-      },
-    },
-  ]
+  export let links = [] || bd.links
 </script>
 
 {#if links}

@@ -1,17 +1,16 @@
 <script>
   import { slide } from 'svelte/transition'
-
+  import { branch_data } from '@/store'
   import { events } from '@/sample_data/events'
   import { re_param, HOST_ROOT } from '@/utils'
-  import { branch_data } from '@/store'
 
   import ArticleCard from '@/components/events/ArticleCard.svelte'
   import Branch from '@/components/admission/Branch.svelte'
   import Button from '@/components/events/Button.svelte'
   import EventCard from '@/components/events/EventCard.svelte'
   import Header from '@/components/events/Header.svelte'
-  import Loading from '@/components/Loading.svelte'
   import LoadFailed from '@/components/LoadFailed.svelte'
+  import Loading from '@/components/Loading.svelte'
 
   let currentELimit = 4
   let currentALimit = 4

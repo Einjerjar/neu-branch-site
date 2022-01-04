@@ -1,6 +1,5 @@
 <script>
   import { fade, slide } from 'svelte/transition'
-
   import { img_path } from '@/store'
 
   $: show = $img_path !== ''

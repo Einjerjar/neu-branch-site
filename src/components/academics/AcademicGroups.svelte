@@ -1,7 +1,7 @@
 <script>
-  import { slide } from 'svelte/transition'
   import { createEventDispatcher } from 'svelte'
-  
+  import { slide } from 'svelte/transition'
+
   export let groups = [
     {
       img: './images/acad/A.png',

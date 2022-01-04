@@ -1,6 +1,6 @@
 <script>
-  import { slide } from 'svelte/transition'
   import { createEventDispatcher } from 'svelte'
+  import { slide } from 'svelte/transition'
 
   const dispatch = createEventDispatcher()
 
@@ -15,7 +15,7 @@
   export let programs = []
   export let departments = []
   export let department = ''
-  
+
   $: currentDep_a = departments.filter(d => d._id === department)
   $: currentDep = currentDep_a.length > 0 ? currentDep_a[0].name : department
 

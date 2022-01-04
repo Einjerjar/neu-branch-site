@@ -1,5 +1,6 @@
 <script>
   export let data = { date: '2009-11-10' }
+
   const date = new Date(data.date) // 2009-11-10
   const day = date.getDate()
   const month = date.toLocaleString('default', { month: 'long' })

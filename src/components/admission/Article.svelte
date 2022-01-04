@@ -1,5 +1,6 @@
 <script>
   import MediumHeader from '@/components/admission/MediumHeader.svelte'
+
   export let title
 </script>
 

@@ -1,6 +1,6 @@
 <script>
   import { footer_links, branch_data as bd } from '@/store'
-  // console.log($bd.address.address)
+
   import LinkGroup from './footer/LinkGroup.svelte'
 
   const year = new Date().getFullYear()

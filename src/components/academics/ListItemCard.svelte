@@ -1,6 +1,6 @@
 <script>
   import { HOST_ROOT } from '@/utils'
-  
+
   import SkeletonImage from '../SkeletonImage.svelte'
 
   export let prg = {

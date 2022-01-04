@@ -1,6 +1,5 @@
 <script>
   import { slide } from 'svelte/transition'
-
   import { re_param, HOST_ROOT } from '@/utils'
   import { img_path } from '@/store'
   import { events } from '@/sample_data/events'

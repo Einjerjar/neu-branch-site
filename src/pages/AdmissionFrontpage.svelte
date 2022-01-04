@@ -1,6 +1,5 @@
 <script>
   import { slide } from 'svelte/transition'
-
   import { branch_data } from '@/store'
   import { clean_item, HOST_ROOT } from '@/utils'
 

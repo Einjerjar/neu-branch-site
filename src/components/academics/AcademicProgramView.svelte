@@ -1,7 +1,6 @@
 <script>
-  import { slide } from 'svelte/transition'
   import { createEventDispatcher } from 'svelte'
-
+  import { slide } from 'svelte/transition'
   import { HOST_ROOT } from '@/utils'
 
   import SkeletonImage from '../SkeletonImage.svelte'
@@ -30,7 +29,7 @@
     images: null,
   }
   $: p_img = prg.image ? HOST_ROOT + prg.image.path : './images/acad/default_compressed.jpg'
-  
+
   let offset = 0
 
   const handleScroll = (n) => {

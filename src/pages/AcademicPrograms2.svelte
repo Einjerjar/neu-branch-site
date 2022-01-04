@@ -1,14 +1,14 @@
 <script>
-  import { departments, programs } from '@/sample_data/programs'
   import { branch_data } from '@/store'
   import { clean_entries, HOST_ROOT, re_get } from '@/utils'
+  import { departments, programs } from '@/sample_data/programs'
 
   import AcademicDepartments from '@/components/academics/AcademicDepartments.svelte'
   import AcademicGroups from '@/components/academics/AcademicGroups.svelte'
   import AcademicProgramList from '@/components/academics/AcademicProgramList.svelte'
   import AcademicProgramView from '@/components/academics/AcademicProgramView.svelte'
-  import Loading from '@/components/Loading.svelte'
   import LoadFailed from '@/components/LoadFailed.svelte'
+  import Loading from '@/components/Loading.svelte'
 
   const expected_levels = [ 'basic', 'shs', 'undergrad' ]
   const level_data = {

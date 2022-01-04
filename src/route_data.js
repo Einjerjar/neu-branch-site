@@ -1,18 +1,16 @@
-import Home from '@/pages/Home.svelte'
 import AcademicPrograms from '@/pages/AcademicPrograms2.svelte'
-import Campus from '@/pages/Campus.svelte'
 import AdmissionFrontPage from '@/pages/AdmissionFrontpage.svelte'
-import Procedure from '@/pages/Procedure.svelte'
-import Undergrad from '@/pages/Undergrad.svelte'
-import SeniorHigh from '@/pages/SeniorHigh.svelte'
-import BasicEducation from '@/pages/BasicEducation.svelte'
-import Visit from '@/pages/Visit.svelte'
-import EventsInfo from '@/pages/EventsInfo.svelte'
-import EventMore from '@/pages/EventMore.svelte'
 import AdmissionProcedure from '@/pages/AdmissionProcedure.svelte'
-
-
+import BasicEducation from '@/pages/BasicEducation.svelte'
+import Campus from '@/pages/Campus.svelte'
+import EventMore from '@/pages/EventMore.svelte'
 import Events from '@/pages/Events.svelte'
+import EventsInfo from '@/pages/EventsInfo.svelte'
+import Home from '@/pages/Home.svelte'
+import Procedure from '@/pages/Procedure.svelte'
+import SeniorHigh from '@/pages/SeniorHigh.svelte'
+import Undergrad from '@/pages/Undergrad.svelte'
+import Visit from '@/pages/Visit.svelte'
 
 
 export const primaryLinks = [

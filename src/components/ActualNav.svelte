@@ -1,9 +1,10 @@
 <script>
-  import { primaryLinks, secondaryLinks } from '@/route_data'
+  import { onMount } from 'svelte'
   import { slide } from 'svelte/transition'
   import { branch_data } from '@/store'
-  import { onMount } from 'svelte'
+  import { primaryLinks, secondaryLinks } from '@/route_data'
   import { re_param } from '@/utils'
+
   export let isSticky = false
 
   onMount(() => {

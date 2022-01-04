@@ -1,6 +1,7 @@
 <script>
   import { branch_data } from '@/store'
   import { branch_data as bd } from '@/sample_data/branch_data'
+
   import IconCard from '@/components/home/IconCard.svelte'
 
   // fallback to sample data

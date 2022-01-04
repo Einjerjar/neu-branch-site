@@ -1,9 +1,10 @@
 <script>
   import '@/styles/admissionProc.css'
-  import { pop } from 'svelte-spa-router'
 
+  import { pop } from 'svelte-spa-router'
   import { branch_data } from '@/store'
   import { clean_item } from '@/utils'
+
   import SlideyButton from '@/components/academics/SlideyButton.svelte'
 
   export let params = {
