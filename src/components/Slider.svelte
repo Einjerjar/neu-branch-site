@@ -17,7 +17,7 @@
   $: perPage = Math.round(rootWidth ? rootWidth / paginationFactor : 0)
 
   $: offset = 0
-  $: maxOffset = (datas.length - perPage) * paginationFactor * -1
+  $: maxOffset = Math.max(datas.length - perPage, 0) * paginationFactor * -1
   $: atStart = offset >= 0
   $: atEnd = offset <= maxOffset
 
@@ -44,6 +44,8 @@
       offset = maxOffset
   }
 </script>
+
+<!-- {JSON.stringify([ offset, maxOffset, atStart, atEnd, Math.max(datas.length - perPage, 0), paginationFactor ])} -->
 
 <svelte:window on:resize={onResize} />
 
