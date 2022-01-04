@@ -348,7 +348,7 @@ export const branch_data = {
     mime: 'video/mp4',
     description: '',
     tags: [
-      
+
     ],
     size: 788493,
     image: false,
@@ -366,7 +366,7 @@ export const branch_data = {
     folder: 'cadb6ade6165338f51000170',
     _id: 'cade05d4343935249b000338'
   },
-  homepage_embed: 'https://www.youtube.com/embed/-laHrCrn64U',
+  homepage_embed: '-laHrCrn64U',
   facilities: [
     {
       field: {

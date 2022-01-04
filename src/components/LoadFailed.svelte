@@ -12,7 +12,7 @@
   }
 </script>
 
-<div class="w-full flex flex-col justify-center items-center my-6">
+<div class="w-full flex flex-col justify-center items-center my-6 {clazz}">
   <div class="text-primary-900 font-bold text-2xl {text_class_extra}">
     <slot>
       Loading Failed!
