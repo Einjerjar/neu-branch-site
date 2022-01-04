@@ -19,7 +19,7 @@
   <GalleryViewer />
   <SampleNav />
 
-  <Router {routes} on:routeLoaded={onRouteLoaded}/>
+  <Router {routes} on:routeLoaded={onRouteLoaded} />
   <Footer />
 </main>
 

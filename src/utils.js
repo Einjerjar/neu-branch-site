@@ -16,7 +16,7 @@ export const clean_item = v => {
   const temp = {}
   Object.assign(temp, v)
 
-  for(let i in temp) {
+  for (let i in temp) {
     if (i.startsWith('_') && i != '_id') {
       delete temp[i]
     }

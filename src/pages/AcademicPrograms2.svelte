@@ -43,7 +43,7 @@
     levels = []
 
     // some magic to search for unassigned programs
-    const dd = res.entries.map(v => v.department)
+    const dd = res.entries.map((v) => v.department)
     has_unassigned = dd.includes(null)
 
     // some magic to get the available levels, too lazy to name so yeah
@@ -62,7 +62,7 @@
     data = clean_entries(data)
 
     // console.log('p', data, d)
-    
+
     return data || programs
   }
 
@@ -96,10 +96,10 @@
 
   let grp = ''
   let dep = ''
-  let prg = { // sample data
+  let prg = {
+    // sample data
     program_name: 'Bachelor of Science in Accounting Information System',
-    program_desc:
-      '<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>',
+    program_desc: '<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>\n<p>Bachelor of Science in Accounting Information System</p>',
     branch: [ 'gensan', 'lipa', 'pampanga' ],
     level: [ 'undergraduate', 'tertiary' ],
     _id: '955862716134343cac000172',
@@ -147,19 +147,18 @@
 <div class="min-h-screen bg-dark-900 w-full fixed top-0 left-0 -z-1 bg-opacity-75" />
 
 {#await a_programs}
-  <Loading icon_class_extra="!text-white" text_class_extra="!text-white">
-    Loading programs
-  </Loading>
+  <Loading icon_class_extra="!text-white" text_class_extra="!text-white">Loading programs</Loading>
 {:then prgs}
   {#await a_departments}
-    <Loading>
-      Loading Departments
-    </Loading>
+    <Loading>Loading Departments</Loading>
   {:then deps}
     {#if state == 'grp'}
       <AcademicGroups groups={levels} on:selectGroup={(v) => selectGroup(v)} />
-    {:else if state == 'dep'} 
-      <AcademicDepartments {grp} on:selectGroup={(v) => selectDepartment(v)} on:closeGroup={() => closeGroup()}
+    {:else if state == 'dep'}
+      <AcademicDepartments
+        {grp}
+        on:selectGroup={(v) => selectDepartment(v)}
+        on:closeGroup={() => closeGroup()}
         {has_unassigned}
         departments={deps.map((v) => {
           return {
@@ -167,7 +166,7 @@
             text: v.name,
             showMore: true,
             _id: v._id,
-            extra_tags: v.extra_tags[0]
+            extra_tags: v.extra_tags[0],
           }
         })} />
     {:else if state == 'prog'}
@@ -176,12 +175,8 @@
       <AcademicProgramView {prg} on:closeView={() => closeView()} />
     {/if}
   {:catch}
-    <LoadFailed on:retry={() => departmentsRetryTrigger++}>
-      Failed to load Department list!
-    </LoadFailed>
+    <LoadFailed on:retry={() => departmentsRetryTrigger++}>Failed to load Department list!</LoadFailed>
   {/await}
 {:catch}
-  <LoadFailed on:retry={() => programsRetryTrigger++}>
-    Failed to load Program list!
-  </LoadFailed>
+  <LoadFailed on:retry={() => programsRetryTrigger++}>Failed to load Program list!</LoadFailed>
 {/await}

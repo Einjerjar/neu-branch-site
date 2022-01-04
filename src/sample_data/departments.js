@@ -5,7 +5,7 @@ export const departments = {
       type: 'text',
       localize: false,
       options: [
-        
+
       ]
     },
     meta_name: {
@@ -13,7 +13,7 @@ export const departments = {
       type: 'text',
       localize: false,
       options: [
-        
+
       ]
     },
     description: {
@@ -21,7 +21,7 @@ export const departments = {
       type: 'wysiwyg',
       localize: false,
       options: [
-        
+
       ]
     },
     branch: {
@@ -29,7 +29,7 @@ export const departments = {
       type: 'tags',
       localize: false,
       options: [
-        
+
       ]
     },
     extra_tags: {
@@ -37,7 +37,7 @@ export const departments = {
       type: 'tags',
       localize: false,
       options: [
-        
+
       ]
     }
   },
@@ -58,7 +58,7 @@ export const departments = {
       ],
       extra_tags: null,
       children: [
-        
+
       ]
     },
     {
@@ -77,7 +77,7 @@ export const departments = {
       ],
       extra_tags: null,
       children: [
-        
+
       ]
     },
     {
@@ -95,7 +95,7 @@ export const departments = {
       _created: 1635775251,
       _id: '96072145613362680e00008a',
       children: [
-        
+
       ]
     },
     {
@@ -113,7 +113,7 @@ export const departments = {
       _created: 1635775636,
       _id: '9641da3837346354cc000169',
       children: [
-        
+
       ]
     }
   ],

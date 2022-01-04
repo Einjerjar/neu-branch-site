@@ -7,11 +7,11 @@ let rr = {
 }
 
 links.forEach(v => {
-  if(v.sublinks) {
+  if (v.sublinks) {
     v.sublinks.forEach(x => {
       rr[x.path] = x.component
     })
-  }else {
+  } else {
     rr[v.path] = v.component
   }
 })

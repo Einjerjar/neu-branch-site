@@ -96,7 +96,12 @@ export const branch_data = {
       }
     }
   ],
-  address: '1795 P. Plan St., Marawoy, Lipa City',
+  address: {
+    address: 'address',
+    city: 'city',
+    country: 'country',
+    postal_code: 'postal_code',
+  },
   contact_emails: [
     {
       field: {
@@ -367,6 +372,8 @@ export const branch_data = {
     _id: 'cade05d4343935249b000338'
   },
   homepage_embed: '-laHrCrn64U',
+  cover_image: null,
+  googlemaps_embed: 'googlemaps_embed',
   facilities: [
     {
       field: {

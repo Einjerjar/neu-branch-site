@@ -37,8 +37,8 @@
 
 <div class="w-full relative">
   <!-- dirty hack, but eh, looks good, lol -->
-  <ActualNav/>
+  <ActualNav />
   {#if navShowing}
-    <ActualNav isSticky={true}/>
+    <ActualNav isSticky={true} />
   {/if}
 </div>

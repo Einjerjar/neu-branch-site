@@ -13,7 +13,7 @@
   import LoadFailed from '@/components/LoadFailed.svelte'
   import { branch_data } from '@/store'
   import LiteYT from '@/components/LiteYT.svelte'
-import UpcomingCard from '@/components/home/UpcomingCard.svelte'
+  import UpcomingCard from '@/components/home/UpcomingCard.svelte'
 
   let currentELimit = 4
   let currentALimit = 4
@@ -23,7 +23,7 @@ import UpcomingCard from '@/components/home/UpcomingCard.svelte'
   let upcomingRetryTrigger = 0
 
   const getEvents = async (category, branch, limit, trigger) => {
-    // if (trigger < 0) console.log(trigger)
+    if (trigger < 0) console.log(trigger)
 
     const conf = { limit }
     if (category.trim() != '') conf['filter[category]'] = category
@@ -36,7 +36,7 @@ import UpcomingCard from '@/components/home/UpcomingCard.svelte'
     return data || events
   }
   const getUpcomingEvent = async (limit, branch, trigger) => {
-    // if (trigger < 0) console.log(trigger)
+    if (trigger < 0) console.log(trigger)
 
     const conf = { limit }
     if (branch.trim() != '') conf['filter[branch]'] = branch
@@ -54,59 +54,52 @@ import UpcomingCard from '@/components/home/UpcomingCard.svelte'
 
 <div transition:slide class="page-home">
   <div class="hidden md:block">
-    <NewsTicker/>
+    <NewsTicker />
   </div>
   <VideoHeader />
   <div class="container mx-auto px-4">
-    <div class="iconcard-section flex flex-wrap justify-center children:mx-4 -mt-8 <md:(max-w-4/5 mx-auto) md:(max-w-screen-lg -mt-10 mx-auto)" >
+    <div class="iconcard-section flex flex-wrap justify-center children:mx-4 -mt-8 <md:(max-w-4/5 mx-auto) md:(max-w-screen-lg -mt-10 mx-auto)">
       <IconCards />
     </div>
     <Divider />
     <div class="news-section px-4">
-      <div class="text-primary-900 text-2xl capitalize font-bold mb-4">
-        latest news
-      </div>
+      <div class="text-primary-900 text-2xl capitalize font-bold mb-4">latest news</div>
       {#await a_event_data}
-        <Loading> Loading News </Loading>
+        <Loading>Loading News</Loading>
       {:then e_data}
-        <Slider datas={e_data.entries}/>
+        <Slider datas={e_data.entries} />
       {:catch}
-        <LoadFailed on:retry={() => eventRetryTrigger ++} />
+        <LoadFailed on:retry={() => eventRetryTrigger++} />
       {/await}
     </div>
     <Divider />
     <div class="announcement-section mb-16 px-4">
-      <div class="text-primary-900 text-2xl capitalize font-bold mb-4">
-        announcements
-      </div>
+      <div class="text-primary-900 text-2xl capitalize font-bold mb-4">announcements</div>
       {#await a_announce_data}
-        <Loading> Loading Announcements </Loading>
+        <Loading>Loading Announcements</Loading>
       {:then a_data}
-        <Slider datas={a_data.entries}/>
+        <Slider datas={a_data.entries} />
       {:catch}
-        <LoadFailed on:retry={() => announceRetryTrigger ++} />
+        <LoadFailed on:retry={() => announceRetryTrigger++} />
       {/await}
     </div>
     <Divider />
     <div class="upcoming-section mb-16 px-4">
-      <div class="text-primary-900 text-2xl capitalize font-bold mb-4">
-        upcoming events
-      </div>
+      <div class="text-primary-900 text-2xl capitalize font-bold mb-4">upcoming events</div>
       <div class="grid gap-4 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
         {#await upcoming_data}
-          <Loading> Loading Upcoming Events </Loading>
+          <Loading>Loading Upcoming Events</Loading>
         {:then u_data}
           {#each u_data.entries as data}
             {#if data.published}
-              <UpcomingCard {data}/>
+              <UpcomingCard {data} />
             {/if}
           {/each}
-          {:catch}
-        <LoadFailed on:retry={() => upcomingRetryTrigger ++} />
+        {:catch}
+          <LoadFailed on:retry={() => upcomingRetryTrigger++} />
         {/await}
       </div>
     </div>
-
 
     {#if $branch_data.homepage_embed}
       <Divider />
@@ -117,10 +110,7 @@ import UpcomingCard from '@/components/home/UpcomingCard.svelte'
           <!-- iframe -->
 
           <!-- <iframe src={$branch_data.homepage_embed} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="<sm:(absolute top-0 left-0 bottom-0 right-0 w-full h-full)" width="100%" height="450"></iframe> -->
-          <LiteYT
-            videoID={$branch_data.homepage_embed}
-            class="<sm:(absolute top-0 left-0 bottom-0 right-0 w-full h-full) w-full h-450px"
-          />
+          <LiteYT videoID={$branch_data.homepage_embed} class="<sm:(absolute top-0 left-0 bottom-0 right-0 w-full h-full) w-full h-450px" />
         </div>
       </div>
     {/if}

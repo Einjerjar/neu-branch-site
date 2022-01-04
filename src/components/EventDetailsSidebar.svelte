@@ -10,13 +10,15 @@
   const MAX_SUB_POST = 2
 
   const getArticles = async (id, category, trigger) => {
-    // if (trigger < 0) console.log(trigger)
-    
-    let response = await fetch(re_param('collections/get/posts', {
-      limit: MAX_SUB_POST,
-      'filter[_id][$ne]': id,
-      'filter[category]': category,
-    }))
+    if (trigger < 0) console.log(trigger)
+
+    let response = await fetch(
+      re_param('collections/get/posts', {
+        limit: MAX_SUB_POST,
+        'filter[_id][$ne]': id,
+        'filter[category]': category,
+      })
+    )
 
     let data = await response.json()
     return data || events
@@ -27,7 +29,6 @@
 
   $: a_events = getArticles(post_id, 'event', eventRetryTrigger)
   $: a_announce = getArticles(post_id, 'announcement', announceRetryTrigger)
-
 </script>
 
 <div class="ml-4">
@@ -39,19 +40,20 @@
       Loding events
     {:then other_events}
       {#each other_events.entries as data}
-        <a href='#/events/{data['_id']}'>
+        <a href="#/events/{data['_id']}">
           <div class="h-50 my-8">
             <NewsCard {data} />
           </div>
         </a>
       {/each}
     {:catch}
-      <LoadFailed on:retry={() => {eventRetryTrigger ++}}/>
+      <LoadFailed
+        on:retry={() => {
+          eventRetryTrigger++
+        }} />
     {/await}
   </div>
-  <div
-    class="text-2xl text-primary-900 uppercase mt-8 font-semibold xl:(text-4xl)"
-  >
+  <div class="text-2xl text-primary-900 uppercase mt-8 font-semibold xl:(text-4xl)">
     <p>Announcements</p>
   </div>
   <div>
@@ -59,14 +61,17 @@
       Loding events
     {:then announce_data}
       {#each announce_data.entries as data}
-        <a href='#/events/{data['_id']}'>
+        <a href="#/events/{data['_id']}">
           <div class="h-50 my-8">
             <NewsCard {data} />
           </div>
         </a>
       {/each}
     {:catch}
-      <LoadFailed on:retry={() => {announceRetryTrigger ++}}/>
+      <LoadFailed
+        on:retry={() => {
+          announceRetryTrigger++
+        }} />
     {/await}
   </div>
 </div>

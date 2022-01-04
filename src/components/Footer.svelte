@@ -11,11 +11,7 @@
     <div class="flex flex-col sm:flex-row">
       <a href="#/" class="mb-8 mx-auto min-w-35 md:ml-auto w-35 h-35 lg:(min-w-50 w-50 h-50) relative">
         <div class="absolute bg-gra shadow-lg w-full h-full bg-primary-800 -top-2 rounded-b-lg p-5">
-          <img
-            src="./images/logo_x300.png"
-            alt="neu"
-            class="w-full h-full"
-          />
+          <img src="./images/logo_x300.png" alt="neu" class="w-full h-full" />
         </div>
       </a>
       <div class="container mx-auto flex flex-col p-4 lg:flex-row">
@@ -27,7 +23,7 @@
 
         <div class="flex flex-col w-60 mx-auto">
           <LinkGroup links={$footer_links.social_icons} icon_only={true} title="Social Links" />
-          <LinkGroup links={$footer_links.extra_links} title="Extra Links" show_title={false} extra_format={true}/>
+          <LinkGroup links={$footer_links.extra_links} title="Extra Links" show_title={false} extra_format={true} />
         </div>
       </div>
     </div>
@@ -36,9 +32,7 @@
   <div class="w-full px-8 bg-gray-900 bg-opacity-20">
     <div class="container mx-auto py-8 px-8 flex flex-col items-center text-white space-y-6 md:(justify-between flex-row)">
       <div class="lg:(flex items-center)">
-        <div class="font-shelley text-4xl capitalize border-b-5px pb-6 lg:(border-none mr-6)" >
-          new era university
-        </div>
+        <div class="font-shelley text-4xl capitalize border-b-5px pb-6 lg:(border-none mr-6)">new era university</div>
         <div class="mt-6 lg:(border-l-5px pl-6)">
           <p>{$bd.address.address}</p>
           <p>{`${$bd.address.city} ${$bd.address.country} ${$bd.address.postal_code}`}</p>

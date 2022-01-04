@@ -5,7 +5,7 @@ export const programs = {
       type: 'text',
       localize: false,
       options: [
-        
+
       ]
     },
     description: {
@@ -13,7 +13,7 @@ export const programs = {
       type: 'wysiwyg',
       localize: false,
       options: [
-        
+
       ]
     },
     branch: {
@@ -21,7 +21,7 @@ export const programs = {
       type: 'tags',
       localize: false,
       options: [
-        
+
       ]
     },
     level: {
@@ -29,7 +29,7 @@ export const programs = {
       type: 'tags',
       localize: false,
       options: [
-        
+
       ]
     },
     department: {
@@ -48,7 +48,7 @@ export const programs = {
       type: 'image',
       localize: false,
       options: [
-        
+
       ]
     },
     images: {
@@ -56,7 +56,7 @@ export const programs = {
       type: 'gallery',
       localize: false,
       options: [
-        
+
       ]
     }
   },
@@ -86,7 +86,7 @@ export const programs = {
       },
       images: null,
       children: [
-        
+
       ]
     },
     {
@@ -114,7 +114,7 @@ export const programs = {
       },
       images: null,
       children: [
-        
+
       ]
     },
     {
@@ -142,7 +142,7 @@ export const programs = {
       },
       images: null,
       children: [
-        
+
       ]
     },
     {
@@ -169,7 +169,7 @@ export const programs = {
       },
       images: null,
       children: [
-        
+
       ]
     },
     {
@@ -191,7 +191,7 @@ export const programs = {
       _pid: null,
       _o: 4,
       children: [
-        
+
       ]
     },
     {
@@ -254,7 +254,7 @@ export const programs = {
         }
       ],
       children: [
-        
+
       ]
     },
     {
@@ -288,7 +288,7 @@ export const programs = {
       },
       images: null,
       children: [
-        
+
       ]
     },
     {
@@ -309,7 +309,7 @@ export const programs = {
       _created: 1635774262,
       _id: '957040be6562334acc0002a0',
       children: [
-        
+
       ]
     },
     {
@@ -341,7 +341,7 @@ export const programs = {
       },
       images: null,
       children: [
-        
+
       ]
     },
     {
@@ -373,7 +373,7 @@ export const programs = {
       },
       images: null,
       children: [
-        
+
       ]
     },
     {
@@ -398,7 +398,7 @@ export const programs = {
       _created: 1635776076,
       _id: '968511e8313235feaa00034d',
       children: [
-        
+
       ]
     },
     {
@@ -425,7 +425,7 @@ export const programs = {
       _created: 1635776111,
       _id: '968a6a64633733cc7b0002ae',
       children: [
-        
+
       ]
     },
     {
@@ -452,7 +452,7 @@ export const programs = {
       _created: 1635776147,
       _id: '968fecb16130351c85000031',
       children: [
-        
+
       ]
     },
     {
@@ -479,7 +479,7 @@ export const programs = {
       _created: 1635776183,
       _id: '96954f7e316161852800039c',
       children: [
-        
+
       ]
     },
     {
@@ -506,7 +506,7 @@ export const programs = {
       _created: 1635776216,
       _id: '969a61bc353763328c0002aa',
       children: [
-        
+
       ]
     },
     {
@@ -533,7 +533,7 @@ export const programs = {
       _created: 1635776248,
       _id: '969f53c3303539c562000028',
       children: [
-        
+
       ]
     },
     {
@@ -560,7 +560,7 @@ export const programs = {
       _created: 1635776291,
       _id: '96a5e2093736317e5b000155',
       children: [
-        
+
       ]
     },
     {
@@ -587,7 +587,7 @@ export const programs = {
       _created: 1635776326,
       _id: '96ab28226630655cef0000a3',
       children: [
-        
+
       ]
     },
     {
@@ -608,7 +608,7 @@ export const programs = {
       _created: 1635776393,
       _id: '96b55f67316438caf2000339',
       children: [
-        
+
       ]
     },
     {
@@ -629,7 +629,7 @@ export const programs = {
       _created: 1635776418,
       _id: '96b92e3b35363960e3000355',
       children: [
-        
+
       ]
     },
     {
@@ -650,7 +650,7 @@ export const programs = {
       _created: 1635776440,
       _id: '96bc8be0656131f21c000357',
       children: [
-        
+
       ]
     },
     {
@@ -671,7 +671,7 @@ export const programs = {
       _created: 1635776456,
       _id: '96bef4d5353133f3d40000fe',
       children: [
-        
+
       ]
     },
     {
@@ -692,7 +692,7 @@ export const programs = {
       _created: 1635776496,
       _id: '96c527503530378f380003c6',
       children: [
-        
+
       ]
     }
   ],
